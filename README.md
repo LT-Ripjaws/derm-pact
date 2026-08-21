@@ -1,8 +1,8 @@
-# MedGuard
+# MedGuard/DERM-RAGV
 
-Code and evaluation artifacts for the manuscript *"MedGuard: An Evidence-Grounded Agentic Retrieval-Augmented Clinical Decision Support System for Dermoscopic Assessment"*.
+Code and evaluation artifacts for the manuscript *"DERM-RAGV: An Evidence-Grounded Agentic Retrieval-Augmented Clinical Decision Support System for Dermoscopic Assessment"*.
 
-MedGuard combines a frozen dermatology image encoder (DermLIP ViT-B/16) with lightweight diagnosis and seven-point-checklist models, an unfamiliar-image warning, a bounded clinical agent that retrieves source-linked guideline passages, and independent rule-based checks that verify every score, citation, and clinician correction before display.
+DERM-RAGV combines a frozen dermatology image encoder (DermLIP ViT-B/16) with lightweight diagnosis and seven-point-checklist models, an unfamiliar-image warning, a bounded clinical agent that retrieves source-linked guideline passages, and independent rule-based checks that verify every score, citation, and clinician correction before display.
 
 
 ## Layout
