@@ -20,6 +20,21 @@ MedGuard combines a frozen dermatology image encoder (DermLIP ViT-B/16) with lig
 | `research/*.json`, `*.jsonl` | Governance records: experiment specifications with acceptance receipts, preregistrations, results ledger, runtime lock, and append-only test-set access logs |
 
 
+## Where each reported number lives
+
+| Paper item | Artifact (under `research/evidence/`) | Producing script |
+|---|---|---|
+| Diagnostic performance table | `derm7pt_v1/paper_metrics_summary.json`, `ham_v1/ham_evaluation.json`, `bcn_v1/bcn_test_evaluation.json`, `sealed_v2/sealed_v2_evaluation.json` | `scripts/dev/build_ham_evaluation.py`, `scripts/dev/build_bcn_test_evaluation.py`, `scripts/sealed/run_sealed_v2.py` |
+| ROC curves and confusion matrices | `derm7pt_v1/roc_overlay_curves.json`, `promoted_two_view_ablation.json`, `confusion_matrices.json` | `scripts/dev/build_paper_figures.py`, `scripts/dev/build_roc_overlay_and_gate_fig.py` |
+| Criterion profile and complementarity | `derm7pt_v1/criteria_regrouped_kawahara.json`, `complementarity_venn_data.json` | `scripts/dev/build_criteria_regrouped_kawahara.py` |
+| Unfamiliar-image warning and coverage sweep | `derm7pt_v1/domain_gate_validation.json`, `domain_gate_residual.json` | `scripts/dev/validate_domain_gate.py`, `scripts/dev/build_domain_gate_residual.py` |
+| Agent endpoints, frozen-configuration test evaluation (395 lesions, 1,144 questions) | `derm7pt_v1/agent_eval_report_test_v1.json`, `cdss_contracts_test_promoted.json` | `scripts/dev/run_agent_eval_test.py` |
+| Agent endpoints, development split (203 cases, 591 questions) | `derm7pt_v1/agent_eval_report_v5_4.json` (+ `.PROVENANCE.md`) | `medguard_v2/eval/agent_eval.py` |
+| Deterministic template baseline (same questions, zero model calls) | `derm7pt_v1/template_baseline_test_v1.json`, `template_baseline_v1.json` | `scripts/dev/build_template_baseline_agent.py` |
+| Evidence faithfulness (RAGAS, development split) | `derm7pt_v1/agent_ragas_metrics_v5_4.json` | `scripts/dev/build_ragas_agent_metrics.py` |
+| Adversarial robustness (132/40/29 trials) | `derm7pt_v1/redteam_v1.json` | `medguard_v2/eval/` red-team modules |
+| Component ablation | `derm7pt_v1/ablation_table.json`, `promoted_two_view_ablation.json` | `scripts/dev/build_ablation_table.py` |
+
 All artifacts record their seeds, split hashes, and boundaries (paid calls, images encoded, which guarded set was read).
 
 ## What is deliberately not here
