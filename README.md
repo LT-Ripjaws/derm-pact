@@ -52,3 +52,13 @@ python -m unittest discover -s medguard_v2/tests -q
 Without any dataset downloaded, the suite collects 479 tests: 478 pass or skip (34 skips), and one module (`test_derm7pt`) reports a collection error because it loads the Derm7pt metadata at import time; it runs once Derm7pt is placed at `release_v0/` in the repository root. Everything else runs from the artifacts in this repository. The agent and judge evaluations replay offline from the caches under `research/evidence/derm7pt_v1/` (`agent_cache/`, `ragas_judge_cache/`, `verifier_cache/`); each cache entry stores the model identifier and reply for one call, which is also direct evidence of the runs. Live generation, if you want to re-run rather than replay, needs an OpenRouter-compatible key in `MEDGUARD_API_KEY`.
 
 Figure scripts assert their recomputed values against the stored artifacts before drawing (see `scripts/dev/build_roc_overlay_and_gate_fig.py`), so a successful figure build is itself a reproduction check.
+
+## Licensing
+
+The code in this repository (`medguard/`, `medguard_v2/`, `scripts/`, `notebooks/`) and the evaluation artifacts we produced (`research/evidence/*.json`, governance records) are released under the MIT License (see `LICENSE`).
+
+Some files derive from third-party material and keep their upstream terms, which take precedence over the MIT license for those files:
+
+- Feature matrices under `research/experiments/.../features/` are derived from HAM10000 (CC BY-NC 4.0; Tschandl et al., Sci. Data 2018) and BCN20000 (CC BY 4.0; Hernandez-Perez et al., Sci. Data 2024). The HAM10000-derived files are therefore for non-commercial use with attribution.
+- `medguard/data/corpus/derm_guideline_recommendations_v1.jsonl` contains short passages quoted verbatim, with source identifiers, from published clinical guidelines (AAD, EADO, NICE, BAD). These excerpts remain the copyright of their publishers and are reproduced here only so that the reported evaluation can be verified; consult the original documents for clinical use.
+- No dataset images and no Derm7pt-derived files are distributed in this repository (Derm7pt is CC BY-NC-ND 4.0).
