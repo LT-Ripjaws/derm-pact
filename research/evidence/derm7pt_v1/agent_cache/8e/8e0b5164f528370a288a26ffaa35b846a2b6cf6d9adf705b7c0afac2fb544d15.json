@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"tool\", \"tool\": \"retrieve_similar_cases\", \"args\": {\"k\": 5}}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

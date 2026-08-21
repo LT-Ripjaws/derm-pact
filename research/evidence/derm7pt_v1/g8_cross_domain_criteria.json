@@ -1,0 +1,112 @@
+{
+  "gate_id": "G8_cross_domain_criteria",
+  "question": "Does a Derm7pt-trained criteria path add melanoma sensitivity on top of an in-domain BCN classifier?",
+  "boundaries": {
+    "classifier_trained_on": "BCN train, lesion level",
+    "classifier_train_lesions": 2143,
+    "criteria_heads_trained_on": "Derm7pt train (413 cases) -- OUT OF DOMAIN, not retrained",
+    "evaluated_on": "BCN valid, lesion level",
+    "bcn_test_read": false,
+    "scoring_unit": "lesion",
+    "paid_calls": 0
+  },
+  "cohort": {
+    "valid_lesions": 715,
+    "melanomas": 105,
+    "class_counts": {
+      "BCC": 197,
+      "NEV": 256,
+      "MEL": 105,
+      "SK": 70,
+      "MISC": 87
+    }
+  },
+  "classifier_in_domain": {
+    "melanoma_auroc": 0.8665,
+    "at_argmax": {
+      "sensitivity": 0.581,
+      "specificity": 0.9475,
+      "ppv": 0.6559,
+      "youden_j": 0.5285,
+      "confusion": {
+        "tp": 61,
+        "fn": 44,
+        "fp": 32,
+        "tn": 578
+      }
+    },
+    "specificity_at_sensitivity": {
+      "0.90": {
+        "threshold": 0.0319,
+        "sensitivity": 0.9048,
+        "specificity": 0.5164,
+        "ppv": 0.2436,
+        "youden_j": 0.4212,
+        "confusion": {
+          "tp": 95,
+          "fn": 10,
+          "fp": 295,
+          "tn": 315
+        }
+      },
+      "0.95": {
+        "threshold": 0.0218,
+        "sensitivity": 0.9524,
+        "specificity": 0.441,
+        "ppv": 0.2268,
+        "youden_j": 0.3934,
+        "confusion": {
+          "tp": 100,
+          "fn": 5,
+          "fp": 341,
+          "tn": 269
+        }
+      }
+    }
+  },
+  "criteria_path_out_of_domain": {
+    "melanoma_auroc_from_raw_score": 0.6818,
+    "at_threshold_3": {
+      "sensitivity": 0.2952,
+      "specificity": 0.9459,
+      "ppv": 0.4844,
+      "youden_j": 0.2411,
+      "confusion": {
+        "tp": 31,
+        "fn": 74,
+        "fp": 33,
+        "tn": 577
+      }
+    },
+    "score_distribution": {
+      "mean_in_melanoma": 1.914,
+      "mean_in_non_melanoma": 0.489
+    }
+  },
+  "union_either_flags": {
+    "sensitivity": 0.6,
+    "specificity": 0.9082,
+    "ppv": 0.5294,
+    "youden_j": 0.5082,
+    "confusion": {
+      "tp": 63,
+      "fn": 42,
+      "fp": 56,
+      "tn": 554
+    }
+  },
+  "complementarity": {
+    "melanomas": 105,
+    "both": 29,
+    "classifier_only": 32,
+    "criteria_only": 2,
+    "neither": 42
+  },
+  "verdict": {
+    "criteria_path_catches_melanomas_the_classifier_misses": 2,
+    "sensitivity_gain_from_union": 0.019,
+    "specificity_cost_from_union": -0.0393,
+    "survives_domain_shift": true,
+    "interpretation": "The criteria path is out-of-domain by construction -- Derm7pt is the only source of criterion labels anywhere. If it still recovers melanomas an in-domain classifier misses, the complementarity claim is robust to domain shift. If it does not, that is a boundary condition on criteria-based dermoscopy AI, and reportable as one."
+  }
+}

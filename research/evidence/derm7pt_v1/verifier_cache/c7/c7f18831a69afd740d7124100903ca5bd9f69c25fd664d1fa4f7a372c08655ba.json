@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the decision contract does not support this. The contract only provides a deterministic score of 0 with no range or override mechanism described. The agent fabricated the new score and its range.",
+    "CRITERION ACCURACY: The agent assumes that changing 'blue_whitish_veil' from 'absent' to 'present' results in 2 points, but the contract does not specify how point values are assigned for criterion overrides or what the point value for 'present' would be. This is an unsupported inference.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', which is consistent with the contract's threshold (3), but the recommendation itself is not grounded in the contract's guideline binding or deterministic ladder. The contract states there are no recommendations for NEV, so any management advice is speculative.",
+    "CONFLICT REPORTING: The agent does not report any conflict state change, but the clinician's override introduces a discrepancy between the original classifier output and the corrected criteria. The contract's conflict field was 'present: false', but the override creates a conflict not addressed in the answer."
+  ],
+  "confidence": "medium",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the decision contract does not support this. The contract only provides a deterministic score of 0 with no range or override mechanism described. The agent fabricated the new score and its range.\",\n    \"CRITERION ACCURACY: The agent assumes that changing 'blue_whitish_veil' from 'absent' to 'present' results in 2 points, but the contract does not specify how point values are assigned for criterion overrides or what the point value for 'present' would be. This is an unsupported inference.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', which is consistent with the contract's threshold (3), but the recommendation itself is not grounded in the contract's guideline binding or deterministic ladder. The contract states there are no recommendations for NEV, so any management advice is speculative.\",\n    \"CONFLICT REPORTING: The agent does not report any conflict state change, but the clinician's override introduces a discrepancy between the original classifier output and the corrected criteria. The contract's conflict field was 'present: false', but the override creates a conflict not addressed in the answer.\"\n  ],\n  \"confidence\": \"medium\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.028,
+  "usage": {
+    "prompt_tokens": 1087,
+    "completion_tokens": 280,
+    "total_tokens": 1367
+  }
+}

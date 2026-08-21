@@ -1,0 +1,431 @@
+{
+  "protocol": "medguard-v2-bcn-test-evaluation-v1",
+  "run": "BCN test -- guarded cohort, single read",
+  "question": "In-domain vs cross-centre BCN classification, and whether an out-of-domain criteria path still adds melanoma sensitivity, on the held-out 712-lesion test set.",
+  "boundaries": {
+    "bcn_test_read": true,
+    "bcn_test_guard": "allow_test=True, medguard_v2.data.bcn20000.load_records",
+    "derm7pt_fit_split": "train",
+    "derm7pt_test_read": false,
+    "scoring_unit": "lesion (mean-pooled DermLIP features via lesion_level())",
+    "paid_calls": 0,
+    "generation_calls": 0
+  },
+  "seeds": {
+    "bcn_classifier_cv_and_fit": 20260811,
+    "derm7pt_classifier_and_criterion_heads": 20260810,
+    "derm7pt_C_registered": 10.0
+  },
+  "cohort": {
+    "bcn_train_lesions": 2143,
+    "bcn_train_melanomas": 314,
+    "bcn_train_class_counts": {
+      "BCC": 590,
+      "NEV": 767,
+      "MEL": 314,
+      "SK": 211,
+      "MISC": 261
+    },
+    "bcn_test_lesions": 712,
+    "bcn_test_melanomas": 104,
+    "bcn_test_class_counts": {
+      "BCC": 196,
+      "NEV": 255,
+      "MEL": 104,
+      "SK": 70,
+      "MISC": 87
+    },
+    "derm7pt_train_cases": 413
+  },
+  "arm1_in_domain_classifier": {
+    "model_selection": {
+      "selected_C": 10.0,
+      "cv_accuracy": 0.6962,
+      "grid_cv_accuracy": {
+        "0.1": 0.58,
+        "1.0": 0.6696,
+        "10.0": 0.6962,
+        "100.0": 0.6794
+      },
+      "method": "5-fold StratifiedGroupKFold on BCN train, grouped by lesion_id",
+      "seed": 20260811
+    },
+    "n": 712,
+    "accuracy": 0.6868,
+    "balanced_accuracy": 0.5773,
+    "macro_f1": 0.5901,
+    "weighted_f1": 0.6685,
+    "mcc": 0.5745,
+    "cohen_kappa": 0.5702,
+    "per_class": {
+      "BCC": {
+        "precision": 0.713,
+        "recall": 0.8367,
+        "f1": 0.77,
+        "support": 196
+      },
+      "NEV": {
+        "precision": 0.7347,
+        "recall": 0.8471,
+        "f1": 0.7869,
+        "support": 255
+      },
+      "MEL": {
+        "precision": 0.5652,
+        "recall": 0.5,
+        "f1": 0.5306,
+        "support": 104
+      },
+      "SK": {
+        "precision": 0.6071,
+        "recall": 0.2429,
+        "f1": 0.3469,
+        "support": 70
+      },
+      "MISC": {
+        "precision": 0.5882,
+        "recall": 0.4598,
+        "f1": 0.5161,
+        "support": 87
+      }
+    },
+    "confusion_matrix": [
+      [
+        164,
+        16,
+        4,
+        1,
+        11
+      ],
+      [
+        15,
+        216,
+        19,
+        2,
+        3
+      ],
+      [
+        9,
+        33,
+        52,
+        5,
+        5
+      ],
+      [
+        9,
+        24,
+        11,
+        17,
+        9
+      ],
+      [
+        33,
+        5,
+        6,
+        3,
+        40
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "BCC",
+      "NEV",
+      "MEL",
+      "SK",
+      "MISC"
+    ],
+    "confusion_matrix_sum": 712,
+    "melanoma": {
+      "auroc": {
+        "estimate": 0.8641,
+        "ci95_low": 0.8251,
+        "ci95_high": 0.9013,
+        "cluster_unit": "lesion_id",
+        "n_boot": 2000
+      },
+      "at_argmax": {
+        "sensitivity": 0.5,
+        "specificity": 0.9342,
+        "ppv": 0.5652,
+        "youden_j": 0.4342,
+        "confusion": {
+          "tp": 52,
+          "fn": 52,
+          "fp": 40,
+          "tn": 568
+        }
+      },
+      "sensitivity_at_specificity": {
+        "0.90": {
+          "sensitivity": 0.5577,
+          "specificity": 0.9013,
+          "threshold": 0.31738029544606267,
+          "target_specificity": 0.9
+        },
+        "0.95": {
+          "sensitivity": 0.4808,
+          "specificity": 0.9507,
+          "threshold": 0.4218389164765398,
+          "target_specificity": 0.95
+        }
+      }
+    },
+    "calibration": {
+      "ece": 0.0436,
+      "aurc": 0.1594
+    }
+  },
+  "arm2_cross_centre_classifier": {
+    "trained_on": "Derm7pt train (413 cases) -- OUT OF DOMAIN for BCN",
+    "hyperparameters": {
+      "C": 10.0,
+      "seed": 20260810,
+      "registered": true
+    },
+    "n": 712,
+    "accuracy": 0.5576,
+    "balanced_accuracy": 0.4121,
+    "macro_f1": 0.3767,
+    "weighted_f1": 0.4931,
+    "mcc": 0.3969,
+    "cohen_kappa": 0.3727,
+    "per_class": {
+      "BCC": {
+        "precision": 0.6412,
+        "recall": 0.5561,
+        "f1": 0.5956,
+        "support": 196
+      },
+      "NEV": {
+        "precision": 0.577,
+        "recall": 0.9255,
+        "f1": 0.7108,
+        "support": 255
+      },
+      "MEL": {
+        "precision": 0.7143,
+        "recall": 0.0962,
+        "f1": 0.1695,
+        "support": 104
+      },
+      "SK": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 70
+      },
+      "MISC": {
+        "precision": 0.3529,
+        "recall": 0.4828,
+        "f1": 0.4078,
+        "support": 87
+      }
+    },
+    "confusion_matrix": [
+      [
+        109,
+        40,
+        1,
+        0,
+        46
+      ],
+      [
+        6,
+        236,
+        0,
+        0,
+        13
+      ],
+      [
+        17,
+        71,
+        10,
+        0,
+        6
+      ],
+      [
+        10,
+        46,
+        2,
+        0,
+        12
+      ],
+      [
+        28,
+        16,
+        1,
+        0,
+        42
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "BCC",
+      "NEV",
+      "MEL",
+      "SK",
+      "MISC"
+    ],
+    "confusion_matrix_sum": 712,
+    "melanoma": {
+      "auroc": {
+        "estimate": 0.7962,
+        "ci95_low": 0.7497,
+        "ci95_high": 0.839,
+        "cluster_unit": "lesion_id",
+        "n_boot": 2000
+      },
+      "at_argmax": {
+        "sensitivity": 0.0962,
+        "specificity": 0.9934,
+        "ppv": 0.7143,
+        "youden_j": 0.0896,
+        "confusion": {
+          "tp": 10,
+          "fn": 94,
+          "fp": 4,
+          "tn": 604
+        }
+      },
+      "sensitivity_at_specificity": {
+        "0.90": {
+          "sensitivity": 0.4038,
+          "specificity": 0.9062,
+          "threshold": 0.10301391232273727,
+          "target_specificity": 0.9
+        },
+        "0.95": {
+          "sensitivity": 0.3173,
+          "specificity": 0.9507,
+          "threshold": 0.16837348119641035,
+          "target_specificity": 0.95
+        }
+      }
+    },
+    "calibration": {
+      "ece": 0.1558,
+      "aurc": 0.2556
+    }
+  },
+  "arm3_full_v2": {
+    "classifier": "identical to arm2_cross_centre_classifier (same model, same predictions)",
+    "criteria_path_out_of_domain": {
+      "trained_on": "Derm7pt train (413 cases) -- OUT OF DOMAIN, not retrained for BCN",
+      "melanoma_auroc_from_raw_score": {
+        "estimate": 0.7101,
+        "ci95_low": 0.6573,
+        "ci95_high": 0.7634,
+        "cluster_unit": "lesion_id",
+        "n_boot": 2000
+      },
+      "at_threshold_3": {
+        "sensitivity": 0.3077,
+        "specificity": 0.9474,
+        "ppv": 0.5,
+        "youden_j": 0.2551,
+        "confusion": {
+          "tp": 32,
+          "fn": 72,
+          "fp": 32,
+          "tn": 576
+        }
+      },
+      "sensitivity_at_specificity": {
+        "0.90": {
+          "sensitivity": 0.3077,
+          "specificity": 0.9474,
+          "threshold": 3.0,
+          "target_specificity": 0.9
+        },
+        "0.95": {
+          "sensitivity": 0.2115,
+          "specificity": 0.9737,
+          "threshold": 4.0,
+          "target_specificity": 0.95
+        }
+      },
+      "score_distribution": {
+        "overall": {
+          "min": 0.0,
+          "p25": 0.0,
+          "median": 0.0,
+          "p75": 1.0,
+          "max": 10.0,
+          "mean": 0.7051
+        },
+        "melanoma": {
+          "min": 0.0,
+          "p25": 0.0,
+          "median": 1.0,
+          "p75": 3.0,
+          "max": 10.0,
+          "mean": 1.8942
+        },
+        "non_melanoma": {
+          "min": 0.0,
+          "p25": 0.0,
+          "median": 0.0,
+          "p75": 1.0,
+          "max": 8.0,
+          "mean": 0.5016
+        }
+      }
+    },
+    "contract_level": {
+      "decidable_rate": 1.0,
+      "decidable_note": "Criterion heads are LogisticRegression.predict() over Derm7pt's own annotation vocabulary, which never contains INDETERMINATE as a training label -- a head can therefore never emit it, and every lesion is decidable by construction. Reported for contract-level completeness, not as a nontrivial finding.",
+      "score_range_observed": {
+        "min": 0,
+        "max": 10
+      },
+      "conflict_rate": 0.0758,
+      "conflict_definition": "classifier commits MEL XOR criteria score >= threshold (3); matches medguard_v2.evidence.contract._build_conflict's definition, reproduced here directly so this script does not need the guideline-binding dependency chain."
+    },
+    "union_either_flags": {
+      "sensitivity": 0.3173,
+      "specificity": 0.9457,
+      "ppv": 0.5,
+      "youden_j": 0.263,
+      "confusion": {
+        "tp": 33,
+        "fn": 71,
+        "fp": 33,
+        "tn": 575
+      }
+    },
+    "complementarity": {
+      "melanomas": 104,
+      "both": 9,
+      "classifier_only": 1,
+      "criteria_only": 23,
+      "neither": 71
+    }
+  },
+  "cross_arm_tests": {
+    "mcnemar_5class_accuracy_in_domain_vs_cross_centre": {
+      "test": "two-sided exact McNemar",
+      "in_domain_only_correct": 137,
+      "cross_centre_only_correct": 45,
+      "p_value": 0.0
+    },
+    "mcnemar_melanoma_call_in_domain_vs_cross_centre": {
+      "test": "two-sided exact McNemar",
+      "in_domain_only_correct": 44,
+      "cross_centre_only_correct": 38,
+      "p_value": 0.581114
+    },
+    "complementarity_arm3": {
+      "melanomas": 104,
+      "both": 9,
+      "classifier_only": 1,
+      "criteria_only": 23,
+      "neither": 71
+    }
+  },
+  "verdict": {
+    "in_domain_beats_cross_centre_5class_accuracy": true,
+    "in_domain_beats_cross_centre_melanoma_auroc": true,
+    "criteria_only_melanoma_catches": 23,
+    "criteria_only_share_of_melanomas": 0.2212,
+    "union_sensitivity_gain_over_cross_centre_classifier_alone": 0.2211,
+    "note": "This is the fully out-of-domain arm: unlike G8 (in-domain BCN classifier, out-of-domain criteria only), here neither reader has ever seen a BCN training image. Compare criteria_only_share_of_melanomas against the G8 valid-set trail (0.148 Derm7pt valid -> 0.149 Derm7pt test -> 0.019 BCN valid, partial transfer) to see whether full transfer collapses further, holds, or (if the in-domain classifier's BCN-specific edge was doing a lot of G8's work) recovers."
+  }
+}

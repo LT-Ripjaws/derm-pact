@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the 7-point score after override is '2 (min=2, max=2)', but the decision contract does not support this. The contract only provides a single deterministic score of 0 with min=0 and max=0. The agent fabricated a new score range of 2-2 without any basis in the contract's criteria or scoring logic.",
+    "CRITERION ACCURACY: The agent reports that 'blue_whitish_veil' was overridden to 'present', but the contract does not contain any mechanism for overriding criteria or recalculating scores. This action and its outcome are not grounded in the provided data.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' because the score is below 3. While this aligns with the contract\u2019s threshold, it assumes a score of 2, which was not present in the original contract. The management advice is therefore based on fabricated data.",
+    "CONFLICT REPORTING: The agent reports 'conflict state: no conflict' after the override, but the contract\u2019s conflict state is static and does not change based on clinician input. The agent incorrectly implies that the conflict status can be dynamically updated, which is not supported by the contract."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the 7-point score after override is '2 (min=2, max=2)', but the decision contract does not support this. The contract only provides a single deterministic score of 0 with min=0 and max=0. The agent fabricated a new score range of 2-2 without any basis in the contract's criteria or scoring logic.\",\n    \"CRITERION ACCURACY: The agent reports that 'blue_whitish_veil' was overridden to 'present', but the contract does not contain any mechanism for overriding criteria or recalculating scores. This action and its outcome are not grounded in the provided data.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' because the score is below 3. While this aligns with the contract\u2019s threshold, it assumes a score of 2, which was not present in the original contract. The management advice is therefore based on fabricated data.\",\n    \"CONFLICT REPORTING: The agent reports 'conflict state: no conflict' after the override, but the contract\u2019s conflict state is static and does not change based on clinician input. The agent incorrectly implies that the conflict status can be dynamically updated, which is not supported by the contract.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.952,
+  "usage": {
+    "prompt_tokens": 1119,
+    "completion_tokens": 288,
+    "total_tokens": 1407
+  }
+}

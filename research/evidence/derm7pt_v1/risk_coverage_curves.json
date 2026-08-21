@@ -1,0 +1,1634 @@
+{
+  "protocol": "derm7pt-risk-coverage-checklist-verdict-n5-v1",
+  "generated_at": "2026-08-14T19:00:43",
+  "question": "Sweeping the criterion-abstention margin threshold, what is the checklist's melanoma-verdict error (risk) among the cases it still leaves decidable (coverage)?",
+  "boundaries": {
+    "paid_calls": 0,
+    "images_encoded": 0,
+    "heads": "PROMOTED criteria (dermlip_tta+metadata14, 526-d, lr_balanced, per-head C), fit on Derm7pt train (run_cohort.fit_readers_promoted)",
+    "cohort": "Derm7pt test",
+    "n_cases": 395,
+    "n_melanoma": 101,
+    "tau_grid": {
+      "min": 0.0,
+      "max": 1.0,
+      "n_points": 101
+    },
+    "abstention_rule": "uniform margin cutoff: criterion INDETERMINATE if head top-minus-second margin < tau; case decidable per aggregate.SevenPointScore.decidable"
+  },
+  "risk_definitions": {
+    "risk_true_label": "1{verdict==excise} XOR 1{diagnosis_group==MEL}, among decided cases",
+    "risk_self_consistency": "1{predicted-criteria verdict} != 1{gold-criteria verdict}, among decided cases"
+  },
+  "base_point_full_coverage": {
+    "tau": 0.0,
+    "coverage": 1.0,
+    "n_decided": 395,
+    "risk_true_label": 0.2734,
+    "risk_self_consistency": 0.243,
+    "sensitivity_among_decided": 0.7921,
+    "specificity_among_decided": 0.7041,
+    "confusion_true_label": {
+      "tp": 80,
+      "fp": 87,
+      "tn": 207,
+      "fn": 21
+    }
+  },
+  "gold_criteria_ceiling": {
+    "verdict_error_vs_true_label": 0.1519,
+    "sensitivity": 0.9406,
+    "specificity": 0.8163,
+    "note": "Fully-informed checklist on GOLD criteria over the WHOLE test set. Predicted-criteria true-label risk starts above this and relaxes toward it as coverage falls; because these ~0.15 whole-set errors are the 7-point rule disagreeing with pathology (not the heads being unsure), abstention on model uncertainty only reduces true-label risk below this whole-set value in the deep low-coverage tail, where it selectively drops the hardest cases -- not at operationally useful coverage. It is a ceiling on the useful-coverage regime, not a hard per-subset floor."
+  },
+  "coverage_at_risk": {
+    "true_label": {
+      "0.05": {
+        "achievable": true,
+        "coverage": 0.0557,
+        "risk": 0.0455,
+        "tau": 0.89,
+        "n_decided": 22,
+        "reliable_sample": true,
+        "note": null
+      },
+      "0.1": {
+        "achievable": true,
+        "coverage": 0.0835,
+        "risk": 0.0909,
+        "tau": 0.86,
+        "n_decided": 33,
+        "reliable_sample": true,
+        "note": null
+      },
+      "0.2": {
+        "achievable": true,
+        "coverage": 0.6709,
+        "risk": 0.1962,
+        "tau": 0.28,
+        "n_decided": 265,
+        "reliable_sample": true,
+        "note": null
+      }
+    },
+    "self_consistency": {
+      "0.05": {
+        "achievable": true,
+        "coverage": 0.0911,
+        "risk": 0.0278,
+        "tau": 0.85,
+        "n_decided": 36,
+        "reliable_sample": true,
+        "note": null
+      },
+      "0.1": {
+        "achievable": true,
+        "coverage": 0.3215,
+        "risk": 0.0945,
+        "tau": 0.6,
+        "n_decided": 127,
+        "reliable_sample": true,
+        "note": null
+      },
+      "0.2": {
+        "achievable": true,
+        "coverage": 0.8228,
+        "risk": 0.1969,
+        "tau": 0.14,
+        "n_decided": 325,
+        "reliable_sample": true,
+        "note": null
+      }
+    }
+  },
+  "conformal_pairing": {
+    "source": "research/evidence/v3_metadata_evaluation.json -> derm7pt.conformal_v3",
+    "method": "LAC split-conformal, alpha=0.10 (>=90% marginal coverage target)",
+    "classifier_side": {
+      "test_coverage": 0.9241,
+      "target_coverage": 0.9,
+      "mean_set_size": 1.605,
+      "singleton_rate": 0.5418,
+      "mel_class_coverage": 0.9406
+    },
+    "conceptual_pairing": "Both the classifier and the checklist carry calibrated uncertainty, expressed differently. The classifier widens a prediction SET (mean 1.605 classes) to hold >=90% marginal coverage -- it never abstains, it hedges by listing more labels. The checklist widens a score RANGE and ABSTAINS (undecidable) when the range straddles the melanoma threshold. The conformal set answers 'which diagnoses can I not rule out'; the risk-coverage curve answers 'how much melanoma-verdict error do I carry if I decide this fraction of cases'. They are complementary uncertainty surfaces over the same cases, not competing metrics."
+  },
+  "curve": [
+    {
+      "tau": 0.0,
+      "coverage": 1.0,
+      "n_decided": 395,
+      "risk_true_label": 0.2734,
+      "risk_self_consistency": 0.243,
+      "sensitivity_among_decided": 0.7921,
+      "specificity_among_decided": 0.7041,
+      "confusion_true_label": {
+        "tp": 80,
+        "fp": 87,
+        "tn": 207,
+        "fn": 21
+      }
+    },
+    {
+      "tau": 0.01,
+      "coverage": 0.9899,
+      "n_decided": 391,
+      "risk_true_label": 0.2711,
+      "risk_self_consistency": 0.2379,
+      "sensitivity_among_decided": 0.7921,
+      "specificity_among_decided": 0.7069,
+      "confusion_true_label": {
+        "tp": 80,
+        "fp": 85,
+        "tn": 205,
+        "fn": 21
+      }
+    },
+    {
+      "tau": 0.02,
+      "coverage": 0.9772,
+      "n_decided": 386,
+      "risk_true_label": 0.2694,
+      "risk_self_consistency": 0.2409,
+      "sensitivity_among_decided": 0.7879,
+      "specificity_among_decided": 0.7108,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 83,
+        "tn": 204,
+        "fn": 21
+      }
+    },
+    {
+      "tau": 0.03,
+      "coverage": 0.9696,
+      "n_decided": 383,
+      "risk_true_label": 0.2689,
+      "risk_self_consistency": 0.2402,
+      "sensitivity_among_decided": 0.7959,
+      "specificity_among_decided": 0.7088,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 83,
+        "tn": 202,
+        "fn": 20
+      }
+    },
+    {
+      "tau": 0.04,
+      "coverage": 0.9595,
+      "n_decided": 379,
+      "risk_true_label": 0.2665,
+      "risk_self_consistency": 0.2401,
+      "sensitivity_among_decided": 0.8041,
+      "specificity_among_decided": 0.7092,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 82,
+        "tn": 200,
+        "fn": 19
+      }
+    },
+    {
+      "tau": 0.05,
+      "coverage": 0.9519,
+      "n_decided": 376,
+      "risk_true_label": 0.2686,
+      "risk_self_consistency": 0.2394,
+      "sensitivity_among_decided": 0.8041,
+      "specificity_among_decided": 0.7061,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 82,
+        "tn": 197,
+        "fn": 19
+      }
+    },
+    {
+      "tau": 0.06,
+      "coverage": 0.9266,
+      "n_decided": 366,
+      "risk_true_label": 0.265,
+      "risk_self_consistency": 0.2322,
+      "sensitivity_among_decided": 0.8125,
+      "specificity_among_decided": 0.7074,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 79,
+        "tn": 191,
+        "fn": 18
+      }
+    },
+    {
+      "tau": 0.07,
+      "coverage": 0.9089,
+      "n_decided": 359,
+      "risk_true_label": 0.2591,
+      "risk_self_consistency": 0.2284,
+      "sensitivity_among_decided": 0.8211,
+      "specificity_among_decided": 0.7121,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 76,
+        "tn": 188,
+        "fn": 17
+      }
+    },
+    {
+      "tau": 0.08,
+      "coverage": 0.8861,
+      "n_decided": 350,
+      "risk_true_label": 0.2486,
+      "risk_self_consistency": 0.22,
+      "sensitivity_among_decided": 0.8298,
+      "specificity_among_decided": 0.7227,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 71,
+        "tn": 185,
+        "fn": 16
+      }
+    },
+    {
+      "tau": 0.09,
+      "coverage": 0.8759,
+      "n_decided": 346,
+      "risk_true_label": 0.2457,
+      "risk_self_consistency": 0.2168,
+      "sensitivity_among_decided": 0.8387,
+      "specificity_among_decided": 0.7233,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 70,
+        "tn": 183,
+        "fn": 15
+      }
+    },
+    {
+      "tau": 0.1,
+      "coverage": 0.8658,
+      "n_decided": 342,
+      "risk_true_label": 0.2427,
+      "risk_self_consistency": 0.2135,
+      "sensitivity_among_decided": 0.8478,
+      "specificity_among_decided": 0.724,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 69,
+        "tn": 181,
+        "fn": 14
+      }
+    },
+    {
+      "tau": 0.11,
+      "coverage": 0.8532,
+      "n_decided": 337,
+      "risk_true_label": 0.2404,
+      "risk_self_consistency": 0.2077,
+      "sensitivity_among_decided": 0.8478,
+      "specificity_among_decided": 0.7265,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 67,
+        "tn": 178,
+        "fn": 14
+      }
+    },
+    {
+      "tau": 0.12,
+      "coverage": 0.8405,
+      "n_decided": 332,
+      "risk_true_label": 0.238,
+      "risk_self_consistency": 0.2018,
+      "sensitivity_among_decided": 0.8571,
+      "specificity_among_decided": 0.7261,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 66,
+        "tn": 175,
+        "fn": 13
+      }
+    },
+    {
+      "tau": 0.13,
+      "coverage": 0.8354,
+      "n_decided": 330,
+      "risk_true_label": 0.2394,
+      "risk_self_consistency": 0.203,
+      "sensitivity_among_decided": 0.8571,
+      "specificity_among_decided": 0.7238,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 66,
+        "tn": 173,
+        "fn": 13
+      }
+    },
+    {
+      "tau": 0.14,
+      "coverage": 0.8228,
+      "n_decided": 325,
+      "risk_true_label": 0.2369,
+      "risk_self_consistency": 0.1969,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7234,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 65,
+        "tn": 170,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.15,
+      "coverage": 0.8051,
+      "n_decided": 318,
+      "risk_true_label": 0.2358,
+      "risk_self_consistency": 0.195,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7237,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 63,
+        "tn": 165,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.16,
+      "coverage": 0.7975,
+      "n_decided": 315,
+      "risk_true_label": 0.2349,
+      "risk_self_consistency": 0.1905,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7244,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 62,
+        "tn": 163,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.17,
+      "coverage": 0.7924,
+      "n_decided": 313,
+      "risk_true_label": 0.23,
+      "risk_self_consistency": 0.1853,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7309,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 60,
+        "tn": 163,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.18,
+      "coverage": 0.7797,
+      "n_decided": 308,
+      "risk_true_label": 0.2305,
+      "risk_self_consistency": 0.1851,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7294,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 59,
+        "tn": 159,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.19,
+      "coverage": 0.7722,
+      "n_decided": 305,
+      "risk_true_label": 0.2295,
+      "risk_self_consistency": 0.1869,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7302,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 58,
+        "tn": 157,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.2,
+      "coverage": 0.7646,
+      "n_decided": 302,
+      "risk_true_label": 0.2252,
+      "risk_self_consistency": 0.1854,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7358,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 56,
+        "tn": 156,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.21,
+      "coverage": 0.7494,
+      "n_decided": 296,
+      "risk_true_label": 0.2196,
+      "risk_self_consistency": 0.1824,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7427,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 53,
+        "tn": 153,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.22,
+      "coverage": 0.7367,
+      "n_decided": 291,
+      "risk_true_label": 0.2131,
+      "risk_self_consistency": 0.1821,
+      "sensitivity_among_decided": 0.8667,
+      "specificity_among_decided": 0.7512,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 50,
+        "tn": 151,
+        "fn": 12
+      }
+    },
+    {
+      "tau": 0.23,
+      "coverage": 0.7215,
+      "n_decided": 285,
+      "risk_true_label": 0.207,
+      "risk_self_consistency": 0.1789,
+      "sensitivity_among_decided": 0.8764,
+      "specificity_among_decided": 0.7551,
+      "confusion_true_label": {
+        "tp": 78,
+        "fp": 48,
+        "tn": 148,
+        "fn": 11
+      }
+    },
+    {
+      "tau": 0.24,
+      "coverage": 0.7165,
+      "n_decided": 283,
+      "risk_true_label": 0.2085,
+      "risk_self_consistency": 0.1802,
+      "sensitivity_among_decided": 0.875,
+      "specificity_among_decided": 0.7538,
+      "confusion_true_label": {
+        "tp": 77,
+        "fp": 48,
+        "tn": 147,
+        "fn": 11
+      }
+    },
+    {
+      "tau": 0.25,
+      "coverage": 0.7139,
+      "n_decided": 282,
+      "risk_true_label": 0.2057,
+      "risk_self_consistency": 0.1773,
+      "sensitivity_among_decided": 0.875,
+      "specificity_among_decided": 0.7577,
+      "confusion_true_label": {
+        "tp": 77,
+        "fp": 47,
+        "tn": 147,
+        "fn": 11
+      }
+    },
+    {
+      "tau": 0.26,
+      "coverage": 0.7089,
+      "n_decided": 280,
+      "risk_true_label": 0.2036,
+      "risk_self_consistency": 0.175,
+      "sensitivity_among_decided": 0.8837,
+      "specificity_among_decided": 0.7577,
+      "confusion_true_label": {
+        "tp": 76,
+        "fp": 47,
+        "tn": 147,
+        "fn": 10
+      }
+    },
+    {
+      "tau": 0.27,
+      "coverage": 0.6962,
+      "n_decided": 275,
+      "risk_true_label": 0.2036,
+      "risk_self_consistency": 0.1745,
+      "sensitivity_among_decided": 0.881,
+      "specificity_among_decided": 0.7592,
+      "confusion_true_label": {
+        "tp": 74,
+        "fp": 46,
+        "tn": 145,
+        "fn": 10
+      }
+    },
+    {
+      "tau": 0.28,
+      "coverage": 0.6709,
+      "n_decided": 265,
+      "risk_true_label": 0.1962,
+      "risk_self_consistency": 0.166,
+      "sensitivity_among_decided": 0.8889,
+      "specificity_among_decided": 0.7663,
+      "confusion_true_label": {
+        "tp": 72,
+        "fp": 43,
+        "tn": 141,
+        "fn": 9
+      }
+    },
+    {
+      "tau": 0.29,
+      "coverage": 0.6658,
+      "n_decided": 263,
+      "risk_true_label": 0.1977,
+      "risk_self_consistency": 0.1673,
+      "sensitivity_among_decided": 0.8889,
+      "specificity_among_decided": 0.7637,
+      "confusion_true_label": {
+        "tp": 72,
+        "fp": 43,
+        "tn": 139,
+        "fn": 9
+      }
+    },
+    {
+      "tau": 0.3,
+      "coverage": 0.6354,
+      "n_decided": 251,
+      "risk_true_label": 0.1873,
+      "risk_self_consistency": 0.1673,
+      "sensitivity_among_decided": 0.9091,
+      "specificity_among_decided": 0.7701,
+      "confusion_true_label": {
+        "tp": 70,
+        "fp": 40,
+        "tn": 134,
+        "fn": 7
+      }
+    },
+    {
+      "tau": 0.31,
+      "coverage": 0.6228,
+      "n_decided": 246,
+      "risk_true_label": 0.1829,
+      "risk_self_consistency": 0.1667,
+      "sensitivity_among_decided": 0.9079,
+      "specificity_among_decided": 0.7765,
+      "confusion_true_label": {
+        "tp": 69,
+        "fp": 38,
+        "tn": 132,
+        "fn": 7
+      }
+    },
+    {
+      "tau": 0.32,
+      "coverage": 0.6101,
+      "n_decided": 241,
+      "risk_true_label": 0.1867,
+      "risk_self_consistency": 0.1701,
+      "sensitivity_among_decided": 0.9067,
+      "specificity_among_decided": 0.7711,
+      "confusion_true_label": {
+        "tp": 68,
+        "fp": 38,
+        "tn": 128,
+        "fn": 7
+      }
+    },
+    {
+      "tau": 0.33,
+      "coverage": 0.6,
+      "n_decided": 237,
+      "risk_true_label": 0.1857,
+      "risk_self_consistency": 0.1688,
+      "sensitivity_among_decided": 0.9067,
+      "specificity_among_decided": 0.7716,
+      "confusion_true_label": {
+        "tp": 68,
+        "fp": 37,
+        "tn": 125,
+        "fn": 7
+      }
+    },
+    {
+      "tau": 0.34,
+      "coverage": 0.5772,
+      "n_decided": 228,
+      "risk_true_label": 0.1842,
+      "risk_self_consistency": 0.1667,
+      "sensitivity_among_decided": 0.9028,
+      "specificity_among_decided": 0.7756,
+      "confusion_true_label": {
+        "tp": 65,
+        "fp": 35,
+        "tn": 121,
+        "fn": 7
+      }
+    },
+    {
+      "tau": 0.35,
+      "coverage": 0.5747,
+      "n_decided": 227,
+      "risk_true_label": 0.185,
+      "risk_self_consistency": 0.163,
+      "sensitivity_among_decided": 0.9028,
+      "specificity_among_decided": 0.7742,
+      "confusion_true_label": {
+        "tp": 65,
+        "fp": 35,
+        "tn": 120,
+        "fn": 7
+      }
+    },
+    {
+      "tau": 0.36,
+      "coverage": 0.5595,
+      "n_decided": 221,
+      "risk_true_label": 0.181,
+      "risk_self_consistency": 0.1584,
+      "sensitivity_among_decided": 0.9155,
+      "specificity_among_decided": 0.7733,
+      "confusion_true_label": {
+        "tp": 65,
+        "fp": 34,
+        "tn": 116,
+        "fn": 6
+      }
+    },
+    {
+      "tau": 0.37,
+      "coverage": 0.5544,
+      "n_decided": 219,
+      "risk_true_label": 0.1826,
+      "risk_self_consistency": 0.1598,
+      "sensitivity_among_decided": 0.9143,
+      "specificity_among_decided": 0.7718,
+      "confusion_true_label": {
+        "tp": 64,
+        "fp": 34,
+        "tn": 115,
+        "fn": 6
+      }
+    },
+    {
+      "tau": 0.38,
+      "coverage": 0.5494,
+      "n_decided": 217,
+      "risk_true_label": 0.1843,
+      "risk_self_consistency": 0.1613,
+      "sensitivity_among_decided": 0.913,
+      "specificity_among_decided": 0.7703,
+      "confusion_true_label": {
+        "tp": 63,
+        "fp": 34,
+        "tn": 114,
+        "fn": 6
+      }
+    },
+    {
+      "tau": 0.39,
+      "coverage": 0.5367,
+      "n_decided": 212,
+      "risk_true_label": 0.1887,
+      "risk_self_consistency": 0.1651,
+      "sensitivity_among_decided": 0.9118,
+      "specificity_among_decided": 0.7639,
+      "confusion_true_label": {
+        "tp": 62,
+        "fp": 34,
+        "tn": 110,
+        "fn": 6
+      }
+    },
+    {
+      "tau": 0.4,
+      "coverage": 0.519,
+      "n_decided": 205,
+      "risk_true_label": 0.1756,
+      "risk_self_consistency": 0.1512,
+      "sensitivity_among_decided": 0.9254,
+      "specificity_among_decided": 0.7754,
+      "confusion_true_label": {
+        "tp": 62,
+        "fp": 31,
+        "tn": 107,
+        "fn": 5
+      }
+    },
+    {
+      "tau": 0.41,
+      "coverage": 0.5165,
+      "n_decided": 204,
+      "risk_true_label": 0.1765,
+      "risk_self_consistency": 0.152,
+      "sensitivity_among_decided": 0.9254,
+      "specificity_among_decided": 0.7737,
+      "confusion_true_label": {
+        "tp": 62,
+        "fp": 31,
+        "tn": 106,
+        "fn": 5
+      }
+    },
+    {
+      "tau": 0.42,
+      "coverage": 0.5013,
+      "n_decided": 198,
+      "risk_true_label": 0.1768,
+      "risk_self_consistency": 0.1515,
+      "sensitivity_among_decided": 0.9254,
+      "specificity_among_decided": 0.771,
+      "confusion_true_label": {
+        "tp": 62,
+        "fp": 30,
+        "tn": 101,
+        "fn": 5
+      }
+    },
+    {
+      "tau": 0.43,
+      "coverage": 0.4911,
+      "n_decided": 194,
+      "risk_true_label": 0.1753,
+      "risk_self_consistency": 0.1495,
+      "sensitivity_among_decided": 0.9394,
+      "specificity_among_decided": 0.7656,
+      "confusion_true_label": {
+        "tp": 62,
+        "fp": 30,
+        "tn": 98,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.44,
+      "coverage": 0.481,
+      "n_decided": 190,
+      "risk_true_label": 0.1789,
+      "risk_self_consistency": 0.1474,
+      "sensitivity_among_decided": 0.9385,
+      "specificity_among_decided": 0.76,
+      "confusion_true_label": {
+        "tp": 61,
+        "fp": 30,
+        "tn": 95,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.45,
+      "coverage": 0.4582,
+      "n_decided": 181,
+      "risk_true_label": 0.1823,
+      "risk_self_consistency": 0.1547,
+      "sensitivity_among_decided": 0.9385,
+      "specificity_among_decided": 0.75,
+      "confusion_true_label": {
+        "tp": 61,
+        "fp": 29,
+        "tn": 87,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.46,
+      "coverage": 0.4532,
+      "n_decided": 179,
+      "risk_true_label": 0.1788,
+      "risk_self_consistency": 0.1508,
+      "sensitivity_among_decided": 0.9385,
+      "specificity_among_decided": 0.7544,
+      "confusion_true_label": {
+        "tp": 61,
+        "fp": 28,
+        "tn": 86,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.47,
+      "coverage": 0.443,
+      "n_decided": 175,
+      "risk_true_label": 0.1771,
+      "risk_self_consistency": 0.1543,
+      "sensitivity_among_decided": 0.9375,
+      "specificity_among_decided": 0.7568,
+      "confusion_true_label": {
+        "tp": 60,
+        "fp": 27,
+        "tn": 84,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.48,
+      "coverage": 0.4354,
+      "n_decided": 172,
+      "risk_true_label": 0.1744,
+      "risk_self_consistency": 0.1453,
+      "sensitivity_among_decided": 0.9365,
+      "specificity_among_decided": 0.7615,
+      "confusion_true_label": {
+        "tp": 59,
+        "fp": 26,
+        "tn": 83,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.49,
+      "coverage": 0.4253,
+      "n_decided": 168,
+      "risk_true_label": 0.1726,
+      "risk_self_consistency": 0.1488,
+      "sensitivity_among_decided": 0.9355,
+      "specificity_among_decided": 0.7642,
+      "confusion_true_label": {
+        "tp": 58,
+        "fp": 25,
+        "tn": 81,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.5,
+      "coverage": 0.4253,
+      "n_decided": 168,
+      "risk_true_label": 0.1726,
+      "risk_self_consistency": 0.1488,
+      "sensitivity_among_decided": 0.9355,
+      "specificity_among_decided": 0.7642,
+      "confusion_true_label": {
+        "tp": 58,
+        "fp": 25,
+        "tn": 81,
+        "fn": 4
+      }
+    },
+    {
+      "tau": 0.51,
+      "coverage": 0.4025,
+      "n_decided": 159,
+      "risk_true_label": 0.1698,
+      "risk_self_consistency": 0.1321,
+      "sensitivity_among_decided": 0.9483,
+      "specificity_among_decided": 0.7624,
+      "confusion_true_label": {
+        "tp": 55,
+        "fp": 24,
+        "tn": 77,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.52,
+      "coverage": 0.3975,
+      "n_decided": 157,
+      "risk_true_label": 0.1656,
+      "risk_self_consistency": 0.1274,
+      "sensitivity_among_decided": 0.9474,
+      "specificity_among_decided": 0.77,
+      "confusion_true_label": {
+        "tp": 54,
+        "fp": 23,
+        "tn": 77,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.53,
+      "coverage": 0.3899,
+      "n_decided": 154,
+      "risk_true_label": 0.1688,
+      "risk_self_consistency": 0.1234,
+      "sensitivity_among_decided": 0.9464,
+      "specificity_among_decided": 0.7653,
+      "confusion_true_label": {
+        "tp": 53,
+        "fp": 23,
+        "tn": 75,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.54,
+      "coverage": 0.3797,
+      "n_decided": 150,
+      "risk_true_label": 0.1667,
+      "risk_self_consistency": 0.1133,
+      "sensitivity_among_decided": 0.9444,
+      "specificity_among_decided": 0.7708,
+      "confusion_true_label": {
+        "tp": 51,
+        "fp": 22,
+        "tn": 74,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.55,
+      "coverage": 0.3696,
+      "n_decided": 146,
+      "risk_true_label": 0.1644,
+      "risk_self_consistency": 0.1096,
+      "sensitivity_among_decided": 0.9434,
+      "specificity_among_decided": 0.7742,
+      "confusion_true_label": {
+        "tp": 50,
+        "fp": 21,
+        "tn": 72,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.56,
+      "coverage": 0.3646,
+      "n_decided": 144,
+      "risk_true_label": 0.1528,
+      "risk_self_consistency": 0.1111,
+      "sensitivity_among_decided": 0.9434,
+      "specificity_among_decided": 0.7912,
+      "confusion_true_label": {
+        "tp": 50,
+        "fp": 19,
+        "tn": 72,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.57,
+      "coverage": 0.3544,
+      "n_decided": 140,
+      "risk_true_label": 0.1571,
+      "risk_self_consistency": 0.1143,
+      "sensitivity_among_decided": 0.9434,
+      "specificity_among_decided": 0.7816,
+      "confusion_true_label": {
+        "tp": 50,
+        "fp": 19,
+        "tn": 68,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.58,
+      "coverage": 0.3443,
+      "n_decided": 136,
+      "risk_true_label": 0.1544,
+      "risk_self_consistency": 0.1103,
+      "sensitivity_among_decided": 0.9412,
+      "specificity_among_decided": 0.7882,
+      "confusion_true_label": {
+        "tp": 48,
+        "fp": 18,
+        "tn": 67,
+        "fn": 3
+      }
+    },
+    {
+      "tau": 0.59,
+      "coverage": 0.3266,
+      "n_decided": 129,
+      "risk_true_label": 0.1395,
+      "risk_self_consistency": 0.1008,
+      "sensitivity_among_decided": 0.9592,
+      "specificity_among_decided": 0.8,
+      "confusion_true_label": {
+        "tp": 47,
+        "fp": 16,
+        "tn": 64,
+        "fn": 2
+      }
+    },
+    {
+      "tau": 0.6,
+      "coverage": 0.3215,
+      "n_decided": 127,
+      "risk_true_label": 0.1339,
+      "risk_self_consistency": 0.0945,
+      "sensitivity_among_decided": 0.9792,
+      "specificity_among_decided": 0.7975,
+      "confusion_true_label": {
+        "tp": 47,
+        "fp": 16,
+        "tn": 63,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.61,
+      "coverage": 0.3089,
+      "n_decided": 122,
+      "risk_true_label": 0.1393,
+      "risk_self_consistency": 0.0902,
+      "sensitivity_among_decided": 0.9787,
+      "specificity_among_decided": 0.7867,
+      "confusion_true_label": {
+        "tp": 46,
+        "fp": 16,
+        "tn": 59,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.62,
+      "coverage": 0.3038,
+      "n_decided": 120,
+      "risk_true_label": 0.1417,
+      "risk_self_consistency": 0.0917,
+      "sensitivity_among_decided": 0.9783,
+      "specificity_among_decided": 0.7838,
+      "confusion_true_label": {
+        "tp": 45,
+        "fp": 16,
+        "tn": 58,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.63,
+      "coverage": 0.2861,
+      "n_decided": 113,
+      "risk_true_label": 0.1504,
+      "risk_self_consistency": 0.0973,
+      "sensitivity_among_decided": 0.9767,
+      "specificity_among_decided": 0.7714,
+      "confusion_true_label": {
+        "tp": 42,
+        "fp": 16,
+        "tn": 54,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.64,
+      "coverage": 0.2709,
+      "n_decided": 107,
+      "risk_true_label": 0.1589,
+      "risk_self_consistency": 0.1028,
+      "sensitivity_among_decided": 0.9756,
+      "specificity_among_decided": 0.7576,
+      "confusion_true_label": {
+        "tp": 40,
+        "fp": 16,
+        "tn": 50,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.65,
+      "coverage": 0.2608,
+      "n_decided": 103,
+      "risk_true_label": 0.165,
+      "risk_self_consistency": 0.1068,
+      "sensitivity_among_decided": 0.9756,
+      "specificity_among_decided": 0.7419,
+      "confusion_true_label": {
+        "tp": 40,
+        "fp": 16,
+        "tn": 46,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.66,
+      "coverage": 0.2506,
+      "n_decided": 99,
+      "risk_true_label": 0.1717,
+      "risk_self_consistency": 0.1111,
+      "sensitivity_among_decided": 0.9756,
+      "specificity_among_decided": 0.7241,
+      "confusion_true_label": {
+        "tp": 40,
+        "fp": 16,
+        "tn": 42,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.67,
+      "coverage": 0.2481,
+      "n_decided": 98,
+      "risk_true_label": 0.1735,
+      "risk_self_consistency": 0.1122,
+      "sensitivity_among_decided": 0.975,
+      "specificity_among_decided": 0.7241,
+      "confusion_true_label": {
+        "tp": 39,
+        "fp": 16,
+        "tn": 42,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.68,
+      "coverage": 0.2278,
+      "n_decided": 90,
+      "risk_true_label": 0.1556,
+      "risk_self_consistency": 0.0889,
+      "sensitivity_among_decided": 0.9744,
+      "specificity_among_decided": 0.7451,
+      "confusion_true_label": {
+        "tp": 38,
+        "fp": 13,
+        "tn": 38,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.69,
+      "coverage": 0.2177,
+      "n_decided": 86,
+      "risk_true_label": 0.1628,
+      "risk_self_consistency": 0.093,
+      "sensitivity_among_decided": 0.9737,
+      "specificity_among_decided": 0.7292,
+      "confusion_true_label": {
+        "tp": 37,
+        "fp": 13,
+        "tn": 35,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.7,
+      "coverage": 0.2127,
+      "n_decided": 84,
+      "risk_true_label": 0.1667,
+      "risk_self_consistency": 0.0952,
+      "sensitivity_among_decided": 0.973,
+      "specificity_among_decided": 0.7234,
+      "confusion_true_label": {
+        "tp": 36,
+        "fp": 13,
+        "tn": 34,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.71,
+      "coverage": 0.1975,
+      "n_decided": 78,
+      "risk_true_label": 0.1795,
+      "risk_self_consistency": 0.1026,
+      "sensitivity_among_decided": 0.9697,
+      "specificity_among_decided": 0.7111,
+      "confusion_true_label": {
+        "tp": 32,
+        "fp": 13,
+        "tn": 32,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.72,
+      "coverage": 0.1924,
+      "n_decided": 76,
+      "risk_true_label": 0.1842,
+      "risk_self_consistency": 0.1053,
+      "sensitivity_among_decided": 0.9688,
+      "specificity_among_decided": 0.7045,
+      "confusion_true_label": {
+        "tp": 31,
+        "fp": 13,
+        "tn": 31,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.73,
+      "coverage": 0.1823,
+      "n_decided": 72,
+      "risk_true_label": 0.1944,
+      "risk_self_consistency": 0.1111,
+      "sensitivity_among_decided": 0.9688,
+      "specificity_among_decided": 0.675,
+      "confusion_true_label": {
+        "tp": 31,
+        "fp": 13,
+        "tn": 27,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.74,
+      "coverage": 0.1797,
+      "n_decided": 71,
+      "risk_true_label": 0.1831,
+      "risk_self_consistency": 0.0986,
+      "sensitivity_among_decided": 0.9688,
+      "specificity_among_decided": 0.6923,
+      "confusion_true_label": {
+        "tp": 31,
+        "fp": 12,
+        "tn": 27,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.75,
+      "coverage": 0.1722,
+      "n_decided": 68,
+      "risk_true_label": 0.1618,
+      "risk_self_consistency": 0.0882,
+      "sensitivity_among_decided": 0.9677,
+      "specificity_among_decided": 0.7297,
+      "confusion_true_label": {
+        "tp": 30,
+        "fp": 10,
+        "tn": 27,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.76,
+      "coverage": 0.1671,
+      "n_decided": 66,
+      "risk_true_label": 0.1515,
+      "risk_self_consistency": 0.0909,
+      "sensitivity_among_decided": 0.9677,
+      "specificity_among_decided": 0.7429,
+      "confusion_true_label": {
+        "tp": 30,
+        "fp": 9,
+        "tn": 26,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.77,
+      "coverage": 0.162,
+      "n_decided": 64,
+      "risk_true_label": 0.1406,
+      "risk_self_consistency": 0.0938,
+      "sensitivity_among_decided": 0.9677,
+      "specificity_among_decided": 0.7576,
+      "confusion_true_label": {
+        "tp": 30,
+        "fp": 8,
+        "tn": 25,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.78,
+      "coverage": 0.1494,
+      "n_decided": 59,
+      "risk_true_label": 0.1356,
+      "risk_self_consistency": 0.0847,
+      "sensitivity_among_decided": 0.9655,
+      "specificity_among_decided": 0.7667,
+      "confusion_true_label": {
+        "tp": 28,
+        "fp": 7,
+        "tn": 23,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.79,
+      "coverage": 0.1418,
+      "n_decided": 56,
+      "risk_true_label": 0.125,
+      "risk_self_consistency": 0.0714,
+      "sensitivity_among_decided": 0.963,
+      "specificity_among_decided": 0.7931,
+      "confusion_true_label": {
+        "tp": 26,
+        "fp": 6,
+        "tn": 23,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.8,
+      "coverage": 0.1266,
+      "n_decided": 50,
+      "risk_true_label": 0.12,
+      "risk_self_consistency": 0.06,
+      "sensitivity_among_decided": 0.9583,
+      "specificity_among_decided": 0.8077,
+      "confusion_true_label": {
+        "tp": 23,
+        "fp": 5,
+        "tn": 21,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.81,
+      "coverage": 0.1215,
+      "n_decided": 48,
+      "risk_true_label": 0.125,
+      "risk_self_consistency": 0.0625,
+      "sensitivity_among_decided": 0.9565,
+      "specificity_among_decided": 0.8,
+      "confusion_true_label": {
+        "tp": 22,
+        "fp": 5,
+        "tn": 20,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.82,
+      "coverage": 0.119,
+      "n_decided": 47,
+      "risk_true_label": 0.1277,
+      "risk_self_consistency": 0.0638,
+      "sensitivity_among_decided": 0.9545,
+      "specificity_among_decided": 0.8,
+      "confusion_true_label": {
+        "tp": 21,
+        "fp": 5,
+        "tn": 20,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.83,
+      "coverage": 0.1165,
+      "n_decided": 46,
+      "risk_true_label": 0.1304,
+      "risk_self_consistency": 0.0652,
+      "sensitivity_among_decided": 0.9524,
+      "specificity_among_decided": 0.8,
+      "confusion_true_label": {
+        "tp": 20,
+        "fp": 5,
+        "tn": 20,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.84,
+      "coverage": 0.1038,
+      "n_decided": 41,
+      "risk_true_label": 0.1463,
+      "risk_self_consistency": 0.0732,
+      "sensitivity_among_decided": 0.95,
+      "specificity_among_decided": 0.7619,
+      "confusion_true_label": {
+        "tp": 19,
+        "fp": 5,
+        "tn": 16,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.85,
+      "coverage": 0.0911,
+      "n_decided": 36,
+      "risk_true_label": 0.1111,
+      "risk_self_consistency": 0.0278,
+      "sensitivity_among_decided": 0.9444,
+      "specificity_among_decided": 0.8333,
+      "confusion_true_label": {
+        "tp": 17,
+        "fp": 3,
+        "tn": 15,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.86,
+      "coverage": 0.0835,
+      "n_decided": 33,
+      "risk_true_label": 0.0909,
+      "risk_self_consistency": 0.0303,
+      "sensitivity_among_decided": 0.9444,
+      "specificity_among_decided": 0.8667,
+      "confusion_true_label": {
+        "tp": 17,
+        "fp": 2,
+        "tn": 13,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.87,
+      "coverage": 0.081,
+      "n_decided": 32,
+      "risk_true_label": 0.0938,
+      "risk_self_consistency": 0.0312,
+      "sensitivity_among_decided": 0.9412,
+      "specificity_among_decided": 0.8667,
+      "confusion_true_label": {
+        "tp": 16,
+        "fp": 2,
+        "tn": 13,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.88,
+      "coverage": 0.0734,
+      "n_decided": 29,
+      "risk_true_label": 0.1034,
+      "risk_self_consistency": 0.0345,
+      "sensitivity_among_decided": 0.9333,
+      "specificity_among_decided": 0.8571,
+      "confusion_true_label": {
+        "tp": 14,
+        "fp": 2,
+        "tn": 12,
+        "fn": 1
+      }
+    },
+    {
+      "tau": 0.89,
+      "coverage": 0.0557,
+      "n_decided": 22,
+      "risk_true_label": 0.0455,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.9231,
+      "confusion_true_label": {
+        "tp": 9,
+        "fp": 1,
+        "tn": 12,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.9,
+      "coverage": 0.0532,
+      "n_decided": 21,
+      "risk_true_label": 0.0476,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.9167,
+      "confusion_true_label": {
+        "tp": 9,
+        "fp": 1,
+        "tn": 11,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.91,
+      "coverage": 0.0456,
+      "n_decided": 18,
+      "risk_true_label": 0.0556,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.9091,
+      "confusion_true_label": {
+        "tp": 7,
+        "fp": 1,
+        "tn": 10,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.92,
+      "coverage": 0.0405,
+      "n_decided": 16,
+      "risk_true_label": 0.0625,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.9,
+      "confusion_true_label": {
+        "tp": 6,
+        "fp": 1,
+        "tn": 9,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.93,
+      "coverage": 0.0329,
+      "n_decided": 13,
+      "risk_true_label": 0.0769,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.8889,
+      "confusion_true_label": {
+        "tp": 4,
+        "fp": 1,
+        "tn": 8,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.94,
+      "coverage": 0.0278,
+      "n_decided": 11,
+      "risk_true_label": 0.0909,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.8571,
+      "confusion_true_label": {
+        "tp": 4,
+        "fp": 1,
+        "tn": 6,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.95,
+      "coverage": 0.0203,
+      "n_decided": 8,
+      "risk_true_label": 0.125,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.8,
+      "confusion_true_label": {
+        "tp": 3,
+        "fp": 1,
+        "tn": 4,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.96,
+      "coverage": 0.0177,
+      "n_decided": 7,
+      "risk_true_label": 0.1429,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.75,
+      "confusion_true_label": {
+        "tp": 3,
+        "fp": 1,
+        "tn": 3,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.97,
+      "coverage": 0.0101,
+      "n_decided": 4,
+      "risk_true_label": 0.25,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": 0.6667,
+      "confusion_true_label": {
+        "tp": 1,
+        "fp": 1,
+        "tn": 2,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.98,
+      "coverage": 0.0025,
+      "n_decided": 1,
+      "risk_true_label": 0.0,
+      "risk_self_consistency": 0.0,
+      "sensitivity_among_decided": 1.0,
+      "specificity_among_decided": null,
+      "confusion_true_label": {
+        "tp": 1,
+        "fp": 0,
+        "tn": 0,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 0.99,
+      "coverage": 0.0,
+      "n_decided": 0,
+      "risk_true_label": null,
+      "risk_self_consistency": null,
+      "sensitivity_among_decided": null,
+      "specificity_among_decided": null,
+      "confusion_true_label": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 0,
+        "fn": 0
+      }
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.0,
+      "n_decided": 0,
+      "risk_true_label": null,
+      "risk_self_consistency": null,
+      "sensitivity_among_decided": null,
+      "specificity_among_decided": null,
+      "confusion_true_label": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 0,
+        "fn": 0
+      }
+    }
+  ],
+  "interpretation": "At full coverage (tau=0, all 395 cases decided) the promoted checklist's melanoma-verdict error vs the true label is 0.2734, with sensitivity 0.7921 / specificity 0.7041 among decided melanomas. The gold-criteria whole-set ceiling (0.1519) bounds the useful-coverage regime: predicted-criteria true-label error starts above it and relaxes toward it as coverage falls (it dips below only in the deep low-coverage tail, where the hardest cases are selectively dropped). Trading coverage for safety does buy real risk reduction against the true label: risk <= 0.20 is reachable at coverage 0.6709 (tau=0.28). On the self-consistency risk (predicted-vs-gold-criteria verdict), which isolates the perception uncertainty abstention CAN fix, risk <= 0.05 is reachable at coverage 0.0911, confirming the abstention knob does move the perception-level error monotonically even where the true-label risk is ceiling-bound. The safety-critical direction moves the right way too: melanoma sensitivity AMONG DECIDED rises monotonically as coverage falls -- from 0.7921 at full coverage to 0.8889 at coverage 0.6709 (specificity 0.7041 -> 0.7663). The cases the checklist abstains on are disproportionately the melanomas it would otherwise miss, so deciding only the confident fraction is safer, not merely lower-volume."
+}

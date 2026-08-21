@@ -1,0 +1,253 @@
+{
+  "protocol": "single-view-ham-demo-v1",
+  "artifact_class": "DEMO -- illustrative end-to-end run of the single-view contract + tiered render on two real HAM10000 images. NOT an evaluation: no test-set metric is computed or claimed; the registered numbers live in ham_evaluation.json and promoted_recipe_ham_bcn.json. E3 test-side images were already read post-hoc under the user-authorized re-read; this demo re-reads two of them.",
+  "generated_at": "2026-08-15T13:51:59",
+  "classifier": {
+    "config": "dermlip + metadata19 (531-d), UNBALANCED LR C=10.0 (train-CV, pooled correct-count, seed 20260812), fit on the E3 train split; ADOPTED ARM = ARGMAX (no operating point -- the Derm7pt-tuned SK/MISC downweights collapse HAM melanoma recall and were never adopted; see finalize_paper_metrics.py)",
+    "fitting_code_path": "scripts/dev/promoted_recipe_ham_bcn.py functions (which reuse build_ham_evaluation.make_split), reproducing the ham_e3 five_group candidate_b_promoted_recipe fit; ARGMAX arm (adopted)",
+    "c_selection": {
+      "selected_C": 10.0,
+      "cv_accuracy": 0.8496,
+      "grid_cv_accuracy": {
+        "0.1": 0.7678,
+        "1.0": 0.8272,
+        "10.0": 0.8496,
+        "100.0": 0.8474
+      },
+      "seed": 20260812,
+      "method": "5-fold StratifiedGroupKFold, pooled correct-count"
+    },
+    "n_train_images": 6429,
+    "n_test_images": 1595,
+    "split_verification": "E3 partition regenerated via build_ham_evaluation.make_split (seed 20260812) and asserted equal to the recorded train/test cluster_id lists; C selection asserted equal to the recorded candidate_b selection"
+  },
+  "case_selection_rule": "for each of (melanoma, nevus): the FIRST E3-test image in manifest record order whose true label matches and whose argmax prediction agrees -- so the demo exercises the guideline-covered and explicit-absence paths as designed. True labels appear here for demo labeling only; no accuracy claim is made or implied.",
+  "encoding": {
+    "path_used": "fresh",
+    "note": "the two query images were encoded FRESH from their raw JPGs with the frozen DermLIP encoder (the raw-image entry path); the cached E3 feature rows agree to the reported max |diff| (float32 batched-CPU inference tolerance)",
+    "encoder_provenance": {
+      "encoder_key": "dermlip",
+      "model_id": "redlessone/DermLIP_ViT-B-16",
+      "resolved_model_id": "hf-hub:redlessone/DermLIP_ViT-B-16",
+      "loader": "open_clip",
+      "open_clip_version": "3.3.0",
+      "torch_version": "2.12.1+cpu",
+      "torch_num_threads": 12,
+      "device": "cpu",
+      "trainable": false,
+      "parameters": 149620737,
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+      "checkpoint": {
+        "snapshot_revision": "b7d427364122927b0d19faf45cec05eea5469226",
+        "weight_files": [
+          {
+            "name": "open_clip_model.safetensors",
+            "bytes": 598516980,
+            "sha256": "727b22532b30d027447563d775cbc9b46188ad952c79b0e117eb970efa6bfbfb"
+          }
+        ],
+        "combined_sha256": "593ae3c9f17efacde7e84efe5027b13de9d1e3cdc96dbf97dabbcca83c0417de"
+      }
+    },
+    "encode_seconds": 6.4,
+    "max_abs_diff_vs_cached": [
+      6e-08,
+      1.2e-07
+    ]
+  },
+  "checklist_unavailable_reason": "this imaging source carries no dermoscopic-criteria annotations; single-view decision",
+  "cases": [
+    {
+      "demo_label": "melanoma (guideline-covered path)",
+      "case_id": "ISIC_0024315",
+      "cluster_id": "HAM_0007538",
+      "true_label_demo_labeling_only": "melanoma",
+      "predicted_group": "MEL",
+      "confidence": 0.64,
+      "posterior": {
+        "BCC": 0.0014,
+        "MEL": 0.64,
+        "MISC": 0.0058,
+        "NEV": 0.2959,
+        "SK": 0.0568
+      },
+      "max_abs_feature_diff_vs_cached": 6e-08,
+      "contract": {
+        "case_id": "ISIC_0024315",
+        "view": "single",
+        "classifier": {
+          "diagnosis": "MEL",
+          "confidence": 0.64
+        },
+        "checklist_unavailable_reason": "this imaging source carries no dermoscopic-criteria annotations; single-view decision",
+        "derived_action": {
+          "action": "follow DOI:10.1016/j.jaad.2018.08.055",
+          "reason": "pattern model reads melanoma",
+          "source": "classifier diagnosis + hash-pinned guideline binding only; no checklist exists for this source and no management text is generated"
+        },
+        "guideline": {
+          "condition_group": "MEL",
+          "catalog_condition": "melanoma",
+          "covered": true,
+          "n_recommendations": 3,
+          "recommendations": [
+            {
+              "id": "aad:pmid:30392755:table-x-excision-first-line",
+              "citation_id": "DOI:10.1016/j.jaad.2018.08.055",
+              "source_version": "2019",
+              "authority_class": "clinical_practice_guideline",
+              "content_sha256": "a716723c6c5f365c6095ba4f3c8c6e7143342a518fbe371831c90ff67f8f1c11",
+              "question_types": [
+                "initial_local_management"
+              ],
+              "text": "Surgical excision with histologically negative margins is the recommended and first-line treatment for primary CM of any thickness, as well as for melanoma in situ. Surgical margins should be based on tumor thickness."
+            },
+            {
+              "id": "aad:pmid:30392755:table-x-slnb-timing",
+              "citation_id": "DOI:10.1016/j.jaad.2018.08.055",
+              "source_version": "2019",
+              "authority_class": "clinical_practice_guideline",
+              "content_sha256": "cdb2332f1b15206c5622d08f6cc0ea32397cf625a9c8ce66b8639dbd837cf7d7",
+              "question_types": [
+                "initial_local_management"
+              ],
+              "text": "Sentinel lymph node biopsy, when indicated, should be performed before wide excision of the primary tumor, and in the same operative setting, whenever possible."
+            },
+            {
+              "id": "eado:pmid:39709737:recommendation-1",
+              "citation_id": "DOI:10.1016/j.ejca.2024.115153",
+              "source_version": "update-2024-published-2025",
+              "authority_class": "clinical_practice_guideline",
+              "content_sha256": "c5687fea4c20ce904684efa1b65043645976c1e0a8c002dcf16cc3a237e7795e",
+              "question_types": [
+                "biopsy_histopathology",
+                "initial_local_management"
+              ],
+              "text": "Recommendation 1. Primary excision Consensus based recommendation GCP When melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis. Incisional biopsies can be performed on large lesions such as lesions on the face (e.g., lentigo maligna), acral lesions and on the genitalia. Consensus rate: 100% (21/21)"
+            }
+          ],
+          "absence_reason": null
+        },
+        "verification_failures": [],
+        "safe_to_display": true,
+        "receipt": {
+          "entry_point": "scripts/dev/demo_single_view_ham.py",
+          "artifact_class": "DEMO -- not an evaluation",
+          "classifier": "dermlip + metadata19 (531-d), UNBALANCED LR C=10.0 (train-CV, pooled correct-count, seed 20260812), fit on the E3 train split; ADOPTED ARM = ARGMAX (no operating point -- the Derm7pt-tuned SK/MISC downweights collapse HAM melanoma recall and were never adopted; see finalize_paper_metrics.py)",
+          "encoding_path": "fresh",
+          "encoder": {
+            "encoder_key": "dermlip",
+            "model_id": "redlessone/DermLIP_ViT-B-16",
+            "resolved_model_id": "hf-hub:redlessone/DermLIP_ViT-B-16",
+            "loader": "open_clip",
+            "open_clip_version": "3.3.0",
+            "torch_version": "2.12.1+cpu",
+            "torch_num_threads": 12,
+            "device": "cpu",
+            "trainable": false,
+            "parameters": 149620737,
+            "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+            "checkpoint": {
+              "snapshot_revision": "b7d427364122927b0d19faf45cec05eea5469226",
+              "weight_files": [
+                {
+                  "name": "open_clip_model.safetensors",
+                  "bytes": 598516980,
+                  "sha256": "727b22532b30d027447563d775cbc9b46188ad952c79b0e117eb970efa6bfbfb"
+                }
+              ],
+              "combined_sha256": "593ae3c9f17efacde7e84efe5027b13de9d1e3cdc96dbf97dabbcca83c0417de"
+            }
+          },
+          "image_sha256": "0b944bef1af1eff9e51b175176ebd8deab2b69a5c17bb018f9dc8431ed608418",
+          "metadata_used": {
+            "age": 55,
+            "sex": "male",
+            "localization": "trunk"
+          }
+        }
+      },
+      "render_default": "## Case ISIC_0024315\n\n**Assessment: follow DOI:10.1016/j.jaad.2018.08.055** \u2014 pattern model reads melanoma \u00b7 single-view\n\n### Next step\n\nFollow DOI:10.1016/j.jaad.2018.08.055 (quoted below). Single-view decision: no independent checklist cross-check was possible \u2014 clinical correlation carries more weight than on a dual-view case.\n\n| assessment | result |\n|---|---|\n| Image pattern model | **melanoma** (moderate model agreement (0.64)) |\n| 7-point checklist | _unavailable \u2014 this imaging source carries no dermoscopic-criteria annotations; single-view decision_ |\n\n### Authoritative guidance\n\n> Surgical excision with histologically negative margins is the recommended and first-line treatment for primary CM of any thickness, as well as for melanoma in situ. Surgical margins should be based on tumor thickness.\n\n\u2014 DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 \u2713\n\n_+2 more recommendation(s) on request._\n\n---\n_Decision support only. This is a SINGLE-VIEW decision from a frozen image model; no dermoscopic-criteria cross-check exists for this imaging source, and the diagnosis has not been validated against clinician judgement._",
+      "render_with_appendix": "## Case ISIC_0024315\n\n**Assessment: follow DOI:10.1016/j.jaad.2018.08.055** \u2014 pattern model reads melanoma \u00b7 single-view\n\n### Next step\n\nFollow DOI:10.1016/j.jaad.2018.08.055 (quoted below). Single-view decision: no independent checklist cross-check was possible \u2014 clinical correlation carries more weight than on a dual-view case.\n\n| assessment | result |\n|---|---|\n| Image pattern model | **melanoma** (moderate model agreement (0.64)) |\n| 7-point checklist | _unavailable \u2014 this imaging source carries no dermoscopic-criteria annotations; single-view decision_ |\n\n### Authoritative guidance\n\n> Surgical excision with histologically negative margins is the recommended and first-line treatment for primary CM of any thickness, as well as for melanoma in situ. Surgical margins should be based on tumor thickness.\n\n\u2014 DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 \u2713\n\n_+2 more recommendation(s) on request._\n\n#### Remaining recommendations (on request)\n\n> Sentinel lymph node biopsy, when indicated, should be performed before wide excision of the primary tumor, and in the same operative setting, whenever possible.\n\n\u2014 DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 `cdb2332f1b15206c`\n\n> Recommendation 1. Primary excision Consensus based recommendation GCP When melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis. Incisional biopsies can be performed on large lesions such as lesions on the face (e.g., lentigo maligna), acral lesions and on the genitalia. Consensus rate: 100% (21/21)\n\n\u2014 DOI:10.1016/j.ejca.2024.115153 \u00b7 update-2024-published-2025 \u00b7 `c5687fea4c20ce90`\n\n#### Record hashes (the \u2713 marks above assert these verified)\n\n- DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 `a716723c6c5f365c`\n- DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 `cdb2332f1b15206c`\n- DOI:10.1016/j.ejca.2024.115153 \u00b7 update-2024-published-2025 \u00b7 `c5687fea4c20ce90`\n\n---\n_Decision support only. This is a SINGLE-VIEW decision from a frozen image model; no dermoscopic-criteria cross-check exists for this imaging source, and the diagnosis has not been validated against clinician judgement._"
+    },
+    {
+      "demo_label": "nevus (explicit-absence path)",
+      "case_id": "ISIC_0024309",
+      "cluster_id": "HAM_0000484",
+      "true_label_demo_labeling_only": "nevus",
+      "predicted_group": "NEV",
+      "confidence": 0.9888,
+      "posterior": {
+        "BCC": 0.0002,
+        "MEL": 0.0099,
+        "MISC": 0.001,
+        "NEV": 0.9888,
+        "SK": 0.0001
+      },
+      "max_abs_feature_diff_vs_cached": 1.2e-07,
+      "contract": {
+        "case_id": "ISIC_0024309",
+        "view": "single",
+        "classifier": {
+          "diagnosis": "NEV",
+          "confidence": 0.9888
+        },
+        "checklist_unavailable_reason": "this imaging source carries no dermoscopic-criteria annotations; single-view decision",
+        "derived_action": {
+          "action": "no citable management",
+          "reason": "pattern model reads melanocytic naevus; the corpus holds no recommendation",
+          "source": "classifier diagnosis + hash-pinned guideline binding only; no checklist exists for this source and no management text is generated"
+        },
+        "guideline": {
+          "condition_group": "NEV",
+          "catalog_condition": null,
+          "covered": false,
+          "n_recommendations": 0,
+          "recommendations": [],
+          "absence_reason": "The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure."
+        },
+        "verification_failures": [],
+        "safe_to_display": true,
+        "receipt": {
+          "entry_point": "scripts/dev/demo_single_view_ham.py",
+          "artifact_class": "DEMO -- not an evaluation",
+          "classifier": "dermlip + metadata19 (531-d), UNBALANCED LR C=10.0 (train-CV, pooled correct-count, seed 20260812), fit on the E3 train split; ADOPTED ARM = ARGMAX (no operating point -- the Derm7pt-tuned SK/MISC downweights collapse HAM melanoma recall and were never adopted; see finalize_paper_metrics.py)",
+          "encoding_path": "fresh",
+          "encoder": {
+            "encoder_key": "dermlip",
+            "model_id": "redlessone/DermLIP_ViT-B-16",
+            "resolved_model_id": "hf-hub:redlessone/DermLIP_ViT-B-16",
+            "loader": "open_clip",
+            "open_clip_version": "3.3.0",
+            "torch_version": "2.12.1+cpu",
+            "torch_num_threads": 12,
+            "device": "cpu",
+            "trainable": false,
+            "parameters": 149620737,
+            "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+            "checkpoint": {
+              "snapshot_revision": "b7d427364122927b0d19faf45cec05eea5469226",
+              "weight_files": [
+                {
+                  "name": "open_clip_model.safetensors",
+                  "bytes": 598516980,
+                  "sha256": "727b22532b30d027447563d775cbc9b46188ad952c79b0e117eb970efa6bfbfb"
+                }
+              ],
+              "combined_sha256": "593ae3c9f17efacde7e84efe5027b13de9d1e3cdc96dbf97dabbcca83c0417de"
+            }
+          },
+          "image_sha256": "c4421c417d4ba9debcb42ff0b9de5c198b3fecdccb848a702d727d2e79309a80",
+          "metadata_used": {
+            "age": 40,
+            "sex": "male",
+            "localization": "trunk"
+          }
+        }
+      },
+      "render_default": "## Case ISIC_0024309\n\n**Assessment: no citable management** \u2014 pattern model reads melanocytic naevus; the corpus holds no recommendation \u00b7 single-view\n\n### Next step\n\nNo citable management \u2014 see the stated absence below. Single-view decision: no independent checklist cross-check was possible \u2014 clinical correlation carries more weight than on a dual-view case.\n\n| assessment | result |\n|---|---|\n| Image pattern model | **melanocytic naevus** (high model agreement (0.99)) |\n| 7-point checklist | _unavailable \u2014 this imaging source carries no dermoscopic-criteria annotations; single-view decision_ |\n\n### Authoritative guidance\n\n**No recommendation available for melanocytic naevus.** The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\n\n_No management advice is offered here because none can be cited. This is a stated limit of the guideline corpus, not an assessment that no action is required._\n\n---\n_Decision support only. This is a SINGLE-VIEW decision from a frozen image model; no dermoscopic-criteria cross-check exists for this imaging source, and the diagnosis has not been validated against clinician judgement._",
+      "render_with_appendix": "## Case ISIC_0024309\n\n**Assessment: no citable management** \u2014 pattern model reads melanocytic naevus; the corpus holds no recommendation \u00b7 single-view\n\n### Next step\n\nNo citable management \u2014 see the stated absence below. Single-view decision: no independent checklist cross-check was possible \u2014 clinical correlation carries more weight than on a dual-view case.\n\n| assessment | result |\n|---|---|\n| Image pattern model | **melanocytic naevus** (high model agreement (0.99)) |\n| 7-point checklist | _unavailable \u2014 this imaging source carries no dermoscopic-criteria annotations; single-view decision_ |\n\n### Authoritative guidance\n\n**No recommendation available for melanocytic naevus.** The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\n\n_No management advice is offered here because none can be cited. This is a stated limit of the guideline corpus, not an assessment that no action is required._\n\n---\n_Decision support only. This is a SINGLE-VIEW decision from a frozen image model; no dermoscopic-criteria cross-check exists for this imaging source, and the diagnosis has not been validated against clinician judgement._"
+    }
+  ],
+  "elapsed_seconds": 18.8
+}

@@ -1,0 +1,563 @@
+{
+  "schema_version": "medguard-experiment-spec-v5",
+  "spec_id": "medguard-derm-evidence-contract-h2h-v5",
+  "status": "design_frozen_runtime_lock_pending",
+  "effective_date": "2026-07-21",
+  "supersedes": "research/EXPERIMENT_SPEC_V4.json",
+  "supersession": {
+    "reason": "Three changes, all before any generation. (1) The authoritative-guideline recommendation subset was expanded from the v4 baseline of 33 records to 66 by ingesting the remaining 8 cross-issuer PDFs (NICE x4, AAD x3, BAD x1), byte-exact verbatim; coverage rises 14->16 of 29 cells (BCC 6/6, melanoma 5/6, AK 5/5). (2) PERCEPTION IS RE-REGISTERED as a competed axis: v4 froze one shared diagnostic commitment for every arm (diagnosis tied), which foreclosed a diagnostic-accuracy claim. v5 unfreezes B0 only -- the M-family (M, B1, B4, B5, B6, A0-A4) still commits the frozen DermLIP probe (so the evidence-architecture comparison stays matched on perception), while B0 'VLM-only' diagnoses via the VLM. The probe is NOT retrained: it already scores ~0.84 accuracy on the natural-distribution held-out node-validation split (>= CALIBER's 0.798); the 0.762 figure was a class-balanced-subset artifact. Diagnosis therefore becomes a superiority claim (M over the VLM baseline) alongside the evidence/selective/provenance wins. (3) The generation-executing runner, all scorers, and the A2/D4/D3 defect resolutions landed and are registered here. PREREGISTRATION.json is bumped to schema 5 in lockstep.",
+    "v4_is_preserved_byte_identical": true,
+    "recommendation_corpus": {
+      "path": "medguard/data/corpus/derm_guideline_recommendations_v1.jsonl",
+      "old_sha256": "c3f8d988c6b391b9fc80972e6ea2754b0ce4147ecc7ea7f1535a05f85ae5f808",
+      "new_sha256": "98ccd42e3a85648d3d5da975a454eea86ccef13e37dc67360a62f612f9923a16",
+      "records": 66,
+      "was": 33,
+      "sources": 12,
+      "added": "NICE NG14/NG12/QS130/CSG8, AAD BCC/AK/Melanoma, BAD AK (cross-issuer corroboration; no new condition coverage)"
+    },
+    "why_v4_must_not_be_edited": "EXPERIMENT_SPEC_V4.receipt.json (sha256 1299f41046aeafd1c4e4f3a83cc161e997d4a93f04b39836082977fd534a0044) pins EXPERIMENT_SPEC_V4.json and the pre-v5 PREREGISTRATION.json as design-binding. v4 and its receipt remain byte-identical historical anchors; v5 governs every forward decision.",
+    "perception_reregistration": {
+      "from": "one frozen commitment shared by every arm (diagnosis tied; noninferiority)",
+      "to": "M-family shares the frozen probe; B0 diagnoses via the VLM (competed; superiority)",
+      "probe_retrained": false
+    }
+  },
+  "preregistration": "research/PREREGISTRATION.json",
+  "source_of_result_truth": "research/RESULTS_LEDGER.json",
+  "scope": {
+    "primary_dataset": "HAM10000",
+    "confirmatory_dataset": "HAM10000 sealed lesion-level test",
+    "external_development_sensitivity_dataset": "BCN20000",
+    "modality": "dermoscopy",
+    "unit": "lesion cluster",
+    "multi_view_policy": "Every selected lesion carries all available views in lexicographic case_id order; all arms receive the identical ordered view set and frozen lesion-level perception output.",
+    "class_order": [
+      "akiec",
+      "bcc",
+      "bkl",
+      "df",
+      "melanoma",
+      "nevus",
+      "vasc"
+    ],
+    "actionable_labels_ham": [
+      "akiec",
+      "bcc",
+      "melanoma"
+    ],
+    "actionable_labels_bcn": [
+      "akiec",
+      "bcc",
+      "melanoma",
+      "scc"
+    ],
+    "bcn_scc_policy": "SCC remains explicit. It is excluded from shared-seven multiclass metrics and retained in actionable-binary metrics. BCN is development sensitivity evidence because it was previously inspected."
+  },
+  "paper_claims_under_test": [
+    {
+      "id": "C1",
+      "claim": "A typed multimodal EvidenceContract makes image support, evidence support, citations, contradiction state, uncertainty, and termination machine-checkable.",
+      "novelty_boundary": "The operational contract and its measured completion are the contribution; structured output in general is not. Narrowed in v2: typed intermediate objects are prior art (MedAgent-Pro stores a JSON plan with per-step {Continue,Terminate,Complete} state; MedCoRAG emits stance/confidence/sufficiency; Retina-RAG serializes an image-bound P={g,e,s_g,s_e}). The defensible claim is the provenance composition -- source id, authority class, version, citation and content hash bound together -- plus the separation of an image-bound diagnosis from source-bound text."
+    },
+    {
+      "id": "C2",
+      "claim": "Patient-image exemplars plus authoritative text retrieval with cross-modal lineage improve evidence usefulness and traceability over single-pass dense RAG.",
+      "novelty_boundary": "Knowledge graphs and provenance alone are not novel and provenance is never treated as truth. This is the strongest surviving gap: MedGraphRAG's triple-linking runs over MIMIC-IV EHR text with no image in the pipeline."
+    },
+    {
+      "id": "C3",
+      "claim": "A transparent bounded hierarchy recovers from typed evidence failures through at most one EXPAND, REFORMULATE, or INDEPENDENT_SOURCE action before PASS or ABSTAIN.",
+      "novelty_boundary": "No learned depth-two policy and no HANDOFF are part of this claim. Narrowed in v2: neither boundedness nor failure-typing is novel. #104, #120 and #115 all cap their loops at three iterations; MED-VRAG ships a four-class error taxonomy as a contribution, DeepRare reports five failure modes, and #104 publishes a Failure-type-to-action table. Those taxonomies are post-hoc human annotation. The surviving claim is runtime typing that selects the next action, evaluated on action appropriateness and recovery by failure type."
+    },
+    {
+      "id": "C4",
+      "claim": "Structured verification and immutable receipts expose separate trajectory-trust dimensions instead of one composite trust score.",
+      "novelty_boundary": "CATIA/GRiP and NIST AI RMF organize interpretation and governance; the frameworks themselves are not novelty. Narrowed in v2: 'trust is scored at the answer, not the trajectory' is false as stated. DeepRare scores per-reference accuracy, MedGraphRAG publishes citation precision/recall, and #104's confidence already penalizes loop depth. The surviving claim is the assembled protocol: selective risk/coverage plus action cost plus recovery-by-type on matched cases."
+    },
+    {
+      "id": "C5",
+      "claim": "A matched multi-paradigm evaluation jointly reports diagnosis, evidence quality, selective risk, recovery, coverage, and cost.",
+      "novelty_boundary": "Published cross-dataset scores are reference bars, not H2H wins. Narrowed in v2: controlled cross-paradigm comparison is NOT missing from the literature. MR-RAG (CVPR) holds the Med-LVLM backbone fixed and varies only retrieval strategy; MedGraphRAG compares all retrieval methods under the same RAG data; #104 attributes differences to architecture. The surviving claim is the dermatology setting and the specific five-paradigm span. Note MedDr (#76) is a dermatology RAG reporting HAM10000 accuracy 0.707 and GSCo (#107) performs Retrieval-Augmented Diagnosis covering dermatology; 'no dermatology multimodal medical RAG exists' must not be claimed."
+    }
+  ],
+  "frozen_dataset_artifacts": [
+    {
+      "role": "HAM parent split including sealed test identities",
+      "path": "research/manifests/ham10000_split_v2.json",
+      "sha256": "6643db69964884e481a6fe6ccfc0f62e7864e0533372bc5719ba3c0798b3cdb1",
+      "counts": {
+        "train_lesions": 5228,
+        "calibration_lesions": 747,
+        "sealed_test_lesions": 1495
+      },
+      "access": "train and calibration allowed; sealed test identities and outcomes prohibited until final authorization"
+    },
+    {
+      "role": "HAM test-redacted development parent",
+      "path": "research/manifests/ham10000_train_calibration_v2.json",
+      "sha256": "45a6dd45bb609d07e364890eeb64a4632fb78d3c4e9da18213f0e02ba80f3ced",
+      "access": "development only"
+    },
+    {
+      "role": "HAM nested development split",
+      "path": "research/manifests/ham10000_nested_calibration_v1.json",
+      "sha256": "9393c6c830bd80a53e3bb8202b163770a21df4925220da27c04eef6a351be20b",
+      "counts": {
+        "threshold_calibration_lesions": 499,
+        "node_validation_lesions": 248
+      },
+      "access": "development only; test_records_loaded=0"
+    },
+    {
+      "role": "BCN external-development sensitivity manifest",
+      "path": "research/manifests/bcn20000_external_v1.json",
+      "sha256": "072047f359940620a20dc9f7a08f178c48bbf741bdea335a563064a96fe22098",
+      "counts": {
+        "lesions": 3570,
+        "records": 12356,
+        "excluded_records": 57
+      },
+      "access": "development sensitivity only; not untouched confirmation"
+    }
+  ],
+  "development_h2h_manifest_rule": {
+    "status": "frozen",
+    "path": "research/manifests/medguard_h2h_development_v1.json",
+    "sha256": "f63077ca55e71a10f7490476d94b25ddc669c96c928134d2ae10a3e85611eb78",
+    "parent": "research/manifests/ham10000_train_calibration_v2.json",
+    "eligible_split": "calibration",
+    "selection_unit": "cluster_id",
+    "selection": "Within each class, order cluster_id by SHA256('20260716:' + cluster_id) and retain min(30, available class lesions). Include every image view for each retained cluster in case_id order.",
+    "expected_lesion_counts": {
+      "akiec": 23,
+      "bcc": 30,
+      "bkl": 30,
+      "df": 7,
+      "melanoma": 30,
+      "nevus": 30,
+      "vasc": 10,
+      "total": 160
+    },
+    "realized": {
+      "lesions": 160,
+      "images": 244,
+      "cross_split_clusters": 0,
+      "sealed_test_intersection": 0
+    },
+    "rare_class_inference_boundary": {
+      "classes_below_the_30_cluster_minimum": {
+        "akiec": 23,
+        "df": 7,
+        "vasc": 10
+      },
+      "consequence": "Per-class inference for akiec, df and vasc on the development manifest is descriptive only."
+    },
+    "truth_field_note": "The manifest file itself carries label and metadata.benign_malignant for all 244 rows. Redaction is a runtime property enforced by the arm-visible input boundary (truth_fields_consumed=false), not a property of this file. The frozen perception artifact is genuinely truth-free. Do not describe this manifest as truth-redacted.",
+    "purpose": "development H2H, implementation debugging, adaptive-slot selection, and ablation; never confirmatory"
+  },
+  "perception_boundary": {
+    "primary_encoder": "DermLIP",
+    "selection_status": "frozen development choice; not a final-test performance claim",
+    "selection_evidence": [
+      {
+        "path": "research/experiments/derm_perception/v4_nested_lesion_tournament/comparison.json",
+        "sha256": "c56ae40fd863a31d014caaba1fcf1be585e99e703e2aff5c8c531d4caa34b01d"
+      },
+      {
+        "path": "research/experiments/derm_perception/v4_nested_lesion_tournament/results/dermlip/result.json",
+        "sha256": "1b0655230c160f831c48c5263126f128ad59c017055799b4ceb0c13fc1d4fe3d"
+      }
+    ],
+    "frozen_artifact": {
+      "status": "frozen",
+      "path": "research/experiments/medguard_h2h_v1/perception/dermlip_v1/predictions.jsonl",
+      "sha256": "e445faed721c42a7ea09da8c324d5c9db8770348eea9ca9940c6e8e3d693140f",
+      "shared_byte_for_byte_by_every_arm": true,
+      "truth_fields_present": false,
+      "contents": "160 lesion commitments over 244 views: committed_diagnosis, diagnosis_probabilities, calibrated_confidence, actionable_score",
+      "frozen_thresholds": {
+        "actionable_threshold": 0.7072967688895188,
+        "diagnosis_temperature": 0.9189393713696214
+      }
+    },
+    "morphology_boundary": "The frozen artifact exposes the diagnostic commitment and distribution but no morphology findings. Asymmetry, border, colour and structure claims must remain uncertain; they may not be inferred from generator prose. C1 image-support scoring therefore covers the diagnostic commitment only.",
+    "sealed_rule": "Sealed-test perception outputs are generated once only after all components are frozen and sealed access is authorized.",
+    "not_part_of_main_ablation": "Perception encoder choice is held fixed. Historical PanDerm/MONET comparisons may be reported as development sensitivity, not as MedGuard component ablations.",
+    "diagnosis_channels": {
+      "m_family_frozen_probe": "M, B1, B4, B5, B6, A0-A4 commit the frozen DermLIP probe distribution (research/experiments/medguard_h2h_v1/perception/dermlip_v1/predictions.jsonl), shared byte-for-byte. ~0.84 accuracy / 0.963 malignant AUC on the natural-distribution node-validation split; the 0.762 dev-set figure is a class-balanced-subset artifact. Not retrained for v5.",
+      "b0_vlm_only": "B0 diagnoses via the VLM constrained to the HAM7 vocabulary (one schema repair, no probe, no evidence contract). It is the naive baseline the M-family is expected to beat on diagnosis."
+    },
+    "actionable_score": "Sum of P over MALIGNANT_LABELS (melanoma, bcc, akiec) from the frozen probe distribution for probe arms. B0 has no calibrated score, so its actionable AUROC and sensitivity_at_fixed_specificity are omitted (None), not zeroed; the 2x2 is still emitted.",
+    "competed_diagnosis_note": "Unfreezing is scoped to B0 only. The M-family evidence-architecture comparison stays matched on perception; diagnosis is a competed axis solely between the M-family (probe) and B0 (VLM)."
+  },
+  "primary_h2h_roster": {
+    "required_arms": [
+      {
+        "id": "B0",
+        "name": "VLM-only"
+      },
+      {
+        "id": "B1",
+        "name": "single-pass dense RAG"
+      },
+      {
+        "id": "B5",
+        "name": "MedGraphRAG-style evidence graph"
+      },
+      {
+        "id": "B6",
+        "name": "Agentic-Graph-RAG-style bounded refinement"
+      },
+      {
+        "id": "M",
+        "name": "MedGuard-RAG full"
+      }
+    ],
+    "adaptive_slot": {
+      "status": "selected",
+      "selected": "B4",
+      "selected_name": "DynaRAG GMM-ATKS component comparator",
+      "selection_date": "2026-07-17",
+      "selection_receipt": "research/implementation_cards/H2H_IMPLEMENTATION_CARDS_V1.json",
+      "selection_basis": "Existing deterministic GMM-ATKS component with focused tests; requires no preference or fusion training; compatible with the shared corpus and the matched budget. Selection was made before any H2H output was viewed.",
+      "selection_boundary": "B4 is a DynaRAG GMM-ATKS component comparator, not a full DynaRAG reproduction. Full DynaRAG naming requires QAF, AAM, the disclosed training losses, and a faithful generator path.",
+      "not_selected": [
+        "B2 MMed-RAG-style",
+        "B3 RULE-style"
+      ],
+      "not_selected_disposition": "reference or appendix style arm; not constructible in medguard/eval/h2h_protocol.py by design",
+      "known_tension": "PREREGISTRATION.json gives B4 the status component_ablation_only_until_qaf_aam_and_training_are_faithful, and B4 was chosen precisely because it needs no training. The implementation card binds this honestly by classifying B4 as a component_proxy rather than a reproduction. The tension is recorded here rather than resolved silently."
+    },
+    "maximum_primary_arms": 6,
+    "published_scores": "reference only",
+    "rival_code_availability": "code_url and checkpoint_url are empty for all eight rivals in research/RIVAL_LEDGER.json. No faithful reproduction is possible for any rival; all thirteen implementation cards declare faithful_reproduction=false. Arm names must carry -style, -inspired or component-proxy qualifiers."
+  },
+  "ablation_matrix": [
+    {
+      "id": "A0",
+      "name": "MedGuard full",
+      "enabled_components": [
+        "image_exemplar_retrieval",
+        "authoritative_text_retrieval",
+        "graph_lineage",
+        "evidence_contract",
+        "verification_gate",
+        "bounded_remediation"
+      ],
+      "comparison_role": "reference",
+      "implementation_note": "A declared alias of M: reuses M's protocol object and payload bytes. The visible report row differs only by alias_of=M."
+    },
+    {
+      "id": "A1",
+      "name": "without image-exemplar retrieval",
+      "change_from_A0": "Disable image-exemplar evidence retrieval only; retain the identical frozen image/perception input and authoritative text retrieval.",
+      "isolates": "cross-modal hybrid retrieval"
+    },
+    {
+      "id": "A2",
+      "name": "without graph relations",
+      "change_from_A0": "Disable graph construction, traversal, and lineage edges; retain flat source_id, version, authority, retrieval_path, and content_hash fields.",
+      "isolates": "graph/lineage structure beyond flat provenance",
+      "resolution": "RESOLVED: the graph is now selection-bearing (h2h_evidence_graph.select_evidence_by_graph_connectivity, delta_r=0.5). M promotes evidence concept-connected to the committed diagnosis ahead of unconnected records before the final_k cut; A2 disables it (raw fusion), so the two arms' evidence sets differ where connectivity crosses the final_k boundary. Production passes the real concept_links (link_concepts_by_embedding)."
+    },
+    {
+      "id": "A3",
+      "name": "without remediation",
+      "change_from_A0": "Disable EXPAND, REFORMULATE, and INDEPENDENT_SOURCE. After one pass, a satisfied contract may PASS and any unresolved failure ABSTAINS.",
+      "isolates": "bounded failure-typed recovery"
+    },
+    {
+      "id": "A4",
+      "name": "without verifier gating",
+      "change_from_A0": "Run and record verification in observe-only mode. Verification cannot trigger repair or abstention; malformed contracts remain generation errors and cannot PASS.",
+      "isolates": "structured verification as a decision gate",
+      "restriction": "offline evaluation only; never a deployment recommendation"
+    },
+    {
+      "id": "B1",
+      "name": "single-pass dense RAG",
+      "change_from_A0": "No EvidenceContract; conventional single-pass answer with the same perception output, text corpus, generator, decoding, and top-k ceiling.",
+      "isolates": "practical full-system contrast for the evidence-contract architecture",
+      "metric_rule": "evidence_contract_completion is not applicable, not zero"
+    }
+  ],
+  "optional_action_ablation_rule": {
+    "eligibility": "A0 must trigger the action on at least 30 distinct development lesions before outcomes are viewed.",
+    "actions": [
+      "EXPAND",
+      "REFORMULATE",
+      "INDEPENDENT_SOURCE"
+    ],
+    "implementation": "Disable one eligible action at a time and fail to ABSTAIN when that typed failure cannot be repaired.",
+    "reporting": "secondary only; strata below 30 are descriptive"
+  },
+  "failure_typed_suite": {
+    "status": "pending_manifest",
+    "strata": {
+      "F0": "clean sufficient evidence",
+      "F1": "sparse or missing evidence",
+      "F2": "query-evidence misalignment",
+      "F3": "source contradiction",
+      "F4": "image-evidence conflict"
+    },
+    "minimum_for_inference": "30 distinct development lesion clusters in each of F1-F4",
+    "purpose": "measure routing appropriateness, recovery, termination, coverage, and cost; not attack-defense efficacy, prevalence, or clinical harm",
+    "construction_rule": "Use only test-redacted development identities and freeze the typed failure before running method outputs."
+  },
+  "matched_conditions": {
+    "same_cases": true,
+    "same_view_order": true,
+    "same_frozen_perception_output": false,
+    "same_corpus_snapshot": true,
+    "same_candidate_pool": true,
+    "same_generator_and_decoding": true,
+    "same_seeds_and_retry_policy": true,
+    "same_maximum_call_and_token_budget": true,
+    "removed_component_gets_extra_budget": false,
+    "actual_calls_tokens_latency_errors_and_coverage_reported": true,
+    "frozen_perception_output_shared_by_m_family": true,
+    "perception_note": "B0 (VLM-only baseline) diagnoses independently via the VLM; every other arm commits the shared frozen probe. All arms still share cases, view order, corpus snapshot, candidate pool, generator/decoding, seeds/retry, and the maximum call/token budget."
+  },
+  "endpoints": {
+    "revision_status": "RESOLVED in v4. The RAGAS demotion and the citation_precision -> citation_integrity substitution are applied in this endpoints block and in PREREGISTRATION.json schema_version 4. Prior versions carried v1's endpoint families unchanged and flagged them as wrong pending this preregistration gate.",
+    "primary": {
+      "diagnosis": "macro_f1",
+      "diagnosis_supporting_noninferiority": "accuracy",
+      "actionable": "sensitivity_at_fixed_specificity",
+      "actionable_fixed_specificity_level": 0.9,
+      "selective": "aurc",
+      "provenance": "citation_integrity",
+      "process": "evidence_contract_completion",
+      "efficiency": "calls_per_answered_case",
+      "diagnosis_hypothesis": "superiority of the M-family over the B0 VLM baseline on the competed diagnosis axis; noninferiority among the M-family holds by construction (shared probe)"
+    },
+    "diagnostic_noninferiority_margin_absolute": 0.01,
+    "evidence_superiority_rule": "Against the strongest compatible primary rival, the 95% lesion-clustered paired interval must exclude zero for at least two prespecified evidence/process endpoints while macro-F1 and accuracy satisfy noninferiority.",
+    "supporting": [
+      "ragas_faithfulness_demoted_from_primary",
+      "balanced_accuracy",
+      "weighted_f1",
+      "mcc",
+      "cohen_kappa",
+      "per_class_precision_recall_f1_support",
+      "actionable_auroc_specificity_ppv_npv_false_negative_rate",
+      "coverage_selective_accuracy_abstention_rate",
+      "ragas_answer_relevancy_context_precision_context_recall",
+      "citation_recall_claim_support_image_claim_consistency_unresolved_contradiction",
+      "failure_typed_recovery_termination_counts",
+      "tokens_latency_cost_coverage_adjusted_utility",
+      "separate_trajectory_trust_axes"
+    ],
+    "filled_parameters": {
+      "sensitivity_at_fixed_specificity_level": 0.9,
+      "alpha": 0.05,
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20260712,
+      "matched_coverage_ceiling_rule": "minimum answered-coverage across primary arms on the 160-lesion development set, floored to 0.05, fixed before the sealed run",
+      "power_justification": "see PREREGISTRATION.json statistics.power_and_precision: diagnosis is tied under frozen perception so noninferiority is exact; single-arm accuracy reaches ~+/-0.022 CI half-width (SE ~0.011) and actionable sensitivity ~+/-0.04 over 1495 sealed lesions, both coarser than the 0.01 margin; non-per-case endpoints report realized 2000-replicate lesion-clustered bootstrap CI widths."
+    }
+  },
+  "statistics": {
+    "pairing": "identical lesion clusters",
+    "confidence_intervals": "95% lesion-clustered bootstrap",
+    "ablation_effect": "paired A0-minus-ablation difference for each compatible endpoint",
+    "missing_scores": "explicit count and reason; no silent deletion",
+    "abstentions": "separate unconditional and answered-only metrics",
+    "multiplicity": "Holm correction within each prespecified endpoint family when more than one comparison is inferential",
+    "multiplicity_inconsistency": "RESOLVED in v4: PREREGISTRATION.json schema_version 4 now states Holm within frozen endpoint families, matching this spec. Both documents agree -- freeze the family AND Holm-correct within it when more than one comparison is inferential.",
+    "alpha": 0.05,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260712
+  },
+  "required_tables_and_figures": [
+    "corpus_and_gap_table",
+    "architecture_and_evidence_contract_diagram",
+    "all_arm_raw_7x7_confusion_matrices",
+    "row_normalized_confusion_matrices_for_M_and_strongest_rival",
+    "diagnostic_and_actionable_metrics_table",
+    "RAGAS_citation_and_image_consistency_table",
+    "risk_coverage_curve_and_AURC_table",
+    "failure_typed_trajectory_and_recovery_table",
+    "paired_leave_one_component_out_ablation_table_or_forest_plot",
+    "calls_tokens_latency_and_coverage_adjusted_utility_table",
+    "negative_results_and_boundary_conditions_table"
+  ],
+  "active_medguard_dependencies": {
+    "evidence_contract": "medguard/evidence/contract.py",
+    "atomic_source_claims": "medguard/evidence/atomic_claims.py",
+    "relation_assessor": "medguard/evidence/relation_assessor.py",
+    "provenance_binding": "medguard/evidence/provenance.py",
+    "verification": "medguard/evidence/verification.py",
+    "evidence_bundle_verifier": "medguard/evidence/bundle.py",
+    "source_policy": "medguard/evidence/source_policy.py",
+    "hybrid_retrieval": "medguard/pipeline/hybrid_retriever.py",
+    "image_retrieval": "medguard/pipeline/image_retriever.py",
+    "pipeline_ops": "medguard/pipeline/ops.py",
+    "remediation_policy": "medguard/remediation/policy.py",
+    "remediation_runner": "medguard/remediation/runner.py",
+    "h2h_protocol": "medguard/eval/h2h_protocol.py",
+    "h2h_generation": "medguard/eval/h2h_generation.py",
+    "matched_full_h2h_validate": "medguard/eval/matched_full_h2h_validate.py",
+    "b5_evidence_graph": "medguard/eval/h2h_evidence_graph.py",
+    "b6_bounded_refinement": "medguard/eval/h2h_b6_adapter.py",
+    "b4_gmm_atks": "medguard/eval/h2h_b4_adapter.py",
+    "process_trust": "medguard/agents/process_trust.py",
+    "matched_harness": "medguard/eval/harness.py",
+    "metrics": "medguard/eval/metrics.py",
+    "statistics": "medguard/eval/statistics.py"
+  },
+  "orphaned_dependencies_removed_from_v1": {
+    "graph_model": "medguard/control_graph/model.py",
+    "graph_runtime": "medguard/control_graph/runtime.py",
+    "graph_attestation": "medguard/control_graph/attestation.py",
+    "reason": "v1 listed medguard/control_graph/* as active. Nothing outside medguard/control_graph/ imports it except its own two test modules; it is disjoint from the live B5 graph in medguard/eval/h2h_evidence_graph.py. It is retained in the tree and in the maintained suite, but it is not an active dependency of this study and must not be described as one."
+  },
+  "artifact_freeze_ledger": [
+    {
+      "artifact": "dataset manifests",
+      "status": "frozen",
+      "evidence": "four hashes listed in frozen_dataset_artifacts"
+    },
+    {
+      "artifact": "development H2H manifest",
+      "status": "frozen",
+      "evidence": "research/manifests/medguard_h2h_development_v1.json sha256 f63077ca55e71a10f7490476d94b25ddc669c96c928134d2ae10a3e85611eb78; 160 lesions / 244 images; audit valid=true; zero sealed-test intersection"
+    },
+    {
+      "artifact": "frozen development perception outputs",
+      "status": "frozen",
+      "evidence": "research/experiments/medguard_h2h_v1/perception/dermlip_v1/predictions.jsonl sha256 e445faed721c42a7ea09da8c324d5c9db8770348eea9ca9940c6e8e3d693140f; truth_fields_present=false"
+    },
+    {
+      "artifact": "authoritative evidence corpus snapshot",
+      "status": "frozen",
+      "evidence": "research/evidence/dermatology_corpus_v1/receipt.json sha256 b2bf41a4672026a4efaa06a37a8a460579ad9d9786bc6ee5a784b4080182360b; 1243 documents; two freezer passes reproduced it byte-for-byte"
+    },
+    {
+      "artifact": "text and exemplar indexes rebuilt from the frozen corpus/case pool",
+      "status": "frozen",
+      "evidence": "1243-vector 768-dim dense text index and 7010-record / 5228-cluster 512-dim train-only exemplar atlas, both inside the bundle receipt above; index_scope excludes calibration and sealed test"
+    },
+    {
+      "artifact": "source policy and citation identifier registry",
+      "status": "frozen",
+      "evidence": "source_policy.json and citation_registry.jsonl inside the bundle receipt above"
+    },
+    {
+      "artifact": "guideline scope inventory",
+      "status": "frozen",
+      "evidence": "research/evidence/guideline_scope_v1/receipt.json sha256 ad341fd931ea04b95b2051ce55d5c6eed839296bd2709c9960f2a5ab4da51741; 16 of 29 recommendation-level retrieval-ready (BCC 6/6, melanoma 5/6, AK 5/5)"
+    },
+    {
+      "artifact": "guideline recommendation subset",
+      "status": "frozen",
+      "evidence": "research/evidence/guideline_scope_v1/recommendation_corpus.receipt.json sha256 83fcf5dacb653da6cdfc8812ac62fb6cd5a981a870e18b457fd7ddf41a91d780; 66 records from 12 sources (EADO x4, NICE x4, AAD x3, BAD x1); medguard/data/corpus/derm_guideline_recommendations_v1.jsonl sha256 98ccd42e3a85648d3d5da975a454eea86ccef13e37dc67360a62f612f9923a16"
+    },
+    {
+      "artifact": "primary and ablation implementation cards",
+      "status": "living_prelock_specification",
+      "evidence": "research/implementation_cards/H2H_IMPLEMENTATION_CARDS_V1.json sha256 bc89bb39fbaa55269af3ece582d2cddd775ac6d54c3e1d7d26663eff4e4d54ba",
+      "note": "Not frozen. The cards file has changed since matched_full_arm_validate_only.json pinned it as ef32cd1a84a8bce1b2bb316420f2e97d65094ea59d0b552996daa2983abda2c8; that report's declared input no longer exists in that form. Re-pin at the lock."
+    },
+    {
+      "artifact": "adaptive-slot selection receipt",
+      "status": "frozen",
+      "evidence": "B4 recorded in the implementation cards; see primary_h2h_roster.adaptive_slot"
+    },
+    {
+      "artifact": "generator, prompts, decoding, seeds, retries, call/token budget",
+      "status": "implemented_but_not_locked",
+      "note": "The generation-executing runner exists (medguard/eval/matched_full_h2h_run.py, run_h2h) with all dependencies injectable and fully fake-client tested at zero paid cost; build_production_dependencies is a deliberate NotImplementedError -- the paid wiring is the separately authorized gate. One open cleanup before the paid run: fold the EvidenceContract output schema into the H2H adapter obligation so it is not duplicated in the runner (_CONTRACT_OUTPUT_SCHEMA)."
+    },
+    {
+      "artifact": "RAGAS judge and evidence scorer versions",
+      "status": "implemented_scorers_pending_judge_lock",
+      "note": "All offline scorers are implemented and unit-tested: citation_integrity (primary provenance, scored over the host-built contract's guideline claims), actionable_confusion + sensitivity_at_fixed_specificity(0.90), classification_summary, evidence_contract_completion, aurc/risk_coverage, clustered bootstrap (2000/seed 20260712), and the h2h_scoring truth-joined evaluator. RAGAS is a mapped-but-not-executed supporting adapter (judge openai/gpt-oss-20b), locked at the pre-H2H gate."
+    },
+    {
+      "artifact": "source-tree revision or deterministic source receipt",
+      "status": "frozen",
+      "evidence": "git 2b657323c5c9b737308aed8fb922716f7ed7e546",
+      "note": "v1 correctly recorded this as pending because the workspace was not a Git repository: .git existed but was an empty directory and git rev-parse reported 'not a git repository'. The repository was initialised on 2026-07-17 with medguard/.env excluded before the first commit. This unblocks the pre-H2H source lock."
+    },
+    {
+      "artifact": "failure-typed development suite",
+      "status": "pending"
+    },
+    {
+      "artifact": "sealed-test access log",
+      "status": "pending_and_must_remain_empty",
+      "note": "The log file does not exist. It must be created before the sealed run. Sealing is currently a policy, not a mechanism: sealed labels and images sit in research/manifests/ham10000_split_v2.json beside train and calibration, distinguished only by a split string. On 2026-07-15 the 1991 sealed identities were enumerated and committed to disk under final_derm_h2h_common_harness_dry_run_v1; that record states prediction_or_generation_performed=false, label_scoring_performed=false and remote_calls=0, and execution was correctly blocked by three blockers. Sealed outcomes are untouched; sealed identities are not. State this in the limitations."
+    }
+  ],
+  "known_blocking_defects": [
+    {
+      "id": "D1",
+      "defect": "RESOLVED since v3. The claim-scoped output obligation and the image-bound/exemplar relation split (medguard/evidence/claim_builder.py) let a contract that owes no external text claim be minimal rather than incomplete.",
+      "consequence": "structured_pass_eligible is now 130 of 160 (30 ABSTAIN), up from 0, verified byte-reproducibly in research/experiments/medguard_h2h_v1/development_preflight.json. Ablation and arm-to-arm evidence-quality differences are now measurable in principle; realising them still needs the guideline-citing claims (D2) and one authorized generation run.",
+      "evidence": "research/experiments/medguard_h2h_v1/development_preflight.json; research/experiments/medguard_h2h_v1/matched_full_arm_validate_only.json",
+      "residual_boundary": "No curated semantic relation gold exists, so free-form text-claim entailment is still not scored. PASS-eligibility rests on image-bound diagnosis and hash-bound exemplar support only."
+    },
+    {
+      "id": "D2",
+      "defect": "The verbatim guideline recommendations are not in the DENSE+BM25 abstract index (the C2 bundle is 1240 legacy_pubmed_abstract_snapshot plus 3 pubmed_abstract_excerpt, zero recommendations). A dedicated authoritative-guideline retrieval channel over the 28 recommendations now exists (medguard/pipeline/guideline_retriever.py), so this is resolved at the channel level; wiring it into the two production call sites (B2) remains.",
+      "consequence": "CORRECTION to v2 carried forward: 20 of the original 23 recommendations are management-eligible; the corpus is now 33 records over 4 EADO documents. The 3 AAD guideline ABSTRACTS in the C2 bundle can still satisfy a management claim by authority class while their text only describes a guideline; the new channel refuses them on content_form, but the abstract index admits them until source_policy.py is fixed and the bundle re-frozen.",
+      "note": "The recommendations remain diagnosis/assessment-weighted for melanoma and BCC; actinic keratosis now carries 5 records across assessment, differential, biopsy, management and follow-up. Management is backable for BCC and melanoma; AK adds assessment and management coverage."
+    },
+    {
+      "id": "D3",
+      "defect": "RESOLVED. A curated host SourceContradictionRegistry (medguard/evidence/source_contradiction.py) makes SOURCE_CONTRADICTION detectable and host-deterministic, so the policy routes to INDEPENDENT_SOURCE rather than abstaining; the action re-retrieves from the FrozenGuidelineRetriever (a structurally separate index from the PubMed-abstract text index), drops the contradicted record and binds an independent source, or abstains if none exists. Fires end-to-end in tests; on dev with no curated flags it fires zero times, honestly.",
+      "consequence": "C3's INDEPENDENT_SOURCE action is now reachable and effectful."
+    },
+    {
+      "id": "D4",
+      "defect": "RESOLVED. B6 sufficiency = candidate evidence count >= final_k (=5), a structural rule fit to coverage, not tuned on dev outcomes (h2h_b6_adapter, MIN_EVIDENCE_SUFFICIENCY_RULE). The old weighted >=0.5 rule stays the default so the frozen matched_full_arm_validate_only.json is byte-unchanged; refinement now triggers on sparse-connectivity commitments.",
+      "consequence": "C3's bounded refinement is no longer vacuous."
+    },
+    {
+      "id": "D5",
+      "defect": "Coverage after the cross-issuer ingestion: 66 records over 12 sources (EADO, NICE, AAD, BAD); 16 of 29 cells recommendation-level retrieval-ready (BCC 6/6, melanoma 5/6, actinic_keratosis 5/5).",
+      "consequence": "All three malignant scored classes are covered cross-issuer. Both squamous-cell conditions stay uncovered (no HAM class). bkl/df/nevus/vasc will never have guidelines -- a real boundary, not a gap."
+    }
+  ],
+  "pending_revisions": {
+    "status": "applied_in_v5",
+    "note": "The v4 endpoint re-registration is retained; v5 adds the competed-diagnosis perception model and the runner/defect registrations.",
+    "gate": "research/PREREGISTRATION.json schema_version 5 (this is that gate)"
+  },
+  "current_generation_authorization": "none",
+  "current_sealed_test_authorization": "none",
+  "next_gate": "SUPERSEDED 2026-08-08. The old text ('smoke one arm, then the full development H2H') describes work already completed. The gate is now the PRE-SEALED RUNTIME LOCK: (1) freeze the runner, prompts, decoding, scorers, dependency versions and source-tree receipt, with the v2-v4 answer-rendering fixes INSIDE the freeze; (2) load the existing frozen abstention gate by path rather than refitting it; (3) pin the RAGAS judge specification hash (medguard.eval.ragas_judge.judge_specification_sha256); (4) resolve registration_defect_2026_08_08 by issuing spec v6 BEFORE the sealed run; (5) re-pin the receipt tiers. Only then does the sealed run become a decision the user can authorize.",
+  "generation_runtime_v5": {
+    "runner": "medguard/eval/matched_full_h2h_run.py (run_h2h); sibling to the untouched validate scaffold",
+    "competed_diagnosis": "M-family commits the frozen probe; B0 commits the VLM HAM7 label (one repair, no probe/contract)",
+    "citation_policy": "citation_integrity (primary provenance) is scored over the HOST-BUILT contract's guideline claims via citation_extraction.guideline_citations_from_contract. It is 1.0 by construction for covered M-family lesions and None for baselines -- the exclusive source-exact provenance GUARANTEE, not a generator-faithfulness test (that is RAGAS, supporting). This is coherent because guideline citations are inherently host-owned: the source-statement-integrity registry that makes them SUPPORTED can only be invoked by the host, not the VLM. The scorer is non-trivial (it detects hallucinated / unoffered / claim-type-mismatched ids in its tests) and verifies a falsifiable property; a correct architecture passes it. Revisable pre-generation.",
+    "guideline_citation_selection": "select_guideline_evidence: claim-type-stratified (assessment-first, then management/treatment/referral), GUIDELINE_K=3, leading with the assessment method the clinical question asks about rather than document_id alphabetical order. On the 160 dev lesions this yields {assessment: 92, management: 184} citations, structured-field-driven with no relevance scorer.",
+    "defect_resolutions": {
+      "A2": "graph selection-bearing at delta_r=0.5; M enables, A2 disables",
+      "D4": "B6 sufficiency = candidate count >= final_k (=5); old 0.5 rule is the default",
+      "D3": "SourceContradictionRegistry + INDEPENDENT_SOURCE -> guideline index"
+    }
+  },
+  "development_h2h_executed": {
+    "date": "2026-07-23/24",
+    "scale": "160 lesions x 11 arms = 1760 arm rows, zero generation errors",
+    "ledger_record": "medguard_development_h2h_full_160x11_v4",
+    "final_artifact": "research/evidence/dev_h2h_full/dev_h2h_full_160x11_v4.json",
+    "status": "development/calibration only; sealed test untouched",
+    "post_run_offline_additions_2026_08_08": [
+      "paired evidence-family CIs (medguard/eval/paired_endpoints.py) -- the registered acceptance condition had never been computed",
+      "efficiency receipt carrying measured cost from the v1 run (v2-v4 report zeros because they are replays)",
+      "RAGAS judge specification pin",
+      "all three offline, zero additional paid calls"
+    ],
+    "authorization_note": "The development H2H was executed under an explicit, single-use user authorization on 2026-07-23/24. That authorization is SPENT. current_generation_authorization stays 'none' because it states standing authority, not history -- a spec that reads 'authorized' is a licence to spend money."
+  },
+  "registration_defect_2026_08_08": {
+    "defect": "The registered evidence-superiority condition names four endpoints -- faithfulness, context recall, citation precision, contract completion -- and requires at least two to show a paired improvement whose 95% clustered-bootstrap interval excludes zero. But citation integrity (which replaced citation precision) and contract completion are UNDEFINED for a no-contract comparator, and the protocol correctly forbids imputing them as zero. Only two of the four are therefore ever testable, so the condition demands that BOTH survive Holm correction. That was not the intent and was not noticed until the paired CIs were actually computed.",
+    "observed_consequence": "On development the condition is met against B5 (faithfulness AND context recall both clear zero) but not against B1, B4 or B6, where context recall clears zero decisively and faithfulness is inconclusive.",
+    "resolution_required_before_sealed": "Issue spec v6 that (a) states plainly that citation_integrity and contract_completion are architectural, reported as not_applicable for no-contract arms and excluded from the inferential family; and (b) replaces them in the family with endpoints that ARE defined for every arm. Two candidates, both of which must be registered BEFORE the sealed run or not used: verifiable-citation coverage (does an answer carry at least one resolvable citation -- defined for every arm, 92/160 for M and 0/160 for every baseline), and scope-matched faithfulness (faithfulness restricted to answers where the text judge has jurisdiction; +0.3395 [0.2428, 0.4382] for M vs B1 on development, which is POST-HOC there and usable only if pre-registered here).",
+    "hard_rule": "No endpoint may be added to the frozen family retroactively for the DEVELOPMENT result. The development verdict stands as measured: met vs B5, not met vs B1."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "reply": "{\"action\": \"refuse\", \"text\": \"The available tools and guidelines do not provide information on five-year survival probabilities for any condition. The system's deterministic computation includes classification, 7-point scoring, and guideline-based management recommendations, but does not contain prognostic data such as survival rates. This information is outside the scope of the provided corpus and tools.\"}",
+  "metadata": {
+    "model": "qwen/qwen3-vl-32b-instruct",
+    "attempt": 1,
+    "succeeded": true,
+    "latency_seconds": 1.6555274999991525,
+    "prompt_tokens": 926,
+    "completion_tokens": 76,
+    "total_tokens": 1002,
+    "usage_available": true,
+    "seed": null
+  },
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the updated 7-point score is in the range [2, 3], but the decision contract does not support this. The contract only provides a score range of [0, 1] with no mechanism for recalculating based on clinician override. The agent fabricated the new score range.",
+    "CRITERION ACCURACY: The agent assumes that changing 'blue_whitish_veil' from 'absent' to 'present' adds 2 points, but the contract does not provide a dynamic scoring engine or re-evaluation logic. This change is not grounded in the contract's structure.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', but this conclusion is based on a fabricated score range and unresolved criterion. The contract\u2019s guideline binding explicitly states there are no recommendations for NEV, so management advice should not be inferred beyond stating the absence of guidance.",
+    "CONFLICT REPORTING: The agent does not report any conflict state, but the clinician\u2019s override introduces a discrepancy between classifier output and clinician assessment. The contract\u2019s original conflict state was 'Both views agree.' After override, this should be flagged as a conflict, which the agent fails to address."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the updated 7-point score is in the range [2, 3], but the decision contract does not support this. The contract only provides a score range of [0, 1] with no mechanism for recalculating based on clinician override. The agent fabricated the new score range.\",\n    \"CRITERION ACCURACY: The agent assumes that changing 'blue_whitish_veil' from 'absent' to 'present' adds 2 points, but the contract does not provide a dynamic scoring engine or re-evaluation logic. This change is not grounded in the contract's structure.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', but this conclusion is based on a fabricated score range and unresolved criterion. The contract\u2019s guideline binding explicitly states there are no recommendations for NEV, so management advice should not be inferred beyond stating the absence of guidance.\",\n    \"CONFLICT REPORTING: The agent does not report any conflict state, but the clinician\u2019s override introduces a discrepancy between classifier output and clinician assessment. The contract\u2019s original conflict state was 'Both views agree.' After override, this should be flagged as a conflict, which the agent fails to address.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.674,
+  "usage": {
+    "prompt_tokens": 1161,
+    "completion_tokens": 282,
+    "total_tokens": 1443
+  }
+}

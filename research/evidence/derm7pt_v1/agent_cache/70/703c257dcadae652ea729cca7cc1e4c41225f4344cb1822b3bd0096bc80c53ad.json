@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"tool\", \"tool\": \"search_guidelines\", \"args\": {\"condition\": \"BCC\", \"question_type\": \"follow_up_surveillance\"}}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

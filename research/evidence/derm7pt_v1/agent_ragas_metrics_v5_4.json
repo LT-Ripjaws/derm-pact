@@ -1,0 +1,4597 @@
+{
+  "protocol": "E5c_ragas_agent_metrics_contract_context_median3",
+  "agent_results_file": "agent_eval_report_v5_4.json",
+  "prompt_version": "clinician-agent-v5.4",
+  "n_judge_attempts": 3,
+  "n_rows_total": 591,
+  "n_out_of_scope": 203,
+  "n_contract_grounded": 285,
+  "n_guideline_scorable": 188,
+  "n_scored_faithfulness": 188,
+  "n_scored_relevancy": 188,
+  "faithfulness": 0.8447,
+  "faithfulness_detail": {
+    "mean": 0.8447,
+    "answered_mean": 0.8447,
+    "assessment_mean": 0.8457,
+    "n_assessment_scored": 187,
+    "overall_mean": 0.8447,
+    "coverage": 1.0,
+    "n_scored": 188,
+    "n_samples": 188,
+    "per_sample": [
+      0.2727,
+      0.6667,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.75,
+      0.8333,
+      1.0,
+      0.5455,
+      0.6667,
+      1.0,
+      0.8333,
+      0.875,
+      0.5,
+      1.0,
+      0.8333,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5833,
+      0.4167,
+      0.5,
+      0.6667,
+      0.75,
+      0.4167,
+      0.5455,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6,
+      0.5,
+      0.75,
+      0.8182,
+      0.625,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.4167,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.5833,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5455,
+      0.8889,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.7,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5833,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.8333,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6667,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.625,
+      0.3333,
+      0.7,
+      0.9,
+      1.0,
+      1.0,
+      1.0,
+      0.6667,
+      0.75,
+      1.0,
+      0.1,
+      0.6667,
+      0.75,
+      1.0,
+      0.5833,
+      1.0,
+      1.0,
+      0.6364,
+      0.75,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.3333,
+      0.5,
+      0.6,
+      0.4444,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      1.0,
+      0.7778,
+      1.0,
+      0.7,
+      0.3333,
+      1.0,
+      0.5,
+      0.75,
+      1.0,
+      0.5833,
+      0.5,
+      0.75,
+      0.5,
+      0.5,
+      0.8333,
+      1.0,
+      0.8333,
+      1.0,
+      1.0,
+      0.5833,
+      0.3333,
+      0.6667,
+      0.9167,
+      0.4545,
+      0.5,
+      1.0,
+      0.5833,
+      0.7778,
+      0.5833,
+      0.8333,
+      1.0,
+      0.8,
+      1.0,
+      0.75,
+      0.5833,
+      0.875,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "per_sample_scope": [
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "whole",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment"
+    ]
+  },
+  "answer_relevancy": 0.9237,
+  "answer_relevancy_detail": {
+    "mean": 0.9237,
+    "coverage": 1.0,
+    "n_scored": 188,
+    "n_samples": 188
+  },
+  "grounding_analysis": {
+    "guideline_grounded": 49,
+    "mixed_grounded": 54,
+    "contract_only": 285,
+    "contract_context_added": 139,
+    "contract_context_lookup_misses": 0
+  },
+  "judge_model": "openai/gpt-oss-20b",
+  "per_sample": [
+    {
+      "case_id": "derm7pt-2",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.2727,
+      "faithfulness_attempts": [
+        0.75,
+        0.25,
+        0.2727
+      ],
+      "faithfulness_mad": 0.1667,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-2",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.7,
+        0.4,
+        0.6667
+      ],
+      "faithfulness_mad": 0.1,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-594",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-594",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-598",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-598",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-12",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-12",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-601",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-601",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        0.6,
+        0.8
+      ],
+      "faithfulness_mad": 0.0667,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-14",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.8333,
+        1.0,
+        0.75
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-14",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        0.8571,
+        1.0
+      ],
+      "faithfulness_mad": 0.0476,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-602",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5455,
+      "faithfulness_attempts": [
+        0.5455,
+        0.5455,
+        0.5455
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-20",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.5,
+        0.6667,
+        0.6667
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "whole",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-20",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-26",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.8333,
+        1.0,
+        0.75
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-26",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.875,
+      "faithfulness_attempts": [
+        0.875,
+        0.875,
+        0.8571
+      ],
+      "faithfulness_mad": 0.006,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-610",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.5,
+        0.6667
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-610",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-37",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.8333,
+        1.0,
+        0.75
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-37",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-614",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-616",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-616",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-70",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-70",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-623",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-623",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.75,
+        0.5833,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-626",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.4167,
+      "faithfulness_attempts": [
+        0.4167,
+        0.4167,
+        0.4167
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-626",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5833,
+        0.5,
+        0.5
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-632",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.75,
+        0.6667,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-632",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        null,
+        0.75
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-638",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.4167,
+      "faithfulness_attempts": [
+        0.4167,
+        0.4167,
+        0.4167
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-638",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5455,
+      "faithfulness_attempts": [
+        0.5455,
+        0.5455,
+        0.5
+      ],
+      "faithfulness_mad": 0.0152,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-647",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-654",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-654",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-655",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.92
+      ],
+      "answer_relevancy_mad": 0.01,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-655",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-659",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-659",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-133",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-133",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6,
+      "faithfulness_attempts": [
+        0.6,
+        0.6,
+        0.6667
+      ],
+      "faithfulness_mad": 0.0222,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-665",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.4167,
+        0.5
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-665",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        0.75,
+        null
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-143",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.8182,
+      "faithfulness_attempts": [
+        0.8333,
+        0.8182,
+        0.7778
+      ],
+      "faithfulness_mad": 0.0185,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-143",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.625,
+      "faithfulness_attempts": [
+        0.625,
+        0.625,
+        0.6667
+      ],
+      "faithfulness_mad": 0.0139,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-667",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-156",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-678",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-682",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-682",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-686",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.4167,
+      "faithfulness_attempts": [
+        0.4167,
+        0.4167,
+        0.5
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-686",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-690",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-692",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-692",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-698",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-699",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-699",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-701",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-701",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        1.0,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-211",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.4167,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0555,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-211",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5556,
+        0.5833,
+        0.7778
+      ],
+      "faithfulness_mad": 0.0741,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-712",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-712",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-719",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-719",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-723",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-723",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.97,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0067,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-226",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5455,
+      "faithfulness_attempts": [
+        0.5455,
+        0.5833,
+        0.5455
+      ],
+      "faithfulness_mad": 0.0126,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-226",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.8889,
+      "faithfulness_attempts": [
+        0.8889,
+        0.8889,
+        0.7778
+      ],
+      "faithfulness_mad": 0.037,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.98,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.01,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-731",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-731",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 1.0,
+      "answer_relevancy_attempts": [
+        1.0,
+        1.0,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-740",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-743",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-743",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-245",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.7,
+      "faithfulness_attempts": [
+        0.8333,
+        0.7,
+        0.5455
+      ],
+      "faithfulness_mad": 0.0959,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-245",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-750",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-750",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-247",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.6,
+      "answer_relevancy_attempts": [
+        0.6,
+        0.5,
+        0.6
+      ],
+      "answer_relevancy_mad": 0.0333,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-247",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-751",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        1.0,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0333,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-751",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-248",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.8333,
+        0.4167,
+        0.5833
+      ],
+      "faithfulness_mad": 0.1389,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-248",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-754",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-754",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-765",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-765",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-768",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-768",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-770",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-770",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-772",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-772",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-774",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-778",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-778",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-779",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-779",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-783",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-785",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.75,
+        1.0,
+        0.8333
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-785",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-790",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-803",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.92,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.01,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-346",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-346",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.6667,
+        0.75,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-805",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-807",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-807",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-809",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-809",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-375",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.625,
+      "faithfulness_attempts": [
+        0.5,
+        0.75,
+        null
+      ],
+      "faithfulness_mad": 0.125,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-375",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.3333,
+      "faithfulness_attempts": [
+        0.3333,
+        0.3333,
+        0.3333
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-814",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.7,
+      "faithfulness_attempts": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-814",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.9,
+      "faithfulness_attempts": [
+        1.0,
+        0.5,
+        0.9
+      ],
+      "faithfulness_mad": 0.1667,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-823",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.7,
+      "answer_relevancy_attempts": [
+        0.7,
+        0.55,
+        0.7
+      ],
+      "answer_relevancy_mad": 0.05,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-823",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-378",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-378",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.5833,
+        0.75,
+        0.6667
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-836",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.8182,
+        0.75,
+        0.75
+      ],
+      "faithfulness_mad": 0.0227,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-836",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-839",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.1,
+      "faithfulness_attempts": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-839",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.75,
+        0.6667,
+        0.6667
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-844",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.8333,
+        0.75,
+        0.75
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-844",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        0.8333,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-851",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5833,
+        1.0,
+        0.5
+      ],
+      "faithfulness_mad": 0.1667,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-851",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 1.0,
+      "answer_relevancy_attempts": [
+        1.0,
+        1.0,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-857",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.55,
+      "answer_relevancy_attempts": [
+        0.5,
+        0.75,
+        0.55
+      ],
+      "answer_relevancy_mad": 0.0833,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-857",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6364,
+      "faithfulness_attempts": [
+        0.6364,
+        0.0,
+        0.6667
+      ],
+      "faithfulness_mad": 0.2222,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-422",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        0.75,
+        0.4444
+      ],
+      "faithfulness_mad": 0.1019,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-422",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-875",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-876",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-876",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-436",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-436",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.3333,
+      "faithfulness_attempts": [
+        0.3333,
+        0.3333,
+        0.3333
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-879",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        null,
+        0.5,
+        0.5
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.92,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0067,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-440",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.6,
+      "faithfulness_attempts": [
+        0.6,
+        0.6667,
+        0.4
+      ],
+      "faithfulness_mad": 0.0889,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-440",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.4444,
+      "faithfulness_attempts": [
+        0.5833,
+        0.4444,
+        0.3333
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-882",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5833,
+        null,
+        0.4167
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-882",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-883",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-883",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-455",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.55,
+      "answer_relevancy_attempts": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-455",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5455,
+        0.5,
+        0.5
+      ],
+      "faithfulness_mad": 0.0152,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-894",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.5833,
+        0.5
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-895",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-895",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.7778,
+      "faithfulness_attempts": [
+        0.875,
+        0.7778,
+        0.7778
+      ],
+      "faithfulness_mad": 0.0324,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-466",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.55,
+      "answer_relevancy_attempts": [
+        0.55,
+        0.7,
+        0.55
+      ],
+      "answer_relevancy_mad": 0.05,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-466",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.7,
+      "faithfulness_attempts": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-473",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.3333,
+      "faithfulness_attempts": [
+        0.2727,
+        0.3333,
+        0.5833
+      ],
+      "faithfulness_mad": 0.1035,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-473",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-900",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.4167,
+        0.5,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0555,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-900",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        0.75,
+        0.625
+      ],
+      "faithfulness_mad": 0.0417,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-906",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.85,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-906",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5833,
+        0.6667,
+        0.5
+      ],
+      "faithfulness_mad": 0.0556,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-489",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.6,
+        0.5,
+        0.4167
+      ],
+      "faithfulness_mad": 0.0611,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-489",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        0.75,
+        0.7
+      ],
+      "faithfulness_mad": 0.0167,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-498",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.5,
+        0.4167
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-498",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5,
+        0.0833,
+        0.6
+      ],
+      "faithfulness_mad": 0.1722,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-925",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.8333,
+        1.0,
+        0.75
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-925",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        0.8571,
+        1.0
+      ],
+      "faithfulness_mad": 0.0476,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.97,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0067,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-939",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.8333,
+        1.0,
+        0.75
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-939",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        0.8571,
+        1.0
+      ],
+      "faithfulness_mad": 0.0476,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-941",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-941",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5455,
+        0.75,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0682,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-950",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.3333,
+      "faithfulness_attempts": [
+        0.5556,
+        0.3333,
+        0.3333
+      ],
+      "faithfulness_mad": 0.0741,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-950",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.6667,
+      "faithfulness_attempts": [
+        0.8889,
+        0.625,
+        0.6667
+      ],
+      "faithfulness_mad": 0.088,
+      "scope": "assessment",
+      "answer_relevancy": 1.0,
+      "answer_relevancy_attempts": [
+        0.95,
+        1.0,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-955",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.9167,
+      "faithfulness_attempts": [
+        0.9167,
+        1.0,
+        0.6667
+      ],
+      "faithfulness_mad": 0.1111,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-955",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.4545,
+      "faithfulness_attempts": [
+        0.4545,
+        0.4167,
+        0.5
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-538",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5,
+      "faithfulness_attempts": [
+        0.5833,
+        0.5,
+        0.5
+      ],
+      "faithfulness_mad": 0.0278,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-538",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.9,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0333,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-541",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5833,
+        0.5455,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0126,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-541",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.7778,
+      "faithfulness_attempts": [
+        0.7778,
+        0.7778,
+        0.7
+      ],
+      "faithfulness_mad": 0.0259,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-545",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5833,
+        0.5455,
+        0.75
+      ],
+      "faithfulness_mad": 0.0682,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-545",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.8333,
+      "faithfulness_attempts": [
+        0.8889,
+        0.6667,
+        0.8333
+      ],
+      "faithfulness_mad": 0.0741,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-548",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-548",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.8,
+      "faithfulness_attempts": [
+        0.8182,
+        0.0,
+        0.8
+      ],
+      "faithfulness_mad": 0.2727,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-558",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        null,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "answer_relevancy_attempts": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-558",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.75,
+      "faithfulness_attempts": [
+        0.75,
+        0.1667,
+        0.75
+      ],
+      "faithfulness_mad": 0.1944,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        1.0
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-999",
+      "kind": "why",
+      "grounding": "mixed",
+      "contract_context_added": true,
+      "faithfulness": 0.5833,
+      "faithfulness_attempts": [
+        0.5833,
+        0.4167,
+        0.5833
+      ],
+      "faithfulness_mad": 0.0555,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-999",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 0.875,
+      "faithfulness_attempts": [
+        0.875,
+        1.0,
+        0.75
+      ],
+      "faithfulness_mad": 0.0833,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.9
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 4
+    },
+    {
+      "case_id": "derm7pt-577",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-587",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "contract_context_added": false,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        1.0,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0167,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-587",
+      "kind": "override",
+      "grounding": "contract",
+      "contract_context_added": true,
+      "faithfulness": 1.0,
+      "faithfulness_attempts": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "faithfulness_mad": 0.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "answer_relevancy_attempts": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "answer_relevancy_mad": 0.0,
+      "n_contexts": 4
+    }
+  ],
+  "faithfulness_by_grounding": {
+    "guideline": {
+      "mean": 0.983,
+      "n": 49
+    },
+    "mixed": {
+      "mean": 0.7051,
+      "n": 54
+    },
+    "contract": {
+      "mean": 0.8537,
+      "n": 85
+    }
+  },
+  "judge_dispersion": {
+    "faithfulness": {
+      "n_attempts": 3,
+      "n_samples_with_dispersion": 188,
+      "mean_absolute_deviation": 0.0258,
+      "max_absolute_deviation": 0.2727,
+      "n_samples_all_attempts_agreed_exactly": 119,
+      "note": "Mean absolute deviation of each judge attempt from that sample's own median, averaged over samples with >=2 non-null attempts. Quantifies judge noise (measured single-call noise floor: 0.0489), not model quality."
+    },
+    "answer_relevancy": {
+      "n_attempts": 3,
+      "n_samples_with_dispersion": 188,
+      "mean_absolute_deviation": 0.0063,
+      "max_absolute_deviation": 0.0833,
+      "n_samples_all_attempts_agreed_exactly": 125,
+      "note": "Mean absolute deviation of each judge attempt from that sample's own median, averaged over samples with >=2 non-null attempts. Quantifies judge noise (measured single-call noise floor: 0.0489), not model quality."
+    }
+  },
+  "cache_stats": {
+    "hits": 1275,
+    "misses": 415,
+    "session_id": "v3_ragas_1786717861"
+  },
+  "scope_distribution": {
+    "assessment": 187,
+    "whole": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the updated score range is [3,5], but this is not supported by the contract. The contract does not provide any mechanism to compute a new score based on overrides; it only reports the original score range [1,3] and states that the 'blue_whitish_veil' criterion was originally 'absent'. The agent fabricated a new score range based on an override not reflected in the contract.",
+    "CRITERION ACCURACY: The agent asserts that 'blue_whitish_veil' was changed from 'absent' to 'present', but the contract does not contain any override or updated criterion values. The original value remains 'absent' per the contract, and no revised criteria are provided.",
+    "MANAGEMENT FIDELITY: The agent states the verdict changed to 'excision' based on the new score range [3,5]. However, the contract's guideline section explicitly states there are no recommendations for 'NEV', and the deterministic ladder (which would guide management) is not shown or referenced. The agent fabricates a management decision ('excision') not grounded in the contract\u2019s guidelines or deterministic ladder.",
+    "CONFLICT REPORTING: The agent does not address the conflict state as described in the contract. The contract notes that conflict is not present because the checklist is undecidable, not because of disagreement with the classifier. The agent ignores this and proceeds as if the classifier is now in agreement with the updated score, which is unsupported.",
+    "CITATION VALIDITY: The agent does not cite any guideline record IDs, so this issue does not apply."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the updated score range is [3,5], but this is not supported by the contract. The contract does not provide any mechanism to compute a new score based on overrides; it only reports the original score range [1,3] and states that the 'blue_whitish_veil' criterion was originally 'absent'. The agent fabricated a new score range based on an override not reflected in the contract.\",\n    \"CRITERION ACCURACY: The agent asserts that 'blue_whitish_veil' was changed from 'absent' to 'present', but the contract does not contain any override or updated criterion values. The original value remains 'absent' per the contract, and no revised criteria are provided.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict changed to 'excision' based on the new score range [3,5]. However, the contract's guideline section explicitly states there are no recommendations for 'NEV', and the deterministic ladder (which would guide management) is not shown or referenced. The agent fabricates a management decision ('excision') not grounded in the contract\u2019s guidelines or deterministic ladder.\",\n    \"CONFLICT REPORTING: The agent does not address the conflict state as described in the contract. The contract notes that conflict is not present because the checklist is undecidable, not because of disagreement with the classifier. The agent ignores this and proceeds as if the classifier is now in agreement with the updated score, which is unsupported.\",\n    \"CITATION VALIDITY: The agent does not cite any guideline record IDs, so this issue does not apply.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.029,
+  "usage": {
+    "prompt_tokens": 1259,
+    "completion_tokens": 360,
+    "total_tokens": 1619
+  }
+}

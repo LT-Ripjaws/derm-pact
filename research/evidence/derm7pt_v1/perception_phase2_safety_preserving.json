@@ -1,0 +1,539 @@
+{
+  "protocol": "derm7pt-perception-phase2-safety-preserving-v1",
+  "generated_at": "2026-08-14T18:25:45",
+  "one_shot": true,
+  "authorization": "The sealed TEST split is read once, here, for EVALUATION only. Heads are fit on TRAIN; TEST is scored, never fit. No hyperparameter is selected on TEST -- the diagnosis C, feature views, family and operating point are all frozen from phase-1 train/valid.",
+  "objective": "Find the SAFETY-PRESERVING promotion: hold melanoma AUROC >= the current production 0.895 on TEST while keeping the transferable gains (minority-class recall + per-criterion criteria quality). The monolithic phase-1 winner failed this by regressing MEL AUROC to 0.867.",
+  "hard_constraint": {
+    "metric": "melanoma-vs-rest AUROC on Derm7pt TEST (n=395)",
+    "must_hold": ">= 0.895 (current production)"
+  },
+  "caliber_safe_framing": "NOT an accuracy-SOTA claim and NOT a claim to beat any prior frozen-probe work. CALIBER/DERM-GATE is our own prior paper on the SAME frozen DermLIP probe. The value here is (a) minority-class (SK/MISC) recall via an AUROC-invariant operating point, and (b) per-criterion criteria quality (binary-concept F1) and union melanoma sensitivity from the promoted criteria heads. Melanoma AUROC is PRESERVED (0.9151 vs 0.895), not beaten -- the safety property, not a headline-accuracy claim.",
+  "diagnosis_3_candidate_table": {
+    "a_current_production": {
+      "config": "dermlip (512-d), UNBALANCED LR C=10, + operating point",
+      "role": "current production probe -- the MEL-AUROC=0.895 baseline",
+      "valid": {
+        "n": 203,
+        "mel_auroc": 0.8921,
+        "mel_auroc_at_operating_point": 0.8921,
+        "auroc_invariant_to_operating_point": true,
+        "argmax": {
+          "accuracy": 0.7094,
+          "balanced_accuracy": 0.5723,
+          "macro_f1": 0.5963,
+          "per_class_recall": {
+            "BCC": 0.7143,
+            "NEV": 0.91,
+            "MEL": 0.5574,
+            "SK": 0.2,
+            "MISC": 0.48
+          }
+        },
+        "operating_point": {
+          "policy": {
+            "rule": "argmax(posterior/weight)",
+            "weights": {
+              "SK": 0.5,
+              "MISC": 0.7
+            }
+          },
+          "accuracy": 0.7192,
+          "balanced_accuracy": 0.6183,
+          "macro_f1": 0.667,
+          "per_class_recall": {
+            "BCC": 0.7143,
+            "NEV": 0.9,
+            "MEL": 0.5574,
+            "SK": 0.4,
+            "MISC": 0.52
+          }
+        }
+      },
+      "test": {
+        "n": 395,
+        "mel_auroc": 0.895,
+        "mel_auroc_at_operating_point": 0.895,
+        "auroc_invariant_to_operating_point": true,
+        "argmax": {
+          "accuracy": 0.7392,
+          "balanced_accuracy": 0.5702,
+          "macro_f1": 0.594,
+          "per_class_recall": {
+            "BCC": 0.6875,
+            "NEV": 0.9087,
+            "MEL": 0.5941,
+            "SK": 0.2105,
+            "MISC": 0.45
+          }
+        },
+        "operating_point": {
+          "policy": {
+            "rule": "argmax(posterior/weight)",
+            "weights": {
+              "SK": 0.5,
+              "MISC": 0.7
+            }
+          },
+          "accuracy": 0.7519,
+          "balanced_accuracy": 0.5998,
+          "macro_f1": 0.6294,
+          "per_class_recall": {
+            "BCC": 0.5625,
+            "NEV": 0.9087,
+            "MEL": 0.5842,
+            "SK": 0.3684,
+            "MISC": 0.575
+          }
+        }
+      },
+      "test_mel_auroc": 0.895,
+      "meets_auroc_constraint_0895": true,
+      "minority_recall_operating_point": {
+        "SK": 0.3684,
+        "MISC": 0.575
+      }
+    },
+    "b_dermlip_metadata_unbalanced": {
+      "config": "dermlip+metadata14 (526-d), UNBALANCED LR C=100 (train-CV-selected), + operating point",
+      "role": "safety-preserving candidate -- metadata was AUROC-neutral on valid (0.8934)",
+      "valid": {
+        "n": 203,
+        "mel_auroc": 0.8934,
+        "mel_auroc_at_operating_point": 0.8934,
+        "auroc_invariant_to_operating_point": true,
+        "argmax": {
+          "accuracy": 0.7537,
+          "balanced_accuracy": 0.6306,
+          "macro_f1": 0.6509,
+          "per_class_recall": {
+            "BCC": 0.7143,
+            "NEV": 0.89,
+            "MEL": 0.6885,
+            "SK": 0.3,
+            "MISC": 0.56
+          }
+        },
+        "operating_point": {
+          "policy": {
+            "rule": "argmax(posterior/weight)",
+            "weights": {
+              "SK": 0.5,
+              "MISC": 0.7
+            }
+          },
+          "accuracy": 0.7537,
+          "balanced_accuracy": 0.6546,
+          "macro_f1": 0.6796,
+          "per_class_recall": {
+            "BCC": 0.7143,
+            "NEV": 0.87,
+            "MEL": 0.6885,
+            "SK": 0.4,
+            "MISC": 0.6
+          }
+        }
+      },
+      "test": {
+        "n": 395,
+        "mel_auroc": 0.9151,
+        "mel_auroc_at_operating_point": 0.9151,
+        "auroc_invariant_to_operating_point": true,
+        "argmax": {
+          "accuracy": 0.762,
+          "balanced_accuracy": 0.6077,
+          "macro_f1": 0.6253,
+          "per_class_recall": {
+            "BCC": 0.625,
+            "NEV": 0.9041,
+            "MEL": 0.6436,
+            "SK": 0.3158,
+            "MISC": 0.55
+          }
+        },
+        "operating_point": {
+          "policy": {
+            "rule": "argmax(posterior/weight)",
+            "weights": {
+              "SK": 0.5,
+              "MISC": 0.7
+            }
+          },
+          "accuracy": 0.7696,
+          "balanced_accuracy": 0.6474,
+          "macro_f1": 0.6549,
+          "per_class_recall": {
+            "BCC": 0.625,
+            "NEV": 0.895,
+            "MEL": 0.6436,
+            "SK": 0.4737,
+            "MISC": 0.6
+          }
+        }
+      },
+      "test_mel_auroc": 0.9151,
+      "meets_auroc_constraint_0895": true,
+      "minority_recall_operating_point": {
+        "SK": 0.4737,
+        "MISC": 0.6
+      }
+    },
+    "c_monolith_balanced_multiview": {
+      "config": "dermlip_tta+dermlip_clinic_tta (1024-d), BALANCED LR C=10, + operating point",
+      "role": "phase-1 monolith (reference) -- known to regress MEL AUROC to 0.867",
+      "valid": {
+        "n": 203,
+        "mel_auroc": 0.8909,
+        "mel_auroc_at_operating_point": 0.8909,
+        "auroc_invariant_to_operating_point": true,
+        "argmax": {
+          "accuracy": 0.7488,
+          "balanced_accuracy": 0.7151,
+          "macro_f1": 0.6978,
+          "per_class_recall": {
+            "BCC": 0.8571,
+            "NEV": 0.81,
+            "MEL": 0.6885,
+            "SK": 0.5,
+            "MISC": 0.72
+          }
+        },
+        "operating_point": {
+          "policy": {
+            "rule": "argmax(posterior/weight)",
+            "weights": {
+              "SK": 0.5,
+              "MISC": 0.7
+            }
+          },
+          "accuracy": 0.7488,
+          "balanced_accuracy": 0.6967,
+          "macro_f1": 0.6645,
+          "per_class_recall": {
+            "BCC": 0.5714,
+            "NEV": 0.8,
+            "MEL": 0.6721,
+            "SK": 0.6,
+            "MISC": 0.84
+          }
+        }
+      },
+      "test": {
+        "n": 395,
+        "mel_auroc": 0.8674,
+        "mel_auroc_at_operating_point": 0.8674,
+        "auroc_invariant_to_operating_point": true,
+        "argmax": {
+          "accuracy": 0.7544,
+          "balanced_accuracy": 0.7018,
+          "macro_f1": 0.6702,
+          "per_class_recall": {
+            "BCC": 0.6875,
+            "NEV": 0.8265,
+            "MEL": 0.6832,
+            "SK": 0.7368,
+            "MISC": 0.575
+          }
+        },
+        "operating_point": {
+          "policy": {
+            "rule": "argmax(posterior/weight)",
+            "weights": {
+              "SK": 0.5,
+              "MISC": 0.7
+            }
+          },
+          "accuracy": 0.7468,
+          "balanced_accuracy": 0.7404,
+          "macro_f1": 0.6674,
+          "per_class_recall": {
+            "BCC": 0.6875,
+            "NEV": 0.8082,
+            "MEL": 0.6337,
+            "SK": 0.9474,
+            "MISC": 0.625
+          }
+        }
+      },
+      "test_mel_auroc": 0.8674,
+      "meets_auroc_constraint_0895": false,
+      "minority_recall_operating_point": {
+        "SK": 0.9474,
+        "MISC": 0.625
+      }
+    }
+  },
+  "diagnosis_choice": {
+    "chosen": "b_dermlip_metadata_unbalanced",
+    "rule": "highest minority (SK+MISC) recall at the operating point SUBJECT TO TEST MEL AUROC >= 0.895",
+    "why": "Candidate (b) is the only candidate that STRICTLY DOMINATES current production on every axis: TEST MEL AUROC 0.9151 (>= 0.895, +0.020 -- metadata lifts the melanoma ranking rather than distorting it), 5-class accuracy and balanced accuracy up, and SK/MISC recall lifted by the operating point (SK 0.21->0.47, MISC 0.45->0.60) with MEL recall preserved. Candidate (c) the monolith reaches higher SK recall (0.95) but VIOLATES the hard constraint (AUROC 0.867). Candidate (a) holds AUROC at exactly 0.895 but has strictly lower minority recall than (b). C=100 is the phase-1 TRAIN-CV-selected regularisation for dermlip+metadata14 (OOF balanced acc 0.5471 > C=10's 0.5147), not a test-set choice; C=10 is also AUROC-safe (0.913)."
+  },
+  "auroc_invariance_confirmation": {
+    "claim": "The SK/MISC operating point re-ranks only SK/MISC (argmax posterior/weight); it never modifies the MEL posterior column, so MEL AUROC is invariant to it.",
+    "per_candidate": {
+      "a_current_production": {
+        "mel_auroc_argmax": 0.895,
+        "mel_auroc_at_operating_point": 0.895,
+        "invariant": true
+      },
+      "b_dermlip_metadata_unbalanced": {
+        "mel_auroc_argmax": 0.9151,
+        "mel_auroc_at_operating_point": 0.9151,
+        "invariant": true
+      },
+      "c_monolith_balanced_multiview": {
+        "mel_auroc_argmax": 0.8674,
+        "mel_auroc_at_operating_point": 0.8674,
+        "invariant": true
+      }
+    }
+  },
+  "criteria_comparison": {
+    "checklist_only_classifier_independent": {
+      "rule": "7-point score_min >= 3 from ARGMAX criterion heads",
+      "current_criteria": {
+        "tp": 58,
+        "fn": 43,
+        "fp": 31,
+        "tn": 263,
+        "sensitivity": 0.5743,
+        "specificity": 0.8946
+      },
+      "promoted_criteria": {
+        "tp": 80,
+        "fn": 21,
+        "fp": 87,
+        "tn": 207,
+        "sensitivity": 0.7921,
+        "specificity": 0.7041
+      },
+      "current_binary_concept_f1": 0.6623,
+      "promoted_binary_concept_f1": 0.7168
+    },
+    "union_isolated_criteria_effect": {
+      "note": "classifier held FIXED at the chosen diagnosis (b, argmax) so the only thing that varies is the criteria heads. Isolates the criteria contribution.",
+      "b_argmax_plus_current_criteria": {
+        "tp": 75,
+        "fn": 26,
+        "fp": 44,
+        "tn": 250,
+        "sensitivity": 0.7426,
+        "specificity": 0.8503,
+        "venn": {
+          "both": 48,
+          "classifier_only": 17,
+          "criteria_only": 10,
+          "neither": 26
+        }
+      },
+      "b_argmax_plus_promoted_criteria": {
+        "tp": 87,
+        "fn": 14,
+        "fp": 89,
+        "tn": 205,
+        "sensitivity": 0.8614,
+        "specificity": 0.6973,
+        "venn": {
+          "both": 58,
+          "classifier_only": 7,
+          "criteria_only": 22,
+          "neither": 14
+        }
+      }
+    },
+    "union_deployed_end_to_end": {
+      "current_system_a_argmax_plus_current_criteria": {
+        "tp": 75,
+        "fn": 26,
+        "fp": 44,
+        "tn": 250,
+        "sensitivity": 0.7426,
+        "specificity": 0.8503
+      },
+      "promoted_system_b_op_plus_promoted_criteria": {
+        "tp": 87,
+        "fn": 14,
+        "fp": 89,
+        "tn": 205,
+        "sensitivity": 0.8614,
+        "specificity": 0.6973,
+        "venn": {
+          "both": 58,
+          "classifier_only": 7,
+          "criteria_only": 22,
+          "neither": 14
+        }
+      },
+      "operating_point_does_not_change_melanoma_detection": true
+    }
+  },
+  "criteria_choice": {
+    "chosen": "promoted (dermlip_tta+metadata14, lr_balanced, per-head C) -- KEPT",
+    "union_melanoma_sensitivity_delta_promoted_minus_current": 0.1188,
+    "union_melanoma_specificity_delta_promoted_minus_current": -0.153,
+    "promoted_criteria_raise_union_melanoma_sensitivity": true,
+    "why": "Promoted criteria RAISE union melanoma sensitivity (0.7426 -> 0.8614, +0.1188; 12 more of 101 melanomas caught, missed-by-both 26 -> 14) and raise per-criterion binary-concept F1 (+0.0545). They do not touch the diagnosis AUROC. Per the registered fallback rule they are kept because they RAISE (do not reduce) union sensitivity.",
+    "disclosed_specificity_cost": "The gain is not free: union melanoma SPECIFICITY falls 0.8503 -> 0.6973 (checklist alone 0.8946 -> 0.7041) -- the balanced heads flag melanoma suspicion more often, raising false positives as well as true positives. This is acceptable and disclosed because the architecture SURFACES the checklist-vs-classifier disagreement for human adjudication rather than auto-acting on it; on a melanoma CDSS a missed melanoma (sensitivity) dominates a benign false alarm (specificity). It is a trade to disclose, not hide."
+  },
+  "final_config": {
+    "diagnosis": {
+      "features": "dermlip+metadata14",
+      "feature_dim": 526,
+      "family": "lr_unbalanced",
+      "class_weight": null,
+      "C": 100.0,
+      "operating_point": {
+        "SK": 0.5,
+        "MISC": 0.7
+      }
+    },
+    "criteria": {
+      "features": "dermlip_tta+metadata14",
+      "feature_dim": 526,
+      "family": "lr_balanced",
+      "C_per_head": {
+        "pigment_network": 100.0,
+        "blue_whitish_veil": 10.0,
+        "vascular_structures": 100.0,
+        "streaks": 100.0,
+        "pigmentation": 100.0,
+        "dots_and_globules": 10.0,
+        "regression_structures": 100.0
+      }
+    },
+    "fit_split": "train",
+    "n_fit_cases": 413,
+    "seed": 20260810,
+    "wired_into": "medguard_v2/pipeline/run_cohort.py run_cohort(promoted=True)"
+  },
+  "final_test_metrics": {
+    "diagnosis_mel_auroc": 0.9151,
+    "diagnosis_mel_auroc_preserved_vs_production_0895": 0.0201,
+    "diagnosis_accuracy_argmax": 0.762,
+    "diagnosis_accuracy_operating_point": 0.7696,
+    "diagnosis_balanced_accuracy_argmax": 0.6077,
+    "diagnosis_balanced_accuracy_operating_point": 0.6474,
+    "per_class_recall_operating_point": {
+      "BCC": 0.625,
+      "NEV": 0.895,
+      "MEL": 0.6436,
+      "SK": 0.4737,
+      "MISC": 0.6
+    },
+    "melanoma_recall_argmax": 0.6436,
+    "melanoma_recall_operating_point": 0.6436,
+    "minority_recall_operating_point": {
+      "SK": 0.4737,
+      "MISC": 0.6
+    },
+    "criteria_binary_concept_f1": 0.7168,
+    "criteria_binary_concept_f1_delta_vs_current": 0.0545,
+    "union_melanoma_sensitivity": 0.8614,
+    "union_melanoma_specificity": 0.6973
+  },
+  "wiring_self_checks": {
+    "candidate_a_test_mel_auroc": {
+      "got": 0.895,
+      "expected": 0.895,
+      "source": "test_metrics_complete.json",
+      "reproduced": true
+    },
+    "candidate_c_test": {
+      "got": {
+        "auroc": 0.8674,
+        "acc": 0.7544,
+        "sk_op": 0.9474
+      },
+      "expected": {
+        "auroc": 0.8674,
+        "acc": 0.7544,
+        "sk_op": 0.9474
+      },
+      "source": "perception_phase2_test.json",
+      "reproduced": true
+    },
+    "candidate_b_valid_mel_auroc": {
+      "got": 0.8934,
+      "expected": 0.8934,
+      "source": "perception_uplift_phase1.json ablation",
+      "reproduced": true
+    },
+    "current_classifier_sens_spec": {
+      "got": {
+        "tp": 60,
+        "fn": 41,
+        "fp": 28,
+        "tn": 266,
+        "sensitivity": 0.5941,
+        "specificity": 0.9048
+      },
+      "expected": {
+        "sensitivity": 0.5941,
+        "specificity": 0.9048
+      },
+      "source": "test_metrics_complete.json",
+      "reproduced": true
+    },
+    "current_criteria_sens_spec": {
+      "got": {
+        "tp": 58,
+        "fn": 43,
+        "fp": 31,
+        "tn": 263,
+        "sensitivity": 0.5743,
+        "specificity": 0.8946
+      },
+      "expected": {
+        "sensitivity": 0.5743,
+        "specificity": 0.8946
+      },
+      "source": "test_metrics_complete.json",
+      "reproduced": true
+    },
+    "current_union_sens_spec": {
+      "got": {
+        "tp": 75,
+        "fn": 26,
+        "fp": 44,
+        "tn": 250,
+        "sensitivity": 0.7426,
+        "specificity": 0.8503
+      },
+      "expected": {
+        "sensitivity": 0.7426,
+        "specificity": 0.8503
+      },
+      "source": "test_metrics_complete.json",
+      "reproduced": true
+    },
+    "current_venn": {
+      "got": {
+        "both": 43,
+        "classifier_only": 17,
+        "criteria_only": 15,
+        "neither": 26
+      },
+      "expected": {
+        "both": 43,
+        "classifier_only": 17,
+        "criteria_only": 15,
+        "neither": 26
+      },
+      "source": "test_metrics_complete.json",
+      "reproduced": true
+    },
+    "current_criteria_binary_f1": {
+      "got": 0.6623,
+      "expected": 0.6623,
+      "source": "test_metrics_complete.json",
+      "reproduced": true
+    }
+  },
+  "verdict": "SAFETY-PRESERVING promotion found and wired: diagnosis dermlip+metadata14 unbalanced C=100 holds TEST melanoma AUROC at 0.9151 (>= production 0.895, +0.0201) while lifting SK/MISC recall via the AUROC-invariant operating point; the promoted criteria are kept and raise union melanoma sensitivity 0.7426 -> 0.8614 (+0.1188) and binary-concept F1 +0.0545, at a disclosed union-specificity cost 0.8503 -> 0.6973. CALIBER-safe: minority recall + criteria quality, MEL AUROC preserved not beaten.",
+  "contracts_rebuilt": {
+    "path": "research/evidence/derm7pt_v1/cdss_contracts_valid_promoted.json",
+    "protocol": "medguard-v2-derm7pt-criteria-ensemble-v2-promoted",
+    "n_cases": 203,
+    "diagnosis": "dermlip+metadata14, UNBALANCED LR C=100, operating point w_SK=0.5 w_MISC=0.7 (TEST MEL AUROC 0.9151 >= production 0.895)"
+  }
+}

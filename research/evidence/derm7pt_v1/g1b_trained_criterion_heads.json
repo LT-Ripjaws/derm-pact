@@ -1,0 +1,132 @@
+{
+  "gate_id": "G1b_trained_criterion_heads",
+  "question": "Is the criteria layer unreadable, or was the zero-shot VLM the wrong reader?",
+  "boundaries": {
+    "encoder": "DermLIP ViT-B-16 frozen features (cached)",
+    "fit_on": "train",
+    "evaluated_on": "valid",
+    "paid_calls": 0,
+    "test_split_read": false
+  },
+  "cohort": {
+    "train": 413,
+    "valid": 203
+  },
+  "per_criterion": {
+    "pigment_network": {
+      "selected_C": 10.0,
+      "accuracy": 0.6897,
+      "balanced_accuracy": 0.6602,
+      "macro_f1": 0.6657,
+      "cohen_kappa": 0.5138,
+      "chance_accuracy_train_majority": 0.4138,
+      "lift_over_chance": 0.2759,
+      "train_majority_value": "absent"
+    },
+    "blue_whitish_veil": {
+      "selected_C": 10.0,
+      "accuracy": 0.8276,
+      "balanced_accuracy": 0.6426,
+      "macro_f1": 0.6712,
+      "cohen_kappa": 0.367,
+      "chance_accuracy_train_majority": 0.7734,
+      "lift_over_chance": 0.0542,
+      "train_majority_value": "absent"
+    },
+    "vascular_structures": {
+      "selected_C": 10.0,
+      "accuracy": 0.8128,
+      "balanced_accuracy": 0.1755,
+      "macro_f1": 0.1854,
+      "cohen_kappa": 0.1759,
+      "chance_accuracy_train_majority": 0.803,
+      "lift_over_chance": 0.0099,
+      "train_majority_value": "absent"
+    },
+    "streaks": {
+      "selected_C": 10.0,
+      "accuracy": 0.7685,
+      "balanced_accuracy": 0.6668,
+      "macro_f1": 0.6991,
+      "cohen_kappa": 0.5307,
+      "chance_accuracy_train_majority": 0.6059,
+      "lift_over_chance": 0.1626,
+      "train_majority_value": "absent"
+    },
+    "pigmentation": {
+      "selected_C": 100.0,
+      "accuracy": 0.6502,
+      "balanced_accuracy": 0.4313,
+      "macro_f1": 0.4468,
+      "cohen_kappa": 0.3682,
+      "chance_accuracy_train_majority": 0.5517,
+      "lift_over_chance": 0.0985,
+      "train_majority_value": "absent"
+    },
+    "dots_and_globules": {
+      "selected_C": 100.0,
+      "accuracy": 0.6404,
+      "balanced_accuracy": 0.6039,
+      "macro_f1": 0.6085,
+      "cohen_kappa": 0.4276,
+      "chance_accuracy_train_majority": 0.4828,
+      "lift_over_chance": 0.1576,
+      "train_majority_value": "irregular"
+    },
+    "regression_structures": {
+      "selected_C": 10.0,
+      "accuracy": 0.7488,
+      "balanced_accuracy": 0.2919,
+      "macro_f1": 0.2793,
+      "cohen_kappa": 0.0842,
+      "chance_accuracy_train_majority": 0.7488,
+      "lift_over_chance": 0.0,
+      "train_majority_value": "absent"
+    }
+  },
+  "macro_across_seven": {
+    "accuracy": 0.734,
+    "cohen_kappa": 0.3525,
+    "chance_accuracy_train_majority": 0.6256,
+    "lift_over_chance": 0.1084
+  },
+  "derived_seven_point_score": {
+    "mae": 1.335,
+    "exact_match_rate": 0.3103,
+    "within_one_rate": 0.6552,
+    "mean_signed_error": -0.9409
+  },
+  "threshold_vs_gold_score": {
+    "accuracy": 0.7783,
+    "sensitivity": 0.5333,
+    "specificity": 0.9219,
+    "confusion": {
+      "tp": 40,
+      "fn": 35,
+      "fp": 10,
+      "tn": 118
+    }
+  },
+  "threshold_vs_melanoma_diagnosis": {
+    "sensitivity": 0.5574,
+    "specificity": 0.8873,
+    "confusion": {
+      "tp": 34,
+      "fn": 27,
+      "fp": 16,
+      "tn": 126
+    }
+  },
+  "comparison_to_g1_zero_shot_vlm": {
+    "g1_macro_accuracy_strict": 0.5672,
+    "g1_macro_lift_over_chance": -0.0584,
+    "g1_macro_cohen_kappa": 0.2092,
+    "g1_score_mae": 1.7143,
+    "note": "Same chance baseline definition and the same valid split."
+  },
+  "verdict": {
+    "beats_chance": true,
+    "beats_zero_shot_vlm": true,
+    "interpretation": "If a trained head clears chance while the zero-shot VLM does not, the criteria are readable and G1 measured the reader, not the layer. The architecture would then need a trained criterion model rather than a general VLM -- a different system, and a narrower agentic claim, but a live one."
+  }
+}

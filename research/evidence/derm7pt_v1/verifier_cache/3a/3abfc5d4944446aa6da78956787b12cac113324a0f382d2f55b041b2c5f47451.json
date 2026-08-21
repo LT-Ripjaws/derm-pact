@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score after override is in the range [2, 3], but this is not supported by the contract. The contract does not provide a score calculation for overridden criteria; it only reports the original score as [0, 1]. The agent fabricated this updated score.",
+    "CRITERION ACCURACY: The agent incorrectly states that 'blue_whitish_veil' was overridden to 'present'. The contract does not support any such override \u2014 it only reports the original value as 'absent'. The agent introduced an unsupported modification.",
+    "MANAGEMENT FIDELITY: The agent states the recommendation remains 'clinical follow up' after the override. However, since the contract does not include any override logic or recalculated score, the management advice is based on fabricated data and cannot be grounded in the contract\u2019s deterministic ladder or guideline binding.",
+    "CONFLICT REPORTING: The agent does not mention conflict, but the contract states no conflict exists ('conflict.present': false). This is technically correct, but the agent\u2019s reasoning about overriding criteria introduces a hypothetical scenario not reflected in the contract, which could imply a conflict not reported."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score after override is in the range [2, 3], but this is not supported by the contract. The contract does not provide a score calculation for overridden criteria; it only reports the original score as [0, 1]. The agent fabricated this updated score.\",\n    \"CRITERION ACCURACY: The agent incorrectly states that 'blue_whitish_veil' was overridden to 'present'. The contract does not support any such override \u2014 it only reports the original value as 'absent'. The agent introduced an unsupported modification.\",\n    \"MANAGEMENT FIDELITY: The agent states the recommendation remains 'clinical follow up' after the override. However, since the contract does not include any override logic or recalculated score, the management advice is based on fabricated data and cannot be grounded in the contract\u2019s deterministic ladder or guideline binding.\",\n    \"CONFLICT REPORTING: The agent does not mention conflict, but the contract states no conflict exists ('conflict.present': false). This is technically correct, but the agent\u2019s reasoning about overriding criteria introduces a hypothetical scenario not reflected in the contract, which could imply a conflict not reported.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.114,
+  "usage": {
+    "prompt_tokens": 1135,
+    "completion_tokens": 264,
+    "total_tokens": 1399
+  }
+}

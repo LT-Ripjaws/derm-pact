@@ -1,0 +1,264 @@
+{
+  "gate_id": "G6_multiview_stacking",
+  "question": "Does a fitted ensemble over multiple views beat the hand-written union rule?",
+  "boundaries": {
+    "feature_sets": [
+      "dermlip"
+    ],
+    "views_available": [
+      "biomedclip_clinic",
+      "biomedclip_derm",
+      "dermlip",
+      "dermlip_clinic"
+    ],
+    "view_selection": "train out-of-fold AUROC",
+    "view_selection_ranking": [
+      {
+        "views": [
+          "dermlip"
+        ],
+        "n_views": 1,
+        "train_oof_auroc": 0.8765
+      },
+      {
+        "views": [
+          "dermlip",
+          "dermlip_clinic"
+        ],
+        "n_views": 2,
+        "train_oof_auroc": 0.873
+      },
+      {
+        "views": [
+          "biomedclip_derm",
+          "dermlip"
+        ],
+        "n_views": 2,
+        "train_oof_auroc": 0.8727
+      },
+      {
+        "views": [
+          "biomedclip_clinic",
+          "dermlip"
+        ],
+        "n_views": 2,
+        "train_oof_auroc": 0.8703
+      },
+      {
+        "views": [
+          "biomedclip_derm",
+          "dermlip",
+          "dermlip_clinic"
+        ],
+        "n_views": 3,
+        "train_oof_auroc": 0.8691
+      },
+      {
+        "views": [
+          "biomedclip_clinic",
+          "dermlip",
+          "dermlip_clinic"
+        ],
+        "n_views": 3,
+        "train_oof_auroc": 0.8678
+      },
+      {
+        "views": [
+          "biomedclip_clinic",
+          "biomedclip_derm",
+          "dermlip"
+        ],
+        "n_views": 3,
+        "train_oof_auroc": 0.8657
+      },
+      {
+        "views": [
+          "biomedclip_clinic",
+          "biomedclip_derm",
+          "dermlip",
+          "dermlip_clinic"
+        ],
+        "n_views": 4,
+        "train_oof_auroc": 0.8635
+      }
+    ],
+    "base_predictions": "out-of-fold on train (no stacking leakage)",
+    "selection": "all C selection inside train via cross-validation",
+    "difficulty_used_as_feature": false,
+    "difficulty_note": "expert annotation, unavailable at inference; reporting strata only",
+    "test_split_read": false,
+    "paid_calls": 0
+  },
+  "cohort": {
+    "train": 413,
+    "valid": 203,
+    "melanoma_in_valid": 61
+  },
+  "meta_feature_count": 47,
+  "melanoma": {
+    "selected_C": 100.0,
+    "auroc": 0.8852,
+    "threshold_policy": "fixed on train out-of-fold meta-predictions, applied unchanged to valid",
+    "at_train_fixed_threshold_target_sens_0_70": {
+      "target_sensitivity": 0.7,
+      "threshold": 0.2981,
+      "train_oof": {
+        "sensitivity": 0.7,
+        "specificity": 0.8824,
+        "ppv": 0.6238,
+        "confusion": {
+          "tp": 63,
+          "fn": 27,
+          "fp": 38,
+          "tn": 285
+        }
+      },
+      "valid": {
+        "sensitivity": 0.7049,
+        "specificity": 0.9014,
+        "ppv": 0.7544,
+        "confusion": {
+          "tp": 43,
+          "fn": 18,
+          "fp": 14,
+          "tn": 128
+        }
+      }
+    },
+    "at_train_fixed_threshold_youden_j": {
+      "threshold": 0.2672,
+      "train_oof_youden_j": 0.6015,
+      "train_oof": {
+        "sensitivity": 0.7222,
+        "specificity": 0.8793,
+        "ppv": 0.625,
+        "confusion": {
+          "tp": 65,
+          "fn": 25,
+          "fp": 39,
+          "tn": 284
+        }
+      },
+      "valid": {
+        "sensitivity": 0.7049,
+        "specificity": 0.8944,
+        "ppv": 0.7414,
+        "confusion": {
+          "tp": 43,
+          "fn": 18,
+          "fp": 15,
+          "tn": 127
+        }
+      }
+    },
+    "at_argmax_0_5": {
+      "sensitivity": 0.5738,
+      "specificity": 0.9789,
+      "ppv": 0.9211,
+      "confusion": {
+        "tp": 35,
+        "fn": 26,
+        "fp": 3,
+        "tn": 139
+      }
+    }
+  },
+  "management": {
+    "representation": "raw_features",
+    "representation_selected_by": "train out-of-fold quadratic-weighted kappa",
+    "representation_ranking": [
+      {
+        "representation": "raw_features",
+        "selected_C": 100.0,
+        "train_oof_qwk": 0.5899
+      },
+      {
+        "representation": "raw_plus_meta",
+        "selected_C": 1.0,
+        "train_oof_qwk": 0.5181
+      },
+      {
+        "representation": "raw_plus_meta",
+        "selected_C": 10.0,
+        "train_oof_qwk": 0.5121
+      },
+      {
+        "representation": "meta_features",
+        "selected_C": 10.0,
+        "train_oof_qwk": 0.5105
+      },
+      {
+        "representation": "meta_features",
+        "selected_C": 1.0,
+        "train_oof_qwk": 0.493
+      },
+      {
+        "representation": "meta_features",
+        "selected_C": 100.0,
+        "train_oof_qwk": 0.4884
+      },
+      {
+        "representation": "raw_features",
+        "selected_C": 10.0,
+        "train_oof_qwk": 0.4793
+      },
+      {
+        "representation": "raw_plus_meta",
+        "selected_C": 100.0,
+        "train_oof_qwk": 0.4659
+      },
+      {
+        "representation": "raw_plus_meta",
+        "selected_C": 0.1,
+        "train_oof_qwk": 0.4344
+      },
+      {
+        "representation": "meta_features",
+        "selected_C": 0.1,
+        "train_oof_qwk": 0.4244
+      },
+      {
+        "representation": "raw_features",
+        "selected_C": 1.0,
+        "train_oof_qwk": 0.2221
+      },
+      {
+        "representation": "raw_features",
+        "selected_C": 0.1,
+        "train_oof_qwk": 0.0029
+      }
+    ],
+    "selected_C": 100.0,
+    "accuracy": 0.6946,
+    "balanced_accuracy": 0.6159,
+    "quadratic_weighted_kappa": 0.4648,
+    "melanoma_under_managed": 8,
+    "melanoma_under_management_rate": 0.1311
+  },
+  "reference_points": {
+    "classifier_alone": {
+      "sensitivity": 0.5574,
+      "specificity": 0.9437
+    },
+    "criteria_alone": {
+      "sensitivity": 0.5574,
+      "specificity": 0.8944
+    },
+    "hand_written_union": {
+      "sensitivity": 0.7049,
+      "specificity": 0.8592
+    },
+    "management_qwk_dermlip_probe": 0.655,
+    "management_qwk_gold_criteria": 0.631,
+    "note": "All on the same valid split; see G2/G5 and the perception baseline."
+  },
+  "verdict": {
+    "threshold_is_honest": true,
+    "valid_sensitivity_at_train_fixed_threshold": 0.7049,
+    "valid_specificity_at_train_fixed_threshold": 0.9014,
+    "youden_j_stacked": 0.6063,
+    "youden_j_hand_written_union": 0.5641,
+    "beats_union_on_youden_j": true,
+    "caveat": "View subset, meta-C and the threshold are now all chosen on train; valid is scored once. The union comparator is a fixed rule with no tunable threshold, so the two are compared by Youden's J rather than by holding one axis constant. Register this configuration before touching test."
+  }
+}

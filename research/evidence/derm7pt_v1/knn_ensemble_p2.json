@@ -1,0 +1,927 @@
+{
+  "protocol": "derm7pt-p2-knn-retrieval-ensemble-v1",
+  "generated_at": "2026-08-14T23:18:30",
+  "one_test_read": true,
+  "authorization": "TEST is read once, here, for EVALUATION only. Every base model and kNN bank is fit on TRAIN; TEST is scored, never fit. k (diag + criteria), each view subset and each meta-C are selected inside TRAIN by cross-validation. The expert difficulty label is never a feature.",
+  "additive_arm_note": "ADDITIVE ensemble arm reported ALONGSIDE the promoted perception; it does not overwrite run_cohort(promoted=True). No promoted artifact is modified.",
+  "caliber_safe_framing": "NOT an accuracy-SOTA claim and NOT a claim to beat any prior frozen-probe work (CALIBER/DERM-GATE is our own paper on the same frozen DermLIP probe). The retrieval arm's intended value was (a) minority-class (SK/MISC) recall from a training-free kNN readout (RAC, CVPR2022; kNN-augmented classification, Jia2021), (b) a second-opinion / calibration signal, and (c) case-based explanation. Melanoma AUROC is a guardrail (must not regress below the promoted 0.9151), not a headline.",
+  "seed": 20260810,
+  "cohort": {
+    "train": 413,
+    "test": 395,
+    "test_class_support": {
+      "BCC": 16,
+      "NEV": 219,
+      "MISC": 40,
+      "MEL": 101,
+      "SK": 19
+    }
+  },
+  "memory_banks": {
+    "diagnosis": {
+      "name": "diagnosis@dermlip",
+      "n_entries": 413,
+      "feature_dim": 512,
+      "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+      "hash_algo": "sha256",
+      "label_fields": [
+        "diagnosis"
+      ],
+      "retrieval": "exact cosine (unit-normalised dot product); no ANN, no randomness",
+      "feature_space": "dermlip (512-d frozen image embedding; image-only retrieval)"
+    },
+    "criteria": {
+      "name": "criteria@dermlip_tta",
+      "n_entries": 413,
+      "feature_dim": 512,
+      "bank_hash": "24dd3c91af00edafd0b2188574ed2ef4dca3f464420e9244fda29e200a09be60",
+      "hash_algo": "sha256",
+      "label_fields": [
+        "blue_whitish_veil",
+        "dots_and_globules",
+        "pigment_network",
+        "pigmentation",
+        "regression_structures",
+        "streaks",
+        "vascular_structures"
+      ],
+      "retrieval": "exact cosine (unit-normalised dot product); no ANN, no randomness",
+      "feature_space": "dermlip_tta (512-d frozen TTA image embedding; image-only retrieval)"
+    },
+    "weighting": "similarity-weighted (non-negative cosine); k is the only knob"
+  },
+  "retrieval_feature_space": {
+    "decision": "kNN retrieval banks read the pure frozen IMAGE embedding (dermlip / dermlip_tta), NOT the promoted dermlip+metadata concatenation.",
+    "argued_deviation_from_brief": "The brief specified dermlip+metadata for the bank. Verified premise failure: in RAW COSINE the 14-d one-hot metadata block (squared-norm 3.0) swamps the unit-norm dermlip block (squared-norm 1.0), so metadata contributes ~75% of the similarity ceiling -- retrieval would rank by demographic/location match, not lesion appearance. A linear probe reweights each dimension and is immune; cosine kNN cannot. RAC (CVPR2022) and kNN-augmented classification (Jia2021) retrieve on the visual embedding. Image-only retrieval is the faithful AND strictly stronger choice for the kNN view; view A still reads the full 526-d promoted space, so the probe comparison is unchanged.",
+    "block_norms_concatenated_space": {
+      "dermlip_block_l2": 1.0,
+      "metadata14_block_l2": 1.7321,
+      "metadata_share_of_cosine_ceiling": 0.75
+    },
+    "sensitivity_knn_diag_alone_at_selected_k": {
+      "k": 1,
+      "dermlip_only_primary": {
+        "mel_auroc": 0.6987,
+        "sk_recall_argmax": 0.1053,
+        "misc_recall_argmax": 0.425,
+        "balanced_accuracy_argmax": 0.538
+      },
+      "dermlip_plus_metadata_dominated": {
+        "mel_auroc": 0.6633,
+        "sk_recall_argmax": 0.1053,
+        "misc_recall_argmax": 0.325,
+        "balanced_accuracy_argmax": 0.4406
+      },
+      "verdict": "image-only retrieval dominates the metadata-concatenated variant on MEL AUROC, confirming the deviation; NEITHER beats the linear probe"
+    }
+  },
+  "k_selection": {
+    "metric_diagnosis": "train out-of-fold balanced accuracy",
+    "metric_criteria": "train out-of-fold macro binary-concept F1",
+    "grid": [
+      1,
+      3,
+      5,
+      7,
+      10,
+      15,
+      20,
+      30
+    ],
+    "k_diag_selected": 1,
+    "k_crit_selected": 3,
+    "k_diag_table": [
+      {
+        "k": 1,
+        "oof_balanced_accuracy": 0.491,
+        "oof_accuracy": 0.6925,
+        "oof_sk_recall": 0.25,
+        "oof_misc_recall": 0.1875
+      },
+      {
+        "k": 3,
+        "oof_balanced_accuracy": 0.4452,
+        "oof_accuracy": 0.707,
+        "oof_sk_recall": 0.1875,
+        "oof_misc_recall": 0.0938
+      },
+      {
+        "k": 5,
+        "oof_balanced_accuracy": 0.4141,
+        "oof_accuracy": 0.7119,
+        "oof_sk_recall": 0.125,
+        "oof_misc_recall": 0.0938
+      },
+      {
+        "k": 7,
+        "oof_balanced_accuracy": 0.4002,
+        "oof_accuracy": 0.7094,
+        "oof_sk_recall": 0.0625,
+        "oof_misc_recall": 0.0938
+      },
+      {
+        "k": 10,
+        "oof_balanced_accuracy": 0.3591,
+        "oof_accuracy": 0.7119,
+        "oof_sk_recall": 0.0625,
+        "oof_misc_recall": 0.0938
+      },
+      {
+        "k": 15,
+        "oof_balanced_accuracy": 0.3299,
+        "oof_accuracy": 0.6925,
+        "oof_sk_recall": 0.0,
+        "oof_misc_recall": 0.0625
+      },
+      {
+        "k": 20,
+        "oof_balanced_accuracy": 0.3247,
+        "oof_accuracy": 0.7022,
+        "oof_sk_recall": 0.0,
+        "oof_misc_recall": 0.0625
+      },
+      {
+        "k": 30,
+        "oof_balanced_accuracy": 0.3088,
+        "oof_accuracy": 0.7046,
+        "oof_sk_recall": 0.0,
+        "oof_misc_recall": 0.0312
+      }
+    ],
+    "k_crit_table": [
+      {
+        "k": 3,
+        "oof_macro_binary_f1": 0.6386
+      },
+      {
+        "k": 5,
+        "oof_macro_binary_f1": 0.6277
+      },
+      {
+        "k": 10,
+        "oof_macro_binary_f1": 0.6173
+      },
+      {
+        "k": 1,
+        "oof_macro_binary_f1": 0.6162
+      },
+      {
+        "k": 7,
+        "oof_macro_binary_f1": 0.6149
+      },
+      {
+        "k": 15,
+        "oof_macro_binary_f1": 0.607
+      },
+      {
+        "k": 20,
+        "oof_macro_binary_f1": 0.5894
+      },
+      {
+        "k": 30,
+        "oof_macro_binary_f1": 0.575
+      }
+    ]
+  },
+  "view_ablation": {
+    "views": {
+      "A": "probe_diag",
+      "B": "knn_diag",
+      "C": "criteria_path",
+      "D": "knn_criteria"
+    },
+    "mel_vs_rest_endpoint": {
+      "selection_metric": "train out-of-fold melanoma-vs-rest AUROC (g6 criterion)",
+      "meta_learner": "binary MEL-vs-rest LogisticRegression over stacked OOF base features",
+      "probe_alone_train_oof_score": 0.8402,
+      "marginal_added_to_probe": {
+        "knn_diag": 0.0106,
+        "criteria_path": 0.0338,
+        "knn_criteria": 0.0041
+      },
+      "marginal_leave_one_out": {
+        "probe_diag": 0.0018,
+        "knn_diag": -0.0022,
+        "criteria_path": 0.0225,
+        "knn_criteria": -0.0036
+      },
+      "negatives_do_not_earn_place": [],
+      "subset_table": [
+        {
+          "views": [
+            "probe_diag",
+            "criteria_path"
+          ],
+          "view_ids": [
+            "A",
+            "C"
+          ],
+          "n_views": 2,
+          "score": 0.874
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag",
+            "criteria_path"
+          ],
+          "view_ids": [
+            "A",
+            "B",
+            "C"
+          ],
+          "n_views": 3,
+          "score": 0.8723
+        },
+        {
+          "views": [
+            "probe_diag",
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "n_views": 3,
+          "score": 0.8709
+        },
+        {
+          "views": [
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "C",
+            "D"
+          ],
+          "n_views": 2,
+          "score": 0.8688
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag",
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "n_views": 4,
+          "score": 0.8687
+        },
+        {
+          "views": [
+            "knn_diag",
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "B",
+            "C",
+            "D"
+          ],
+          "n_views": 3,
+          "score": 0.8669
+        },
+        {
+          "views": [
+            "knn_diag",
+            "criteria_path"
+          ],
+          "view_ids": [
+            "B",
+            "C"
+          ],
+          "n_views": 2,
+          "score": 0.8647
+        },
+        {
+          "views": [
+            "criteria_path"
+          ],
+          "view_ids": [
+            "C"
+          ],
+          "n_views": 1,
+          "score": 0.8633
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag"
+          ],
+          "view_ids": [
+            "A",
+            "B"
+          ],
+          "n_views": 2,
+          "score": 0.8508
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "B",
+            "D"
+          ],
+          "n_views": 3,
+          "score": 0.8462
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "D"
+          ],
+          "n_views": 2,
+          "score": 0.8443
+        },
+        {
+          "views": [
+            "probe_diag"
+          ],
+          "view_ids": [
+            "A"
+          ],
+          "n_views": 1,
+          "score": 0.8402
+        },
+        {
+          "views": [
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "D"
+          ],
+          "n_views": 1,
+          "score": 0.803
+        },
+        {
+          "views": [
+            "knn_diag",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "B",
+            "D"
+          ],
+          "n_views": 2,
+          "score": 0.803
+        },
+        {
+          "views": [
+            "knn_diag"
+          ],
+          "view_ids": [
+            "B"
+          ],
+          "n_views": 1,
+          "score": 0.6724
+        }
+      ],
+      "chosen_subset": {
+        "views": [
+          "probe_diag",
+          "criteria_path"
+        ],
+        "view_ids": [
+          "A",
+          "C"
+        ],
+        "train_oof_score": 0.874
+      },
+      "meta_C_selection": {
+        "grid": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "selected_C": 0.1,
+        "table": [
+          {
+            "C": 0.1,
+            "train_oof_mel_auroc": 0.8796
+          },
+          {
+            "C": 1.0,
+            "train_oof_mel_auroc": 0.874
+          },
+          {
+            "C": 10.0,
+            "train_oof_mel_auroc": 0.866
+          },
+          {
+            "C": 100.0,
+            "train_oof_mel_auroc": 0.8642
+          }
+        ]
+      }
+    },
+    "five_class_endpoint": {
+      "selection_metric": "train out-of-fold balanced accuracy (5-class)",
+      "meta_learner": "multinomial 5-class LogisticRegression over stacked OOF base features",
+      "probe_alone_train_oof_score": 0.4854,
+      "marginal_added_to_probe": {
+        "knn_diag": -0.0006,
+        "criteria_path": 0.0155,
+        "knn_criteria": -0.0065
+      },
+      "marginal_leave_one_out": {
+        "probe_diag": 0.0536,
+        "knn_diag": -0.0095,
+        "criteria_path": -0.0119,
+        "knn_criteria": -0.018
+      },
+      "negatives_do_not_earn_place": [
+        "knn_criteria",
+        "knn_diag"
+      ],
+      "subset_table": [
+        {
+          "views": [
+            "probe_diag",
+            "criteria_path"
+          ],
+          "view_ids": [
+            "A",
+            "C"
+          ],
+          "n_views": 2,
+          "score": 0.5009
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag",
+            "criteria_path"
+          ],
+          "view_ids": [
+            "A",
+            "B",
+            "C"
+          ],
+          "n_views": 3,
+          "score": 0.497
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "B",
+            "D"
+          ],
+          "n_views": 3,
+          "score": 0.4909
+        },
+        {
+          "views": [
+            "probe_diag",
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "n_views": 3,
+          "score": 0.4885
+        },
+        {
+          "views": [
+            "probe_diag"
+          ],
+          "view_ids": [
+            "A"
+          ],
+          "n_views": 1,
+          "score": 0.4854
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag"
+          ],
+          "view_ids": [
+            "A",
+            "B"
+          ],
+          "n_views": 2,
+          "score": 0.4848
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_diag",
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "n_views": 4,
+          "score": 0.479
+        },
+        {
+          "views": [
+            "probe_diag",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "A",
+            "D"
+          ],
+          "n_views": 2,
+          "score": 0.4789
+        },
+        {
+          "views": [
+            "knn_diag"
+          ],
+          "view_ids": [
+            "B"
+          ],
+          "n_views": 1,
+          "score": 0.4613
+        },
+        {
+          "views": [
+            "knn_diag",
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "B",
+            "C",
+            "D"
+          ],
+          "n_views": 3,
+          "score": 0.4254
+        },
+        {
+          "views": [
+            "knn_diag",
+            "criteria_path"
+          ],
+          "view_ids": [
+            "B",
+            "C"
+          ],
+          "n_views": 2,
+          "score": 0.4089
+        },
+        {
+          "views": [
+            "knn_diag",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "B",
+            "D"
+          ],
+          "n_views": 2,
+          "score": 0.393
+        },
+        {
+          "views": [
+            "criteria_path",
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "C",
+            "D"
+          ],
+          "n_views": 2,
+          "score": 0.3024
+        },
+        {
+          "views": [
+            "criteria_path"
+          ],
+          "view_ids": [
+            "C"
+          ],
+          "n_views": 1,
+          "score": 0.2963
+        },
+        {
+          "views": [
+            "knn_criteria"
+          ],
+          "view_ids": [
+            "D"
+          ],
+          "n_views": 1,
+          "score": 0.2831
+        }
+      ],
+      "chosen_subset": {
+        "views": [
+          "probe_diag",
+          "criteria_path"
+        ],
+        "view_ids": [
+          "A",
+          "C"
+        ],
+        "train_oof_score": 0.5009
+      },
+      "meta_C_selection": {
+        "grid": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "selected_C": 1.0,
+        "table": [
+          {
+            "C": 1.0,
+            "train_oof_balanced_accuracy": 0.5009
+          },
+          {
+            "C": 10.0,
+            "train_oof_balanced_accuracy": 0.4908
+          },
+          {
+            "C": 100.0,
+            "train_oof_balanced_accuracy": 0.49
+          },
+          {
+            "C": 0.1,
+            "train_oof_balanced_accuracy": 0.3089
+          }
+        ]
+      }
+    },
+    "negatives_on_both_endpoints": []
+  },
+  "test_metrics": {
+    "note": "One TEST read (n=395). All selection above is train/CV only.",
+    "mel_vs_rest": {
+      "fused_stacker_auroc": 0.8933,
+      "chosen_views": [
+        "probe_diag",
+        "criteria_path"
+      ],
+      "meta_C": 0.1,
+      "promoted_probe_raw_auroc": 0.9151,
+      "probe_through_same_stacker_auroc": 0.8883,
+      "stacking_cost_probe_raw_minus_stacked": 0.0268,
+      "fused_minus_probe_raw": -0.0218,
+      "fused_operating_point_train_fixed": {
+        "target_sensitivity_train": 0.85,
+        "threshold": 0.1942,
+        "tp": 84,
+        "fn": 17,
+        "fp": 60,
+        "tn": 234,
+        "sensitivity": 0.8317,
+        "specificity": 0.7959
+      },
+      "delong_raw_probe_vs_fused": {
+        "auc_raw_probe": 0.9151,
+        "auc_fused": 0.8933,
+        "difference": 0.0217,
+        "p_value": 0.0369,
+        "note": "positive difference = raw probe ranks melanomas better than the fused stacker"
+      },
+      "note": "Headline MEL AUROC is the BINARY stacker (g6's melanoma-endpoint design). The probe's RAW MEL posterior already ranks at 0.9151; re-fitting any stacker on the squashed posteriors ranks slightly WORSE on test (see probe_through_same_stacker_auroc) -- a structural cost of stacking posteriors, not a fault of the extra views."
+    },
+    "five_class": {
+      "fused_argmax": {
+        "accuracy": 0.7696,
+        "balanced_accuracy": 0.5953,
+        "macro_f1": 0.6166,
+        "per_class_recall": {
+          "BCC": 0.6875,
+          "NEV": 0.9178,
+          "MEL": 0.6634,
+          "SK": 0.1579,
+          "MISC": 0.55
+        }
+      },
+      "fused_mel_auroc_multinomial_column": 0.8924,
+      "chosen_views": [
+        "probe_diag",
+        "criteria_path"
+      ],
+      "meta_C": 1.0,
+      "promoted_probe_argmax": {
+        "accuracy": 0.762,
+        "balanced_accuracy": 0.6077,
+        "macro_f1": 0.6253,
+        "per_class_recall": {
+          "BCC": 0.625,
+          "NEV": 0.9041,
+          "MEL": 0.6436,
+          "SK": 0.3158,
+          "MISC": 0.55
+        }
+      },
+      "knn_diag_alone_argmax": {
+        "accuracy": 0.6886,
+        "balanced_accuracy": 0.538,
+        "macro_f1": 0.5322,
+        "per_class_recall": {
+          "BCC": 0.75,
+          "NEV": 0.8356,
+          "MEL": 0.5743,
+          "SK": 0.1053,
+          "MISC": 0.425
+        }
+      },
+      "deltas_fused_minus_probe_argmax": {
+        "accuracy": 0.0076,
+        "balanced_accuracy": -0.0124,
+        "sk_recall": -0.1579,
+        "misc_recall": 0.0,
+        "mel_recall": 0.0198
+      },
+      "operating_point_caveat": "The promoted SK/MISC operating point is calibrated to the promoted probe posterior; it is valid for promoted_probe_alone (a wiring check) but not for the fused/knn posteriors, so the fused five-class numbers above are ARGMAX."
+    },
+    "promoted_probe_alone": {
+      "n": 395,
+      "mel_auroc": 0.9151,
+      "argmax": {
+        "accuracy": 0.762,
+        "balanced_accuracy": 0.6077,
+        "macro_f1": 0.6253,
+        "per_class_recall": {
+          "BCC": 0.625,
+          "NEV": 0.9041,
+          "MEL": 0.6436,
+          "SK": 0.3158,
+          "MISC": 0.55
+        }
+      },
+      "operating_point": {
+        "weights": {
+          "SK": 0.5,
+          "MISC": 0.7
+        },
+        "accuracy": 0.7696,
+        "balanced_accuracy": 0.6474,
+        "macro_f1": 0.6549,
+        "per_class_recall": {
+          "BCC": 0.625,
+          "NEV": 0.895,
+          "MEL": 0.6436,
+          "SK": 0.4737,
+          "MISC": 0.6
+        }
+      },
+      "role": "current promoted production reader (reference; op valid here)"
+    },
+    "knn_diag_alone": {
+      "n": 395,
+      "mel_auroc": 0.6987,
+      "argmax": {
+        "accuracy": 0.6886,
+        "balanced_accuracy": 0.538,
+        "macro_f1": 0.5322,
+        "per_class_recall": {
+          "BCC": 0.75,
+          "NEV": 0.8356,
+          "MEL": 0.5743,
+          "SK": 0.1053,
+          "MISC": 0.425
+        }
+      },
+      "operating_point": {
+        "weights": {
+          "SK": 0.5,
+          "MISC": 0.7
+        },
+        "accuracy": 0.6886,
+        "balanced_accuracy": 0.538,
+        "macro_f1": 0.5322,
+        "per_class_recall": {
+          "BCC": 0.75,
+          "NEV": 0.8356,
+          "MEL": 0.5743,
+          "SK": 0.1053,
+          "MISC": 0.425
+        }
+      },
+      "k": 1,
+      "role": "training-free retrieval readout (RAC test)"
+    }
+  },
+  "criteria_endpoints_test": {
+    "promoted_linear_criteria": {
+      "binary_concept_f1": 0.7168,
+      "checklist_mel": {
+        "tp": 80,
+        "fn": 21,
+        "fp": 87,
+        "tn": 207,
+        "sensitivity": 0.7921,
+        "specificity": 0.7041
+      }
+    },
+    "knn_criteria": {
+      "binary_concept_f1": 0.6558,
+      "binary_concept_f1_delta_vs_promoted": -0.061,
+      "checklist_mel": {
+        "tp": 72,
+        "fn": 29,
+        "fp": 77,
+        "tn": 217,
+        "sensitivity": 0.7129,
+        "specificity": 0.7381
+      },
+      "k": 3
+    },
+    "verdict": "kNN criteria do NOT beat the promoted linear criterion heads on binary-concept F1"
+  },
+  "rac_tail_class_hypothesis": {
+    "claim": "RAC / kNN-augmented classification predict a training-free kNN readout helps TAIL classes specifically. Tested on SK (test n=19) and MISC (test n=40).",
+    "knn_alone_vs_probe_alone": {
+      "primary_basis": "argmax per-class recall (operating point is probe-calibrated -> secondary)",
+      "SK": {
+        "knn_alone": 0.1053,
+        "probe_alone": 0.3158,
+        "delta": -0.2105
+      },
+      "MISC": {
+        "knn_alone": 0.425,
+        "probe_alone": 0.55,
+        "delta": -0.125
+      },
+      "secondary_operating_point": {
+        "SK": {
+          "knn_alone": 0.1053,
+          "probe_alone": 0.4737
+        },
+        "MISC": {
+          "knn_alone": 0.425,
+          "probe_alone": 0.6
+        }
+      }
+    },
+    "confirmed": false,
+    "verdict": "kNN-alone does NOT beat the linear probe on tail-class recall (either class, argmax or operating point) -- RAC hypothesis REFUTED on this split, in BOTH the image-only and metadata-concatenated retrieval spaces; reported as a negative"
+  },
+  "safety_verdict": {
+    "hard_constraint": "fused TEST melanoma-vs-rest AUROC >= promoted probe-alone 0.9151",
+    "fused_stacker_test_mel_auroc": 0.8933,
+    "promoted_probe_raw_auroc": 0.9151,
+    "mel_guard_held": false,
+    "structural_finding": "No stacked configuration preserves the raw probe's 0.9151: even the probe posterior ALONE through the binary stacker reaches only 0.8883, because a meta-LR fit to train log-loss over SQUASHED posteriors does not reproduce the raw MEL-column ranking on test. The kNN/criteria views do not close this gap.",
+    "recommendation": "DO NOT SHIP the fused arm as the melanoma reader: it regresses MEL AUROC below the 0.9151 guardrail (DeLong p<0.05). Keep the promoted probe (raw MEL posterior) as the melanoma reader. No kNN view is SELECTED on either endpoint -- both are strict negatives on the 5-class endpoint and redundant (negative leave-one-out) on the melanoma endpoint. The retrieval arm's only defensible standalone value is case-based explanation (XAI), not accuracy/recall/AUROC."
+  },
+  "wiring_self_checks": {
+    "probe_test_mel_auroc": {
+      "got": 0.9151,
+      "expected": 0.9151,
+      "reproduced": true
+    },
+    "probe_test_acc_argmax": {
+      "got": 0.762,
+      "expected": 0.762,
+      "reproduced": true
+    },
+    "probe_test_acc_op": {
+      "got": 0.7696,
+      "expected": 0.7696,
+      "reproduced": true
+    },
+    "probe_test_sk_recall_op": {
+      "got": 0.4737,
+      "expected": 0.4737,
+      "reproduced": true
+    },
+    "probe_test_misc_recall_op": {
+      "got": 0.6,
+      "expected": 0.6,
+      "reproduced": true
+    },
+    "promoted_criteria_binary_f1": {
+      "got": 0.7168,
+      "expected": 0.7168,
+      "reproduced": true
+    }
+  }
+}

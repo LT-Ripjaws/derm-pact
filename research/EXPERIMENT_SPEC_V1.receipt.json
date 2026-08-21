@@ -1,0 +1,41 @@
+{
+  "schema_version": "medguard-design-freeze-receipt-v1",
+  "spec_id": "medguard-derm-evidence-contract-h2h-v1",
+  "created": "2026-07-16",
+  "hash_convention": "SHA-256 of raw file bytes exactly as stored",
+  "status": "design_frozen_artifacts_pending",
+  "files": [
+    {
+      "path": "research/EXPERIMENT_SPEC_V1.json",
+      "bytes": 15233,
+      "sha256": "37e8d5912180f5fa4246b53f15a2e52a39904d2df22b9d42f1893652ec1a485b"
+    },
+    {
+      "path": "research/PREREGISTRATION.json",
+      "bytes": 10573,
+      "sha256": "1e4e2bfe69800ac79d55cd55ba8d68329af7caf8d37440badc78aa9b21b0b43a"
+    },
+    {
+      "path": "notes/MEDGUARD_MASTER_EXECUTION_PLAN.md",
+      "bytes": 11188,
+      "sha256": "f82df460086123dfb75b6dd05bef082cc8113f8ef947ca74906e5bf19020fcfd"
+    },
+    {
+      "path": "notes/TARGETS_TO_BEAT.md",
+      "bytes": 14034,
+      "sha256": "fad4cdf8da5711c2703310f94eb3c4924470f4b0aefc0ea53745ea093f0b5885"
+    },
+    {
+      "path": "research/RIVAL_LEDGER.json",
+      "bytes": 14380,
+      "sha256": "dd15daf3cf58367ed022e8f32df12ca51edbc1236afee0dd9248436f6c79d46e"
+    },
+    {
+      "path": "research/RESULTS_LEDGER.json",
+      "bytes": 344881,
+      "sha256": "883f0c44849196c84fd357ebd19514bae1c4c079896453996ce217415bd9947c"
+    }
+  ],
+  "change_control": "If any pinned file changes, this receipt becomes historical. Create a new specification/receipt version and state the reason; never overwrite v1 after viewing current-paper results.",
+  "authorization": "This receipt freezes the design only. It does not authorize paid generation or sealed-test access."
+}

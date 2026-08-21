@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score recomputed to 3 after overriding 'blue_whitish_veil' to 'present', but the contract does not provide any information about how scores change when criteria are overridden. The original score was 1, and there is no evidence in the contract that changing one criterion (which originally scored 0) to 'present' would add 2 points (since max_points for blue_whitish_veil is 2). This implies a fabricated score calculation.",
+    "CRITERION ACCURACY: The agent overrides 'blue_whitish_veil' from 'absent' to 'present', but the contract does not allow for such overrides; it only reports the original values. The agent's computation of new points based on this override is unsupported by the provided data.",
+    "MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision' after the override. However, the contract's guideline section explicitly states that there are no recommendations for 'NEV', and the criteria-implied action was 'clinical follow up'. There is no deterministic ladder or guideline binding in the contract that supports a shift to 'excision' based on score threshold alone. Thus, the management advice is fabricated.",
+    "CONFLICT REPORTING: The agent reports 'conflict state: no conflict', which matches the contract's conflict state. However, since the agent introduced an override not present in the contract, the conflict status may no longer be valid \u2014 but the contract does not support evaluating conflicts under overrides, so reporting 'no conflict' is technically consistent with the contract\u2019s original state, though misleading given the override."
+  ],
+  "confidence": "low",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score recomputed to 3 after overriding 'blue_whitish_veil' to 'present', but the contract does not provide any information about how scores change when criteria are overridden. The original score was 1, and there is no evidence in the contract that changing one criterion (which originally scored 0) to 'present' would add 2 points (since max_points for blue_whitish_veil is 2). This implies a fabricated score calculation.\",\n    \"CRITERION ACCURACY: The agent overrides 'blue_whitish_veil' from 'absent' to 'present', but the contract does not allow for such overrides; it only reports the original values. The agent's computation of new points based on this override is unsupported by the provided data.\",\n    \"MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision' after the override. However, the contract's guideline section explicitly states that there are no recommendations for 'NEV', and the criteria-implied action was 'clinical follow up'. There is no deterministic ladder or guideline binding in the contract that supports a shift to 'excision' based on score threshold alone. Thus, the management advice is fabricated.\",\n    \"CONFLICT REPORTING: The agent reports 'conflict state: no conflict', which matches the contract's conflict state. However, since the agent introduced an override not present in the contract, the conflict status may no longer be valid \u2014 but the contract does not support evaluating conflicts under overrides, so reporting 'no conflict' is technically consistent with the contract\u2019s original state, though misleading given the override.\"\n  ],\n  \"confidence\": \"low\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.26,
+  "usage": {
+    "prompt_tokens": 1180,
+    "completion_tokens": 363,
+    "total_tokens": 1543
+  }
+}

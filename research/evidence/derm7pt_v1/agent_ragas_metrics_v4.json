@@ -1,0 +1,433 @@
+{
+  "protocol": "E5b_ragas_agent_metrics_v3",
+  "agent_results_file": "agent_eval_report_v4.json",
+  "prompt_version": "unknown",
+  "n_rows_total": 599,
+  "n_out_of_scope": 203,
+  "n_contract_grounded": 362,
+  "n_guideline_scorable": 34,
+  "n_scored_faithfulness": 32,
+  "n_scored_relevancy": 34,
+  "faithfulness": 0.9414,
+  "faithfulness_detail": {
+    "mean": 0.9414,
+    "answered_mean": 0.9414,
+    "assessment_mean": 0.9414,
+    "n_assessment_scored": 32,
+    "overall_mean": 0.886,
+    "coverage": 0.9412,
+    "n_scored": 32,
+    "n_samples": 34,
+    "per_sample": [
+      0.8333,
+      1.0,
+      null,
+      0.5833,
+      0.8333,
+      0.8333,
+      0.8333,
+      1.0,
+      1.0,
+      null,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.8333,
+      1.0,
+      1.0,
+      0.875
+    ],
+    "per_sample_scope": [
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment",
+      "assessment"
+    ]
+  },
+  "answer_relevancy": 0.9029,
+  "answer_relevancy_detail": {
+    "mean": 0.9029,
+    "coverage": 1.0,
+    "n_scored": 34,
+    "n_samples": 34
+  },
+  "grounding_analysis": {
+    "guideline_grounded": 31,
+    "mixed_grounded": 3,
+    "contract_only": 362
+  },
+  "judge_model": "openai/gpt-oss-20b",
+  "per_sample": [
+    {
+      "case_id": "derm7pt-2",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 0.8333,
+      "scope": "assessment",
+      "answer_relevancy": 0.85,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-598",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-14",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": null,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-602",
+      "kind": "why",
+      "grounding": "mixed",
+      "faithfulness": 0.5833,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-20",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 0.8333,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-26",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 0.8333,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-37",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 0.8333,
+      "scope": "assessment",
+      "answer_relevancy": 0.85,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-614",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-626",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-632",
+      "kind": "why",
+      "grounding": "mixed",
+      "faithfulness": null,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-654",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-667",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-678",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-682",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-692",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-699",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-204",
+      "kind": "why",
+      "grounding": "mixed",
+      "faithfulness": 0.5,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-701",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-719",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-740",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-743",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-750",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-772",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-774",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-779",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-790",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-803",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-805",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-807",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.95,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-809",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-520",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 0.8333,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-950",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-955",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 1.0,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    },
+    {
+      "case_id": "derm7pt-966",
+      "kind": "guideline",
+      "grounding": "guideline",
+      "faithfulness": 0.875,
+      "scope": "assessment",
+      "answer_relevancy": 0.9,
+      "n_contexts": 3
+    }
+  ],
+  "faithfulness_by_grounding": {
+    "guideline": {
+      "mean": 0.968,
+      "n": 30
+    },
+    "mixed": {
+      "mean": 0.5416,
+      "n": 2
+    }
+  },
+  "cache_stats": {
+    "hits": 55,
+    "misses": 46,
+    "session_id": "v3_ragas_1786633240"
+  },
+  "scope_distribution": {
+    "assessment": 34
+  }
+}

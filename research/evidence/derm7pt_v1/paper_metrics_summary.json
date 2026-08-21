@@ -1,0 +1,964 @@
+{
+  "protocol": "paper_metrics_summary_v5",
+  "description": "Every reportable number for the MedGuard v2 paper, organized by section. Derm7pt perception / ablation / management / contracts sections describe the PROMOTED perception (run_cohort(promoted=True): diagnosis dermlip+metadata14 unbalanced C=100 + SK/MISC operating point; criteria dermlip_tta+metadata14 lr_balanced, argmax). Pre-promotion numbers are retained ONLY under explicitly labeled base_arm_reference keys.",
+  "datasets": {
+    "derm7pt": {
+      "train": 413,
+      "valid": 203,
+      "test": 395,
+      "total": 1011,
+      "note": "Seven-point checklist annotations available"
+    },
+    "bcn20000": {
+      "train_lesions": 2143,
+      "valid_lesions": 715,
+      "test_lesions": 712,
+      "test_images": 2510,
+      "note": "Image-to-lesion pooling via mean DermLIP features"
+    },
+    "ham10000": {
+      "e3_train": 6429,
+      "e3_test": 1595,
+      "sealed_test": 1991,
+      "note": "E3: 80/20 lesion-level split from train+cal. Sealed: separate frozen partition."
+    },
+    "total_test_cases": 4197,
+    "total_test_breakdown": "Derm7pt 395 + BCN 712 + HAM-E3 1595 + HAM-sealed 1495"
+  },
+  "perception_derm7pt": {
+    "n": 395,
+    "system": "PROMOTED perception (promoted_two_view_ablation.json / promoted_management_and_score.json); pre-promotion values only under base_arm_reference",
+    "classifier_5class": {
+      "argmax": {
+        "accuracy": 0.762,
+        "balanced_accuracy": 0.6077,
+        "macro_f1": 0.6253,
+        "weighted_f1": 0.7542,
+        "mcc": 0.5985,
+        "cohen_kappa": 0.594,
+        "per_class": {
+          "BCC": {
+            "precision": 0.4762,
+            "recall": 0.625,
+            "f1": 0.5405,
+            "support": 16
+          },
+          "NEV": {
+            "precision": 0.8049,
+            "recall": 0.9041,
+            "f1": 0.8516,
+            "support": 219
+          },
+          "MEL": {
+            "precision": 0.7222,
+            "recall": 0.6436,
+            "f1": 0.6806,
+            "support": 101
+          },
+          "SK": {
+            "precision": 0.5,
+            "recall": 0.3158,
+            "f1": 0.3871,
+            "support": 19
+          },
+          "MISC": {
+            "precision": 0.8462,
+            "recall": 0.55,
+            "f1": 0.6667,
+            "support": 40
+          }
+        }
+      },
+      "operating_point": {
+        "policy": {
+          "rule": "argmax(posterior/weight)",
+          "weights": {
+            "SK": 0.5,
+            "MISC": 0.7
+          }
+        },
+        "accuracy": 0.7696,
+        "balanced_accuracy": 0.6474,
+        "macro_f1": 0.6549,
+        "weighted_f1": 0.766,
+        "mcc": 0.6159,
+        "cohen_kappa": 0.6135,
+        "per_class": {
+          "BCC": {
+            "precision": 0.4762,
+            "recall": 0.625,
+            "f1": 0.5405,
+            "support": 16
+          },
+          "NEV": {
+            "precision": 0.8235,
+            "recall": 0.895,
+            "f1": 0.8578,
+            "support": 219
+          },
+          "MEL": {
+            "precision": 0.7222,
+            "recall": 0.6436,
+            "f1": 0.6806,
+            "support": 101
+          },
+          "SK": {
+            "precision": 0.5294,
+            "recall": 0.4737,
+            "f1": 0.5,
+            "support": 19
+          },
+          "MISC": {
+            "precision": 0.8276,
+            "recall": 0.6,
+            "f1": 0.6957,
+            "support": 40
+          }
+        }
+      },
+      "base_arm_reference": {
+        "label": "PRE-PROMOTION classifier (dermlip 512-d, C=10)",
+        "accuracy": 0.7392,
+        "balanced_accuracy": 0.5702,
+        "macro_f1": 0.594
+      }
+    },
+    "melanoma_auroc": {
+      "point": 0.9151,
+      "ci95_low": 0.8847,
+      "ci95_high": 0.9424,
+      "base_arm_reference": {
+        "point": 0.895,
+        "ci95_low": 0.8596,
+        "ci95_high": 0.9262
+      },
+      "note": "Promoted AUROC preserved (not traded away): >= the 0.895 base by design."
+    },
+    "operating_points": {
+      "specificity_0.9": {
+        "sensitivity": 0.703,
+        "specificity": 0.9014,
+        "threshold": 0.404859934333553,
+        "target_specificity": 0.9
+      },
+      "specificity_0.95": {
+        "sensitivity": 0.5644,
+        "specificity": 0.9524,
+        "threshold": 0.6801041252910845,
+        "target_specificity": 0.95
+      }
+    },
+    "operating_point_bootstrap": {
+      "classifier": {
+        "confusion": {
+          "tp": 65,
+          "fn": 36,
+          "fp": 25,
+          "tn": 269
+        },
+        "sensitivity": 0.6436,
+        "specificity": 0.915,
+        "youden_j": 0.5585,
+        "sensitivity_ci95": {
+          "estimate": 0.6436,
+          "ci95_low": 0.5483,
+          "ci95_high": 0.7383,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "specificity_ci95": {
+          "estimate": 0.915,
+          "ci95_low": 0.8831,
+          "ci95_high": 0.945,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "melanoma_auroc": 0.9151,
+        "note": "Melanoma flag identical at argmax and at the SK/MISC operating point (asserted): re-ranking SK/MISC never touches the MEL column."
+      },
+      "criteria": {
+        "confusion": {
+          "tp": 80,
+          "fn": 21,
+          "fp": 87,
+          "tn": 207
+        },
+        "sensitivity": 0.7921,
+        "specificity": 0.7041,
+        "youden_j": 0.4962,
+        "sensitivity_ci95": {
+          "estimate": 0.7921,
+          "ci95_low": 0.7065,
+          "ci95_high": 0.8704,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "specificity_ci95": {
+          "estimate": 0.7041,
+          "ci95_low": 0.6498,
+          "ci95_high": 0.7552,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "auroc_note": "No AUROC: 'seven-point score >= threshold 3' is a binary rule, not a ranked score."
+      },
+      "union": {
+        "confusion": {
+          "tp": 87,
+          "fn": 14,
+          "fp": 89,
+          "tn": 205
+        },
+        "sensitivity": 0.8614,
+        "specificity": 0.6973,
+        "youden_j": 0.5587,
+        "sensitivity_ci95": {
+          "estimate": 0.8614,
+          "ci95_low": 0.7895,
+          "ci95_high": 0.9286,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "specificity_ci95": {
+          "estimate": 0.6973,
+          "ci95_low": 0.6424,
+          "ci95_high": 0.7491,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "auroc_note": "No AUROC: OR of two binary flags, not a ranked score."
+      }
+    },
+    "criteria_aggregate": {
+      "f1_macro_across_criteria": 0.5491,
+      "accuracy_macro_across_criteria": 0.6973,
+      "cohen_kappa_macro_across_criteria": 0.4316,
+      "binary_concept_f1_macro": 0.7168,
+      "binary_concept_f1_per_criterion": {
+        "pigment_network": 0.7138,
+        "blue_whitish_veil": 0.7565,
+        "vascular_structures": 0.6377,
+        "streaks": 0.7176,
+        "pigmentation": 0.7285,
+        "dots_and_globules": 0.7606,
+        "regression_structures": 0.7031
+      },
+      "binary_concept_note": "Binary F1-macro (scoring vs non-scoring values, macro-averaged over both classes). Matches DermAgent's evaluation protocol (binary concept detection F1-Macro).",
+      "base_arm_reference": {
+        "f1_macro_across_criteria": 0.4947,
+        "accuracy_macro_across_criteria": 0.7324,
+        "cohen_kappa_macro_across_criteria": 0.3623,
+        "binary_concept_f1_macro": 0.6623,
+        "binary_concept_f1_per_criterion": {
+          "pigment_network": 0.7153,
+          "blue_whitish_veil": 0.6979,
+          "vascular_structures": 0.5605,
+          "streaks": 0.6753,
+          "pigmentation": 0.6855,
+          "dots_and_globules": 0.7381,
+          "regression_structures": 0.5637
+        },
+        "binary_concept_note": "Binary F1-macro (scoring vs non-scoring values, macro-averaged over both classes). Matches DermAgent's evaluation protocol (binary concept detection F1-Macro)."
+      }
+    },
+    "per_criterion_summary": {
+      "pigment_network": {
+        "accuracy": 0.6886,
+        "balanced_accuracy": 0.6728,
+        "macro_f1": 0.6725,
+        "cohen_kappa": 0.5231,
+        "n_classes": 3
+      },
+      "blue_whitish_veil": {
+        "accuracy": 0.8253,
+        "balanced_accuracy": 0.8054,
+        "macro_f1": 0.7565,
+        "cohen_kappa": 0.5183,
+        "n_classes": 2
+      },
+      "vascular_structures": {
+        "accuracy": 0.6835,
+        "balanced_accuracy": 0.3618,
+        "macro_f1": 0.3123,
+        "cohen_kappa": 0.3123,
+        "n_classes": 7
+      },
+      "streaks": {
+        "accuracy": 0.7342,
+        "balanced_accuracy": 0.6429,
+        "macro_f1": 0.6395,
+        "cohen_kappa": 0.4898,
+        "n_classes": 3
+      },
+      "pigmentation": {
+        "accuracy": 0.643,
+        "balanced_accuracy": 0.3809,
+        "macro_f1": 0.3738,
+        "cohen_kappa": 0.4109,
+        "n_classes": 5
+      },
+      "dots_and_globules": {
+        "accuracy": 0.6203,
+        "balanced_accuracy": 0.607,
+        "macro_f1": 0.6043,
+        "cohen_kappa": 0.4202,
+        "n_classes": 3
+      },
+      "regression_structures": {
+        "accuracy": 0.6861,
+        "balanced_accuracy": 0.5228,
+        "macro_f1": 0.4848,
+        "cohen_kappa": 0.3469,
+        "n_classes": 4
+      }
+    },
+    "per_criterion_summary_base_arm_reference": {
+      "pigment_network": {
+        "accuracy": 0.7013,
+        "balanced_accuracy": 0.6746,
+        "macro_f1": 0.6778,
+        "cohen_kappa": 0.5371,
+        "n_classes": 3
+      },
+      "blue_whitish_veil": {
+        "accuracy": 0.8608,
+        "balanced_accuracy": 0.6589,
+        "macro_f1": 0.6979,
+        "cohen_kappa": 0.4124,
+        "n_classes": 2
+      },
+      "vascular_structures": {
+        "accuracy": 0.8051,
+        "balanced_accuracy": 0.2299,
+        "macro_f1": 0.2359,
+        "cohen_kappa": 0.2414,
+        "n_classes": 7
+      },
+      "streaks": {
+        "accuracy": 0.7342,
+        "balanced_accuracy": 0.5773,
+        "macro_f1": 0.6119,
+        "cohen_kappa": 0.4236,
+        "n_classes": 3
+      },
+      "pigmentation": {
+        "accuracy": 0.6658,
+        "balanced_accuracy": 0.3375,
+        "macro_f1": 0.3491,
+        "cohen_kappa": 0.3546,
+        "n_classes": 5
+      },
+      "dots_and_globules": {
+        "accuracy": 0.6076,
+        "balanced_accuracy": 0.5779,
+        "macro_f1": 0.5691,
+        "cohen_kappa": 0.3895,
+        "n_classes": 3
+      },
+      "regression_structures": {
+        "accuracy": 0.7519,
+        "balanced_accuracy": 0.3145,
+        "macro_f1": 0.3214,
+        "cohen_kappa": 0.1776,
+        "n_classes": 4
+      }
+    },
+    "seven_point_score": {
+      "n": 395,
+      "mae": 1.4329,
+      "exact_match_rate": 0.3468,
+      "within_one_rate": 0.6177,
+      "mean_signed_error": 0.4203,
+      "signed_error_note": "mean(predicted - gold): positive means the heads over-score (call more criteria present) relative to the annotated 7-point score.",
+      "base_arm_reference": {
+        "label": "PRE-PROMOTION heads (dermlip 512-d, unbalanced C=10, argmax)",
+        "n": 395,
+        "mae": 1.4152,
+        "exact_match_rate": 0.357,
+        "within_one_rate": 0.638,
+        "mean_signed_error": -0.843,
+        "signed_error_note": "mean(predicted - gold): positive means the heads over-score (call more criteria present) relative to the annotated 7-point score."
+      },
+      "honesty_note": "The promoted balanced heads are tuned for melanoma sensitivity: they call scoring values more often, which raises the predicted 7-point score. Whether MAE/exact agreement improves or degrades vs base is reported exactly as measured above -- the union melanoma sensitivity gain (0.7426 -> 0.8614) is the endpoint the promotion was accepted on, not score agreement."
+    },
+    "calibration": {
+      "ece_uncalibrated": 0.0891,
+      "aurc": 0.0958,
+      "note": "The pre-promotion calibration figures (ECE 0.0455) used a temperature-calibrated confidence from perception_baseline.json; no calibration has been fit for the promoted head, so these are raw-posterior diagnostics and not directly comparable to the calibrated base figure.",
+      "base_arm_reference": {
+        "ece_calibrated": 0.0455,
+        "aurc": 0.0967,
+        "label": "PRE-PROMOTION head with temperature calibration"
+      }
+    }
+  },
+  "perception_bcn": {
+    "n": 712,
+    "in_domain": {
+      "accuracy": 0.6868,
+      "balanced_accuracy": 0.5773,
+      "macro_f1": 0.5901,
+      "mcc": 0.5745,
+      "cohen_kappa": 0.5702,
+      "mel_auroc": 0.8641,
+      "mel_auroc_ci": [
+        0.8251,
+        0.9013
+      ],
+      "ece": 0.0436,
+      "aurc": 0.1594,
+      "sens_at_spec90": 0.5577,
+      "sens_at_spec95": 0.4808
+    },
+    "cross_centre": {
+      "accuracy": 0.5576,
+      "balanced_accuracy": 0.4121,
+      "macro_f1": 0.3767,
+      "mcc": 0.3969,
+      "mel_auroc": 0.7962
+    },
+    "transfer_delta": {
+      "accuracy_drop": 0.1292,
+      "note": "Cross-centre transfer boundary: in-domain trained BCN classifier vs Derm7pt-trained."
+    },
+    "promoted_recipe_post_hoc": {
+      "post_hoc": true,
+      "adopted_arm": "promoted recipe at argmax (metadata + train-CV C; NO operating point)",
+      "accuracy": 0.6868,
+      "accuracy_delta_vs_baseline": 0.0,
+      "mel_auroc": 0.8719,
+      "mel_auroc_delta_vs_baseline": 0.0078,
+      "minority_recall_baseline": {
+        "SK": 0.2429,
+        "MISC": 0.4598
+      },
+      "minority_recall_at_op": {
+        "SK": 0.6143,
+        "MISC": 0.7701
+      },
+      "operating_point_non_transfer": {
+        "mel_recall_argmax": 0.5,
+        "mel_recall_at_op": 0.2885,
+        "note": "The Derm7pt-tuned SK/MISC downweights collapse melanoma recall on this dataset; the operating point is a Derm7pt-specific policy and is NOT adopted here (boundary finding, consistent with G8/abstention-shift)."
+      }
+    }
+  },
+  "perception_ham": {
+    "e3_split": {
+      "n_test": 1595,
+      "five_group": {
+        "accuracy": 0.842,
+        "balanced_accuracy": 0.7058,
+        "macro_f1": 0.7133,
+        "mcc": 0.6902,
+        "cohen_kappa": 0.6894,
+        "mel_auroc": 0.9303,
+        "mel_auroc_ci": [
+          0.906,
+          0.9511
+        ],
+        "ece": 0.0302,
+        "aurc": 0.0366,
+        "sens_at_spec90": 0.779,
+        "sens_at_spec95": 0.6077
+      },
+      "seven_class": {
+        "accuracy": 0.8514,
+        "balanced_accuracy": 0.7334,
+        "macro_f1": 0.7199,
+        "mcc": 0.7079,
+        "cohen_kappa": 0.7066
+      }
+    },
+    "sealed_test": {
+      "n_test": 1495,
+      "note": "From comparison_table.json; evaluated in prior session. These remain the REGISTERED one-shot confirmatory numbers.",
+      "accuracy_5group": 0.8783,
+      "mel_auroc": 0.9444,
+      "mel_auroc_ci": [
+        0.9263,
+        0.96
+      ],
+      "ece": 0.0169
+    },
+    "promoted_recipe_post_hoc": {
+      "e3_five_group": {
+        "post_hoc": true,
+        "adopted_arm": "promoted recipe at argmax (metadata + train-CV C; NO operating point)",
+        "accuracy": 0.8533,
+        "accuracy_delta_vs_baseline": 0.0113,
+        "mel_auroc": 0.9367,
+        "mel_auroc_delta_vs_baseline": 0.0064,
+        "minority_recall_baseline": {
+          "SK": 0.6437,
+          "MISC": 0.6333
+        },
+        "minority_recall_at_op": {
+          "SK": 0.7931,
+          "MISC": 0.6889
+        },
+        "operating_point_non_transfer": {
+          "mel_recall_argmax": 0.5801,
+          "mel_recall_at_op": 0.3481,
+          "note": "The Derm7pt-tuned SK/MISC downweights collapse melanoma recall on this dataset; the operating point is a Derm7pt-specific policy and is NOT adopted here (boundary finding, consistent with G8/abstention-shift)."
+        }
+      },
+      "e3_seven_class": {
+        "post_hoc": true,
+        "adopted_arm": "promoted recipe at argmax (metadata + train-CV C; NO operating point)",
+        "accuracy": 0.8589,
+        "accuracy_delta_vs_baseline": 0.0075,
+        "mel_auroc": 0.9377,
+        "mel_auroc_delta_vs_baseline": 0.0059,
+        "minority_recall_baseline": {},
+        "minority_recall_at_op": {},
+        "operating_point_non_transfer": {
+          "mel_recall_argmax": 0.5967,
+          "mel_recall_at_op": 0.3757,
+          "note": "The Derm7pt-tuned SK/MISC downweights collapse melanoma recall on this dataset; the operating point is a Derm7pt-specific policy and is NOT adopted here (boundary finding, consistent with G8/abstention-shift)."
+        }
+      },
+      "sealed_five_group": {
+        "post_hoc": true,
+        "adopted_arm": "promoted recipe at argmax (metadata + train-CV C; NO operating point)",
+        "accuracy": 0.8809,
+        "accuracy_delta_vs_baseline": 0.0026,
+        "mel_auroc": 0.9386,
+        "mel_auroc_delta_vs_baseline": -0.0058,
+        "minority_recall_baseline": {
+          "SK": 0.6621,
+          "MISC": 0.716
+        },
+        "minority_recall_at_op": {
+          "SK": 0.7103,
+          "MISC": 0.8519
+        },
+        "operating_point_non_transfer": {
+          "mel_recall_argmax": 0.5772,
+          "mel_recall_at_op": 0.3496,
+          "note": "The Derm7pt-tuned SK/MISC downweights collapse melanoma recall on this dataset; the operating point is a Derm7pt-specific policy and is NOT adopted here (boundary finding, consistent with G8/abstention-shift)."
+        }
+      }
+    },
+    "dermagent_comparison": {
+      "dermagent_ham_accuracy": 0.6183,
+      "dermagent_ham_n": 642,
+      "dermagent_source_note": "Externally reported figure (task brief), not independently reproduced here: DermAgent's own published HAM10000 accuracy on a 642-image subset.",
+      "our_7class_accuracy": 0.8514,
+      "our_7class_n_test": 1595,
+      "our_5group_accuracy": 0.842,
+      "our_5group_n_test": 1595,
+      "accuracy_diff_7class_vs_dermagent": 0.2331,
+      "caveat": "Not a controlled comparison: different test set, different size (1595 vs 642), unknown DermAgent train/test protocol, and a linear probe on frozen DermLIP features here versus whatever DermAgent's own architecture is."
+    }
+  },
+  "ablation_perception": {
+    "system": "PROMOTED arms (promoted_two_view_ablation.json)",
+    "derm7pt_test_n395": {
+      "classifier_alone": {
+        "sensitivity": 0.6436,
+        "specificity": 0.915,
+        "youden_j": 0.5585,
+        "auroc": 0.9151
+      },
+      "criteria_alone": {
+        "sensitivity": 0.7921,
+        "specificity": 0.7041,
+        "youden_j": 0.4962
+      },
+      "union_rule": {
+        "sensitivity": 0.8614,
+        "specificity": 0.6973,
+        "youden_j": 0.5587
+      },
+      "union_sensitivity_gain": 0.2178,
+      "union_sensitivity_gain_ci95": [
+        0.1398,
+        0.3034
+      ],
+      "union_sensitivity_delta_vs_base_union": {
+        "delta": 0.1188,
+        "paired_bootstrap_ci95": {
+          "estimate": 0.1188,
+          "ci95_low": 0.0508,
+          "ci95_high": 0.1927,
+          "n_boot": 2000,
+          "seed": 20260712
+        },
+        "note": "Promoted union minus PRE-promotion union sensitivity, paired on the same cases."
+      },
+      "stacked_ensemble_base_arm_reference": {
+        "label": "BASE-arm stacked ensemble (null result; no promoted stacking arm exists)",
+        "auroc": 0.8875,
+        "delong_p": 0.5935
+      }
+    },
+    "complementarity": {
+      "melanomas": 101,
+      "both": 58,
+      "classifier_only": 7,
+      "criteria_only": 22,
+      "neither": 14
+    },
+    "complementarity_odds_ratio": {
+      "or": 0.3182,
+      "log_or": -1.1451,
+      "ci_low": 0.1359,
+      "ci_high": 0.7448,
+      "a_only": 7,
+      "b_only": 22
+    },
+    "mcnemar": {
+      "classifier_only_correct": 64,
+      "union_only_correct": 22,
+      "p_value": 7e-06,
+      "classifier_binary_accuracy": 0.8456,
+      "union_binary_accuracy": 0.7392
+    },
+    "mcnemar_honesty_note": "On BINARY accuracy the promoted union is significantly WORSE than the promoted classifier alone (the specificity cost of the sensitive checklist); the union is accepted on melanoma sensitivity, and the disagreement is surfaced for human adjudication rather than auto-acted on. In the base system this McNemar was null (16/15, p=1.0).",
+    "disclosed_specificity_cost": "Union melanoma specificity falls 0.8503 (base) -> 0.6973 (promoted): the balanced criteria heads raise false positives along with true positives. Disclosed, not hidden -- the architecture surfaces the disagreement for human adjudication, and on a melanoma CDSS a missed melanoma dominates a benign false alarm.",
+    "base_arm_reference": {
+      "label": "PRE-PROMOTION arms (test_metrics_complete.json / ablation_table.json)",
+      "classifier_alone": {
+        "sensitivity": 0.5941,
+        "specificity": 0.9048,
+        "youden_j": 0.4989,
+        "auroc": 0.895
+      },
+      "criteria_alone": {
+        "sensitivity": 0.5743,
+        "specificity": 0.8946,
+        "youden_j": 0.4689
+      },
+      "union_rule": {
+        "sensitivity": 0.7426,
+        "specificity": 0.8503,
+        "youden_j": 0.5929
+      },
+      "union_sensitivity_gain": 0.1485,
+      "complementarity": {
+        "melanomas": 101,
+        "both": 43,
+        "classifier_only": 17,
+        "criteria_only": 15,
+        "neither": 26
+      },
+      "complementarity_odds_ratio": {
+        "or": 1.1333,
+        "log_or": 0.1252,
+        "ci_low": 0.566,
+        "ci_high": 2.2693,
+        "a_only": 17,
+        "b_only": 15
+      },
+      "mcnemar": {
+        "classifier_only_correct": 16,
+        "union_only_correct": 15,
+        "p_value": 1.0,
+        "classifier_binary_accuracy": 0.8253,
+        "union_binary_accuracy": 0.8228
+      }
+    }
+  },
+  "management": {
+    "n": 395,
+    "system": "promoted diagnosis view (dermlip+metadata14), C=100.0, class_weight=None, seed=20260810",
+    "accuracy": 0.7544,
+    "balanced_accuracy": 0.7064,
+    "macro_f1": 0.7042,
+    "qwk": 0.544,
+    "qwk_ci": [
+      0.4317,
+      0.638
+    ],
+    "labels": [
+      "no further examination",
+      "clinical follow up",
+      "excision"
+    ],
+    "per_class": {
+      "no further examination": {
+        "precision": 0.625,
+        "recall": 0.625,
+        "f1": 0.625,
+        "support": 40
+      },
+      "clinical follow up": {
+        "precision": 0.6581,
+        "recall": 0.6875,
+        "f1": 0.6725,
+        "support": 112
+      },
+      "excision": {
+        "precision": 0.8235,
+        "recall": 0.8066,
+        "f1": 0.815,
+        "support": 243
+      }
+    },
+    "honesty_note": "Promoted-view management improves accuracy/balanced-accuracy/macro-F1 but its ordinal QWK (0.544) is slightly BELOW the base arm's 0.5735; the promoted QWK CI covers the base point estimate, so the dip is not resolvable at n=395. Dual-reported, not hidden.",
+    "base_arm_reference": {
+      "label": "PRE-PROMOTION registered P2 arm (raw dermlip 512-d, C=100)",
+      "accuracy": 0.7367,
+      "balanced_accuracy": 0.6818,
+      "macro_f1": 0.6868,
+      "qwk": 0.5735,
+      "qwk_ci": [
+        0.4734,
+        0.6598
+      ]
+    },
+    "checklist_implied_secondary": {
+      "accuracy": 0.6278,
+      "qwk": 0.418,
+      "note": "recommend_management emits only 'clinical follow up' or 'excision' (an argmax reading is always decidable, and 'no further examination' is never implied by the checklist), so the 63 'no further examination' gold cases can never be matched. This caps accuracy and QWK structurally; the block is reported for transparency about what the checklist alone implies, not as the primary management arm."
+    }
+  },
+  "contracts_and_routing": {
+    "system": "PROMOTED contracts (cdss_contracts_valid_promoted.json, valid n=203, recomputed + cross-checked in promoted_contracts_routing.json). The base references include the pre-promotion TEST-split rates; split denominators differ and are stated per entry.",
+    "contract_safe_rate_derm7pt": 1.0,
+    "contract_n_derm7pt": 203,
+    "contract_safe_rate_sealed": 1.0,
+    "contract_n_sealed": 1495,
+    "conflict_rate": 0.266,
+    "escalation_rate": 0.266,
+    "undecidable_rate": 0.0,
+    "undecidable_note": "The promoted path reads the balanced 526-d criterion heads by ARGMAX with no abstention gating: every criterion is determinate, so score_min == score_max and every case is decidable -- undecidable and abstention rates are 0.0 BY CONSTRUCTION, not by measurement. The criterion_abstention_v1 cutoffs were fit on the pre-promotion 512-d dermlip head and would mis-abstain on these heads; per-criterion top-minus-second margins are plumbed into each contract (criterion_margins) so a future abstention policy can be re-fit for the promoted heads.",
+    "citation_rate": 0.2808,
+    "router_state_distribution": {
+      "NO_COVERAGE": {
+        "cases": 100,
+        "rate": 0.4926
+      },
+      "CONFLICT": {
+        "cases": 55,
+        "rate": 0.2709
+      },
+      "UNDECIDABLE": {
+        "cases": 0,
+        "rate": 0.0
+      },
+      "ROUTINE": {
+        "cases": 48,
+        "rate": 0.2365
+      }
+    },
+    "retrieval_rate": 0.5074,
+    "retrieval_avoided": 0.4926,
+    "retrieval_savings_call_level": 0.4778,
+    "retrieval_note": "Router classification, not measured gating: binding is a free local lookup that ran for every case. CONFLICT cases can request guidance for both candidate conditions, so gated CALLS can exceed retrieving CASES; both denominators are reported. The saving is hypothetical: binding is a free local lookup that ran for every case here.",
+    "criterion_abstention_rate": 0.0,
+    "criterion_abstention_by_construction": true,
+    "base_arm_reference": {
+      "label": "PRE-PROMOTION pipeline (dermlip 512-d readers + criterion_abstention_v1)",
+      "valid_n203": {
+        "conflict_rate": 0.1724,
+        "escalation_rate": 0.1724,
+        "undecidable_rate_contracts_artifact": 0.0,
+        "source": "cdss_contracts_valid.json (frozen, protocol v1)"
+      },
+      "test_n395": {
+        "conflict_rate": 0.1544,
+        "escalation_rate": 0.1544,
+        "undecidable_rate": 0.0,
+        "citation_rate": 0.2785,
+        "source": "ablation_table.json contract_layer_context (confirmatory run)"
+      },
+      "router_and_abstention_valid_n203": {
+        "retrieval_rate": 0.3,
+        "retrieval_avoided": 0.7,
+        "router_states": "NO_COVERAGE 55.7%, UNDECIDABLE 20.7%, ROUTINE 14.3%, CONFLICT 9.4%",
+        "criterion_abstention_rate": 0.158,
+        "source": "efficiency_analysis.json (pre-promotion seed values)"
+      },
+      "note": "Base-arm numbers are kept for comparison only; they describe the pre-promotion readers and the margin-based abstention policy that the promoted path does not use. The split differs across base references (valid n=203 vs test n=395) -- the promoted block above is valid n=203."
+    }
+  },
+  "agent_eval": {
+    "prompt_version": "clinician-agent-v5.4",
+    "model": "qwen/qwen3-vl-32b-instruct",
+    "n_cases": 203,
+    "n_questions": 591,
+    "endpoints": {
+      "citation_resolvability": {
+        "answers_with_citations": 161,
+        "resolvability": 1.0,
+        "all_intact": true,
+        "exact": true
+      },
+      "refusal_correctness": {
+        "overall": 1.0,
+        "on_answerable": 1.0,
+        "on_unanswerable": 1.0,
+        "exact": true
+      },
+      "counterfactual_accuracy": {
+        "n": 185,
+        "override_applied": 1.0,
+        "states_correct_score": 0.9676,
+        "asserts_a_wrong_score": 0.0054,
+        "correct": 0.9622,
+        "exact": true,
+        "note": "Ground truth is the host's deterministic aggregator; no judge involved."
+      },
+      "absence_disclosure": {
+        "n": 100,
+        "states_absence": 1.0,
+        "exact": false,
+        "note": "Cases where the corpus holds nothing. Correct behaviour is to say so."
+      },
+      "management_fabrication": {
+        "rate": 0.0,
+        "exact": false,
+        "note": "Keyword rule: advice-shaped language in an answer that cites nothing."
+      }
+    },
+    "verification_loop": {
+      "first_draft_failure_rate": 0.3119,
+      "revision_reasons": {
+        "assessment_without_search": 82,
+        "score_mismatch": 34,
+        "criterion_misstatement": 19
+      },
+      "retrieval_gating": {
+        "served_total": 188,
+        "skipped_total": 0
+      }
+    },
+    "case_briefs": {
+      "n": 203,
+      "verified_rate": 1.0,
+      "verified_first_try_rate": 0.9852,
+      "verified_after_revision_rate": 0.0148,
+      "fallback_rate": 0.0,
+      "note": "The measured claim is the gate: a brief is shown only if it passes the same deterministic host checks the agent faces (score quotes, criterion values, citation/specifics traceability, action statement); on double failure the deterministic headline renders instead. Unverified generated prose is never displayed, by construction."
+    }
+  },
+  "ragas": {
+    "prompt_version": "clinician-agent-v5.4",
+    "judge_model": "openai/gpt-oss-20b",
+    "overall_faithfulness": 0.8447,
+    "answer_relevancy": 0.9237,
+    "combined_faithfulness": 0.9248,
+    "combined_n": 388,
+    "combined_note": "Deduplicated so every non-out-of-scope answer counts once: 188 RAGAS-scored answers (85 of those also contract-grounded, counted only via their RAGAS score, not twice) plus 200 additional contract-only answers at 1.0.",
+    "contract_grounded_n": 285,
+    "guideline_scored_n": 188,
+    "by_grounding": {
+      "guideline": {
+        "mean": 0.983,
+        "n": 49
+      },
+      "mixed": {
+        "mean": 0.7051,
+        "n": 54
+      },
+      "contract": {
+        "mean": 0.8537,
+        "n": 85
+      }
+    },
+    "scope_distribution": {
+      "assessment": 187,
+      "whole": 1
+    },
+    "assessment_scoped_mean": 0.8457,
+    "judge_noise_floor": 0.0489,
+    "v2_comparison": {
+      "v2_faithfulness": 0.6781,
+      "current_faithfulness": 0.8447,
+      "v2_guideline": 0.8121,
+      "current_guideline": 0.983,
+      "v2_mixed": 0.0972,
+      "current_mixed": 0.7051
+    }
+  },
+  "metadata_augmentation": {
+    "summary": [
+      {
+        "dataset": "derm7pt",
+        "n_test": 395,
+        "v2_accuracy": 0.7392,
+        "v3_accuracy": 0.757,
+        "accuracy_delta": 0.0178,
+        "v2_mel_auroc": 0.895,
+        "v3_mel_auroc": 0.913,
+        "auroc_delta": 0.018
+      },
+      {
+        "dataset": "bcn",
+        "n_test": 712,
+        "v2_accuracy": 0.684,
+        "v3_accuracy": 0.6868,
+        "accuracy_delta": 0.0028,
+        "v2_mel_auroc": 0.8644,
+        "v3_mel_auroc": 0.8716,
+        "auroc_delta": 0.0072
+      },
+      {
+        "dataset": "ham",
+        "n_test": 1991,
+        "v2_accuracy": 0.8543,
+        "v3_accuracy": 0.8518,
+        "accuracy_delta": -0.0025,
+        "v2_mel_auroc": 0.9197,
+        "v3_mel_auroc": 0.9165,
+        "auroc_delta": -0.0032
+      }
+    ],
+    "note": "v2 = visual-only (512-d DermLIP), v3 = visual + clinical metadata. Delta small on BCN/HAM, +1.8% on Derm7pt."
+  },
+  "efficiency": {
+    "feature_model": "DermLIP ViT-B/16, frozen, 512-d",
+    "classifier": "LogisticRegression, 5-class",
+    "criterion_heads": "7\u00d7 LogisticRegression",
+    "llm_calls_per_case": 0,
+    "llm_calls_per_question": 2.82,
+    "hypothetical_retrieval_savings": 0.4926,
+    "hypothetical_retrieval_savings_call_level": 0.4778,
+    "retrieval_savings_note": "Router classification only (PROMOTED contracts, valid n=203); binding is a free local lookup that ran for every case. The saving is what gating would avoid where retrieval is remote or paid. Base arm avoided 0.70; the promoted checklist disagrees with the classifier more often, so it retrieves more.",
+    "agent_model": "qwen/qwen3-vl-32b-instruct"
+  },
+  "dermagent_comparison": {
+    "our_ham_7class_acc": 0.8514,
+    "our_ham_7class_n": 1595,
+    "dermagent_ham_acc": 0.6183,
+    "dermagent_ham_n": 642,
+    "accuracy_gap": 0.2331,
+    "our_criterion_f1_binary": 0.7168,
+    "our_criterion_f1_multiclass": 0.5491,
+    "our_criterion_f1_binary_base_arm_reference": 0.6623,
+    "our_criterion_n": 395,
+    "dermagent_criterion_f1": 0.6506,
+    "dermagent_criterion_n": 100,
+    "our_total_test_cases": 4197,
+    "dermagent_total_test_cases": 1542,
+    "our_citation_resolvability": 1.0,
+    "dermagent_citation_resolvability": null,
+    "our_faithfulness": 0.8447,
+    "dermagent_faithfulness": null
+  },
+  "negative_results": {
+    "g7_cross_dataset_transfer": {
+      "description": "Derm7pt-trained classifier on HAM valid: AUROC drops",
+      "derm7pt_auroc_base_arm": 0.895,
+      "note": "Cross-dataset transfer boundary (contribution, not limitation). The transfer experiment used the BASE (pre-promotion) probe (AUROC 0.895 in-domain); the promoted in-domain probe is 0.9151 (see perception_derm7pt)."
+    },
+    "g8_criteria_cross_centre": {
+      "description": "Derm7pt criteria heads on BCN: complementarity collapses",
+      "in_domain_complementarity": null,
+      "cross_centre_complementarity": 0.019
+    },
+    "stacked_ensemble_null": {
+      "description": "Stacked ensemble does not beat classifier (DeLong p=0.5935)",
+      "delong_p": 0.5935
+    }
+  },
+  "limitations": [
+    "No human evaluation (acknowledged; listed as future work)",
+    "Stacked ensemble does not beat classifier (p=0.5935)",
+    "Cross-centre generalizability limited (3 negatives)",
+    "Criteria path only available for Derm7pt (annotation bottleneck: 413 cases is world supply)",
+    "RAGAS judge is nondeterministic at temp 0 (noise floor 0.0489, demonstrated FP at p=0.023)"
+  ]
+}

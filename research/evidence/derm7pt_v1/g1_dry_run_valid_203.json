@@ -1,0 +1,161 @@
+{
+  "gate_id": "G1_criterion_readability",
+  "mode": "dry_run",
+  "boundaries": {
+    "api_calls": 0,
+    "paid_calls": 0,
+    "images_read_for_hashing_only": 203,
+    "test_split_read": false
+  },
+  "cohort": {
+    "n_cases": 203,
+    "splits": [
+      "valid"
+    ],
+    "selection": {
+      "strategy": "all",
+      "n_available": 203,
+      "n_selected": 203,
+      "representative_of_split": true,
+      "note": "whole split, no selection applied",
+      "split": "valid"
+    }
+  },
+  "assessor": {
+    "prompt_version": "g1-criterion-assessor-v2",
+    "decoding": {
+      "model": "qwen/qwen3-vl-32b-instruct",
+      "temperature": 0.0,
+      "max_tokens": 900,
+      "seed": 20260810
+    },
+    "max_repair_attempts": 1,
+    "include_clinical": false,
+    "images_per_case": [
+      [
+        1,
+        203
+      ]
+    ],
+    "cache_dir": "E:\\Studies\\Research\\MedGuard-RAG-Journal\\research\\evidence\\derm7pt_v1\\g1_assessor_cache"
+  },
+  "token_estimate_method": {
+    "text": "tiktoken cl100k_base (proxy; the served model uses a Qwen VL tokeniser)",
+    "image": "Qwen-VL smart_resize grid, 28x28 px per visual token, +2 delimiters",
+    "extrapolation_basis": "per-case means computed over the 203 selected case(s); rows for other cohort sizes reuse those means",
+    "warning": "ESTIMATE ONLY. The live run reports observed prompt tokens and a calibration ratio; multiply this projection by that ratio before trusting it."
+  },
+  "per_case_tokens": {
+    "prompt_text_tokens": 1471,
+    "image_tokens_mean": 487.2,
+    "image_tokens_min": 326,
+    "image_tokens_max": 488,
+    "prompt_tokens_mean": 1958.2,
+    "completion_tokens_typical": 362,
+    "completion_tokens_ceiling": 900,
+    "repair_call_prompt_tokens": 2012
+  },
+  "cache": {
+    "entries_on_disk": 0,
+    "requests_already_cached": 0,
+    "requests_needing_a_paid_call": 203
+  },
+  "projection": {
+    "this_cohort_no_repairs": {
+      "cases": 203,
+      "repair_rate_assumed": 0.0,
+      "input_tokens": 397515,
+      "output_tokens_typical": 73486,
+      "output_tokens_ceiling": 182700,
+      "input_millions": 0.397515,
+      "output_millions": 0.073486,
+      "cost_grid_usd": {
+        "in=$0.05/M,out=$0.2/M": 0.0346,
+        "in=$0.1/M,out=$0.4/M": 0.0691,
+        "in=$0.2/M,out=$0.8/M": 0.1383,
+        "in=$0.5/M,out=$1.5/M": 0.309,
+        "in=$1.0/M,out=$3.0/M": 0.618
+      }
+    },
+    "this_cohort_10pct_repairs": {
+      "cases": 203,
+      "repair_rate_assumed": 0.1,
+      "input_tokens": 438359,
+      "output_tokens_typical": 80835,
+      "output_tokens_ceiling": 200970,
+      "input_millions": 0.438359,
+      "output_millions": 0.080835,
+      "cost_grid_usd": {
+        "in=$0.05/M,out=$0.2/M": 0.0381,
+        "in=$0.1/M,out=$0.4/M": 0.0762,
+        "in=$0.2/M,out=$0.8/M": 0.1523,
+        "in=$0.5/M,out=$1.5/M": 0.3404,
+        "in=$1.0/M,out=$3.0/M": 0.6809
+      }
+    },
+    "incremental_uncached_only": {
+      "cases": 203,
+      "repair_rate_assumed": 0.1,
+      "input_tokens": 438359,
+      "output_tokens_typical": 80835,
+      "output_tokens_ceiling": 200970,
+      "input_millions": 0.438359,
+      "output_millions": 0.080835,
+      "cost_grid_usd": {
+        "in=$0.05/M,out=$0.2/M": 0.0381,
+        "in=$0.1/M,out=$0.4/M": 0.0762,
+        "in=$0.2/M,out=$0.8/M": 0.1523,
+        "in=$0.5/M,out=$1.5/M": 0.3404,
+        "in=$1.0/M,out=$3.0/M": 0.6809
+      }
+    },
+    "valid_split_203_cases": {
+      "cases": 203,
+      "repair_rate_assumed": 0.1,
+      "input_tokens": 438359,
+      "output_tokens_typical": 80835,
+      "output_tokens_ceiling": 200970,
+      "input_millions": 0.438359,
+      "output_millions": 0.080835,
+      "cost_grid_usd": {
+        "in=$0.05/M,out=$0.2/M": 0.0381,
+        "in=$0.1/M,out=$0.4/M": 0.0762,
+        "in=$0.2/M,out=$0.8/M": 0.1523,
+        "in=$0.5/M,out=$1.5/M": 0.3404,
+        "in=$1.0/M,out=$3.0/M": 0.6809
+      }
+    },
+    "train_split_413_cases": {
+      "cases": 413,
+      "repair_rate_assumed": 0.1,
+      "input_tokens": 891833,
+      "output_tokens_typical": 164457,
+      "output_tokens_ceiling": 408870,
+      "input_millions": 0.891833,
+      "output_millions": 0.164457,
+      "cost_grid_usd": {
+        "in=$0.05/M,out=$0.2/M": 0.0775,
+        "in=$0.1/M,out=$0.4/M": 0.155,
+        "in=$0.2/M,out=$0.8/M": 0.3099,
+        "in=$0.5/M,out=$1.5/M": 0.6926,
+        "in=$1.0/M,out=$3.0/M": 1.3852
+      }
+    },
+    "full_dataset_1011_cases": {
+      "cases": 1011,
+      "repair_rate_assumed": 0.1,
+      "input_tokens": 2183155,
+      "output_tokens_typical": 402580,
+      "output_tokens_ceiling": 1000890,
+      "input_millions": 2.183155,
+      "output_millions": 0.40258,
+      "cost_grid_usd": {
+        "in=$0.05/M,out=$0.2/M": 0.1897,
+        "in=$0.1/M,out=$0.4/M": 0.3793,
+        "in=$0.2/M,out=$0.8/M": 0.7587,
+        "in=$0.5/M,out=$1.5/M": 1.6954,
+        "in=$1.0/M,out=$3.0/M": 3.3909
+      }
+    }
+  }
+}

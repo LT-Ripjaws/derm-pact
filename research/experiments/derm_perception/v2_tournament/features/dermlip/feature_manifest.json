@@ -1,0 +1,33 @@
+{
+  "batch_size": 32,
+  "development_manifest": "E:\\Studies\\Research\\MedGuard-RAG-Journal\\research\\manifests\\ham10000_train_calibration_v2.json",
+  "development_manifest_sha256": "45a6dd45bb609d07e364890eeb64a4632fb78d3c4e9da18213f0e02ba80f3ced",
+  "elapsed_seconds_current_process": 503.3956867000088,
+  "feature_dim": 512,
+  "feature_file_sha256": "c640f2f934b7d86854d6034609af5714a6cafd1277dc9a420b36331fe2006763",
+  "included_splits": [
+    "train",
+    "calibration"
+  ],
+  "loader": "open_clip",
+  "model_id": "redlessone/DermLIP_ViT-B-16",
+  "model_key": "dermlip",
+  "n_records": 8024,
+  "protocol": "ham10000-derm-encoder-features-v2",
+  "provenance": {
+    "checkpoint": {
+      "combined_sha256": "593ae3c9f17efacde7e84efe5027b13de9d1e3cdc96dbf97dabbcca83c0417de",
+      "snapshot_revision": "b7d427364122927b0d19faf45cec05eea5469226",
+      "weight_files": [
+        {
+          "bytes": 598516980,
+          "name": "open_clip_model.safetensors",
+          "sha256": "727b22532b30d027447563d775cbc9b46188ad952c79b0e117eb970efa6bfbfb"
+        }
+      ]
+    },
+    "implementation": "E:\\Studies\\Research\\IEEE THAI CONF\\venv_win\\Lib\\site-packages\\open_clip\\__init__.py",
+    "parameters": 149620737
+  },
+  "test_records_loaded": 0
+}

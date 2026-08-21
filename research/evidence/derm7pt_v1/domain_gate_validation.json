@@ -1,0 +1,321 @@
+{
+  "protocol": "derm7pt-domain-gate-validation-v1",
+  "generated_at": "2026-08-15T14:09:10",
+  "question": "Does mean top-k cosine to the frozen TRAIN dermlip bank separate in-domain dermoscopy (Derm7pt valid) from the measured cross-centre shift population (BCN20000), and from gross non-dermoscopic inputs? N3 showed criterion margins move the WRONG way under this shift; this is the mechanism that can gate, if anything can.",
+  "n3_link": {
+    "artifact": "research/evidence/derm7pt_v1/abstention_under_shift.json",
+    "n3_finding": "criterion-head margins WIDEN on BCN (mean headroom-margin delta +, abstention rate flat/lower): margin-based abstention cannot gate out-of-domain inputs"
+  },
+  "boundaries": {
+    "paid_calls": 0,
+    "images_encoded": 5,
+    "encoding_note": "only the sanity probes are freshly encoded (local frozen DermLIP)",
+    "bank": "Derm7pt TRAIN only, 512-d plain dermlip image embedding, hash-versioned",
+    "threshold_fit": "Derm7pt VALID only (p1); BCN NEVER touches the threshold",
+    "k_selection": "k in {1,3,5} selected by valid-vs-BCN image AUROC -- BCN touches the k choice (pre-registered 3-point grid, all candidates reported) but not the threshold",
+    "bcn_test_read": false,
+    "derm7pt_test_read": "feature cache only, for the flagged-fraction histogram; no label used, no model evaluated (authorized domain-score read)"
+  },
+  "populations": {
+    "derm7pt_valid": {
+      "n": 203,
+      "role": "in-domain positives + threshold fit"
+    },
+    "derm7pt_test": {
+      "n": 395,
+      "role": "in-domain spill check"
+    },
+    "bcn_image": {
+      "n": 9846,
+      "role": "cross-centre shift population, image level (PRIMARY: the gate's deployment unit is a single image)"
+    },
+    "bcn_lesion_pooled": {
+      "n": 2858,
+      "role": "cross-centre, lesion mean-pooled + renormalised (secondary view, matches N3's primary unit)",
+      "group_counts": {
+        "BCC": 787,
+        "MEL": 419,
+        "MISC": 348,
+        "NEV": 1023,
+        "SK": 281
+      }
+    }
+  },
+  "k_grid": {
+    "1": {
+      "threshold_p1_valid": 0.835128,
+      "auroc_valid_vs_bcn_image": 0.9657,
+      "auroc_valid_vs_bcn_lesion": 0.9519,
+      "scores": {
+        "derm7pt_valid": {
+          "n": 203,
+          "mean": 0.9231,
+          "std": 0.0285,
+          "min": 0.8214,
+          "p1": 0.8351,
+          "p5": 0.8702,
+          "median": 0.9316,
+          "max": 0.9644
+        },
+        "derm7pt_test": {
+          "n": 395,
+          "mean": 0.9228,
+          "std": 0.0288,
+          "min": 0.7821,
+          "p1": 0.8302,
+          "p5": 0.865,
+          "median": 0.9292,
+          "max": 0.9711
+        },
+        "bcn_image": {
+          "n": 9846,
+          "mean": 0.8347,
+          "std": 0.0381,
+          "min": 0.6862,
+          "p1": 0.7302,
+          "p5": 0.7655,
+          "median": 0.8386,
+          "max": 0.9361
+        },
+        "bcn_lesion_pooled": {
+          "n": 2858,
+          "mean": 0.8433,
+          "std": 0.0379,
+          "min": 0.6864,
+          "p1": 0.7419,
+          "p5": 0.7753,
+          "median": 0.8465,
+          "max": 0.9315
+        }
+      },
+      "flagged_at_threshold": {
+        "derm7pt_valid": {
+          "n_flagged": 3,
+          "flagged_fraction": 0.0148
+        },
+        "derm7pt_test": {
+          "n_flagged": 5,
+          "flagged_fraction": 0.0127
+        },
+        "bcn_image": {
+          "n_flagged": 4564,
+          "flagged_fraction": 0.4635
+        },
+        "bcn_lesion_pooled": {
+          "n_flagged": 1110,
+          "flagged_fraction": 0.3884
+        }
+      }
+    },
+    "3": {
+      "threshold_p1_valid": 0.825264,
+      "auroc_valid_vs_bcn_image": 0.9602,
+      "auroc_valid_vs_bcn_lesion": 0.946,
+      "scores": {
+        "derm7pt_valid": {
+          "n": 203,
+          "mean": 0.9154,
+          "std": 0.0311,
+          "min": 0.8019,
+          "p1": 0.8253,
+          "p5": 0.8536,
+          "median": 0.9237,
+          "max": 0.9594
+        },
+        "derm7pt_test": {
+          "n": 395,
+          "mean": 0.9152,
+          "std": 0.0295,
+          "min": 0.7794,
+          "p1": 0.8178,
+          "p5": 0.8578,
+          "median": 0.9222,
+          "max": 0.9578
+        },
+        "bcn_image": {
+          "n": 9846,
+          "mean": 0.8254,
+          "std": 0.0382,
+          "min": 0.6728,
+          "p1": 0.7224,
+          "p5": 0.7567,
+          "median": 0.829,
+          "max": 0.9299
+        },
+        "bcn_lesion_pooled": {
+          "n": 2858,
+          "mean": 0.8339,
+          "std": 0.0379,
+          "min": 0.6843,
+          "p1": 0.7345,
+          "p5": 0.7663,
+          "median": 0.8365,
+          "max": 0.9265
+        }
+      },
+      "flagged_at_threshold": {
+        "derm7pt_valid": {
+          "n_flagged": 3,
+          "flagged_fraction": 0.0148
+        },
+        "derm7pt_test": {
+          "n_flagged": 5,
+          "flagged_fraction": 0.0127
+        },
+        "bcn_image": {
+          "n_flagged": 4529,
+          "flagged_fraction": 0.46
+        },
+        "bcn_lesion_pooled": {
+          "n_flagged": 1122,
+          "flagged_fraction": 0.3926
+        }
+      }
+    },
+    "5": {
+      "threshold_p1_valid": 0.816337,
+      "auroc_valid_vs_bcn_image": 0.9556,
+      "auroc_valid_vs_bcn_lesion": 0.9413,
+      "scores": {
+        "derm7pt_valid": {
+          "n": 203,
+          "mean": 0.9105,
+          "std": 0.0329,
+          "min": 0.7937,
+          "p1": 0.8163,
+          "p5": 0.8419,
+          "median": 0.9197,
+          "max": 0.9579
+        },
+        "derm7pt_test": {
+          "n": 395,
+          "mean": 0.9105,
+          "std": 0.0305,
+          "min": 0.7726,
+          "p1": 0.8053,
+          "p5": 0.8541,
+          "median": 0.9176,
+          "max": 0.9536
+        },
+        "bcn_image": {
+          "n": 9846,
+          "mean": 0.8196,
+          "std": 0.0388,
+          "min": 0.6591,
+          "p1": 0.7176,
+          "p5": 0.751,
+          "median": 0.8227,
+          "max": 0.9271
+        },
+        "bcn_lesion_pooled": {
+          "n": 2858,
+          "mean": 0.8279,
+          "std": 0.0385,
+          "min": 0.6821,
+          "p1": 0.7305,
+          "p5": 0.7606,
+          "median": 0.8296,
+          "max": 0.9222
+        }
+      },
+      "flagged_at_threshold": {
+        "derm7pt_valid": {
+          "n_flagged": 3,
+          "flagged_fraction": 0.0148
+        },
+        "derm7pt_test": {
+          "n_flagged": 5,
+          "flagged_fraction": 0.0127
+        },
+        "bcn_image": {
+          "n_flagged": 4306,
+          "flagged_fraction": 0.4373
+        },
+        "bcn_lesion_pooled": {
+          "n_flagged": 1075,
+          "flagged_fraction": 0.3761
+        }
+      }
+    }
+  },
+  "k_selection": {
+    "grid": [
+      1,
+      3,
+      5
+    ],
+    "criterion": "argmax valid-vs-BCN image-level AUROC (ties -> smaller k)",
+    "selected_k": 1,
+    "registered_k": 1,
+    "registered_matches_selected": true
+  },
+  "registered_gate": {
+    "gate": "domain-similarity-v1",
+    "score_definition": "mean top-1 exact cosine to the frozen TRAIN dermlip image bank (512-d, image-only; metadata block excluded so cosine is not poisoned)",
+    "k": 1,
+    "threshold": 0.835128,
+    "threshold_provenance": {
+      "fit_population": "derm7pt-valid",
+      "n_fit": 203,
+      "percentile": 1.0,
+      "percentile_method": "linear (numpy default)",
+      "bcn_used_for_threshold": false,
+      "valid_score_min": 0.8214346193855646,
+      "valid_score_mean": 0.9231324996567458,
+      "valid_score_max": 0.9644151147778651
+    },
+    "bank": {
+      "name": "derm7pt-train@dermlip512-domain",
+      "n_entries": 413,
+      "feature_dim": 512,
+      "bank_hash": "71aef70058f6bce6c87651b284d646a9987138361007344a4d1abc25f23fdfdd",
+      "hash_algo": "sha256",
+      "label_fields": [],
+      "retrieval": "exact cosine (unit-normalised dot product); no ANN, no randomness"
+    },
+    "valid_percentile": 1.0
+  },
+  "headline_at_registered_gate": {
+    "auroc_valid_vs_bcn_image": 0.9657,
+    "auroc_valid_vs_bcn_lesion": 0.9519,
+    "bcn_image_flagged_fraction": 0.4635,
+    "bcn_lesion_flagged_fraction": 0.3884,
+    "derm7pt_test_flagged_fraction": 0.0127,
+    "derm7pt_valid_flagged_fraction": 0.0148
+  },
+  "sanity_probes": {
+    "status": "ran",
+    "encoder": {
+      "model_id": "redlessone/DermLIP_ViT-B-16"
+    },
+    "note": "The figure probes are matplotlib canvases CONTAINING dermoscopy crops -- a conservative gross-OOD probe, deliberately harder than a photo of a cat. The synthetic probes contain no dermoscopic content at all.",
+    "probes": [
+      {
+        "probe": "synthetic: seeded uniform RGB noise",
+        "domain_score": 0.6849,
+        "flagged_ood": true
+      },
+      {
+        "probe": "synthetic: flat mid-grey",
+        "domain_score": 0.701,
+        "flagged_ood": true
+      },
+      {
+        "probe": "in-repo figure rendering: research\\evidence\\derm7pt_v1\\g1c_exemplar_sheets\\pigment_network.png",
+        "domain_score": 0.8426,
+        "flagged_ood": false
+      },
+      {
+        "probe": "in-repo figure rendering: research\\evidence\\derm7pt_v1\\g1c_exemplar_sheets\\streaks.png",
+        "domain_score": 0.8876,
+        "flagged_ood": false
+      },
+      {
+        "probe": "in-repo figure rendering: research\\evidence\\derm7pt_v1\\attribution_samples\\case_2_diagnosis.png",
+        "domain_score": 0.828,
+        "flagged_ood": true
+      }
+    ]
+  },
+  "verdict": "CENTRE SHIFT IS DETECTABLE IN RANK: valid-vs-BCN image AUROC 0.9657 -- bank similarity sees the cross-centre shift that N3 showed head margins cannot (margins move the WRONG way; this score moves the right way). At the registered valid-p1 operating point (kept deliberately conservative so ~99% of in-domain images pass), 46.4% of BCN images fall below threshold and are auto-downgraded to the single-view report. The upper tail of the BCN score distribution overlaps the in-domain distribution, so the conservative threshold converts strong rank separation into a partial gate: the closest-to-domain BCN images pass. The gate materially NARROWS the N3 boundary for centre shift; it does not close it, and the paper should quote both numbers rather than the AUROC alone. Gross non-dermoscopic inputs: 3/5 sanity probes flagged; the fully synthetic probes (no dermoscopic content) were ALL flagged, so the gate does catch inputs that are not dermoscopy at all. Spill on legitimate in-domain images: 1.27% of Derm7pt TEST flagged (valid, the fitting population, 1.48% by construction)."
+}

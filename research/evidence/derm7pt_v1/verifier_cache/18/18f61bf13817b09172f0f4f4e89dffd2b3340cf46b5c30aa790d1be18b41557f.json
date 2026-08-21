@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score range after override is [2, 3], but the contract does not provide any mechanism to compute a new score based on criterion overrides. The original score range was [0, 1] with max 7 points possible. Changing 'blue_whitish_veil' from 'absent' (0 points) to 'present' would award 2 points, but without knowing how other criteria contribute or whether 'pigmentation' can be assigned points, the agent fabricates the [2, 3] range. This is incorrect.",
+    "CRITERION ACCURACY: The agent assumes that 'blue_whitish_veil' being 'present' awards 2 points, which is plausible, but it fails to account for the unresolved 'pigmentation' criterion (which could add 0 or 1 point). Without explicit computation from the contract, the agent's score range calculation is ungrounded.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', which matches the contract's original recommendation. However, since the agent fabricated the score range and reasoning, this conclusion is not faithfully derived from the contract\u2019s deterministic ladder or guideline binding \u2014 it is speculative.",
+    "CONFLICT REPORTING: The agent does not report any conflict state as required by the contract, even though it has introduced an override not present in the original decision contract. The contract's conflict field is {\"present\": false}, but the agent's action creates a deviation that should be flagged as a potential conflict or escalation."
+  ],
+  "confidence": "medium",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score range after override is [2, 3], but the contract does not provide any mechanism to compute a new score based on criterion overrides. The original score range was [0, 1] with max 7 points possible. Changing 'blue_whitish_veil' from 'absent' (0 points) to 'present' would award 2 points, but without knowing how other criteria contribute or whether 'pigmentation' can be assigned points, the agent fabricates the [2, 3] range. This is incorrect.\",\n    \"CRITERION ACCURACY: The agent assumes that 'blue_whitish_veil' being 'present' awards 2 points, which is plausible, but it fails to account for the unresolved 'pigmentation' criterion (which could add 0 or 1 point). Without explicit computation from the contract, the agent's score range calculation is ungrounded.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', which matches the contract's original recommendation. However, since the agent fabricated the score range and reasoning, this conclusion is not faithfully derived from the contract\u2019s deterministic ladder or guideline binding \u2014 it is speculative.\",\n    \"CONFLICT REPORTING: The agent does not report any conflict state as required by the contract, even though it has introduced an override not present in the original decision contract. The contract's conflict field is {\\\"present\\\": false}, but the agent's action creates a deviation that should be flagged as a potential conflict or escalation.\"\n  ],\n  \"confidence\": \"medium\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.063,
+  "usage": {
+    "prompt_tokens": 1128,
+    "completion_tokens": 347,
+    "total_tokens": 1475
+  }
+}

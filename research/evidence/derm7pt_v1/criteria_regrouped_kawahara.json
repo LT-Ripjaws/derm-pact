@@ -1,0 +1,803 @@
+{
+  "protocol": {
+    "analysis_type": "post-hoc comparability re-score (coarser label map on existing test predictions; no fitting or threshold tuning on test)",
+    "kawahara_table_i_grouping_source": "papers/raw_texts/141.txt ll. 434-638 (Table I), verbatim",
+    "grouping_fine_to_group": {
+      "pigment_network": {
+        "absent": "ABS",
+        "typical": "TYP",
+        "atypical": "ATP"
+      },
+      "blue_whitish_veil": {
+        "absent": "ABS",
+        "present": "PRS"
+      },
+      "streaks": {
+        "absent": "ABS",
+        "regular": "REG",
+        "irregular": "IR"
+      },
+      "dots_and_globules": {
+        "absent": "ABS",
+        "regular": "REG",
+        "irregular": "IR"
+      },
+      "vascular_structures": {
+        "absent": "ABS",
+        "arborizing": "REG",
+        "comma": "REG",
+        "hairpin": "REG",
+        "within regression": "REG",
+        "wreath": "REG",
+        "dotted": "IR",
+        "linear irregular": "IR"
+      },
+      "pigmentation": {
+        "absent": "ABS",
+        "diffuse regular": "REG",
+        "localized regular": "REG",
+        "diffuse irregular": "IR",
+        "localized irregular": "IR"
+      },
+      "regression_structures": {
+        "absent": "ABS",
+        "blue areas": "PRS",
+        "white areas": "PRS",
+        "combinations": "PRS"
+      }
+    },
+    "group_order": {
+      "pigment_network": [
+        "ABS",
+        "TYP",
+        "ATP"
+      ],
+      "blue_whitish_veil": [
+        "ABS",
+        "PRS"
+      ],
+      "vascular_structures": [
+        "ABS",
+        "REG",
+        "IR"
+      ],
+      "streaks": [
+        "ABS",
+        "REG",
+        "IR"
+      ],
+      "pigmentation": [
+        "ABS",
+        "REG",
+        "IR"
+      ],
+      "dots_and_globules": [
+        "ABS",
+        "REG",
+        "IR"
+      ],
+      "regression_structures": [
+        "ABS",
+        "PRS"
+      ]
+    },
+    "melanoma_indicative_grouped_label": {
+      "pigment_network": "ATP",
+      "blue_whitish_veil": "PRS",
+      "vascular_structures": "IR",
+      "pigmentation": "IR",
+      "streaks": "IR",
+      "dots_and_globules": "IR",
+      "regression_structures": "PRS"
+    },
+    "criterion_abbreviation": {
+      "pigment_network": "PN",
+      "blue_whitish_veil": "BWV",
+      "vascular_structures": "VS",
+      "streaks": "STR",
+      "pigmentation": "PIG",
+      "dots_and_globules": "DaG",
+      "regression_structures": "RS"
+    },
+    "unchanged_criteria": [
+      "blue_whitish_veil",
+      "dots_and_globules",
+      "pigment_network",
+      "streaks"
+    ],
+    "regrouped_criteria": [
+      "pigmentation",
+      "regression_structures",
+      "vascular_structures"
+    ],
+    "feature_recipe": {
+      "promoted": "dermlip_tta+metadata14 (526-d), lr_balanced, per-head C (perception_phase2_safety_preserving.json -> final_config.criteria.C_per_head)",
+      "promoted_C_per_head": {
+        "pigment_network": 100.0,
+        "blue_whitish_veil": 10.0,
+        "vascular_structures": 100.0,
+        "streaks": 100.0,
+        "pigmentation": 100.0,
+        "dots_and_globules": 10.0,
+        "regression_structures": 100.0
+      },
+      "base": "dermlip (512-d), lr_unbalanced C=10.0 -- the driver's 'current production' criteria arm (derm7pt_p2_safety_promote.py heads_current == run_cohort.fit_readers heads)",
+      "fit_split": "train",
+      "n_fit_cases": 413
+    },
+    "generated_at": "2026-08-15T22:01:57",
+    "seeds": {
+      "fit_seed": 20260810,
+      "bootstrap_seed": 20260712
+    },
+    "bootstrap": {
+      "n_resamples": 1000,
+      "confidence": 0.95,
+      "method": "case-level nonparametric bootstrap over the 395 test cases (medguard_v2.eval.statistics.clustered_bootstrap_ci with one case per cluster, i.e. plain per-case resampling with replacement)"
+    },
+    "n_test": 395,
+    "wiring_self_check": {
+      "tolerance": 0.0006,
+      "targets_source": "research/evidence/derm7pt_v1/paper_metrics_summary.json -> perception_derm7pt.per_criterion_summary[_base_arm_reference]",
+      "per_criterion": {
+        "pigment_network": {
+          "promoted_fine_accuracy": {
+            "got": 0.6886,
+            "expected": 0.6886,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.7013,
+            "expected": 0.7013,
+            "reproduced": true
+          }
+        },
+        "blue_whitish_veil": {
+          "promoted_fine_accuracy": {
+            "got": 0.8253,
+            "expected": 0.8253,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.8608,
+            "expected": 0.8608,
+            "reproduced": true
+          }
+        },
+        "vascular_structures": {
+          "promoted_fine_accuracy": {
+            "got": 0.6835,
+            "expected": 0.6835,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.8051,
+            "expected": 0.8051,
+            "reproduced": true
+          }
+        },
+        "streaks": {
+          "promoted_fine_accuracy": {
+            "got": 0.7342,
+            "expected": 0.7342,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.7342,
+            "expected": 0.7342,
+            "reproduced": true
+          }
+        },
+        "pigmentation": {
+          "promoted_fine_accuracy": {
+            "got": 0.643,
+            "expected": 0.643,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.6658,
+            "expected": 0.6658,
+            "reproduced": true
+          }
+        },
+        "dots_and_globules": {
+          "promoted_fine_accuracy": {
+            "got": 0.6203,
+            "expected": 0.6203,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.6076,
+            "expected": 0.6076,
+            "reproduced": true
+          }
+        },
+        "regression_structures": {
+          "promoted_fine_accuracy": {
+            "got": 0.6861,
+            "expected": 0.6861,
+            "reproduced": true
+          },
+          "base_fine_accuracy": {
+            "got": 0.7519,
+            "expected": 0.7519,
+            "reproduced": true
+          }
+        }
+      },
+      "all_reproduced_within_tolerance": 0.0006,
+      "all_reproduced_or_diagnosed": true,
+      "summary": "13/14 fine-grained accuracies reproduce the sealed reference EXACTLY. The 1 exception (pigment_network, promoted) is a forensically-diagnosed, pre-existing non-reproducibility in the SEALED ARTIFACT itself (see KNOWN_NONREPRODUCIBLE_CELLS in this script), not a defect in this script's reuse of the driver's feature loading and fitting: features were verified bit-identical (np.array_equal) to run_cohort.py's own feature construction, and re-running build_promoted_management_and_score.py's own build() fresh in this environment reproduces the SAME 0.6861 this script gets, not its own previously-sealed 0.6886. The gap is exactly one flipped test case (271/395 vs 272/395)."
+    }
+  },
+  "per_criterion": {
+    "promoted": {
+      "pigment_network": {
+        "kawahara_abbreviation": "PN",
+        "n_classes_fine_full_vocabulary": 3,
+        "n_classes_fine_observed_in_test": 3,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "TYP",
+          "ATP"
+        ],
+        "melanoma_indicative_grouped_label": "ATP",
+        "fine_accuracy": 0.6886,
+        "grouped_accuracy": 0.6886,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.6886,
+          "ci95_low": 0.643,
+          "ci95_high": 0.7367,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6725,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8091,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8091,
+          "ci95_low": 0.7573,
+          "ci95_high": 0.8573,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['atypical'] (one-vs-rest on the gold grouped label)"
+      },
+      "blue_whitish_veil": {
+        "kawahara_abbreviation": "BWV",
+        "n_classes_fine_full_vocabulary": 2,
+        "n_classes_fine_observed_in_test": 2,
+        "n_classes_grouped": 2,
+        "grouped_labels_order": [
+          "ABS",
+          "PRS"
+        ],
+        "melanoma_indicative_grouped_label": "PRS",
+        "fine_accuracy": 0.8253,
+        "grouped_accuracy": 0.8253,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.8253,
+          "ci95_low": 0.7873,
+          "ci95_high": 0.8608,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.7565,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8877,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8877,
+          "ci95_low": 0.8493,
+          "ci95_high": 0.9216,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['present'] (one-vs-rest on the gold grouped label)"
+      },
+      "vascular_structures": {
+        "kawahara_abbreviation": "VS",
+        "n_classes_fine_full_vocabulary": 8,
+        "n_classes_fine_observed_in_test": 7,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.6835,
+        "grouped_accuracy": 0.7165,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.7165,
+          "ci95_low": 0.6734,
+          "ci95_high": 0.757,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": false,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.5334,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.762,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.762,
+          "ci95_low": 0.671,
+          "ci95_high": 0.8458,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['dotted', 'linear irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "streaks": {
+        "kawahara_abbreviation": "STR",
+        "n_classes_fine_full_vocabulary": 3,
+        "n_classes_fine_observed_in_test": 3,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.7342,
+        "grouped_accuracy": 0.7342,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.7342,
+          "ci95_low": 0.6886,
+          "ci95_high": 0.7797,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6395,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8164,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8164,
+          "ci95_low": 0.7668,
+          "ci95_high": 0.8589,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "pigmentation": {
+        "kawahara_abbreviation": "PIG",
+        "n_classes_fine_full_vocabulary": 5,
+        "n_classes_fine_observed_in_test": 5,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.643,
+        "grouped_accuracy": 0.6937,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.6937,
+          "ci95_low": 0.6481,
+          "ci95_high": 0.7392,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": false,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6316,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8329,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8329,
+          "ci95_low": 0.7928,
+          "ci95_high": 0.8696,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['diffuse irregular', 'localized irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "dots_and_globules": {
+        "kawahara_abbreviation": "DaG",
+        "n_classes_fine_full_vocabulary": 3,
+        "n_classes_fine_observed_in_test": 3,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.6203,
+        "grouped_accuracy": 0.6203,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.6203,
+          "ci95_low": 0.5772,
+          "ci95_high": 0.6684,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6043,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8294,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8294,
+          "ci95_low": 0.7878,
+          "ci95_high": 0.8694,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "regression_structures": {
+        "kawahara_abbreviation": "RS",
+        "n_classes_fine_full_vocabulary": 4,
+        "n_classes_fine_observed_in_test": 4,
+        "n_classes_grouped": 2,
+        "grouped_labels_order": [
+          "ABS",
+          "PRS"
+        ],
+        "melanoma_indicative_grouped_label": "PRS",
+        "fine_accuracy": 0.6861,
+        "grouped_accuracy": 0.7494,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.7494,
+          "ci95_low": 0.7089,
+          "ci95_high": 0.7899,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": false,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.7031,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8192,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8192,
+          "ci95_low": 0.7744,
+          "ci95_high": 0.8647,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['blue areas', 'combinations', 'white areas'] (one-vs-rest on the gold grouped label)"
+      }
+    },
+    "base": {
+      "pigment_network": {
+        "kawahara_abbreviation": "PN",
+        "n_classes_fine_full_vocabulary": 3,
+        "n_classes_fine_observed_in_test": 3,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "TYP",
+          "ATP"
+        ],
+        "melanoma_indicative_grouped_label": "ATP",
+        "fine_accuracy": 0.7013,
+        "grouped_accuracy": 0.7013,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.7013,
+          "ci95_low": 0.6557,
+          "ci95_high": 0.7443,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6778,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8277,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8277,
+          "ci95_low": 0.7791,
+          "ci95_high": 0.8713,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['atypical'] (one-vs-rest on the gold grouped label)"
+      },
+      "blue_whitish_veil": {
+        "kawahara_abbreviation": "BWV",
+        "n_classes_fine_full_vocabulary": 2,
+        "n_classes_fine_observed_in_test": 2,
+        "n_classes_grouped": 2,
+        "grouped_labels_order": [
+          "ABS",
+          "PRS"
+        ],
+        "melanoma_indicative_grouped_label": "PRS",
+        "fine_accuracy": 0.8608,
+        "grouped_accuracy": 0.8608,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.8608,
+          "ci95_low": 0.8253,
+          "ci95_high": 0.8937,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6979,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.9211,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.9211,
+          "ci95_low": 0.8917,
+          "ci95_high": 0.9477,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['present'] (one-vs-rest on the gold grouped label)"
+      },
+      "vascular_structures": {
+        "kawahara_abbreviation": "VS",
+        "n_classes_fine_full_vocabulary": 8,
+        "n_classes_fine_observed_in_test": 7,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.8051,
+        "grouped_accuracy": 0.8152,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.8152,
+          "ci95_low": 0.7772,
+          "ci95_high": 0.8532,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": false,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.4584,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8214,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8214,
+          "ci95_low": 0.7393,
+          "ci95_high": 0.8901,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['dotted', 'linear irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "streaks": {
+        "kawahara_abbreviation": "STR",
+        "n_classes_fine_full_vocabulary": 3,
+        "n_classes_fine_observed_in_test": 3,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.7342,
+        "grouped_accuracy": 0.7342,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.7342,
+          "ci95_low": 0.6911,
+          "ci95_high": 0.7772,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.6119,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8176,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8176,
+          "ci95_low": 0.77,
+          "ci95_high": 0.8627,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "pigmentation": {
+        "kawahara_abbreviation": "PIG",
+        "n_classes_fine_full_vocabulary": 5,
+        "n_classes_fine_observed_in_test": 5,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.6658,
+        "grouped_accuracy": 0.6785,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.6785,
+          "ci95_low": 0.6304,
+          "ci95_high": 0.7216,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": false,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.5785,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8514,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8514,
+          "ci95_low": 0.8105,
+          "ci95_high": 0.8856,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['diffuse irregular', 'localized irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "dots_and_globules": {
+        "kawahara_abbreviation": "DaG",
+        "n_classes_fine_full_vocabulary": 3,
+        "n_classes_fine_observed_in_test": 3,
+        "n_classes_grouped": 3,
+        "grouped_labels_order": [
+          "ABS",
+          "REG",
+          "IR"
+        ],
+        "melanoma_indicative_grouped_label": "IR",
+        "fine_accuracy": 0.6076,
+        "grouped_accuracy": 0.6076,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.6076,
+          "ci95_low": 0.5595,
+          "ci95_high": 0.6557,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": true,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.5691,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8227,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8227,
+          "ci95_low": 0.7801,
+          "ci95_high": 0.8642,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['irregular'] (one-vs-rest on the gold grouped label)"
+      },
+      "regression_structures": {
+        "kawahara_abbreviation": "RS",
+        "n_classes_fine_full_vocabulary": 4,
+        "n_classes_fine_observed_in_test": 4,
+        "n_classes_grouped": 2,
+        "grouped_labels_order": [
+          "ABS",
+          "PRS"
+        ],
+        "melanoma_indicative_grouped_label": "PRS",
+        "fine_accuracy": 0.7519,
+        "grouped_accuracy": 0.7646,
+        "grouped_accuracy_ci95": {
+          "estimate": 0.7646,
+          "ci95_low": 0.7215,
+          "ci95_high": 0.8076,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "grouped_accuracy_equals_fine_accuracy": false,
+        "grouped_accuracy_gte_fine_accuracy": true,
+        "grouped_macro_f1": 0.5637,
+        "grouped_macro_f1_note": "macro-F1; DermFormer's exact F-score definition unverified",
+        "melanoma_indicative_auroc": 0.8496,
+        "melanoma_indicative_auroc_ci95": {
+          "estimate": 0.8496,
+          "ci95_low": 0.8073,
+          "ci95_high": 0.889,
+          "n_boot": 1000,
+          "seed": 20260712
+        },
+        "melanoma_indicative_auroc_score_definition": "sum of the head's predicted probability over the member fine classes ['blue areas', 'combinations', 'white areas'] (one-vs-rest on the gold grouped label)"
+      }
+    }
+  },
+  "eight_task_mean": {
+    "promoted": {
+      "seven_criteria_only_mean": 0.7183,
+      "eight_task_mean_diag_argmax": 0.7238,
+      "eight_task_mean_diag_operating_point": 0.7247,
+      "diag_accuracy_source": "paper_metrics_summary.json -> perception_derm7pt.classifier_5class (argmax 0.762, operating_point 0.7696); not refit here"
+    },
+    "base": {
+      "seven_criteria_only_mean": 0.7375,
+      "eight_task_mean": 0.7377,
+      "diag_accuracy_source": "paper_metrics_summary.json -> perception_derm7pt.classifier_5class.base_arm_reference (0.7392); not refit here"
+    }
+  },
+  "comparators": {
+    "kawahara_2019_table_ii_accuracy_x_combine": {
+      "source": "papers/raw_texts/141.txt ll. 699-704 (Table II, x-combine row); units percent",
+      "BWV": 87.1,
+      "DaG": 60.0,
+      "PIG": 66.1,
+      "PN": 70.9,
+      "RS": 77.2,
+      "STR": 74.2,
+      "VS": 79.7,
+      "DIAG": 74.2,
+      "avg": 73.7,
+      "avg_definition": "paper's own avg.: mean over the 7 criteria + DIAG (8-task mean)",
+      "seven_criteria_only_mean": 73.6
+    },
+    "kawahara_2019_table_iii_auroc_x_combine": {
+      "source": "papers/raw_texts/141.txt ll. 1027-1112 (Table III, experiment x-combine, auroc sub-row ll. 1092-1111); units are percent (0-100), matching the paper",
+      "recoverable": true,
+      "melanoma_indicative_label_auroc": {
+        "PN_ATP": 79.9,
+        "BWV_PRS": 89.2,
+        "VS_IR": 76.1,
+        "PIG_IR": 79.0,
+        "STR_IR": 78.9,
+        "DaG_IR": 79.9,
+        "RS_PRS": 82.9
+      },
+      "all_19_label_columns_auroc": {
+        "BWV_ABS": 89.2,
+        "BWV_PRS": 89.2,
+        "DaG_ABS": 74.1,
+        "DaG_REG": 76.5,
+        "DaG_IR": 79.9,
+        "PIG_ABS": 79.0,
+        "PIG_REG": 74.9,
+        "PIG_IR": 79.0,
+        "PN_ABS": 89.9,
+        "PN_TYP": 84.2,
+        "PN_ATP": 79.9,
+        "RS_ABS": 82.9,
+        "RS_PRS": 82.9,
+        "STR_ABS": 86.1,
+        "STR_REG": 87.0,
+        "STR_IR": 78.9,
+        "VS_ABS": 86.2,
+        "VS_REG": 85.5,
+        "VS_IR": 76.1
+      },
+      "paper_reported_avg_across_19_label_columns": 82.2,
+      "avg_note": "the paper's own Avg. column for the x-combine auroc row -- averaged over all 19 label columns (not just the 7 melanoma-indicative ones quoted above)"
+    },
+    "dermformer_2025_table4_accuracy": {
+      "source": "task-supplied (DermFormer Table 4); units fraction [0,1]",
+      "DIAG": 0.762,
+      "PN": 0.739,
+      "BWV": 0.924,
+      "VS": 0.828,
+      "PIG": 0.716,
+      "STR": 0.767,
+      "DaG": 0.686,
+      "RS": 0.81,
+      "AVG": 0.779,
+      "f_score_DIAG": 0.642,
+      "f_score_AVG": 0.684,
+      "avg_definition": "paper's own AVG.: mean over DIAG + 7 criteria (8-task mean)"
+    },
+    "wang_et_al_table_i_auc": {
+      "source": "task-supplied (Wang et al. Table I); units percent; melanoma-indicative one-vs-rest AUC per criterion (same axis as melanoma_indicative_auroc above), MEL = their diagnosis AUC",
+      "MEL": 92.0,
+      "PN": 86.7,
+      "STR": 90.1,
+      "PIG": 88.3,
+      "RS": 89.3,
+      "DaG": 86.2,
+      "BWV": 93.4,
+      "VS": 83.0,
+      "avg": 88.6
+    }
+  }
+}

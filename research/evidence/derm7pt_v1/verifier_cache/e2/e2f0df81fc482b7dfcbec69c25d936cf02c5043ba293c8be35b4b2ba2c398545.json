@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent incorrectly states the score range as '2/2' after correction. The maximum possible score is 7, not 2. The correct score after changing 'blue_whitish_veil' to 'present' should be 2 (since that criterion gives 2 points), but the agent misrepresents the total score range as 2/2, implying a maximum of 2, which is wrong.",
+    "CRITERION ACCURACY: The agent implies that only the 'blue_whitish_veil' criterion was changed, but does not account for other criteria. However, the contract shows all other criteria are 'absent' or 'typical' with 0 points, so the corrected score should be 2 (from blue_whitish_veil) + 0 from others = 2/7, not 2/2. The agent's representation of the score range is misleading and inaccurate.",
+    "MANAGEMENT FIDELITY: The agent correctly reports that the recommendation remains 'clinical follow up' because 2 < 3, which aligns with the deterministic ladder. This part is accurate.",
+    "CONFLICT REPORTING: The agent does not report any conflict state, which is acceptable since the contract did not indicate a conflict after override. No issue here.",
+    "CITATION VALIDITY: No citations were made; no validation needed."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent incorrectly states the score range as '2/2' after correction. The maximum possible score is 7, not 2. The correct score after changing 'blue_whitish_veil' to 'present' should be 2 (since that criterion gives 2 points), but the agent misrepresents the total score range as 2/2, implying a maximum of 2, which is wrong.\",\n    \"CRITERION ACCURACY: The agent implies that only the 'blue_whitish_veil' criterion was changed, but does not account for other criteria. However, the contract shows all other criteria are 'absent' or 'typical' with 0 points, so the corrected score should be 2 (from blue_whitish_veil) + 0 from others = 2/7, not 2/2. The agent's representation of the score range is misleading and inaccurate.\",\n    \"MANAGEMENT FIDELITY: The agent correctly reports that the recommendation remains 'clinical follow up' because 2 < 3, which aligns with the deterministic ladder. This part is accurate.\",\n    \"CONFLICT REPORTING: The agent does not report any conflict state, which is acceptable since the contract did not indicate a conflict after override. No issue here.\",\n    \"CITATION VALIDITY: No citations were made; no validation needed.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.107,
+  "usage": {
+    "prompt_tokens": 1121,
+    "completion_tokens": 313,
+    "total_tokens": 1434
+  }
+}

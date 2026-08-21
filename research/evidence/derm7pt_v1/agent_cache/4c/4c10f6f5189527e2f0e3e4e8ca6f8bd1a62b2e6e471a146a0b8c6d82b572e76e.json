@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"refuse\", \"text\": \"The available tools and guidelines do not provide information on five-year survival probabilities for any condition. The system's deterministic computation includes classification, 7-point scoring, and routing to guideline-based management, but no survival statistics are part of the provided corpus or computed outputs. Therefore, I cannot answer this question.\"}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

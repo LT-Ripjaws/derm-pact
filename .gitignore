@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+venv/
+venv_win/
+.env
+.env.*
+*.pem
+
+# local dataset copies (never committed; obtain from the custodians)
+research/data/
+research/datasets/
+datasets/

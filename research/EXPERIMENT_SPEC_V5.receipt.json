@@ -1,0 +1,77 @@
+{
+  "schema_version": "medguard-design-freeze-receipt-v5",
+  "spec_id": "medguard-derm-evidence-contract-h2h-v5",
+  "created": "2026-07-21",
+  "supersedes": "research/EXPERIMENT_SPEC_V4.receipt.json",
+  "supersession_reason": "v4 recorded the 33-record corpus and the frozen-shared-perception (diagnosis-tied) design. v5 expands the corpus to 66 records / 12 sources (cross-issuer ingestion), re-registers perception as a competed axis (M-family probe vs B0 VLM; probe not retrained), and registers the generation runner and the A2/D4/D3 resolutions. PREREGISTRATION.json is bumped to schema 5. v4 and its receipt are preserved byte-identical.",
+  "hash_convention": "SHA-256 of raw file bytes exactly as stored",
+  "status": "design_frozen_runtime_lock_pending",
+  "two_tier_rationale": "design_binding_files must not change without a version bump; observed_files drift.",
+  "design_binding_files": [
+    {
+      "path": "research/EXPERIMENT_SPEC_V5.json",
+      "bytes": 42031,
+      "sha256": "65778047fc61040be5915c8c2db4fa525452bea6c6b5752cef09d6a2ebfe99c0"
+    },
+    {
+      "path": "research/PREREGISTRATION.json",
+      "bytes": 15966,
+      "sha256": "2aa1409d870542c5be67c95d365a866b3421f9d041f91005e9847827534f2152"
+    },
+    {
+      "path": "research/RIVAL_LEDGER.json",
+      "bytes": 18340,
+      "sha256": "0bbcfdcbd4dd5e5cee8ccf7c2b492b68f5eb4fdfd5954eb837b69d0c92087203"
+    }
+  ],
+  "design_binding_rule": "If any one changes, this receipt becomes historical: issue v6 and state the reason.",
+  "observed_files": [
+    {
+      "path": "research/RESULTS_LEDGER.json",
+      "bytes": 354507,
+      "sha256": "4f8eb5eb2274038b2d070a47f1999e836b83af2afe1927c0680fc8339fa20157"
+    },
+    {
+      "path": "research/implementation_cards/H2H_IMPLEMENTATION_CARDS_V1.json",
+      "bytes": 43739,
+      "sha256": "bc89bb39fbaa55269af3ece582d2cddd775ac6d54c3e1d7d26663eff4e4d54ba"
+    },
+    {
+      "path": "notes/MEDGUARD_MASTER_EXECUTION_PLAN.md",
+      "bytes": 21634,
+      "sha256": "fefeb3d25c3e8c549a7fd8c7ad8577fea3b910dc0d18d86080a5870a01f1f677"
+    },
+    {
+      "path": "notes/TARGETS_TO_BEAT.md",
+      "bytes": 15456,
+      "sha256": "c4fa49ca9186a0fbe5d7c0bfe314d355638e3cdfd32854fb0a8d2830ad1587f7"
+    },
+    {
+      "path": "notes/GAP_MATRIX_FINAL.md",
+      "bytes": 15660,
+      "sha256": "f94098f66b8313b217d4c730103484c394a2a69b411012468206d0d71ac7795f"
+    }
+  ],
+  "observed_rule": "Recorded for provenance; drift expected. Implementation cards become design-binding at the pre-H2H lock.",
+  "historical_versions": [
+    {
+      "path": "research/EXPERIMENT_SPEC_V1.receipt.json",
+      "sha256": "5a990ece1c41b21d491b4919b5f31817c1522306846fbcd0058c84d1a05bbfd8",
+      "status": "historical_but_load_bearing",
+      "note": "Pinned by five frozen artifacts. Never edit."
+    },
+    {
+      "path": "research/EXPERIMENT_SPEC_V3.receipt.json",
+      "sha256": "8024d3708e2b98c7ba174d68ee67779679bb863745546aab519f515122b5d7e8",
+      "status": "historical"
+    },
+    {
+      "path": "research/EXPERIMENT_SPEC_V4.receipt.json",
+      "sha256": "1299f41046aeafd1c4e4f3a83cc161e997d4a93f04b39836082977fd534a0044",
+      "status": "historical",
+      "note": "Superseded by this v5. Its design_binding pins (v4 spec + the pre-v5 prereg) are the historical v4 design; the current prereg is pinned by this v5 receipt."
+    }
+  ],
+  "authorization": "This receipt freezes the design only. It does not authorize paid generation or sealed-test access.",
+  "repin_note_2026_08_08": "EXPERIMENT_SPEC_V5.json was re-pinned after its stale next_gate/authorization text was corrected and registration_defect_2026_08_08 was recorded. No endpoint, arm, statistic, or fairness constraint was changed; the design freeze is unaffected."
+}

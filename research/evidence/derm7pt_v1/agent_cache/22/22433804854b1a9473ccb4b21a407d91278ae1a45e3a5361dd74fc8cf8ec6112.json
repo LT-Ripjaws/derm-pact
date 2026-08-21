@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 85.39% confidence. The 7-point score is computed as 2/7, with a minimum of 1 and maximum of 2; this score is undeterminate due to an indeterminate criterion ('streaks'). The threshold for referral is 3, so the current score does not meet it. The criteria-implied action is clinical follow-up because the score is below the threshold.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

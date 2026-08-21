@@ -1,0 +1,5 @@
+{
+  "reply": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9815, and all seven criteria were determinate and scored 0 points. No guideline recommendations are available for this condition (absence_reason: The licensed guideline corpus holds no recommendation for 'NEV').",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

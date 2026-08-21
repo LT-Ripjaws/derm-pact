@@ -1,0 +1,1239 @@
+{
+  "protocol": "medguard-v2-derm7pt-criteria-ensemble-v1",
+  "source": "cdss_contracts_valid.json",
+  "n_cases": 203,
+  "tier_order": [
+    "escalate_conflict",
+    "undecidable",
+    "routine_covered",
+    "routine_uncovered"
+  ],
+  "ordering": "escalate_conflict > undecidable > routine_covered > routine_uncovered; within a tier by seven_point_score.max desc, then case_id asc",
+  "note": "Ordering is deterministic from contract fields only (conflict.present, seven_point_score.decidable, guideline.covered, seven_point_score.max, case_id) -- no model output, wall-clock time, or dict/file iteration order is involved. Re-running this script against an unchanged source file reproduces byte-identical ordering.",
+  "tier_counts": {
+    "escalate_conflict": 35,
+    "undecidable": 0,
+    "routine_covered": 35,
+    "routine_uncovered": 133
+  },
+  "worklist": [
+    {
+      "case_id": "derm7pt-632",
+      "tier": "escalate_conflict",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-133",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-204",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-623",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-638",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-690",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-731",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-783",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-894",
+      "tier": "escalate_conflict",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-143",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-346",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-436",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-455",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-571",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-602",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-659",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-778",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-857",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-875",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-895",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-941",
+      "tier": "escalate_conflict",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-577",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-587",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-765",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-770",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-823",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-836",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-844",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-967",
+      "tier": "escalate_conflict",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-422",
+      "tier": "escalate_conflict",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-712",
+      "tier": "escalate_conflict",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-754",
+      "tier": "escalate_conflict",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-768",
+      "tier": "escalate_conflict",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-800",
+      "tier": "escalate_conflict",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-851",
+      "tier": "escalate_conflict",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 VIEWS DISAGREE"
+    },
+    {
+      "case_id": "derm7pt-740",
+      "tier": "routine_covered",
+      "score_max": 8,
+      "headline": "**Assessment: excision** \u2014 score 8 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-598",
+      "tier": "routine_covered",
+      "score_max": 7,
+      "headline": "**Assessment: excision** \u2014 score 7 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-774",
+      "tier": "routine_covered",
+      "score_max": 7,
+      "headline": "**Assessment: excision** \u2014 score 7 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-803",
+      "tier": "routine_covered",
+      "score_max": 7,
+      "headline": "**Assessment: excision** \u2014 score 7 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-654",
+      "tier": "routine_covered",
+      "score_max": 6,
+      "headline": "**Assessment: excision** \u2014 score 6 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-678",
+      "tier": "routine_covered",
+      "score_max": 6,
+      "headline": "**Assessment: excision** \u2014 score 6 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-614",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-667",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-699",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-719",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-779",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-790",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-950",
+      "tier": "routine_covered",
+      "score_max": 5,
+      "headline": "**Assessment: excision** \u2014 score 5 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-626",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-647",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-743",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-750",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-772",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-805",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-807",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-809",
+      "tier": "routine_covered",
+      "score_max": 4,
+      "headline": "**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-12",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-594",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-682",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-692",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-701",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-723",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-955",
+      "tier": "routine_covered",
+      "score_max": 3,
+      "headline": "**Assessment: excision** \u2014 score 3 >= 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-2",
+      "tier": "routine_covered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-14",
+      "tier": "routine_covered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-20",
+      "tier": "routine_covered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-26",
+      "tier": "routine_covered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-520",
+      "tier": "routine_covered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-37",
+      "tier": "routine_covered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-966",
+      "tier": "routine_covered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-156",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-190",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-226",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-440",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-538",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-601",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-655",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-663",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-734",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-785",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-828",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-882",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-883",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-902",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-939",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-969",
+      "tier": "routine_uncovered",
+      "score_max": 2,
+      "headline": "**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-122",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-165",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-211",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-247",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-248",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-258",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-378",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-489",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-541",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-545",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-548",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-610",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-616",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-665",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-686",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-698",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-751",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-839",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-860",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-876",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-879",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-892",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-906",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-918",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-925",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-929",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-961",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-976",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-999",
+      "tier": "routine_uncovered",
+      "score_max": 1,
+      "headline": "**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-1001",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-1005",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-1006",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-105",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-128",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-131",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-142",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-166",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-175",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-187",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-192",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-195",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-210",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-217",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-219",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-234",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-238",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-240",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-245",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-266",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-278",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-284",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-286",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-307",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-317",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-318",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-323",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-330",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-332",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-334",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-356",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-365",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-375",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-376",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-393",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-396",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-398",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-399",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-407",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-410",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-412",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-419",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-431",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-437",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-442",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-458",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-461",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-466",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-473",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-475",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-479",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-498",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-507",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-513",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-523",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-526",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-529",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-534",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-539",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-552",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-554",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-555",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-558",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-559",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-57",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-59",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-6",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-608",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-613",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-630",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-687",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-70",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-706",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-75",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-76",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-77",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-814",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-824",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-83",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-848",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-877",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-896",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-900",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-933",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-958",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-988",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-994",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    },
+    {
+      "case_id": "derm7pt-997",
+      "tier": "routine_uncovered",
+      "score_max": 0,
+      "headline": "**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree"
+    }
+  ]
+}

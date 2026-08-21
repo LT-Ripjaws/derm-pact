@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the decision contract does not support this calculation. The original contract shows 'blue_whitish_veil' as 'absent' with 0 points. If corrected to 'present', it would be worth 2 points (per criterion table), but other criteria remain unchanged (all 0). Therefore, the correct score should be 2 (min=2, max=2) \u2014 which matches the agent's claim. However, the agent incorrectly states 'the previous score was incorrect given the clinician's correction', implying the original score was wrong due to misclassification, but the contract explicitly states all criteria were determinate and correctly assessed. Thus, the agent fabricates a discrepancy where none exists in the contract.",
+    "CRITERION ACCURACY: The agent assumes that changing 'blue_whitish_veil' from 'absent' to 'present' results in 2 points, which is correct per the criterion definition. But since the contract does not allow for such overrides, and the agent performs an out-of-contract modification, this constitutes a violation of fidelity to the provided data structure. The contract does not contain any mechanism or permission to override criteria values."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the decision contract does not support this calculation. The original contract shows 'blue_whitish_veil' as 'absent' with 0 points. If corrected to 'present', it would be worth 2 points (per criterion table), but other criteria remain unchanged (all 0). Therefore, the correct score should be 2 (min=2, max=2) \u2014 which matches the agent's claim. However, the agent incorrectly states 'the previous score was incorrect given the clinician's correction', implying the original score was wrong due to misclassification, but the contract explicitly states all criteria were determinate and correctly assessed. Thus, the agent fabricates a discrepancy where none exists in the contract.\",\n    \"CRITERION ACCURACY: The agent assumes that changing 'blue_whitish_veil' from 'absent' to 'present' results in 2 points, which is correct per the criterion definition. But since the contract does not allow for such overrides, and the agent performs an out-of-contract modification, this constitutes a violation of fidelity to the provided data structure. The contract does not contain any mechanism or permission to override criteria values.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.977,
+  "usage": {
+    "prompt_tokens": 1088,
+    "completion_tokens": 287,
+    "total_tokens": 1375
+  }
+}

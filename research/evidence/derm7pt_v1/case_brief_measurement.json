@@ -1,0 +1,2054 @@
+{
+  "protocol": "case_brief_measurement_v1",
+  "perception": "promoted (v5.4 contracts)",
+  "prompt_version": "clinician-agent-v5.4",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "n": 203,
+  "verified_rate": 1.0,
+  "verified_first_try_rate": 0.9852,
+  "verified_after_revision_rate": 0.0148,
+  "fallback_rate": 0.0,
+  "mean_attempts": 1.015,
+  "mean_chars_verified": 313.0,
+  "issue_types_final": {},
+  "guarantee_note": "The measured claim is the gate: a brief is shown only if it passes the same deterministic host checks the agent faces (score quotes, criterion values, citation/specifics traceability, action statement); on double failure the deterministic headline renders instead. Unverified generated prose is never displayed, by construction.",
+  "usage": {
+    "calls": 0,
+    "cache_hits": 206,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+  },
+  "rows": [
+    {
+      "case_id": "derm7pt-2",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 420,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model reports BCC, but there is a conflict as the 7-point checklist raises melanoma suspicion, which the classifier does not. For melanoma suspicion, the guideline recommends complete excision with a narrow (1\u20133 mm) margin to perform histological diagnosis, per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-594",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 371,
+      "text": "The seven-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 4 >= 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-6",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 250,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.478, and no guideline recommendations are available for this category."
+    },
+    {
+      "case_id": "derm7pt-598",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 5 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-12",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 4 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-601",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 391,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the checklist result; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with a narrow margin when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-14",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 258,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The lesion was classified as BCC with high confidence, but no guideline recommendation for initial management is triggered by this score."
+    },
+    {
+      "case_id": "derm7pt-602",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 435,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3. The criteria_implied_action is excision due to the score meeting or exceeding the threshold. Although the pattern model classified the lesion as NEV, the checklist raises melanoma suspicion, and contingent guidelines for melanoma support excision as first-line management when melanoma is suspected (e.g., DOI:10.1016/j.jaad.2018.08.055, DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-20",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 344,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3. The criteria_implied_action is excision due to the score meeting or exceeding the threshold. There is a conflict between the pattern model, which reports basal cell carcinoma (BCC), and the 7-point checklist, which raises melanoma suspicion; this discrepancy warrants escalation."
+    },
+    {
+      "case_id": "derm7pt-608",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 237,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9083, and no guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-26",
+      "verified": true,
+      "attempts": 2,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 389,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is BCC with a classifier confidence of 0.8879. Guideline recommendations include a treatment plan that considers recurrence rate, preservation of function, patient expectations, and potential adverse effects (citation ID: DOI:10.1016/j.jaad.2017.10.006)."
+    },
+    {
+      "case_id": "derm7pt-610",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 334,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 6 >= 3. The contingent guideline for melanoma includes a recommendation for complete excision with narrow margins when melanoma is suspected (citation ID: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-37",
+      "verified": true,
+      "attempts": 2,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 386,
+      "text": "The seven-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The diagnosis is BCC with a classifier confidence of 0.8138. Guideline recommendations include a treatment plan that considers recurrence rate, preservation of function, patient expectations, and potential adverse effects (citation ID: DOI:10.1016/j.jaad.2017.10.006)."
+    },
+    {
+      "case_id": "derm7pt-613",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 205,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-57",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 2, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-614",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 257,
+      "text": "The seven-point score is 8, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being \u22653. Guideline recommendation supports primary excision for suspected melanoma, citing DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-59",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 266,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9926), and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-616",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 4 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-70",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 348,
+      "text": "The 7-point score is 3, which is decidable and meets the threshold. The criteria_implied_action is excision due to the score being \u22653. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-623",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 391,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the checklist result; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with a narrow margin when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-75",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 297,
+      "text": "The seven-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 1.0, and all criteria are determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-626",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 420,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with 60% confidence, but this conflicts with the checklist result; no guideline recommendation exists for NEV, but for melanoma, the contingent guidelines recommend complete excision with narrow margins (1\u20133 mm) when melanoma is suspected, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-76",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-630",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9955), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-77",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-632",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 435,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist's melanoma suspicion; no guideline recommendation exists for NEV, but for melanoma, the contingent guidelines recommend complete excision with narrow margins (1\u20133 mm) when melanoma is suspected, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-83",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-638",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 438,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the checklist result, which raises melanoma suspicion; the two views disagree in a clinically significant direction. For melanoma, guideline recommendations include complete excision with narrow margins (1\u20133 mm) when suspected, as per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-105",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9966), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-647",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 260,
+      "text": "The 7-point score is 7, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision with a narrow margin for suspected melanoma, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-122",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 260,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9896. No guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-654",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 529,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 6 >= 3. According to guideline recommendation DOI:10.1016/j.jaad.2018.08.055, surgical excision with histologically negative margins is recommended as first-line treatment for primary melanoma; additionally, per DOI:10.1016/j.ejca.2024.115153, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-128",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-655",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-131",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 266,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9981), and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-659",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 371,
+      "text": "The seven-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 4 >= 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-133",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 379,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. For melanoma, guideline recommendations include complete excision with narrow margins (1\u20133 mm) when suspected, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-663",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.8703, and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-142",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 217,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for SK in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-665",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 427,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist result, which raises melanoma suspicion; the conflict has been escalated. For melanoma, the contingent guideline recommends complete excision with narrow margins (1\u20133 mm) when suspected, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-143",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 391,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the checklist result; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with a narrow margin when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-667",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 281,
+      "text": "The 7-point score is 8, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to a score of 8 \u2265 3. Guideline recommendation supports primary excision with narrow margins for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-156",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 443,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the 7-point checklist result, which raises melanoma suspicion; therefore, the case is escalated. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-678",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 277,
+      "text": "The 7-point score is 10, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being 10 \u2265 3. Guideline recommendation supports primary excision with narrow margins for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-165",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 237,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.6172, and no guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-682",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The 7-point score is 3, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision with a narrow margin for suspected melanoma (citation: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-166",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 205,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-686",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 443,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with 0.7252 confidence, but this conflicts with the checklist\u2019s melanoma suspicion; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with a narrow margin (1\u20133 mm) when melanoma is suspected, as per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-175",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9888), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-687",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 2, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-187",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-690",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 8, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 8 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-190",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 319,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9864, and no guideline recommendations are available for this condition (absence_reason: The licensed guideline corpus holds no recommendation for 'NEV')."
+    },
+    {
+      "case_id": "derm7pt-692",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 4 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-192",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 227,
+      "text": "The seven-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence, and no guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-698",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The seven-point score is 8, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being 8 \u2265 3. Guideline recommendation supports primary excision for suspected melanoma (citation: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-195",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 266,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9984), and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-699",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 6 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-204",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9989), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-701",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 246,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma, with citation DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-210",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-706",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 270,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with 97.08% confidence. No guideline recommendations are available for this condition as the licensed corpus does not cover NEV."
+    },
+    {
+      "case_id": "derm7pt-211",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 452,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist result, which raises melanoma suspicion; no guideline recommendations are available for NEV, but for melanoma, the contingent guideline recommends complete excision with narrow margins when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-712",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 4 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-217",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 2, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-719",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 6 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-219",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-723",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 309,
+      "text": "The seven-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 5 \u2265 3. Guideline recommendation supports primary excision for suspected melanoma, citing DOI:10.1016/j.ejca.2024.115153 (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-226",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 440,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the 7-point checklist result; the two views disagree in a way that raises melanoma suspicion. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-731",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 265,
+      "text": "The 7-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma, with citation DOI:10.1016/j.ejca.2024.115153 (Recommendation 1)."
+    },
+    {
+      "case_id": "derm7pt-234",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 205,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-734",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 237,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9604, and no guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-238",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-740",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 243,
+      "text": "The seven-point score is 10, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-240",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9978), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-743",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 371,
+      "text": "The seven-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 4 >= 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-245",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 379,
+      "text": "The 7-point score is 3, which meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being at or above the threshold. No guideline recommendation is available for NEV; however, for melanoma, the contingent guideline recommends primary excision with a narrow margin (1\u20133 mm) when melanoma is suspected, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-750",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 7, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-247",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 443,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the 7-point checklist result, which raises melanoma suspicion; therefore, the case is escalated. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-751",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 7, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-248",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 391,
+      "text": "The 7-point score is 3, which meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being at or above the threshold. Although the pattern model classified the lesion as NEV, the checklist raises melanoma suspicion, and contingent guidelines for melanoma support complete excision when melanoma is suspected (e.g., eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-754",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-258",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 2, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-765",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 263,
+      "text": "The 7-point score is 3, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being \u22653. Guideline recommendation supports primary excision for suspected melanoma, with citation ID DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-266",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 251,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.8564, and no guideline recommendations are available for this category."
+    },
+    {
+      "case_id": "derm7pt-768",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 371,
+      "text": "The seven-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 6 >= 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-278",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-770",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-284",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-772",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 4 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-286",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 2, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-774",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 338,
+      "text": "The 7-point score is 10, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-307",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 234,
+      "text": "The seven-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 1.0. No guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-778",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 261,
+      "text": "The 7-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to a score of 5 \u2265 3. Guideline recommendation supports primary excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-317",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-779",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 7, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-318",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-783",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 8, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 8 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-323",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-785",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 385,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The pattern model reports melanoma, but the checklist score does not support this, resulting in a conflict requiring escalation. Guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-330",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 205,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-790",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 277,
+      "text": "The 7-point score is 10, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being 10 \u2265 3. Guideline recommendation supports primary excision with narrow margins for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-332",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-800",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 251,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.9505, and no guideline recommendations are available for this category."
+    },
+    {
+      "case_id": "derm7pt-334",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9996), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-803",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 257,
+      "text": "The seven-point score is 9, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being \u22653. Guideline recommendation supports primary excision for suspected melanoma, citing DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-346",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 439,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model classifies the lesion as NEV with high confidence, but this conflicts with the 7-point checklist result; the two views disagree in a manner that raises melanoma suspicion. For melanoma, guideline recommendations support primary excision with narrow margins when suspected (e.g., DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-805",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The seven-point score is 8, which is decidable and meets the threshold of 3. The criteria_implied_action is excision due to the score being \u22653. Guideline recommendation DOI:10.1016/j.jaad.2018.08.055 supports surgical excision as first-line treatment for melanoma."
+    },
+    {
+      "case_id": "derm7pt-356",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-807",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 371,
+      "text": "The seven-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 5 >= 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-365",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-809",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The 7-point score is 8, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision with a narrow margin for suspected melanoma (citation: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-375",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 459,
+      "text": "The 7-point score is 3, which meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being at or above the threshold. Although the pattern model classified the lesion as NEV, the checklist raises melanoma suspicion, creating a conflict that requires escalation. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-814",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 440,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist's melanoma suspicion; no guideline recommendation exists for NEV, but for melanoma, the contingent guidelines recommend complete excision with narrow margins (1\u20133 mm) when melanoma is suspected, as per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-376",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9988), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-823",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 462,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The pattern model reports melanoma, but the checklist score does not support this, resulting in a conflict requiring escalation. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-378",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 452,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist result, which raises melanoma suspicion; no guideline recommendations are available for NEV, but for melanoma, the contingent guideline recommends complete excision with narrow margins when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-824",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.3168, and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-393",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 237,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9389, and no guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-828",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 244,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with high confidence, and no guideline recommendations are available for this category."
+    },
+    {
+      "case_id": "derm7pt-396",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-836",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 438,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3. The criteria_implied_action is excision due to the score meeting or exceeding the threshold. Although the pattern model classified the lesion as MISC, the checklist raises melanoma suspicion, and contingent guidelines for melanoma support complete excision with a narrow margin (1\u20133 mm) when melanoma is suspected, as per recommendation eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-398",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-839",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 525,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. No guideline recommendations are available for MISC; however, contingent guidelines for melanoma include excision as first-line management (citation: DOI:10.1016/j.jaad.2018.08.055) and complete excision with narrow margins when melanoma is suspected (citation: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-399",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9995), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-844",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 462,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The pattern model reports melanoma, but the checklist score does not support this, resulting in a conflict requiring escalation. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-407",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-848",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 276,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for this case, as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-410",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 313,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9947), and all seven criteria are absent, contributing to the score of 0. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-851",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 435,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The pattern model indicates melanoma, but the checklist score does not support immediate intervention. Guideline recommendation eado:pmid:39709737:recommendation-1 advises that when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-412",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-857",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 419,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC, but this conflicts with the 7-point checklist result; no guideline recommendation is available for MISC, but contingent recommendations for melanoma include complete excision with narrow margins (1\u20133 mm) when melanoma is suspected, as per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-419",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-860",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 257,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.411, and no guideline recommendations are available for this condition group."
+    },
+    {
+      "case_id": "derm7pt-422",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 387,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The pattern model indicates melanoma, but the checklist score does not support this, resulting in a conflict requiring escalation. Guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-875",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 261,
+      "text": "The 7-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to a score of 5 \u2265 3. Guideline recommendation supports primary excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-431",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9992), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-876",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 454,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. No guideline recommendations are available for NEV; however, for melanoma, the contingent guideline recommends primary excision with a narrow margin (1\u20133 mm) when melanoma is suspected, as per DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-436",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 429,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with 61.45% confidence, but this conflicts with the 7-point checklist result; no guideline recommendations are available for NEV, but for melanoma, the contingent guideline recommends complete excision with narrow margins when suspicion is present (e.g., DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-877",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 376,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9815, and all seven criteria were determinate and scored 0 points. No guideline recommendations are available for this condition (absence_reason: The licensed guideline corpus holds no recommendation for 'NEV')."
+    },
+    {
+      "case_id": "derm7pt-437",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-879",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 505,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 6 \u2265 3. Although the classifier diagnosed NEV with high confidence, there is a conflict requiring escalation because the checklist raises melanoma suspicion; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with narrow margins when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-440",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 402,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with 61.8% confidence, but this conflicts with the checklist result, which raises melanoma suspicion. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-882",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 334,
+      "text": "The 7-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 5 >= 3. The contingent guideline for melanoma includes a recommendation for complete excision with narrow margins when melanoma is suspected (citation ID: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-442",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 267,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for this case as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-883",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 367,
+      "text": "The 7-point score is 4, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision, based on the score of 4 \u2265 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-455",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 388,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-892",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 266,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9947), and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-458",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9982), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-894",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 441,
+      "text": "The 7-point score is 5, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 5 >= 3. Although the classifier reports a diagnosis of NEV with high confidence, there is a conflict as the 7-point checklist raises melanoma suspicion; the contingent guideline for melanoma includes recommendations for primary excision (e.g., DOI:10.1016/j.ejca.2024.115153, Recommendation 1)."
+    },
+    {
+      "case_id": "derm7pt-461",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-895",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 490,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model classifies the lesion as NEV, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. No guideline recommendations are available for NEV; however, for melanoma, the contingent guideline includes a recommendation for primary excision with a narrow margin (1\u20133 mm) when melanoma is suspected, cited as DOI:10.1016/j.ejca.2024.115153."
+    },
+    {
+      "case_id": "derm7pt-466",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 443,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the 7-point checklist result, which raises melanoma suspicion; therefore, the case is escalated. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-896",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.8702, and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-473",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 410,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The pattern model indicates suspicion for melanoma (MEL), but the checklist score does not support this, resulting in a conflict that requires escalation. Guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with narrow margins when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-900",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 499,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist result, which raises melanoma suspicion; therefore, the case is escalated. For melanoma, the contingent guideline recommends primary excision with a narrow margin (1\u20133 mm) to enable histological diagnosis, as per recommendation eado:pmid:39709737:recommendation-1 (DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-475",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-902",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 264,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9878, and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-479",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-906",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 402,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with 83.4% confidence, but this conflicts with the checklist result, which raises melanoma suspicion. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with a narrow (1\u20133 mm) margin when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-489",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 486,
+      "text": "The 7-point score is 4, which meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being \u22653. Although the classifier diagnosed a nevus (NEV), the checklist indicates melanoma suspicion, and no guideline recommendation exists for NEV; however, for melanoma (MEL), guideline recommendations support excision as first-line management, including complete excision with narrow margins when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-918",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 256,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. All seven criteria were determinate and scored 0 points each. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-498",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 430,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the 7-point checklist result; the two views disagree in a way that raises melanoma suspicion. For melanoma, guideline recommendation eado:pmid:39709737:recommendation-1 advises complete excision with narrow margins when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-925",
+      "verified": true,
+      "attempts": 2,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 385,
+      "text": "The seven-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The diagnosis is BCC with a classifier confidence of 0.851. Guideline recommendations include a treatment plan that considers recurrence rate, preservation of function, patient expectations, and potential adverse effects (citation ID: DOI:10.1016/j.jaad.2017.10.006)."
+    },
+    {
+      "case_id": "derm7pt-507",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-929",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 218,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-513",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 317,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.9561, and all criteria were determinate with no conflicts or unresolved items. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-933",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9949), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-520",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 280,
+      "text": "The 7-point score is 1, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to the score being less than 3. No guideline recommendations are available for this case as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-939",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 450,
+      "text": "The 7-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The lesion was assessed as having no features meeting the criteria for concern, with all seven criteria scored as absent. Guideline recommendations include consideration of a treatment plan that accounts for recurrence rate, function preservation, patient expectations, and adverse effects (citation ID: DOI:10.1016/j.jaad.2017.10.006)."
+    },
+    {
+      "case_id": "derm7pt-523",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 241,
+      "text": "The seven-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The diagnosis is NEV with a classifier confidence of 0.6262. No guideline recommendations are available for this condition."
+    },
+    {
+      "case_id": "derm7pt-941",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 391,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the checklist result; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with a narrow margin when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-526",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 299,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9945), and all criteria were determinate with no conflicts. No guideline recommendations are available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-950",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 333,
+      "text": "The 7-point score is 6, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 6 \u2265 3. The contingent guideline for melanoma includes a recommendation for complete excision with narrow margins when melanoma is suspected (citation ID: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-529",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 212,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for SK in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-955",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 485,
+      "text": "The 7-point score is 4, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC with 66.2% confidence, but this conflicts with the checklist result; no guideline recommendation is available for MISC. However, under contingent guideline conditions for melanoma (MEL), the recommendation is to completely excise the lesion with a narrow margin (1\u20133 mm) when melanoma is suspected, as per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-534",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 306,
+      "text": "The seven-point score is 0, which is below the threshold of 3, and the verdict is decidable. The criteria_implied_action is clinical follow up due to a score less than 3. No guideline recommendations are available for this case as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-958",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 263,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is SK with a confidence of 0.6158, and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-538",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 441,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. No guideline recommendations are available for MISC; however, contingent guidelines for melanoma include excision as first-line management (e.g., DOI:10.1016/j.jaad.2018.08.055, DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-961",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-539",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 205,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-966",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 311,
+      "text": "The seven-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnostic classifier assigned a diagnosis of SK with a confidence of 0.1959. No guideline recommendations are available for this condition, as the licensed corpus does not cover SK."
+    },
+    {
+      "case_id": "derm7pt-541",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 480,
+      "text": "The 7-point score is 3, which meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being \u22653. Although the pattern model classified the lesion as MISC, there is a conflict requiring escalation; no guideline recommendation exists for MISC, but contingent guidelines for melanoma (MEL) support excision, including one recommending complete excision with narrow margins when melanoma is suspected (citation ID: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-967",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 212,
+      "text": "The 7-point score is 2, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 2 < 3. There are no guideline recommendations available for SK in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-545",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 525,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. No guideline recommendations are available for MISC; however, contingent guidelines for melanoma include excision as first-line management (citation: DOI:10.1016/j.jaad.2018.08.055) and complete excision with narrow margins when melanoma is suspected (citation: DOI:10.1016/j.ejca.2024.115153)."
+    },
+    {
+      "case_id": "derm7pt-969",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 295,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is SK with a confidence of 0.9521, and all criteria were determinate with no conflicts. No guideline recommendations are available for SK in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-548",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 391,
+      "text": "The 7-point score is 5, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV, but this conflicts with the checklist result; no guideline recommendation exists for NEV, but for melanoma, the contingent guideline recommends complete excision with a narrow margin when melanoma is suspected (eado:pmid:39709737:recommendation-1)."
+    },
+    {
+      "case_id": "derm7pt-976",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 260,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.8956. No guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-552",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 251,
+      "text": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.9545, and no guideline recommendations are available for this category."
+    },
+    {
+      "case_id": "derm7pt-988",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 267,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for this case as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-554",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-994",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 267,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for this case as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-555",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-997",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 268,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. No guideline recommendation is available for this case, as the condition group 'MISC' is not covered in the licensed guideline corpus."
+    },
+    {
+      "case_id": "derm7pt-558",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 449,
+      "text": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed NEV with high confidence, but this conflicts with the checklist result, which raises melanoma suspicion; escalation is recommended due to this disagreement. For melanoma, guideline recommendations include primary excision with a narrow margin (1\u20133 mm) when suspected, as per eado:pmid:39709737:recommendation-1."
+    },
+    {
+      "case_id": "derm7pt-999",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 478,
+      "text": "The 7-point score is 6, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC with 0.6927 confidence, but this conflicts with the checklist\u2019s melanoma-suspicious score; the guideline corpus contains no recommendation for MISC, but for melanoma (MEL), it includes recommendations such as DOI:10.1016/j.jaad.2018.08.055 and DOI:10.1016/j.ejca.2024.115153, which support complete excision when melanoma is suspected."
+    },
+    {
+      "case_id": "derm7pt-559",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 251,
+      "text": "The 7-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.5522, and no guideline recommendations are available for this category."
+    },
+    {
+      "case_id": "derm7pt-1001",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 319,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.6964, and no guideline recommendations are available for this condition (absence_reason: The licensed guideline corpus holds no recommendation for 'NEV')."
+    },
+    {
+      "case_id": "derm7pt-571",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 257,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is classified as MISC with a confidence of 0.886, and no guideline recommendations are available for this condition group."
+    },
+    {
+      "case_id": "derm7pt-1005",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 213,
+      "text": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for NEV in the current corpus."
+    },
+    {
+      "case_id": "derm7pt-577",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 371,
+      "text": "The seven-point score is 7, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision due to the score being 7 >= 3. According to guideline recommendation eado:pmid:39709737:recommendation-1, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis."
+    },
+    {
+      "case_id": "derm7pt-1006",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 266,
+      "text": "The 7-point score is 1, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with high confidence (0.9995), and no guideline recommendations are available for this condition as per the licensed corpus."
+    },
+    {
+      "case_id": "derm7pt-587",
+      "verified": true,
+      "attempts": 1,
+      "fallback_used": false,
+      "n_issues": 0,
+      "issues": [],
+      "chars": 238,
+      "text": "The 7-point score is 3, which is decidable and meets or exceeds the threshold of 3. The criteria_implied_action is excision. Guideline recommendation supports complete excision for suspected melanoma (eado:pmid:39709737:recommendation-1)."
+    }
+  ]
+}

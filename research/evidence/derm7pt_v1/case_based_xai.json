@@ -1,0 +1,650 @@
+{
+  "protocol": "derm7pt-case-based-xai-retrieval-sanity-v1",
+  "generated_at": "2026-08-14T23:42:14",
+  "seed": 20260810,
+  "purpose": "Measures whether the ON-DEMAND case-based explanation retrieves clinically coherent neighbours: same-label neighbour rate (retrieval sanity) and same-vs-nearest-other-label similarity gap (boundary separation), over a frozen TRAIN-only DermLIP image bank.",
+  "faithful_by_construction_note": "The neighbours ARE the query's nearest points in the frozen feature space the perception reader itself reads, so the explanation is faithful by construction (identity in the model's representation), not a post-hoc rationalisation. This eval does NOT test faithfulness (which is definitional); it tests whether that faithful retrieval is clinically SANE.",
+  "retrieval_feature_space": {
+    "space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)",
+    "argued_deviation_from_brief": "The brief specified dermlip+metadata for the bank. Same verified premise failure as knn_ensemble_p2.json: in RAW cosine the 14-d one-hot metadata block swamps the unit-norm image block, so a metadata-concatenated bank retrieves by demographics, not lesion appearance. A linear probe reweights each dimension and is immune; cosine kNN is not. Image-only retrieval is the faithful and stronger choice."
+  },
+  "bank": {
+    "name": "diagnosis@dermlip",
+    "n_entries": 413,
+    "feature_dim": 512,
+    "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+    "hash_algo": "sha256",
+    "label_fields": [
+      "diagnosis"
+    ],
+    "retrieval": "exact cosine (unit-normalised dot product); no ANN, no randomness",
+    "split": "train",
+    "feature_space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)"
+  },
+  "cohort": {
+    "train": 413,
+    "valid": 203,
+    "valid_class_support": {
+      "BCC": 7,
+      "NEV": 100,
+      "MISC": 25,
+      "MEL": 61,
+      "SK": 10
+    }
+  },
+  "leak_discipline": {
+    "primary_read": "VALID queries vs TRAIN bank (disjoint splits -> leak-free by construction)",
+    "second_read": "TRAIN-on-TRAIN with leave-one-out exclusion",
+    "train_loo_self_leaks": 0,
+    "leak_free": true
+  },
+  "same_label_neighbor_rate": {
+    "definition": "fraction of the k nearest TRAIN cases whose CONFIRMED diagnosis matches the query's true diagnosis",
+    "k_main": 5,
+    "valid": {
+      "rate_mean": 0.6059,
+      "random_baseline_label_prior": 0.3839,
+      "lift_over_baseline": 0.222,
+      "per_class_rate": {
+        "BCC": 0.5143,
+        "NEV": 0.796,
+        "MEL": 0.5541,
+        "SK": 0.08,
+        "MISC": 0.208
+      },
+      "per_class_support": {
+        "BCC": 7,
+        "NEV": 100,
+        "MEL": 61,
+        "SK": 10,
+        "MISC": 25
+      },
+      "one_nn_same_label_accuracy": 0.6847
+    },
+    "train_loo": {
+      "rate_mean": 0.6392,
+      "random_baseline_label_prior": 0.4413,
+      "lift_over_baseline": 0.1979,
+      "per_class_rate": {
+        "BCC": 0.2526,
+        "NEV": 0.8031,
+        "MEL": 0.5222,
+        "SK": 0.15,
+        "MISC": 0.1313
+      },
+      "one_nn_same_label_accuracy": 0.6973
+    }
+  },
+  "boundary_separation_gap": {
+    "definition": "per-case (nearest-same-label cosine) minus (nearest-different-label cosine); positive => the case is closer to its own class than to any other",
+    "identity_note": "fraction_cases_positive_gap equals one_nn_same_label_accuracy by construction (the gap is positive iff the single nearest case is same-label). The nearest_*_sim_mean pair shows the absolute proximities: both are high, so lesions sit in a DENSE region and near class boundaries in raw DermLIP cosine space -- which is precisely why surfacing the nearest different-label case is clinically informative (it flags a genuinely close rival, not a far-away strawman). The linear probe reweights dimensions to separate the classes; raw cosine kNN cannot (cf. knn_ensemble_p2.json).",
+    "valid": {
+      "gap_mean": 0.0066,
+      "gap_median": 0.0092,
+      "nearest_same_sim_mean": 0.9157,
+      "nearest_other_sim_mean": 0.9091,
+      "fraction_cases_positive_gap": 0.6847
+    },
+    "train_loo": {
+      "gap_mean": 0.0082,
+      "gap_median": 0.01,
+      "nearest_same_sim_mean": 0.9184,
+      "nearest_other_sim_mean": 0.9102,
+      "fraction_cases_positive_gap": 0.6973
+    }
+  },
+  "k_sweep": {
+    "valid": [
+      {
+        "k": 1,
+        "n": 203,
+        "same_label_neighbor_rate_mean": 0.6847,
+        "same_label_neighbor_rate_std": 0.4646,
+        "boundary_gap_mean": 0.0066,
+        "boundary_gap_median": 0.0092,
+        "nearest_same_sim_mean": 0.9157,
+        "nearest_other_sim_mean": 0.9091,
+        "fraction_cases_positive_gap": 0.6847,
+        "one_nn_same_label_accuracy": 0.6847,
+        "per_class_same_label_rate": {
+          "BCC": 0.7143,
+          "NEV": 0.85,
+          "MEL": 0.623,
+          "SK": 0.2,
+          "MISC": 0.36
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        }
+      },
+      {
+        "k": 3,
+        "n": 203,
+        "same_label_neighbor_rate_mean": 0.6125,
+        "same_label_neighbor_rate_std": 0.3827,
+        "boundary_gap_mean": 0.0066,
+        "boundary_gap_median": 0.0092,
+        "nearest_same_sim_mean": 0.9157,
+        "nearest_other_sim_mean": 0.9091,
+        "fraction_cases_positive_gap": 0.6847,
+        "one_nn_same_label_accuracy": 0.6847,
+        "per_class_same_label_rate": {
+          "BCC": 0.5714,
+          "NEV": 0.8033,
+          "MEL": 0.5464,
+          "SK": 0.1,
+          "MISC": 0.2267
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        }
+      },
+      {
+        "k": 5,
+        "n": 203,
+        "same_label_neighbor_rate_mean": 0.6059,
+        "same_label_neighbor_rate_std": 0.3438,
+        "boundary_gap_mean": 0.0066,
+        "boundary_gap_median": 0.0092,
+        "nearest_same_sim_mean": 0.9157,
+        "nearest_other_sim_mean": 0.9091,
+        "fraction_cases_positive_gap": 0.6847,
+        "one_nn_same_label_accuracy": 0.6847,
+        "per_class_same_label_rate": {
+          "BCC": 0.5143,
+          "NEV": 0.796,
+          "MEL": 0.5541,
+          "SK": 0.08,
+          "MISC": 0.208
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        }
+      },
+      {
+        "k": 7,
+        "n": 203,
+        "same_label_neighbor_rate_mean": 0.5897,
+        "same_label_neighbor_rate_std": 0.3269,
+        "boundary_gap_mean": 0.0066,
+        "boundary_gap_median": 0.0092,
+        "nearest_same_sim_mean": 0.9157,
+        "nearest_other_sim_mean": 0.9091,
+        "fraction_cases_positive_gap": 0.6847,
+        "one_nn_same_label_accuracy": 0.6847,
+        "per_class_same_label_rate": {
+          "BCC": 0.3878,
+          "NEV": 0.7829,
+          "MEL": 0.541,
+          "SK": 0.0857,
+          "MISC": 0.1943
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        }
+      },
+      {
+        "k": 10,
+        "n": 203,
+        "same_label_neighbor_rate_mean": 0.5818,
+        "same_label_neighbor_rate_std": 0.3206,
+        "boundary_gap_mean": 0.0066,
+        "boundary_gap_median": 0.0092,
+        "nearest_same_sim_mean": 0.9157,
+        "nearest_other_sim_mean": 0.9091,
+        "fraction_cases_positive_gap": 0.6847,
+        "one_nn_same_label_accuracy": 0.6847,
+        "per_class_same_label_rate": {
+          "BCC": 0.3571,
+          "NEV": 0.784,
+          "MEL": 0.523,
+          "SK": 0.08,
+          "MISC": 0.18
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        }
+      }
+    ],
+    "train_loo": [
+      {
+        "k": 1,
+        "n": 413,
+        "same_label_neighbor_rate_mean": 0.6973,
+        "same_label_neighbor_rate_std": 0.4594,
+        "boundary_gap_mean": 0.0082,
+        "boundary_gap_median": 0.01,
+        "nearest_same_sim_mean": 0.9184,
+        "nearest_other_sim_mean": 0.9102,
+        "fraction_cases_positive_gap": 0.6973,
+        "one_nn_same_label_accuracy": 0.6973,
+        "per_class_same_label_rate": {
+          "BCC": 0.4737,
+          "NEV": 0.8203,
+          "MEL": 0.6444,
+          "SK": 0.25,
+          "MISC": 0.2188
+        },
+        "per_class_support": {
+          "BCC": 19,
+          "NEV": 256,
+          "MEL": 90,
+          "SK": 16,
+          "MISC": 32
+        }
+      },
+      {
+        "k": 3,
+        "n": 413,
+        "same_label_neighbor_rate_mean": 0.6602,
+        "same_label_neighbor_rate_std": 0.3674,
+        "boundary_gap_mean": 0.0082,
+        "boundary_gap_median": 0.01,
+        "nearest_same_sim_mean": 0.9184,
+        "nearest_other_sim_mean": 0.9102,
+        "fraction_cases_positive_gap": 0.6973,
+        "one_nn_same_label_accuracy": 0.6973,
+        "per_class_same_label_rate": {
+          "BCC": 0.2982,
+          "NEV": 0.8151,
+          "MEL": 0.5593,
+          "SK": 0.1667,
+          "MISC": 0.1667
+        },
+        "per_class_support": {
+          "BCC": 19,
+          "NEV": 256,
+          "MEL": 90,
+          "SK": 16,
+          "MISC": 32
+        }
+      },
+      {
+        "k": 5,
+        "n": 413,
+        "same_label_neighbor_rate_mean": 0.6392,
+        "same_label_neighbor_rate_std": 0.3464,
+        "boundary_gap_mean": 0.0082,
+        "boundary_gap_median": 0.01,
+        "nearest_same_sim_mean": 0.9184,
+        "nearest_other_sim_mean": 0.9102,
+        "fraction_cases_positive_gap": 0.6973,
+        "one_nn_same_label_accuracy": 0.6973,
+        "per_class_same_label_rate": {
+          "BCC": 0.2526,
+          "NEV": 0.8031,
+          "MEL": 0.5222,
+          "SK": 0.15,
+          "MISC": 0.1313
+        },
+        "per_class_support": {
+          "BCC": 19,
+          "NEV": 256,
+          "MEL": 90,
+          "SK": 16,
+          "MISC": 32
+        }
+      },
+      {
+        "k": 7,
+        "n": 413,
+        "same_label_neighbor_rate_mean": 0.6327,
+        "same_label_neighbor_rate_std": 0.3257,
+        "boundary_gap_mean": 0.0082,
+        "boundary_gap_median": 0.01,
+        "nearest_same_sim_mean": 0.9184,
+        "nearest_other_sim_mean": 0.9102,
+        "fraction_cases_positive_gap": 0.6973,
+        "one_nn_same_label_accuracy": 0.6973,
+        "per_class_same_label_rate": {
+          "BCC": 0.2256,
+          "NEV": 0.7907,
+          "MEL": 0.5333,
+          "SK": 0.1339,
+          "MISC": 0.1384
+        },
+        "per_class_support": {
+          "BCC": 19,
+          "NEV": 256,
+          "MEL": 90,
+          "SK": 16,
+          "MISC": 32
+        }
+      },
+      {
+        "k": 10,
+        "n": 413,
+        "same_label_neighbor_rate_mean": 0.6264,
+        "same_label_neighbor_rate_std": 0.3161,
+        "boundary_gap_mean": 0.0082,
+        "boundary_gap_median": 0.01,
+        "nearest_same_sim_mean": 0.9184,
+        "nearest_other_sim_mean": 0.9102,
+        "fraction_cases_positive_gap": 0.6973,
+        "one_nn_same_label_accuracy": 0.6973,
+        "per_class_same_label_rate": {
+          "BCC": 0.2158,
+          "NEV": 0.7891,
+          "MEL": 0.5144,
+          "SK": 0.1125,
+          "MISC": 0.1406
+        },
+        "per_class_support": {
+          "BCC": 19,
+          "NEV": 256,
+          "MEL": 90,
+          "SK": 16,
+          "MISC": 32
+        }
+      }
+    ]
+  },
+  "example_contracts": [
+    {
+      "case_num": 2,
+      "true_diagnosis": "BCC",
+      "committed_diagnosis": "BCC",
+      "safe_to_display": true,
+      "default_view_hides_appendix": true,
+      "similar_cases": {
+        "query_case_id": "2",
+        "reference_diagnosis": "BCC",
+        "neighbors": [
+          {
+            "case_id": "3",
+            "diagnosis": "BCC",
+            "similarity": 0.8987,
+            "same_label": true
+          },
+          {
+            "case_id": "10",
+            "diagnosis": "BCC",
+            "similarity": 0.8922,
+            "same_label": true
+          },
+          {
+            "case_id": "81",
+            "diagnosis": "NEV",
+            "similarity": 0.8877,
+            "same_label": false
+          },
+          {
+            "case_id": "470",
+            "diagnosis": "NEV",
+            "similarity": 0.8826,
+            "same_label": false
+          },
+          {
+            "case_id": "34",
+            "diagnosis": "BCC",
+            "similarity": 0.8778,
+            "same_label": true
+          }
+        ],
+        "nearest_different_label": {
+          "case_id": "81",
+          "diagnosis": "NEV",
+          "similarity": 0.8877,
+          "same_label": false
+        },
+        "same_label_neighbor_rate": 0.6,
+        "feature_space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)",
+        "bank_name": "diagnosis@dermlip",
+        "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+        "k": 5,
+        "faithful_by_construction": "Neighbours are the query's nearest TRAIN cases by exact cosine in the frozen DermLIP feature space the perception reader itself reads -- retrieval is identity in that space, not a post-hoc rationalisation. Train-only and leave-one-out, so a case never retrieves itself."
+      },
+      "rendered_on_demand": "## Case derm7pt-2\n\n**Assessment: excision** \u2014 score 4 >= 3 \u00b7 VIEWS DISAGREE\n\n> ### \u26a0 The two assessments disagree\n> \n> The pattern model reports BCC, but the 7-point checklist scores 4, at or above the threshold of 3. The two views disagree in the direction that matters: the checklist is raising melanoma suspicion the classifier is not.\n> \n> **This is the finding to act on.** The image classifier and the dermoscopic checklist fail on different lesions, so a disagreement is not noise \u2014 it marks a case where one view is seeing something the other is not.\n\n| assessment | result |\n|---|---|\n| Image pattern model | **basal cell carcinoma** (high model agreement (0.99)) |\n| 7-point checklist | **score 4** (threshold for excision: 3) |\n| Checklist implies | **excision** \u2014 score 4 >= 3 |\n\n### Dermoscopic criteria\n\n| criterion | observed | points |\n|---|---|---:|\n| pigment network (major, max 2) | absent | 0 |\n| blue whitish veil (major, max 2) | present | 2 |\n| vascular structures (major, max 2) | arborizing | 0 |\n| streaks (minor, max 1) | irregular | 1 |\n| pigmentation (minor, max 1) | absent | 0 |\n| dots and globules (minor, max 1) | irregular | 1 |\n| regression structures (minor, max 1) | absent | 0 |\n\n**Total: 4**\n\n_This verdict hinges on blue whitish veil (present, +2): read as absent, the score falls to 2 and clinical follow up applies._\n\n### Authoritative guidance\n\n> For low-risk primary BCC, surgical excision with 4-mm clinical margins and histologic margin assessment is recommended.\n\n\u2014 DOI:10.1016/j.jaad.2017.10.006 \u00b7 2018 \u00b7 `035945353a5b8661`\n\n> A treatment plan that considers recurrence rate, preservation of function, patient expectations, and potential adverse effects is recommended.\n\n\u2014 DOI:10.1016/j.jaad.2017.10.006 \u00b7 2018 \u00b7 `0731cef152ebd7e1`\n\n> Box 10 Surgery with 3D histology. Surgery with 3D his - tology Evidence-based recommendation Grade of recommenda - tion A Micrographically controlled surgery (3D) shall be offered in high-risk BCC (recurrent, aggressive subtypes, location in critical anatomical sites, poorly defined margins) Level of evidence 1 [99\u2013101,105,108] Strength of consensus: 100% BCC, basal cell carcinoma.\n\n\u2014 DOI:10.1016/j.ejca.2023.113254 \u00b7 update-2023 \u00b7 `bf9ed7ee830d54af`\n\n#### If the checklist is right\n\n_The following applies to melanoma, the condition the checklist is raising. It is contingent on that reading, not on the committed diagnosis above._\n\n> Surgical excision with histologically negative margins is the recommended and first-line treatment for primary CM of any thickness, as well as for melanoma in situ. Surgical margins should be based on tumor thickness.\n\n\u2014 DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 `a716723c6c5f365c`\n\n### Next step\n\nSpecialist review. The two assessments disagree, and this system does not adjudicate between them.\n\n### Similar confirmed cases (on request)\n\n_On request only \u2014 not shown in the 10-second view (MG52: a displayed explanation raises cognitive load, so this is progressive disclosure)._\n\nNearest confirmed **training** cases to this lesion in the model's own frozen DermLIP feature space (dermlip (512-d frozen DermLIP image embedding; image-only cosine)). Faithful **by construction**: this is the identity of the case in the representation the reader itself reads, not a post-hoc rationalisation. Train-only and leave-one-out, so the case never retrieves itself. Confirmed diagnoses, not system predictions.\n\n| train case | confirmed diagnosis | cosine similarity | same as committed |\n|---|---|---:|:--:|\n| 3 | basal cell carcinoma (BCC) | 0.90 | yes |\n| 10 | basal cell carcinoma (BCC) | 0.89 | yes |\n| 81 | melanocytic naevus (NEV) | 0.89 | \u2014 |\n| 470 | melanocytic naevus (NEV) | 0.88 | \u2014 |\n| 34 | basal cell carcinoma (BCC) | 0.88 | yes |\n\n**Nearest different-label case (decision boundary):** the committed diagnosis is basal cell carcinoma; the nearest confirmed **melanocytic naevus** is train case 81 at cosine 0.89. The closer that case sits, the nearer this lesion is to a class boundary.\n\n\u2014 retrieval bank `diagnosis@dermlip` \u00b7 `0fc552e673ef9443` \u00b7 k=5\n\n#### Saliency (caveated appendix)\n\nA GradCAM saliency map over the frozen DermLIP backbone is available on request but is offered only as a caveated pointer: **faithful by deletion/insertion but spatially diffuse; not a substitute for clinician localization.** It beats a random masking order at p<1e-5 (deletion and insertion, `research/evidence/derm7pt_v1/attribution_faithfulness_v1.json`) yet attends to artifacts, so it is not surfaced as primary evidence and no region is drawn here.\n\n---\n_Decision support only. The diagnosis is produced by a frozen image model and a published checklist; it has not been validated against clinician judgement._"
+    },
+    {
+      "case_num": 12,
+      "true_diagnosis": "BCC",
+      "committed_diagnosis": "MEL",
+      "safe_to_display": true,
+      "default_view_hides_appendix": true,
+      "similar_cases": {
+        "query_case_id": "12",
+        "reference_diagnosis": "MEL",
+        "neighbors": [
+          {
+            "case_id": "648",
+            "diagnosis": "MEL",
+            "similarity": 0.9444,
+            "same_label": true
+          },
+          {
+            "case_id": "651",
+            "diagnosis": "MEL",
+            "similarity": 0.9228,
+            "same_label": true
+          },
+          {
+            "case_id": "628",
+            "diagnosis": "MEL",
+            "similarity": 0.9092,
+            "same_label": true
+          },
+          {
+            "case_id": "643",
+            "diagnosis": "MEL",
+            "similarity": 0.9089,
+            "same_label": true
+          },
+          {
+            "case_id": "684",
+            "diagnosis": "MEL",
+            "similarity": 0.903,
+            "same_label": true
+          }
+        ],
+        "nearest_different_label": {
+          "case_id": "34",
+          "diagnosis": "BCC",
+          "similarity": 0.8899,
+          "same_label": false
+        },
+        "same_label_neighbor_rate": 1.0,
+        "feature_space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)",
+        "bank_name": "diagnosis@dermlip",
+        "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+        "k": 5,
+        "faithful_by_construction": "Neighbours are the query's nearest TRAIN cases by exact cosine in the frozen DermLIP feature space the perception reader itself reads -- retrieval is identity in that space, not a post-hoc rationalisation. Train-only and leave-one-out, so a case never retrieves itself."
+      },
+      "rendered_on_demand": "## Case derm7pt-12\n\n**Assessment: excision** \u2014 score 4 >= 3 \u00b7 views agree\n\n| assessment | result |\n|---|---|\n| Image pattern model | **melanoma** (high model agreement (0.88)) |\n| 7-point checklist | **score 4** (threshold for excision: 3) |\n| Checklist implies | **excision** \u2014 score 4 >= 3 |\n\n### Dermoscopic criteria\n\n| criterion | observed | points |\n|---|---|---:|\n| pigment network (major, max 2) | absent | 0 |\n| blue whitish veil (major, max 2) | present | 2 |\n| vascular structures (major, max 2) | within regression | 0 |\n| streaks (minor, max 1) | absent | 0 |\n| pigmentation (minor, max 1) | absent | 0 |\n| dots and globules (minor, max 1) | irregular | 1 |\n| regression structures (minor, max 1) | combinations | 1 |\n\n**Total: 4**\n\n_This verdict hinges on blue whitish veil (present, +2): read as absent, the score falls to 2 and clinical follow up applies._\n\n### Authoritative guidance\n\n> Surgical excision with histologically negative margins is the recommended and first-line treatment for primary CM of any thickness, as well as for melanoma in situ. Surgical margins should be based on tumor thickness.\n\n\u2014 DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 `a716723c6c5f365c`\n\n> Sentinel lymph node biopsy, when indicated, should be performed before wide excision of the primary tumor, and in the same operative setting, whenever possible.\n\n\u2014 DOI:10.1016/j.jaad.2018.08.055 \u00b7 2019 \u00b7 `cdb2332f1b15206c`\n\n> Recommendation 1. Primary excision Consensus based recommendation GCP When melanoma is suspected, the whole lesion should be completely excised with a narrow (1-3mm) margin to perform histological diagnosis. Incisional biopsies can be performed on large lesions such as lesions on the face (e.g., lentigo maligna), acral lesions and on the genitalia. Consensus rate: 100% (21/21)\n\n\u2014 DOI:10.1016/j.ejca.2024.115153 \u00b7 update-2024-published-2025 \u00b7 `c5687fea4c20ce90`\n\n### Next step\n\nExcision \u2014 see DOI:10.1016/j.jaad.2018.08.055.\n\n### Similar confirmed cases (on request)\n\n_On request only \u2014 not shown in the 10-second view (MG52: a displayed explanation raises cognitive load, so this is progressive disclosure)._\n\nNearest confirmed **training** cases to this lesion in the model's own frozen DermLIP feature space (dermlip (512-d frozen DermLIP image embedding; image-only cosine)). Faithful **by construction**: this is the identity of the case in the representation the reader itself reads, not a post-hoc rationalisation. Train-only and leave-one-out, so the case never retrieves itself. Confirmed diagnoses, not system predictions.\n\n| train case | confirmed diagnosis | cosine similarity | same as committed |\n|---|---|---:|:--:|\n| 648 | melanoma (MEL) | 0.94 | yes |\n| 651 | melanoma (MEL) | 0.92 | yes |\n| 628 | melanoma (MEL) | 0.91 | yes |\n| 643 | melanoma (MEL) | 0.91 | yes |\n| 684 | melanoma (MEL) | 0.90 | yes |\n\n**Nearest different-label case (decision boundary):** the committed diagnosis is melanoma; the nearest confirmed **basal cell carcinoma** is train case 34 at cosine 0.89. The closer that case sits, the nearer this lesion is to a class boundary.\n\n\u2014 retrieval bank `diagnosis@dermlip` \u00b7 `0fc552e673ef9443` \u00b7 k=5\n\n#### Saliency (caveated appendix)\n\nA GradCAM saliency map over the frozen DermLIP backbone is available on request but is offered only as a caveated pointer: **faithful by deletion/insertion but spatially diffuse; not a substitute for clinician localization.** It beats a random masking order at p<1e-5 (deletion and insertion, `research/evidence/derm7pt_v1/attribution_faithfulness_v1.json`) yet attends to artifacts, so it is not surfaced as primary evidence and no region is drawn here.\n\n---\n_Decision support only. The diagnosis is produced by a frozen image model and a published checklist; it has not been validated against clinician judgement._"
+    },
+    {
+      "case_num": 6,
+      "true_diagnosis": "BCC",
+      "committed_diagnosis": "MISC",
+      "safe_to_display": true,
+      "default_view_hides_appendix": true,
+      "similar_cases": {
+        "query_case_id": "6",
+        "reference_diagnosis": "MISC",
+        "neighbors": [
+          {
+            "case_id": "5",
+            "diagnosis": "BCC",
+            "similarity": 0.9064,
+            "same_label": false
+          },
+          {
+            "case_id": "642",
+            "diagnosis": "MEL",
+            "similarity": 0.9021,
+            "same_label": false
+          },
+          {
+            "case_id": "23",
+            "diagnosis": "BCC",
+            "similarity": 0.8904,
+            "same_label": false
+          },
+          {
+            "case_id": "819",
+            "diagnosis": "MEL",
+            "similarity": 0.8848,
+            "same_label": false
+          },
+          {
+            "case_id": "63",
+            "diagnosis": "NEV",
+            "similarity": 0.8765,
+            "same_label": false
+          }
+        ],
+        "nearest_different_label": {
+          "case_id": "5",
+          "diagnosis": "BCC",
+          "similarity": 0.9064,
+          "same_label": false
+        },
+        "same_label_neighbor_rate": 0.0,
+        "feature_space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)",
+        "bank_name": "diagnosis@dermlip",
+        "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+        "k": 5,
+        "faithful_by_construction": "Neighbours are the query's nearest TRAIN cases by exact cosine in the frozen DermLIP feature space the perception reader itself reads -- retrieval is identity in that space, not a post-hoc rationalisation. Train-only and leave-one-out, so a case never retrieves itself."
+      },
+      "rendered_on_demand": "## Case derm7pt-6\n\n**Assessment: clinical follow up** \u2014 score 0 < 3 \u00b7 views agree\n\n| assessment | result |\n|---|---|\n| Image pattern model | **other / miscellaneous** (low model agreement (0.48)) |\n| 7-point checklist | **score 0** (threshold for excision: 3) |\n| Checklist implies | **clinical follow up** \u2014 score 0 < 3 |\n\n### Dermoscopic criteria\n\n| criterion | observed | points |\n|---|---|---:|\n| pigment network (major, max 2) | absent | 0 |\n| blue whitish veil (major, max 2) | absent | 0 |\n| vascular structures (major, max 2) | arborizing | 0 |\n| streaks (minor, max 1) | absent | 0 |\n| pigmentation (minor, max 1) | diffuse regular | 0 |\n| dots and globules (minor, max 1) | absent | 0 |\n| regression structures (minor, max 1) | absent | 0 |\n\n**Total: 0**\n\n_No single criterion changes this verdict._\n\n### Authoritative guidance\n\n**No recommendation available for other / miscellaneous.** The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\n\n_No management advice is offered here because none can be cited. This is a stated limit of the guideline corpus, not an assessment that no action is required._\n\n### Next step\n\nClinical follow up \u2014 no citable guidance (see above).\n\n### Similar confirmed cases (on request)\n\n_On request only \u2014 not shown in the 10-second view (MG52: a displayed explanation raises cognitive load, so this is progressive disclosure)._\n\nNearest confirmed **training** cases to this lesion in the model's own frozen DermLIP feature space (dermlip (512-d frozen DermLIP image embedding; image-only cosine)). Faithful **by construction**: this is the identity of the case in the representation the reader itself reads, not a post-hoc rationalisation. Train-only and leave-one-out, so the case never retrieves itself. Confirmed diagnoses, not system predictions.\n\n| train case | confirmed diagnosis | cosine similarity | same as committed |\n|---|---|---:|:--:|\n| 5 | basal cell carcinoma (BCC) | 0.91 | \u2014 |\n| 642 | melanoma (MEL) | 0.90 | \u2014 |\n| 23 | basal cell carcinoma (BCC) | 0.89 | \u2014 |\n| 819 | melanoma (MEL) | 0.88 | \u2014 |\n| 63 | melanocytic naevus (NEV) | 0.88 | \u2014 |\n\n**Nearest different-label case (decision boundary):** the committed diagnosis is other / miscellaneous; the nearest confirmed **basal cell carcinoma** is train case 5 at cosine 0.91. The closer that case sits, the nearer this lesion is to a class boundary.\n\n\u2014 retrieval bank `diagnosis@dermlip` \u00b7 `0fc552e673ef9443` \u00b7 k=5\n\n#### Saliency (caveated appendix)\n\nA GradCAM saliency map over the frozen DermLIP backbone is available on request but is offered only as a caveated pointer: **faithful by deletion/insertion but spatially diffuse; not a substitute for clinician localization.** It beats a random masking order at p<1e-5 (deletion and insertion, `research/evidence/derm7pt_v1/attribution_faithfulness_v1.json`) yet attends to artifacts, so it is not surfaced as primary evidence and no region is drawn here.\n\n---\n_Decision support only. The diagnosis is produced by a frozen image model and a published checklist; it has not been validated against clinician judgement._"
+    },
+    {
+      "case_num": 57,
+      "true_diagnosis": "NEV",
+      "committed_diagnosis": "NEV",
+      "safe_to_display": true,
+      "default_view_hides_appendix": true,
+      "similar_cases": {
+        "query_case_id": "57",
+        "reference_diagnosis": "NEV",
+        "neighbors": [
+          {
+            "case_id": "63",
+            "diagnosis": "NEV",
+            "similarity": 0.9141,
+            "same_label": true
+          },
+          {
+            "case_id": "502",
+            "diagnosis": "NEV",
+            "similarity": 0.8923,
+            "same_label": true
+          },
+          {
+            "case_id": "923",
+            "diagnosis": "NEV",
+            "similarity": 0.8842,
+            "same_label": true
+          },
+          {
+            "case_id": "52",
+            "diagnosis": "NEV",
+            "similarity": 0.8716,
+            "same_label": true
+          },
+          {
+            "case_id": "819",
+            "diagnosis": "MEL",
+            "similarity": 0.8675,
+            "same_label": false
+          }
+        ],
+        "nearest_different_label": {
+          "case_id": "819",
+          "diagnosis": "MEL",
+          "similarity": 0.8675,
+          "same_label": false
+        },
+        "same_label_neighbor_rate": 0.8,
+        "feature_space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)",
+        "bank_name": "diagnosis@dermlip",
+        "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+        "k": 5,
+        "faithful_by_construction": "Neighbours are the query's nearest TRAIN cases by exact cosine in the frozen DermLIP feature space the perception reader itself reads -- retrieval is identity in that space, not a post-hoc rationalisation. Train-only and leave-one-out, so a case never retrieves itself."
+      },
+      "rendered_on_demand": "## Case derm7pt-57\n\n**Assessment: clinical follow up** \u2014 score 2 < 3 \u00b7 views agree\n\n| assessment | result |\n|---|---|\n| Image pattern model | **melanocytic naevus** (high model agreement (0.78)) |\n| 7-point checklist | **score 2** (threshold for excision: 3) |\n| Checklist implies | **clinical follow up** \u2014 score 2 < 3 |\n\n### Dermoscopic criteria\n\n| criterion | observed | points |\n|---|---|---:|\n| pigment network (major, max 2) | absent | 0 |\n| blue whitish veil (major, max 2) | present | 2 |\n| vascular structures (major, max 2) | absent | 0 |\n| streaks (minor, max 1) | absent | 0 |\n| pigmentation (minor, max 1) | diffuse regular | 0 |\n| dots and globules (minor, max 1) | absent | 0 |\n| regression structures (minor, max 1) | absent | 0 |\n\n**Total: 2**\n\n_This verdict hinges on pigment network (currently absent): read as atypical, the score would rise to 4 and excision would apply \u2014 and 5 other criterion/criteria._\n\n### Authoritative guidance\n\n**No recommendation available for melanocytic naevus.** The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\n\n_No management advice is offered here because none can be cited. This is a stated limit of the guideline corpus, not an assessment that no action is required._\n\n### Next step\n\nClinical follow up \u2014 no citable guidance (see above).\n\n### Similar confirmed cases (on request)\n\n_On request only \u2014 not shown in the 10-second view (MG52: a displayed explanation raises cognitive load, so this is progressive disclosure)._\n\nNearest confirmed **training** cases to this lesion in the model's own frozen DermLIP feature space (dermlip (512-d frozen DermLIP image embedding; image-only cosine)). Faithful **by construction**: this is the identity of the case in the representation the reader itself reads, not a post-hoc rationalisation. Train-only and leave-one-out, so the case never retrieves itself. Confirmed diagnoses, not system predictions.\n\n| train case | confirmed diagnosis | cosine similarity | same as committed |\n|---|---|---:|:--:|\n| 63 | melanocytic naevus (NEV) | 0.91 | yes |\n| 502 | melanocytic naevus (NEV) | 0.89 | yes |\n| 923 | melanocytic naevus (NEV) | 0.88 | yes |\n| 52 | melanocytic naevus (NEV) | 0.87 | yes |\n| 819 | melanoma (MEL) | 0.87 | \u2014 |\n\n**Nearest different-label case (decision boundary):** the committed diagnosis is melanocytic naevus; the nearest confirmed **melanoma** is train case 819 at cosine 0.87. The closer that case sits, the nearer this lesion is to a class boundary.\n\n\u2014 retrieval bank `diagnosis@dermlip` \u00b7 `0fc552e673ef9443` \u00b7 k=5\n\n#### Saliency (caveated appendix)\n\nA GradCAM saliency map over the frozen DermLIP backbone is available on request but is offered only as a caveated pointer: **faithful by deletion/insertion but spatially diffuse; not a substitute for clinician localization.** It beats a random masking order at p<1e-5 (deletion and insertion, `research/evidence/derm7pt_v1/attribution_faithfulness_v1.json`) yet attends to artifacts, so it is not surfaced as primary evidence and no region is drawn here.\n\n---\n_Decision support only. The diagnosis is produced by a frozen image model and a published checklist; it has not been validated against clinician judgement._"
+    },
+    {
+      "case_num": 142,
+      "true_diagnosis": "NEV",
+      "committed_diagnosis": "SK",
+      "safe_to_display": true,
+      "default_view_hides_appendix": true,
+      "similar_cases": {
+        "query_case_id": "142",
+        "reference_diagnosis": "SK",
+        "neighbors": [
+          {
+            "case_id": "718",
+            "diagnosis": "MEL",
+            "similarity": 0.9119,
+            "same_label": false
+          },
+          {
+            "case_id": "835",
+            "diagnosis": "MISC",
+            "similarity": 0.9094,
+            "same_label": false
+          },
+          {
+            "case_id": "681",
+            "diagnosis": "MEL",
+            "similarity": 0.8964,
+            "same_label": false
+          },
+          {
+            "case_id": "855",
+            "diagnosis": "NEV",
+            "similarity": 0.8911,
+            "same_label": false
+          },
+          {
+            "case_id": "379",
+            "diagnosis": "NEV",
+            "similarity": 0.8746,
+            "same_label": false
+          }
+        ],
+        "nearest_different_label": {
+          "case_id": "718",
+          "diagnosis": "MEL",
+          "similarity": 0.9119,
+          "same_label": false
+        },
+        "same_label_neighbor_rate": 0.0,
+        "feature_space": "dermlip (512-d frozen DermLIP image embedding; image-only cosine)",
+        "bank_name": "diagnosis@dermlip",
+        "bank_hash": "0fc552e673ef9443475aa2393c360757adc187079ab573c32e5fe883f20271d5",
+        "k": 5,
+        "faithful_by_construction": "Neighbours are the query's nearest TRAIN cases by exact cosine in the frozen DermLIP feature space the perception reader itself reads -- retrieval is identity in that space, not a post-hoc rationalisation. Train-only and leave-one-out, so a case never retrieves itself."
+      },
+      "rendered_on_demand": "## Case derm7pt-142\n\n**Assessment: clinical follow up** \u2014 score 1 < 3 \u00b7 views agree\n\n| assessment | result |\n|---|---|\n| Image pattern model | **seborrhoeic keratosis** (moderate model agreement (0.67)) |\n| 7-point checklist | **score 1** (threshold for excision: 3) |\n| Checklist implies | **clinical follow up** \u2014 score 1 < 3 |\n\n### Dermoscopic criteria\n\n| criterion | observed | points |\n|---|---|---:|\n| pigment network (major, max 2) | absent | 0 |\n| blue whitish veil (major, max 2) | absent | 0 |\n| vascular structures (major, max 2) | absent | 0 |\n| streaks (minor, max 1) | absent | 0 |\n| pigmentation (minor, max 1) | absent | 0 |\n| dots and globules (minor, max 1) | regular | 0 |\n| regression structures (minor, max 1) | white areas | 1 |\n\n**Total: 1**\n\n_This verdict hinges on pigment network (currently absent): read as atypical, the score would rise to 3 and excision would apply \u2014 and 2 other criterion/criteria._\n\n### Authoritative guidance\n\n**No recommendation available for seborrhoeic keratosis.** The licensed guideline corpus holds no recommendation for 'SK'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\n\n_No management advice is offered here because none can be cited. This is a stated limit of the guideline corpus, not an assessment that no action is required._\n\n### Next step\n\nClinical follow up \u2014 no citable guidance (see above).\n\n### Similar confirmed cases (on request)\n\n_On request only \u2014 not shown in the 10-second view (MG52: a displayed explanation raises cognitive load, so this is progressive disclosure)._\n\nNearest confirmed **training** cases to this lesion in the model's own frozen DermLIP feature space (dermlip (512-d frozen DermLIP image embedding; image-only cosine)). Faithful **by construction**: this is the identity of the case in the representation the reader itself reads, not a post-hoc rationalisation. Train-only and leave-one-out, so the case never retrieves itself. Confirmed diagnoses, not system predictions.\n\n| train case | confirmed diagnosis | cosine similarity | same as committed |\n|---|---|---:|:--:|\n| 718 | melanoma (MEL) | 0.91 | \u2014 |\n| 835 | other / miscellaneous (MISC) | 0.91 | \u2014 |\n| 681 | melanoma (MEL) | 0.90 | \u2014 |\n| 855 | melanocytic naevus (NEV) | 0.89 | \u2014 |\n| 379 | melanocytic naevus (NEV) | 0.87 | \u2014 |\n\n**Nearest different-label case (decision boundary):** the committed diagnosis is seborrhoeic keratosis; the nearest confirmed **melanoma** is train case 718 at cosine 0.91. The closer that case sits, the nearer this lesion is to a class boundary.\n\n\u2014 retrieval bank `diagnosis@dermlip` \u00b7 `0fc552e673ef9443` \u00b7 k=5\n\n#### Saliency (caveated appendix)\n\nA GradCAM saliency map over the frozen DermLIP backbone is available on request but is offered only as a caveated pointer: **faithful by deletion/insertion but spatially diffuse; not a substitute for clinician localization.** It beats a random masking order at p<1e-5 (deletion and insertion, `research/evidence/derm7pt_v1/attribution_faithfulness_v1.json`) yet attends to artifacts, so it is not surfaced as primary evidence and no region is drawn here.\n\n---\n_Decision support only. The diagnosis is produced by a frozen image model and a published checklist; it has not been validated against clinician judgement._"
+    }
+  ],
+  "surface_wiring": {
+    "contract_field": "DecisionContract.similar_cases (Optional[SimilarCasesContext])",
+    "render": "render_markdown(contract, include_appendix=True) -- ON-DEMAND appendix; the default 10-second view never shows it (MG52 progressive disclosure)",
+    "agent": "clinician_agent.explain_reasoning() step 9 (case_based_explanation), on-demand",
+    "saliency": "caveated pointer only (faithful by deletion/insertion but spatially diffuse; not a substitute for clinician localization); attribution_faithfulness_v1.json"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "reply": "{\"action\": \"tool\", \"tool\": \"get_decision\", \"args\": {}}",
+  "metadata": {
+    "model": "qwen/qwen3-vl-32b-instruct",
+    "attempt": 1,
+    "succeeded": true,
+    "latency_seconds": 1.3975774999998976,
+    "prompt_tokens": 953,
+    "completion_tokens": 19,
+    "total_tokens": 972,
+    "usage_available": true,
+    "seed": null
+  },
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

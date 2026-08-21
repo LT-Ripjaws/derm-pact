@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the new 7-point score is 2/7 after overriding 'blue_whitish_veil' to 'present'. However, according to the contract, 'blue_whitish_veil' has a maximum of 2 points, and if present, it would contribute 2 points. The other criteria remain unchanged (all 0). Therefore, the correct score should be 2/7 \u2014 this part is accurate. However, the agent incorrectly implies that the score was previously 0/7, which matches the contract, so no error here.",
+    "CRITERION ACCURACY: The agent correctly reports the override of 'blue_whitish_veil' to 'present', which is plausible. However, the contract does not provide any mechanism for dynamic recalculation of scores or overrides; the decision contract is static. The agent fabricates a scenario where an override changes the score \u2014 this is not supported by the contract\u2019s structure or stated rules.",
+    "MANAGEMENT FIDELITY: The agent states that the recommendation remains 'clinical follow up' because the score is below 3. This aligns with the contract's 'criteria_implied_action' and threshold. However, since the agent fabricated the override scenario, the management advice is not grounded in the deterministic ladder or guideline binding as required \u2014 it is speculative.",
+    "CONFLICT REPORTING: The agent does not mention conflict, and the contract indicates no conflict ('conflict.present': false). This is acceptable, but the fabricated override introduces a new context not in the contract, so conflict reporting is irrelevant in this case.",
+    "CITATION VALIDITY: No guideline record IDs are cited, so no issue."
+  ],
+  "confidence": "medium",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the new 7-point score is 2/7 after overriding 'blue_whitish_veil' to 'present'. However, according to the contract, 'blue_whitish_veil' has a maximum of 2 points, and if present, it would contribute 2 points. The other criteria remain unchanged (all 0). Therefore, the correct score should be 2/7 \u2014 this part is accurate. However, the agent incorrectly implies that the score was previously 0/7, which matches the contract, so no error here.\",\n    \"CRITERION ACCURACY: The agent correctly reports the override of 'blue_whitish_veil' to 'present', which is plausible. However, the contract does not provide any mechanism for dynamic recalculation of scores or overrides; the decision contract is static. The agent fabricates a scenario where an override changes the score \u2014 this is not supported by the contract\u2019s structure or stated rules.\",\n    \"MANAGEMENT FIDELITY: The agent states that the recommendation remains 'clinical follow up' because the score is below 3. This aligns with the contract's 'criteria_implied_action' and threshold. However, since the agent fabricated the override scenario, the management advice is not grounded in the deterministic ladder or guideline binding as required \u2014 it is speculative.\",\n    \"CONFLICT REPORTING: The agent does not mention conflict, and the contract indicates no conflict ('conflict.present': false). This is acceptable, but the fabricated override introduces a new context not in the contract, so conflict reporting is irrelevant in this case.\",\n    \"CITATION VALIDITY: No guideline record IDs are cited, so no issue.\"\n  ],\n  \"confidence\": \"medium\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.59,
+  "usage": {
+    "prompt_tokens": 1112,
+    "completion_tokens": 375,
+    "total_tokens": 1487
+  }
+}

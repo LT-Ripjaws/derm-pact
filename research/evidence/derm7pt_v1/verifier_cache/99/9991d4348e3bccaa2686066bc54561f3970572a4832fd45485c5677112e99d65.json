@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score became '3\u20134' after overriding 'blue_whitish_veil' to 'present', but the contract does not contain any computed score for this override. The original score range was 1\u20132, and no alternate scoring is provided in the contract. The agent fabricated a new score range.",
+    "MANAGEMENT FIDELITY: The agent states the recommendation changed to 'excision' based on the new score of 3\u20134. However, the contract's guideline section explicitly states there are no recommendations for 'NEV', and the criteria-implied action was 'clinical follow up'. There is no deterministic ladder or guideline binding in the contract that supports 'excision' as a valid management step. The agent invented management advice not grounded in the contract.",
+    "CRITERION ACCURACY: The agent assumes changing 'blue_whitish_veil' from 'absent' to 'present' adds 2 points, which may be correct, but the contract does not confirm this override or its effect. The agent extrapolates beyond the contract's data without verification."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score became '3\u20134' after overriding 'blue_whitish_veil' to 'present', but the contract does not contain any computed score for this override. The original score range was 1\u20132, and no alternate scoring is provided in the contract. The agent fabricated a new score range.\",\n    \"MANAGEMENT FIDELITY: The agent states the recommendation changed to 'excision' based on the new score of 3\u20134. However, the contract's guideline section explicitly states there are no recommendations for 'NEV', and the criteria-implied action was 'clinical follow up'. There is no deterministic ladder or guideline binding in the contract that supports 'excision' as a valid management step. The agent invented management advice not grounded in the contract.\",\n    \"CRITERION ACCURACY: The agent assumes changing 'blue_whitish_veil' from 'absent' to 'present' adds 2 points, which may be correct, but the contract does not confirm this override or its effect. The agent extrapolates beyond the contract's data without verification.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.024,
+  "usage": {
+    "prompt_tokens": 1144,
+    "completion_tokens": 255,
+    "total_tokens": 1399
+  }
+}

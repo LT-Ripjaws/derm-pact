@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score range after override is [2,4], but the contract does not provide a mechanism for recomputing scores based on clinician overrides. The original score range was [0,2] with determinate=false. The agent fabricated the new score range [2,4], which is not grounded in the contract's scoring logic or criteria table.",
+    "CRITERION ACCURACY: The agent assumes 'blue_whitish_veil' being 'present' contributes 2 points. While this is correct per the criterion definition (max_points=2), the contract does not allow for dynamic updates to criteria values; the agent performed an unsupported computation.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' because the score range spans the threshold and includes unresolved criteria. This reasoning matches the contract\u2019s \u2018criteria_implied_action\u2019 and \u2018decidable\u2019 field, so management fidelity is preserved despite the fabricated score range.",
+    "CONFLICT REPORTING: The agent does not mention conflict, but the contract states 'conflict.present': false. Since no conflict is reported, this is consistent.",
+    "CITATION VALIDITY: No guideline record IDs were cited, so no validity check needed."
+  ],
+  "confidence": "medium",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score range after override is [2,4], but the contract does not provide a mechanism for recomputing scores based on clinician overrides. The original score range was [0,2] with determinate=false. The agent fabricated the new score range [2,4], which is not grounded in the contract's scoring logic or criteria table.\",\n    \"CRITERION ACCURACY: The agent assumes 'blue_whitish_veil' being 'present' contributes 2 points. While this is correct per the criterion definition (max_points=2), the contract does not allow for dynamic updates to criteria values; the agent performed an unsupported computation.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' because the score range spans the threshold and includes unresolved criteria. This reasoning matches the contract\u2019s \u2018criteria_implied_action\u2019 and \u2018decidable\u2019 field, so management fidelity is preserved despite the fabricated score range.\",\n    \"CONFLICT REPORTING: The agent does not mention conflict, but the contract states 'conflict.present': false. Since no conflict is reported, this is consistent.\",\n    \"CITATION VALIDITY: No guideline record IDs were cited, so no validity check needed.\"\n  ],\n  \"confidence\": \"medium\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.189,
+  "usage": {
+    "prompt_tokens": 1166,
+    "completion_tokens": 284,
+    "total_tokens": 1450
+  }
+}

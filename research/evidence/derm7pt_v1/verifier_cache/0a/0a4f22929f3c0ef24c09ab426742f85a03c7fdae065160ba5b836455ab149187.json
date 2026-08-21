@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the 7-point score after correction is [3,7], but the contract does not provide any mechanism to compute a new score based on criterion overrides. The original score range was [1,5] with unresolved criteria; no updated score is computed or validated in the contract. This is a fabricated score.",
+    "CRITERION ACCURACY: The agent assumes 'blue_whitish_veil' being 'present' adds 2 points, but the contract only specifies that 'absent' gives 0 points and 'determinate' is true for this criterion. It does not define what 'present' would yield \u2014 thus, the point assignment is unsupported and speculative.",
+    "MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision', but the contract's guideline section explicitly states there are no recommendations for 'NEV'. The management advice of 'excision' is not grounded in the contract\u2019s deterministic ladder or guideline binding, making it fabricated.",
+    "CONFLICT REPORTING: The agent does not address the conflict state as defined in the contract. The contract indicates no conflict present, but escalation is required due to undecidability. The agent\u2019s answer implies resolution via override, which is not reflected in the contract\u2019s conflict logic."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the 7-point score after correction is [3,7], but the contract does not provide any mechanism to compute a new score based on criterion overrides. The original score range was [1,5] with unresolved criteria; no updated score is computed or validated in the contract. This is a fabricated score.\",\n    \"CRITERION ACCURACY: The agent assumes 'blue_whitish_veil' being 'present' adds 2 points, but the contract only specifies that 'absent' gives 0 points and 'determinate' is true for this criterion. It does not define what 'present' would yield \u2014 thus, the point assignment is unsupported and speculative.\",\n    \"MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision', but the contract's guideline section explicitly states there are no recommendations for 'NEV'. The management advice of 'excision' is not grounded in the contract\u2019s deterministic ladder or guideline binding, making it fabricated.\",\n    \"CONFLICT REPORTING: The agent does not address the conflict state as defined in the contract. The contract indicates no conflict present, but escalation is required due to undecidability. The agent\u2019s answer implies resolution via override, which is not reflected in the contract\u2019s conflict logic.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 3.934,
+  "usage": {
+    "prompt_tokens": 1273,
+    "completion_tokens": 291,
+    "total_tokens": 1564
+  }
+}

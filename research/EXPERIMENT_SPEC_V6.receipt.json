@@ -1,0 +1,128 @@
+{
+  "schema_version": "medguard-design-freeze-receipt-v6",
+  "spec_id": "medguard-derm-evidence-contract-h2h-v6",
+  "created": "2026-08-08",
+  "supersedes": "research/EXPERIMENT_SPEC_V5.receipt.json",
+  "supersession_reason": "v5 registered an evidence-superiority condition that could not be satisfied as written: two of its four endpoints are undefined for a no-contract comparator and may not be imputed as zero, leaving only two testable and silently requiring both. v6 reclassifies endpoints by a stated rule, registers two inferential families that include endpoints MedGuard loses, and gives the honest middle outcome a name. The development verdict stands as measured under v5.",
+  "hash_convention": "SHA-256 of raw file bytes exactly as stored",
+  "status": "design_frozen_runtime_lock_pending",
+  "two_tier_rationale": "design_binding_files must not change without a version bump; observed_files drift.",
+  "design_binding_files": [
+    {
+      "path": "research/EXPERIMENT_SPEC_V6.json",
+      "bytes": 65245,
+      "sha256": "8f1ef8413bfdc7f2f02c238d286349ba5a105d26855004ad82211a40900687f4"
+    },
+    {
+      "path": "research/PREREGISTRATION.json",
+      "bytes": 18601,
+      "sha256": "ae4e7e64d2b8fb977c31468e5271b88503ae66a8f6a2434c67a16ec0a7153e56"
+    },
+    {
+      "path": "medguard/data/corpus/derm_guideline_recommendations_v1.jsonl",
+      "bytes": 108381,
+      "sha256": "98ccd42e3a85648d3d5da975a454eea86ccef13e37dc67360a62f612f9923a16"
+    },
+    {
+      "path": "research/RUNTIME_LOCK_V1.json",
+      "bytes": 17886,
+      "sha256": "3ca3c79897db312f173f1eed81cef3a320352f27c1d0483bfa1507295c8ad83b"
+    }
+  ],
+  "design_binding_rule": "If any one changes, this receipt becomes historical: issue v7 and state the reason.",
+  "observed_files": [
+    {
+      "path": "research/RESULTS_LEDGER.json",
+      "bytes": 401709,
+      "sha256": "831a6b2f0864b9454c38ff1baae2f0aaea876b7f1467d864fe715d5a4d82544f"
+    },
+    {
+      "path": "research/RIVAL_LEDGER.json",
+      "bytes": 29236,
+      "sha256": "6fceb618516a9ad931859fbcbbee033a5e0223dfa99099d4343d99c226a89348"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/dev_h2h_full_160x11_v4.scored.json",
+      "bytes": 7096451,
+      "sha256": "e5a7a931b796fe261b7c6475f8f7144fa55998149c90dfea6c084a10b96e58c1"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/paired_evidence_v4.json",
+      "bytes": 40083,
+      "sha256": "b3c0722dbf5efe3b4f91f746393ddfa1d4de4b19c6db1b82aa9ae97b81ba7acf"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/v6_endpoints_v4.json",
+      "bytes": 12896,
+      "sha256": "9aaf4aa61bb35c34a700aa527433c519aa08412adf4bcba77a2521ce2b8402de"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/efficiency_receipt_v4.json",
+      "bytes": 10053,
+      "sha256": "90ae9ba6f7798ec6498f3cc2f082fe938704eb120eb7341a56f5206ca4c0f8a4"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/paired_ablation_v4.json",
+      "bytes": 29615,
+      "sha256": "7345b17884e932373301a66523b6532b09b6fdc604ff538da8c22769e304309d"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/judge_noise_floor_v4.json",
+      "bytes": 21538,
+      "sha256": "496a5220198442691c4bb6d5d640953a6f4651259b92e6aea0b311dbde28c1ac"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/dev_h2h_full_160x11_v5.scored.json",
+      "bytes": 7134898,
+      "sha256": "06ed3c4e895edee905d17544146fabe0758f652125f7631033e60461ecdc5b5e"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/paired_evidence_v5.json",
+      "bytes": 40211,
+      "sha256": "bfef3015b0bec5059ffc28c23d81910dede658f696170d84e4dcbc6892cad492"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/v6_endpoints_v5.json",
+      "bytes": 12905,
+      "sha256": "fbb7cbbf52d9ec5f137faebfc92e54b909c5cf801029dc042dcca04e83a32914"
+    },
+    {
+      "path": "research/evidence/dev_h2h_full/paired_ablation_v5.json",
+      "bytes": 29770,
+      "sha256": "9404f702cd2fea1506af28a4187086ca763615891504d0082df151b97193eaea"
+    }
+  ],
+  "observed_rule": "Recorded for provenance; drift expected. Implementation cards become design-binding at the pre-sealed runtime lock.",
+  "scorer_pins": {
+    "ragas_judge_specification_sha256": "c521f674e940e0b65fef519a3ee94a7f734c9ebe379444810553b8b1a32abe33",
+    "note": "filled below from medguard.eval.ragas_judge.judge_specification_sha256()"
+  },
+  "historical_versions": [
+    {
+      "path": "research/EXPERIMENT_SPEC_V1.receipt.json",
+      "sha256": "5a990ece1c41b21d491b4919b5f31817c1522306846fbcd0058c84d1a05bbfd8",
+      "status": "historical_but_load_bearing",
+      "note": "Pinned by five frozen artifacts. Never edit."
+    },
+    {
+      "path": "research/EXPERIMENT_SPEC_V3.receipt.json",
+      "sha256": "8024d3708e2b98c7ba174d68ee67779679bb863745546aab519f515122b5d7e8",
+      "status": "historical"
+    },
+    {
+      "path": "research/EXPERIMENT_SPEC_V4.receipt.json",
+      "sha256": "1299f41046aeafd1c4e4f3a83cc161e997d4a93f04b39836082977fd534a0044",
+      "status": "historical",
+      "note": "Superseded by this v5. Its design_binding pins (v4 spec + the pre-v5 prereg) are the historical v4 design; the current prereg is pinned by this v5 receipt."
+    },
+    {
+      "path": "research/EXPERIMENT_SPEC_V5.receipt.json",
+      "sha256": "b669057cf389d6812cb086dda4076ca1fc57c1aab10e8beeb3a1a28a7558e6c3",
+      "status": "historical_superseded_by_v6",
+      "note": "v5's design tier pinned PREREGISTRATION.json, which schema 6 changes. Per v5's own design_binding_rule, that makes the v5 receipt historical rather than broken: the reason is recorded in EXPERIMENT_SPEC_V6.supersession."
+    }
+  ],
+  "authorization": "This receipt freezes the design only. It does not authorize paid generation or sealed-test access.",
+  "runtime_lock_note": "The runtime lock is design-binding from 2026-08-08: it fixes the machinery that will produce the sealed numbers, as distinct from the endpoints v6 fixes.",
+  "tier_note_2026_08_08": "RUNTIME_LOCK_V1.json was promoted from observed to design-binding when the lock was declared sealed-ready: from that point it defines the runtime the sealed evaluation must execute, so a change to it is a design change."
+}

@@ -1,0 +1,5 @@
+{
+  "reply": "The seven-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The diagnosis is NEV with a classifier confidence of 0.6262. No guideline recommendations are available for this condition.",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

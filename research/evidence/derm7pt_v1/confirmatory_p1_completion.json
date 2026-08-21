@@ -1,0 +1,68 @@
+{
+  "purpose": "registered P1 completion",
+  "protocol_id": "medguard-v2-derm7pt-criteria-ensemble-v1",
+  "preregistration_schema": 2,
+  "split": "test",
+  "n_cases": 395,
+  "melanomas": 101,
+  "access_grant": {
+    "sequence": 3,
+    "entry_sha256": "7095930a7d80a26239b33ed67827433dcc0d24bf95cb3989d0a334c0465e9a36"
+  },
+  "registered_configuration": {
+    "view": "dermlip",
+    "meta_C": 100.0,
+    "threshold": 0.2981,
+    "meta_feature_count": 47,
+    "base_predictions": "out-of-fold on train"
+  },
+  "P1_registered_comparison": {
+    "stacked_auroc": 0.8875,
+    "classifier_alone_auroc": 0.895,
+    "auroc_difference": -0.0075,
+    "delong": {
+      "auc_a": 0.8875,
+      "auc_b": 0.895,
+      "difference": -0.0075,
+      "variance": 0.0002,
+      "z": -0.5338,
+      "p_value": 0.5935
+    },
+    "stacked_at_registered_threshold": {
+      "sensitivity": 0.6733,
+      "specificity": 0.8639,
+      "youden_j": 0.5372,
+      "confusion": {
+        "tp": 68,
+        "fn": 33,
+        "fp": 40,
+        "tn": 254
+      }
+    }
+  },
+  "reported_alongside_from_the_confirmatory_run": {
+    "classifier_alone": {
+      "sensitivity": 0.5941,
+      "specificity": 0.9048,
+      "youden_j": 0.4988,
+      "confusion": {
+        "tp": 60,
+        "fn": 41,
+        "fp": 28,
+        "tn": 266
+      }
+    },
+    "hand_written_union": {
+      "sensitivity": 0.7426,
+      "specificity": 0.8503,
+      "youden_j": 0.5929,
+      "confusion": {
+        "tp": 75,
+        "fn": 26,
+        "fp": 44,
+        "tn": 250
+      }
+    }
+  },
+  "disclosure": "The confirmatory runner did not implement the registered stacked comparison; this module completes it on the same fitted readers and split. The union-rule outcome was already observed when this was computed, so the two are reported together and neither is presented as a blind result. The comparator's test metrics were also visible during design (see test_split_exposure in the preregistration)."
+}

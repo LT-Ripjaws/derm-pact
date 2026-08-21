@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus recommends surgical excision as the first-line treatment for melanoma. Specifically, the whole lesion should be completely excised with a narrow margin (1\u20133 mm) to enable histological diagnosis. For large lesions such as those on the face, acral areas, or genitalia, incisional biopsies may be performed. If sentinel lymph node biopsy is indicated, it should be done before wide excision and ideally in the same operative setting.\", \"citations\": [\"aad:pmid:30392755:table-x-excision-first-line\", \"eado:pmid:39709737:recommendation-1\", \"aad:pmid:30392755:table-x-slnb-timing\"]}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

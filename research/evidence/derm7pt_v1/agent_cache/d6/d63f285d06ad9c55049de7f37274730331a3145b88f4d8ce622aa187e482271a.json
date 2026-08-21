@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for the condition group 'MISC'. The licensed guidelines focus on malignant and pre-malignant lesions such as BCC, MEL, NEV, and SK. For this lesion, which was classified as 'MISC' with a 7-point score of 2 (below the threshold of 3), the criteria imply clinical follow-up due to indeterminate features in pigmentation and dots/globules. However, since no formal management guidance exists for 'MISC' in the corpus, no specific action can be derived from the guidelines.\", \"citations\": []}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

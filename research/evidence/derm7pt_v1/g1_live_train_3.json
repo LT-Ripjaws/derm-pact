@@ -1,0 +1,927 @@
+{
+  "gate_id": "G1_criterion_readability",
+  "mode": "live",
+  "question": "Can a VLM read the seven dermoscopic criteria off the image?",
+  "boundaries": {
+    "splits": [
+      "train"
+    ],
+    "test_split_read": false,
+    "cache_dir": "E:\\Studies\\Research\\MedGuard-RAG-Journal\\research\\evidence\\derm7pt_v1\\g1_assessor_cache"
+  },
+  "cohort": {
+    "n_cases": 3,
+    "selection": {
+      "strategy": "score-spread",
+      "n_available": 413,
+      "n_selected": 3,
+      "representative_of_split": false,
+      "note": "spread across the gold 7-point score (lowest .. highest). NOT a random sample: difficulty is deliberately maximised, so accuracy here does not estimate the split.",
+      "case_nums": [
+        1,
+        978,
+        795
+      ],
+      "diagnosis_groups": [
+        "BCC",
+        "SK",
+        "MEL"
+      ],
+      "gold_scores": [
+        0,
+        1,
+        9
+      ],
+      "split": "train"
+    },
+    "class_counts": {
+      "BCC": 1,
+      "SK": 1,
+      "MEL": 1
+    }
+  },
+  "assessor": {
+    "prompt_version": "g1-criterion-assessor-v2",
+    "decoding": {
+      "model": "qwen/qwen3-vl-32b-instruct",
+      "temperature": 0.0,
+      "max_tokens": 900,
+      "seed": 20260810
+    },
+    "max_repair_attempts": 1,
+    "include_clinical": false
+  },
+  "usage": {
+    "cases": 3,
+    "paid_this_run": {
+      "cases": 3,
+      "remote_calls": 3,
+      "transport_attempts": 3,
+      "repair_attempts": 0,
+      "prompt_tokens": 5610,
+      "completion_tokens": 889,
+      "total_tokens": 6499,
+      "latency_seconds": 18.604
+    },
+    "replayed_from_cache": {
+      "cases": 0,
+      "remote_calls": 0,
+      "transport_attempts": 0,
+      "repair_attempts": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "latency_seconds": 0
+    },
+    "cache_hit_rate": 0.0,
+    "usage_reported_by_gateway": true,
+    "calibration": {
+      "observed_prompt_tokens_per_call": 1870.0,
+      "observed_completion_tokens_per_call": 296.3,
+      "estimated_prompt_tokens_per_call": 1959.0,
+      "ratio_observed_over_estimated": 0.9546,
+      "note": "multiply any dry-run input-token projection by this ratio"
+    }
+  },
+  "reliability": {
+    "n_cases": 3,
+    "n_scored": 3,
+    "parse_failures": 0,
+    "parse_failure_rate": 0.0,
+    "api_failures": 0,
+    "api_failure_rate": 0.0,
+    "failed_case_nums": [],
+    "failure_reasons": [],
+    "note": "Parse failures carry NO criterion values. They are excluded from the accuracy denominators and reported here instead; they are never coerced to 'absent', which would fabricate a 7-point score of 0."
+  },
+  "per_criterion": {
+    "pigment_network": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.6667,
+        "macro_f1_full_vocabulary": 0.5556,
+        "macro_f1_supported_classes": 0.5556,
+        "cohen_kappa": 0.5,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "labels": [
+          "absent",
+          "atypical",
+          "typical"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.5,
+        "macro_f1_full_vocabulary": 0.4167,
+        "macro_f1_supported_classes": 0.5556,
+        "cohen_kappa": 0.5
+      },
+      "gold_value_counts": {
+        "absent": 1,
+        "atypical": 1,
+        "typical": 1
+      },
+      "gold_is_constant": false,
+      "chance_baseline": {
+        "train_majority_value": "absent",
+        "train_majority": {
+          "accuracy": 0.3333,
+          "balanced_accuracy": 0.3333,
+          "macro_f1_full_vocabulary": 0.1667,
+          "macro_f1_supported_classes": 0.1667,
+          "cohen_kappa": 0.0
+        },
+        "eval_majority_value": "absent",
+        "eval_majority_accuracy_oracle": 0.3333,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": 0.3333,
+        "determinate_accuracy": 0.3334
+      }
+    },
+    "blue_whitish_veil": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1_full_vocabulary": 1.0,
+        "macro_f1_supported_classes": 1.0,
+        "cohen_kappa": 1.0,
+        "confusion_matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "absent",
+          "present"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 0.6667,
+        "macro_f1_full_vocabulary": 0.6667,
+        "macro_f1_supported_classes": 1.0,
+        "cohen_kappa": 1.0
+      },
+      "gold_value_counts": {
+        "absent": 2,
+        "present": 1
+      },
+      "gold_is_constant": false,
+      "chance_baseline": {
+        "train_majority_value": "absent",
+        "train_majority": {
+          "accuracy": 0.6667,
+          "balanced_accuracy": 0.5,
+          "macro_f1_full_vocabulary": 0.4,
+          "macro_f1_supported_classes": 0.4,
+          "cohen_kappa": 0.0
+        },
+        "eval_majority_value": "absent",
+        "eval_majority_accuracy_oracle": 0.6667,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": 0.3333,
+        "determinate_accuracy": 0.3333
+      }
+    },
+    "vascular_structures": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.25,
+        "macro_f1_full_vocabulary": 0.2083,
+        "macro_f1_supported_classes": 0.5556,
+        "cohen_kappa": 0.5,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "absent",
+          "arborizing",
+          "comma",
+          "dotted",
+          "hairpin",
+          "linear irregular",
+          "within regression",
+          "wreath"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.2222,
+        "macro_f1_full_vocabulary": 0.1852,
+        "macro_f1_supported_classes": 0.5556,
+        "cohen_kappa": 0.5
+      },
+      "gold_value_counts": {
+        "absent": 1,
+        "arborizing": 1,
+        "dotted": 1
+      },
+      "gold_is_constant": false,
+      "chance_baseline": {
+        "train_majority_value": "absent",
+        "train_majority": {
+          "accuracy": 0.3333,
+          "balanced_accuracy": 0.125,
+          "macro_f1_full_vocabulary": 0.0625,
+          "macro_f1_supported_classes": 0.1667,
+          "cohen_kappa": 0.0
+        },
+        "eval_majority_value": "absent",
+        "eval_majority_accuracy_oracle": 0.3333,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": 0.3333,
+        "determinate_accuracy": 0.3334
+      }
+    },
+    "streaks": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.3333,
+        "macro_f1_full_vocabulary": 0.2667,
+        "macro_f1_supported_classes": 0.4,
+        "cohen_kappa": 0.0,
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "absent",
+          "irregular",
+          "regular"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.25,
+        "macro_f1_full_vocabulary": 0.2,
+        "macro_f1_supported_classes": 0.4,
+        "cohen_kappa": 0.0
+      },
+      "gold_value_counts": {
+        "absent": 2,
+        "irregular": 1
+      },
+      "gold_is_constant": false,
+      "chance_baseline": {
+        "train_majority_value": "absent",
+        "train_majority": {
+          "accuracy": 0.6667,
+          "balanced_accuracy": 0.3333,
+          "macro_f1_full_vocabulary": 0.2667,
+          "macro_f1_supported_classes": 0.4,
+          "cohen_kappa": 0.0
+        },
+        "eval_majority_value": "absent",
+        "eval_majority_accuracy_oracle": 0.6667,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": 0.0,
+        "determinate_accuracy": 0.0
+      }
+    },
+    "pigmentation": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 0.4,
+        "macro_f1_full_vocabulary": 0.4,
+        "macro_f1_supported_classes": 1.0,
+        "cohen_kappa": 1.0,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "absent",
+          "diffuse irregular",
+          "diffuse regular",
+          "localized irregular",
+          "localized regular"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 1.0,
+        "balanced_accuracy": 0.3333,
+        "macro_f1_full_vocabulary": 0.3333,
+        "macro_f1_supported_classes": 1.0,
+        "cohen_kappa": 1.0
+      },
+      "gold_value_counts": {
+        "absent": 1,
+        "diffuse irregular": 2
+      },
+      "gold_is_constant": false,
+      "chance_baseline": {
+        "train_majority_value": "absent",
+        "train_majority": {
+          "accuracy": 0.3333,
+          "balanced_accuracy": 0.2,
+          "macro_f1_full_vocabulary": 0.1,
+          "macro_f1_supported_classes": 0.25,
+          "cohen_kappa": 0.0
+        },
+        "eval_majority_value": "diffuse irregular",
+        "eval_majority_accuracy_oracle": 0.6667,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": 0.6667,
+        "determinate_accuracy": 0.6667
+      }
+    },
+    "dots_and_globules": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.5,
+        "macro_f1_full_vocabulary": 0.4444,
+        "macro_f1_supported_classes": 0.6667,
+        "cohen_kappa": 0.4,
+        "confusion_matrix": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "absent",
+          "irregular",
+          "regular"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.375,
+        "macro_f1_full_vocabulary": 0.3333,
+        "macro_f1_supported_classes": 0.6667,
+        "cohen_kappa": 0.4
+      },
+      "gold_value_counts": {
+        "absent": 2,
+        "irregular": 1
+      },
+      "gold_is_constant": false,
+      "chance_baseline": {
+        "train_majority_value": "irregular",
+        "train_majority": {
+          "accuracy": 0.3333,
+          "balanced_accuracy": 0.3333,
+          "macro_f1_full_vocabulary": 0.1667,
+          "macro_f1_supported_classes": 0.25,
+          "cohen_kappa": 0.0
+        },
+        "eval_majority_value": "absent",
+        "eval_majority_accuracy_oracle": 0.6667,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": 0.3333,
+        "determinate_accuracy": 0.3334
+      }
+    },
+    "regression_structures": {
+      "n_assessed": 3,
+      "n_indeterminate": 0,
+      "indeterminate_rate": 0.0,
+      "n_determinate": 3,
+      "determinate_only": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.1667,
+        "macro_f1_full_vocabulary": 0.2,
+        "macro_f1_supported_classes": 0.8,
+        "cohen_kappa": 0.0,
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "absent",
+          "blue areas",
+          "combinations",
+          "white areas"
+        ]
+      },
+      "strict_indeterminate_counts_as_wrong": {
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.1333,
+        "macro_f1_full_vocabulary": 0.16,
+        "macro_f1_supported_classes": 0.8,
+        "cohen_kappa": 0.0
+      },
+      "gold_value_counts": {
+        "absent": 3
+      },
+      "gold_is_constant": true,
+      "chance_baseline": {
+        "train_majority_value": "absent",
+        "train_majority": {
+          "accuracy": 1.0,
+          "balanced_accuracy": 0.25,
+          "macro_f1_full_vocabulary": 0.25,
+          "macro_f1_supported_classes": 1.0,
+          "cohen_kappa": 1.0
+        },
+        "eval_majority_value": "absent",
+        "eval_majority_accuracy_oracle": 1.0,
+        "note": "train_majority is the legitimate prior (fit on train, applied to the eval cohort). Its Cohen kappa is 0 whenever the gold labels vary; when the gold column is itself constant (gold_is_constant) the constant is trivially perfect and metrics.py reports kappa 1.0 -- read the lift on that criterion as uninformative, not as a loss. eval_majority is an oracle constant shown only to bound how easy the cohort is."
+      },
+      "lift_over_train_majority": {
+        "strict_accuracy": -0.3333,
+        "determinate_accuracy": -0.3333
+      }
+    }
+  },
+  "macro_across_seven": {
+    "accuracy_determinate": 0.7619,
+    "macro_f1_supported_classes": 0.7111,
+    "cohen_kappa": 0.4857,
+    "accuracy_strict": 0.7619,
+    "chance_accuracy_train_majority": 0.5238,
+    "lift_over_chance_strict": 0.2381,
+    "indeterminate_rate": 0.0
+  },
+  "seven_point_score_agreement": {
+    "n_cases": 3,
+    "n_fully_determinate": 3,
+    "fully_determinate_rate": 1.0,
+    "fully_determinate": {
+      "mae": 1.6667,
+      "exact_match_rate": 0.3333,
+      "within_one_rate": 0.3333,
+      "mean_signed_error": 0.3333,
+      "max_abs_error": 3
+    },
+    "with_abstention": {
+      "gold_score_within_predicted_range_rate": 0.3333,
+      "mean_range_width": 0.0,
+      "decidable_rate": 1.0
+    },
+    "threshold_verdict_on_decidable": {
+      "threshold": 3,
+      "n": 3,
+      "accuracy": 0.6667,
+      "sensitivity": 1.0,
+      "specificity": 0.5,
+      "confusion": {
+        "tp": 1,
+        "fn": 0,
+        "fp": 1,
+        "tn": 1
+      },
+      "note": "vs the gold 7-point score's own threshold verdict, not vs the diagnosis"
+    }
+  },
+  "seven_point_score_agreement_chance_baseline": {
+    "n_cases": 3,
+    "n_fully_determinate": 3,
+    "fully_determinate_rate": 1.0,
+    "fully_determinate": {
+      "mae": 3.0,
+      "exact_match_rate": 0.3333,
+      "within_one_rate": 0.6667,
+      "mean_signed_error": -2.3333,
+      "max_abs_error": 8
+    },
+    "with_abstention": {
+      "gold_score_within_predicted_range_rate": 0.3333,
+      "mean_range_width": 0.0,
+      "decidable_rate": 1.0
+    },
+    "threshold_verdict_on_decidable": {
+      "threshold": 3,
+      "n": 3,
+      "accuracy": 0.6667,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "confusion": {
+        "tp": 0,
+        "fn": 1,
+        "fp": 0,
+        "tn": 2
+      },
+      "note": "vs the gold 7-point score's own threshold verdict, not vs the diagnosis"
+    }
+  },
+  "confidence": {
+    "mean_when_correct": 0.9125,
+    "mean_when_wrong": 0.9,
+    "separation": 0.0125
+  },
+  "per_case": [
+    {
+      "case_index": 0,
+      "case_num": 1,
+      "split": "train",
+      "diagnosis": "basal cell carcinoma",
+      "diagnosis_group": "BCC",
+      "status": "ok",
+      "criteria": {
+        "pigment_network": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "No reticular grid of pigmented lines is visible anywhere in the lesion."
+        },
+        "blue_whitish_veil": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "No confluent blue-grey area with an overlying whitish film is present."
+        },
+        "vascular_structures": {
+          "gold": "arborizing",
+          "predicted": "arborizing",
+          "agree": true,
+          "confidence": 0.9,
+          "justification": "Large-calibre bright red vessels branching into progressively thinner ramifications are clearly visible within the lesion."
+        },
+        "streaks": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "No radial linear projections or pseudopods are seen at the lesion border."
+        },
+        "pigmentation": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "No structureless pigmented blotches are visible within the lesion."
+        },
+        "dots_and_globules": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "No round pigmented dots or globules are discernible within the lesion."
+        },
+        "regression_structures": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "No white scar-like areas or blue-grey peppering are observed in the lesion."
+        }
+      },
+      "n_criteria_agreeing": 7,
+      "gold_seven_point_score": 0,
+      "predicted_score_range": [
+        0,
+        0
+      ],
+      "cache_hit": false,
+      "repair_attempts": 0,
+      "soft_defects": [],
+      "normalisations": {}
+    },
+    {
+      "case_index": 794,
+      "case_num": 795,
+      "split": "train",
+      "diagnosis": "melanoma (0.76 to 1.5 mm)",
+      "diagnosis_group": "MEL",
+      "status": "ok",
+      "criteria": {
+        "pigment_network": {
+          "gold": "atypical",
+          "predicted": "atypical",
+          "agree": true,
+          "confidence": 0.9,
+          "justification": "thickened, broken brown lines with irregularly sized holes and abrupt endings at the periphery"
+        },
+        "blue_whitish_veil": {
+          "gold": "present",
+          "predicted": "present",
+          "agree": true,
+          "confidence": 0.8,
+          "justification": "confluent blue-grey area overlaid by a whitish haze, not covering entire lesion"
+        },
+        "vascular_structures": {
+          "gold": "dotted",
+          "predicted": "absent",
+          "agree": false,
+          "confidence": 0.9,
+          "justification": "no discernible blood vessels visible within the lesion"
+        },
+        "streaks": {
+          "gold": "irregular",
+          "predicted": "absent",
+          "agree": false,
+          "confidence": 0.9,
+          "justification": "no radial lines or pseudopods observed at the lesion border"
+        },
+        "pigmentation": {
+          "gold": "diffuse irregular",
+          "predicted": "diffuse irregular",
+          "agree": true,
+          "confidence": 0.9,
+          "justification": "structureless pigmentation over most of lesion, uneven in colour and asymmetrically distributed"
+        },
+        "dots_and_globules": {
+          "gold": "irregular",
+          "predicted": "irregular",
+          "agree": true,
+          "confidence": 0.8,
+          "justification": "small, variably sized and coloured dots and globules clustered in central areas"
+        },
+        "regression_structures": {
+          "gold": "absent",
+          "predicted": "combinations",
+          "agree": false,
+          "confidence": 0.9,
+          "justification": "white scar-like areas and blue-grey granular peppering both present"
+        }
+      },
+      "n_criteria_agreeing": 4,
+      "gold_seven_point_score": 9,
+      "predicted_score_range": [
+        7,
+        7
+      ],
+      "cache_hit": false,
+      "repair_attempts": 0,
+      "soft_defects": [],
+      "normalisations": {}
+    },
+    {
+      "case_index": 977,
+      "case_num": 978,
+      "split": "train",
+      "diagnosis": "seborrheic keratosis",
+      "diagnosis_group": "SK",
+      "status": "ok",
+      "criteria": {
+        "pigment_network": {
+          "gold": "typical",
+          "predicted": "atypical",
+          "agree": false,
+          "confidence": 0.9,
+          "justification": "irregular brown lines with uneven thickness and varying hole sizes, some ending abruptly"
+        },
+        "blue_whitish_veil": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "no blue-grey area with whitish haze observed"
+        },
+        "vascular_structures": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.9,
+          "justification": "no discernible blood vessels within the lesion"
+        },
+        "streaks": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "no radial lines or pseudopods at the lesion border"
+        },
+        "pigmentation": {
+          "gold": "diffuse irregular",
+          "predicted": "diffuse irregular",
+          "agree": true,
+          "confidence": 0.85,
+          "justification": "structureless pigmentation covering most of lesion with uneven colour and asymmetric distribution"
+        },
+        "dots_and_globules": {
+          "gold": "absent",
+          "predicted": "irregular",
+          "agree": false,
+          "confidence": 0.9,
+          "justification": "multiple dots and globules of varying size and colour, clustered in parts of the lesion"
+        },
+        "regression_structures": {
+          "gold": "absent",
+          "predicted": "absent",
+          "agree": true,
+          "confidence": 0.95,
+          "justification": "no white scar-like areas or blue-grey peppering visible"
+        }
+      },
+      "n_criteria_agreeing": 5,
+      "gold_seven_point_score": 1,
+      "predicted_score_range": [
+        4,
+        4
+      ],
+      "cache_hit": false,
+      "repair_attempts": 0,
+      "soft_defects": [],
+      "normalisations": {}
+    }
+  ]
+}

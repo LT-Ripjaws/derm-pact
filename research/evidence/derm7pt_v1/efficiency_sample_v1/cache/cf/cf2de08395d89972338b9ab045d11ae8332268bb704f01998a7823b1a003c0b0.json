@@ -1,0 +1,15 @@
+{
+  "reply": "{\"action\": \"tool\", \"tool\": \"override_criterion\", \"args\": {\"criterion\": \"pigment_network\", \"value\": \"atypical\"}}",
+  "metadata": {
+    "model": "qwen/qwen3-vl-32b-instruct",
+    "attempt": 1,
+    "succeeded": true,
+    "latency_seconds": 2.4848407999961637,
+    "prompt_tokens": 2943,
+    "completion_tokens": 34,
+    "total_tokens": 2977,
+    "usage_available": true,
+    "seed": null
+  },
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

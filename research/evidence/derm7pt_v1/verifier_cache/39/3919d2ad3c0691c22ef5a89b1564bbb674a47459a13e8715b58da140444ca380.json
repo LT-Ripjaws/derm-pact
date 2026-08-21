@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the updated 7-point score range is 5\u20136, but the contract does not provide a mechanism for computing scores with overridden criteria. The original score was 3\u20134 (with 'blue_whitish_veil' = absent). Changing this criterion to 'present' would add 2 points, resulting in a score of 5\u20136 only if all other criteria remain unchanged. However, the contract does not specify that the score can be recomputed based on clinician overrides, and the agent\u2019s claim about the new score is not grounded in the provided decision contract. This is a fabrication of score computation.",
+    "CRITERION ACCURACY: The agent states that 'blue_whitish_veil' was corrected from 'absent' to 'present', but the contract does not support dynamic updates or overrides. The original value in the contract is 'absent'. Any change must be explicitly modeled in the contract; since it is not, the agent's assertion of an override is not faithful to the data.",
+    "MANAGEMENT FIDELITY: The agent concludes that the recommendation remains excision because the score is still \u22653. While this logic is sound, the premise (score 5\u20136) is not supported by the contract, making the management advice indirectly fabricated due to reliance on an unverified score update.",
+    "CITATION VALIDITY: All cited guideline record IDs are plausible in format (e.g., 'aad:pmid:30392755:table-x-excision-first-line'), matching expected structure. No issue here."
+  ],
+  "confidence": "medium",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the updated 7-point score range is 5\u20136, but the contract does not provide a mechanism for computing scores with overridden criteria. The original score was 3\u20134 (with 'blue_whitish_veil' = absent). Changing this criterion to 'present' would add 2 points, resulting in a score of 5\u20136 only if all other criteria remain unchanged. However, the contract does not specify that the score can be recomputed based on clinician overrides, and the agent\u2019s claim about the new score is not grounded in the provided decision contract. This is a fabrication of score computation.\",\n    \"CRITERION ACCURACY: The agent states that 'blue_whitish_veil' was corrected from 'absent' to 'present', but the contract does not support dynamic updates or overrides. The original value in the contract is 'absent'. Any change must be explicitly modeled in the contract; since it is not, the agent's assertion of an override is not faithful to the data.\",\n    \"MANAGEMENT FIDELITY: The agent concludes that the recommendation remains excision because the score is still \u22653. While this logic is sound, the premise (score 5\u20136) is not supported by the contract, making the management advice indirectly fabricated due to reliance on an unverified score update.\",\n    \"CITATION VALIDITY: All cited guideline record IDs are plausible in format (e.g., 'aad:pmid:30392755:table-x-excision-first-line'), matching expected structure. No issue here.\"\n  ],\n  \"confidence\": \"medium\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 6.356,
+  "usage": {
+    "prompt_tokens": 2087,
+    "completion_tokens": 356,
+    "total_tokens": 2443
+  }
+}

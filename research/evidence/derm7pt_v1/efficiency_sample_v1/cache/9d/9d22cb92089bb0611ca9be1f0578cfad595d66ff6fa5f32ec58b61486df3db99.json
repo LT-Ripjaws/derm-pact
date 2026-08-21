@@ -1,0 +1,15 @@
+{
+  "reply": "{\"action\": \"tool\", \"tool\": \"search_guidelines\", \"args\": {\"condition\": \"MEL\", \"question_type\": \"initial_local_management\"}}",
+  "metadata": {
+    "model": "qwen/qwen3-vl-32b-instruct",
+    "attempt": 1,
+    "succeeded": true,
+    "latency_seconds": 1.5284015999932308,
+    "prompt_tokens": 3038,
+    "completion_tokens": 34,
+    "total_tokens": 3072,
+    "usage_available": true,
+    "seed": null
+  },
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

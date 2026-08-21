@@ -1,0 +1,89 @@
+{
+  "assessment": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "error": null,
+        "kind": "initial",
+        "response": "{\n  \"pigment_network\": {\n    \"value\": \"atypical\",\n    \"confidence\": 0.78,\n    \"justification\": \"Irregular thick brown network lines with uneven, variably sized openings are visible superiorly.\"\n  },\n  \"blue_whitish_veil\": {\n    \"value\": \"absent\",\n    \"confidence\": 0.87,\n    \"justification\": \"No confluent blue-grey area is covered by a distinct whitish ground-glass haze.\"\n  },\n  \"vascular_structures\": {\n    \"value\": \"absent\",\n    \"confidence\": 0.92,\n    \"justification\": \"No discernible vascular morphology is seen within the pigmented lesion.\"\n  },\n  \"streaks\": {\n    \"value\": \"absent\",\n    \"confidence\": 0.88,\n    \"justification\": \"The border lacks radial linear projections or bulbous pseudopods.\"\n  },\n  \"pigmentation\": {\n    \"value\": \"diffuse irregular\",\n    \"confidence\": 0.9,\n    \"justification\": \"Structureless brown-to-black pigmentation covers most of the lesion with asymmetric density variation.\"\n  },\n  \"dots_and_globules\": {\n    \"value\": \"irregular\",\n    \"confidence\": 0.83,\n    \"justification\": \"Dark dots and globules are variably sized and clustered predominantly in the left portion.\"\n  },\n  \"regression_structures\": {\n    \"value\": \"blue areas\",\n    \"confidence\": 0.63,\n    \"justification\": \"Focal blue-grey granular peppering is visible without a definite white scar-like area.\"\n  }\n}"
+      }
+    ],
+    "cache_key": "710bf9e3b87e370acb0124cbab30a30f510e301db4ed06a955f697d688e77ad8",
+    "case_index": 705,
+    "case_num": 706,
+    "confidences": {
+      "blue_whitish_veil": 0.87,
+      "dots_and_globules": 0.83,
+      "pigment_network": 0.78,
+      "pigmentation": 0.9,
+      "regression_structures": 0.63,
+      "streaks": 0.88,
+      "vascular_structures": 0.92
+    },
+    "failure_reason": null,
+    "justifications": {
+      "blue_whitish_veil": "No confluent blue-grey area is covered by a distinct whitish ground-glass haze.",
+      "dots_and_globules": "Dark dots and globules are variably sized and clustered predominantly in the left portion.",
+      "pigment_network": "Irregular thick brown network lines with uneven, variably sized openings are visible superiorly.",
+      "pigmentation": "Structureless brown-to-black pigmentation covers most of the lesion with asymmetric density variation.",
+      "regression_structures": "Focal blue-grey granular peppering is visible without a definite white scar-like area.",
+      "streaks": "The border lacks radial linear projections or bulbous pseudopods.",
+      "vascular_structures": "No discernible vascular morphology is seen within the pigmented lesion."
+    },
+    "normalisations": {},
+    "raw_values": {
+      "blue_whitish_veil": "absent",
+      "dots_and_globules": "irregular",
+      "pigment_network": "atypical",
+      "pigmentation": "diffuse irregular",
+      "regression_structures": "blue areas",
+      "streaks": "absent",
+      "vascular_structures": "absent"
+    },
+    "soft_defects": [],
+    "stats": {
+      "cache_hit": false,
+      "completion_tokens": 472,
+      "latency_seconds": 13.2312,
+      "prompt_tokens": 1935,
+      "remote_calls": 1,
+      "repair_attempts": 0,
+      "total_tokens": 2407,
+      "transport_attempts": 1,
+      "usage_available": true
+    },
+    "status": "ok",
+    "values": {
+      "blue_whitish_veil": "absent",
+      "dots_and_globules": "irregular",
+      "pigment_network": "atypical",
+      "pigmentation": "diffuse irregular",
+      "regression_structures": "blue areas",
+      "streaks": "absent",
+      "vascular_structures": "absent"
+    }
+  },
+  "first_seen_case_num": 706,
+  "prompt_version": "g1-criterion-assessor-v2",
+  "request_identity": {
+    "decoding": {
+      "max_tokens": 4000,
+      "model": "openai/gpt-5.6-terra",
+      "seed": 20260810,
+      "temperature": 1.0
+    },
+    "images": [
+      {
+        "role": "dermoscopic",
+        "sha256": "e306977be55ae17d6c8a345a0d330f17165e8a7943b77f4e9c975cc9c1dec620"
+      }
+    ],
+    "max_repair_attempts": 1,
+    "prompt_version": "g1-criterion-assessor-v2",
+    "schema_version": 2,
+    "system_prompt": "You are a dermoscopy image reader. You judge individual morphological criteria that are visible in an image. You never diagnose, never name a disease, never compute or mention any score or total, and never state or imply a management recommendation. Those are decided elsewhere from your criterion judgements. Answer only with the requested JSON.",
+    "user_prompt": "You are given one dermoscopic image of a skin lesion.\n\nAssess each of the seven dermoscopic criteria below, independently of one another.\n\n\"pigment_network\" -- The reticular grid of pigmented lines ('network') over the lesion.\n  permitted values (choose exactly one):\n    \"absent\" = no reticular grid of pigmented lines anywhere in the lesion\n    \"atypical\" = a grid whose lines are thickened, broken or unevenly coloured, with holes that vary in size and shape, often ending abruptly at the edge\n    \"typical\" = a regular grid of thin, evenly coloured brown lines with uniformly sized holes, thinning out gradually towards the edge\n\n\"blue_whitish_veil\" -- A confluent blue-grey area overlaid by a whitish haze.\n  permitted values (choose exactly one):\n    \"absent\" = no confluent blue-grey area with an overlying whitish film\n    \"present\" = a confluent blue-grey pigmented area covered by a white 'ground-glass' film, not occupying the whole lesion\n\n\"vascular_structures\" -- The morphology of blood vessels visible inside the lesion.\n  permitted values (choose exactly one):\n    \"absent\" = no vessels discernible inside the lesion\n    \"arborizing\" = large-calibre bright red vessels branching into progressively thinner ramifications, sharply in focus\n    \"comma\" = short, gently curved, comma-shaped vessels of low branching complexity\n    \"dotted\" = numerous tiny pinpoint red dots at the limit of resolution, densely and unevenly distributed\n    \"hairpin\" = elongated vessels looping back on themselves like a hairpin, often with a whitish halo\n    \"linear irregular\" = red linear vessels of irregular shape, calibre and distribution, fitting no regular arrangement\n    \"within regression\" = fine vessels seen inside white scar-like depigmented areas\n    \"wreath\" = short vessels arranged in crown-like arcs around the periphery, not crossing the centre of the lesion\n\n\"streaks\" -- Radial linear projections or bulbous pseudopods at the lesion border.\n  permitted values (choose exactly one):\n    \"absent\" = no radial lines or pseudopods at the lesion border\n    \"irregular\" = radial lines or pseudopods present at only some segments of the border, unevenly distributed\n    \"regular\" = radial lines or bulbous pseudopods distributed symmetrically around the whole border\n\n\"pigmentation\" -- Structureless areas of pigment (blotches), as opposed to structured patterns.\n  permitted values (choose exactly one):\n    \"absent\" = no structureless pigmented blotch\n    \"diffuse irregular\" = structureless pigmentation over most of the lesion but uneven in colour or density and asymmetrically placed\n    \"diffuse regular\" = structureless pigmentation covering most of the lesion, uniform in colour and symmetrically placed\n    \"localized irregular\" = a structureless pigmented blotch confined to part of the lesion, eccentric or asymmetrically placed\n    \"localized regular\" = structureless pigmentation confined to part of the lesion, uniform in colour and symmetrically placed\n\n\"dots_and_globules\" -- Round pigmented dots and globules within the lesion.\n  permitted values (choose exactly one):\n    \"absent\" = no dots or globules\n    \"irregular\" = dots and globules varying in size, shape or colour, unevenly distributed or clustered at one part of the lesion\n    \"regular\" = round-oval brown or black dots and globules of similar size and colour, evenly distributed\n\n\"regression_structures\" -- White scar-like areas and/or blue-grey granular peppering.\n  permitted values (choose exactly one):\n    \"absent\" = no white scar-like areas and no blue-grey peppering\n    \"blue areas\" = blue-grey granular peppering, without white scar-like areas\n    \"combinations\" = both white scar-like areas and blue-grey peppering\n    \"white areas\" = white scar-like areas lighter than the surrounding skin, without blue-grey peppering\n\nRULES\n1. For every criterion return exactly one value copied verbatim from that criterion's permitted\n   list. Do not invent values, do not abbreviate, do not translate, do not merge two values.\n2. If a criterion genuinely cannot be judged from the image -- the region is out of frame, out of\n   focus, obscured by hair, bubbles, glare or ink, or the image quality does not let you tell --\n   return \"indeterminate\". This is a legitimate and expected answer, not a failure. Declining is\n   strictly better than guessing: a wrong confident value is worse than an honest abstention.\n3. \"confidence\" is your probability that your chosen value is the one an expert dermoscopist\n   would record, as a number between 0 and 1.\n4. \"justification\" is ONE short line naming the visual feature you actually saw (or, for\n   \"indeterminate\", what prevented the judgement). No diagnosis, no score, no management advice.\n5. Judge only what is visible. Do not infer one criterion from another, and do not let an\n   impression of the overall lesion decide an individual criterion.\n\nReturn ONLY a JSON object with exactly these seven keys and no other text:\n\n{\n  \"pigment_network\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"},\n  \"blue_whitish_veil\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"},\n  \"vascular_structures\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"},\n  \"streaks\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"},\n  \"pigmentation\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"},\n  \"dots_and_globules\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"},\n  \"regression_structures\": {\"value\": \"<one permitted value or \\\"indeterminate\\\">\", \"confidence\": <number between 0 and 1>, \"justification\": \"<one short line>\"}\n}"
+  },
+  "request_sha256": "710bf9e3b87e370acb0124cbab30a30f510e301db4ed06a955f697d688e77ad8",
+  "schema_version": 2
+}

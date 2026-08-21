@@ -1,0 +1,224 @@
+{
+  "gate_id": "G7_ham_scaled_classifier",
+  "question": "Does training the diagnosis classifier on HAM10000 beat training it on Derm7pt's 413 cases?",
+  "boundaries": {
+    "ham_features": "v1-encoded DermLIP, train+calibration only; HAM sealed test excluded",
+    "ham_records": 8024,
+    "derm7pt_train_records": 413,
+    "evaluated_on": "Derm7pt valid (cross-centre, cross-device transfer)",
+    "derm7pt_test_read": false,
+    "paid_calls": 0
+  },
+  "label_mapping": {
+    "melanoma": "MEL",
+    "nevus": "NEV",
+    "bcc": "BCC",
+    "bkl": "SK",
+    "akiec": "MISC",
+    "df": "MISC",
+    "vasc": "MISC"
+  },
+  "ham_class_distribution": {
+    "NEV": 5375,
+    "MEL": 891,
+    "SK": 878,
+    "MISC": 469,
+    "BCC": 411
+  },
+  "sanity": {
+    "ham_lesion_grouped_cv_accuracy": 0.8443,
+    "selected_C": 100.0,
+    "note": "Near-chance here would mean the feature/label join is misaligned."
+  },
+  "arms_on_derm7pt_valid": {
+    "trained_on_derm7pt_413": {
+      "accuracy": 0.7094,
+      "balanced_accuracy": 0.5723,
+      "macro_f1": 0.5963,
+      "cohen_kappa": 0.5204,
+      "per_class": {
+        "BCC": {
+          "precision": 0.625,
+          "recall": 0.7143,
+          "f1": 0.6667,
+          "support": 7
+        },
+        "NEV": {
+          "precision": 0.6947,
+          "recall": 0.91,
+          "f1": 0.7879,
+          "support": 100
+        },
+        "MEL": {
+          "precision": 0.8095,
+          "recall": 0.5574,
+          "f1": 0.6602,
+          "support": 61
+        },
+        "SK": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333,
+          "support": 10
+        },
+        "MISC": {
+          "precision": 0.6,
+          "recall": 0.48,
+          "f1": 0.5333,
+          "support": 25
+        }
+      },
+      "melanoma_auroc": 0.8921,
+      "melanoma_at_argmax": {
+        "sensitivity": 0.5574,
+        "specificity": 0.9437,
+        "confusion": {
+          "tp": 34,
+          "fn": 27,
+          "fp": 8,
+          "tn": 134
+        }
+      },
+      "specificity_at_sensitivity": {
+        "0.90": {
+          "achieved_sensitivity": 0.9016,
+          "specificity": 0.6901,
+          "threshold": 0.1207
+        },
+        "0.95": {
+          "achieved_sensitivity": 0.9508,
+          "specificity": 0.5704,
+          "threshold": 0.0871
+        }
+      }
+    },
+    "trained_on_ham_8024": {
+      "accuracy": 0.6108,
+      "balanced_accuracy": 0.5168,
+      "macro_f1": 0.4983,
+      "cohen_kappa": 0.4142,
+      "per_class": {
+        "BCC": {
+          "precision": 1.0,
+          "recall": 0.2857,
+          "f1": 0.4444,
+          "support": 7
+        },
+        "NEV": {
+          "precision": 0.7444,
+          "recall": 0.67,
+          "f1": 0.7053,
+          "support": 100
+        },
+        "MEL": {
+          "precision": 0.5915,
+          "recall": 0.6885,
+          "f1": 0.6364,
+          "support": 61
+        },
+        "SK": {
+          "precision": 0.2059,
+          "recall": 0.7,
+          "f1": 0.3182,
+          "support": 10
+        },
+        "MISC": {
+          "precision": 1.0,
+          "recall": 0.24,
+          "f1": 0.3871,
+          "support": 25
+        }
+      },
+      "melanoma_auroc": 0.7867,
+      "melanoma_at_argmax": {
+        "sensitivity": 0.6885,
+        "specificity": 0.7958,
+        "confusion": {
+          "tp": 42,
+          "fn": 19,
+          "fp": 29,
+          "tn": 113
+        }
+      },
+      "specificity_at_sensitivity": {
+        "0.90": {
+          "achieved_sensitivity": 0.9016,
+          "specificity": 0.3944,
+          "threshold": 0.0521
+        },
+        "0.95": {
+          "achieved_sensitivity": 0.9508,
+          "specificity": 0.2746,
+          "threshold": 0.0197
+        }
+      }
+    },
+    "trained_on_both": {
+      "accuracy": 0.7241,
+      "balanced_accuracy": 0.6207,
+      "macro_f1": 0.6359,
+      "cohen_kappa": 0.555,
+      "per_class": {
+        "BCC": {
+          "precision": 0.5556,
+          "recall": 0.7143,
+          "f1": 0.625,
+          "support": 7
+        },
+        "NEV": {
+          "precision": 0.719,
+          "recall": 0.87,
+          "f1": 0.7873,
+          "support": 100
+        },
+        "MEL": {
+          "precision": 0.7959,
+          "recall": 0.6393,
+          "f1": 0.7091,
+          "support": 61
+        },
+        "SK": {
+          "precision": 0.6667,
+          "recall": 0.4,
+          "f1": 0.5,
+          "support": 10
+        },
+        "MISC": {
+          "precision": 0.6667,
+          "recall": 0.48,
+          "f1": 0.5581,
+          "support": 25
+        }
+      },
+      "melanoma_auroc": 0.8671,
+      "melanoma_at_argmax": {
+        "sensitivity": 0.6393,
+        "specificity": 0.9296,
+        "confusion": {
+          "tp": 39,
+          "fn": 22,
+          "fp": 10,
+          "tn": 132
+        }
+      },
+      "specificity_at_sensitivity": {
+        "0.90": {
+          "achieved_sensitivity": 0.9016,
+          "specificity": 0.5775,
+          "threshold": 0.036
+        },
+        "0.95": {
+          "achieved_sensitivity": 0.9508,
+          "specificity": 0.3803,
+          "threshold": 0.0121
+        }
+      }
+    }
+  },
+  "verdict": {
+    "best_arm_by_melanoma_auroc": "trained_on_derm7pt_413",
+    "baseline_melanoma_auroc": 0.8921,
+    "best_melanoma_auroc": 0.8921,
+    "note": "Selection here is descriptive: this gate asks whether more data helps, on valid. The arm actually used must be fixed on train before any confirmatory cohort."
+  }
+}

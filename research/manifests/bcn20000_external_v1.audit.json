@@ -1,0 +1,210 @@
+{
+  "cross_lesion_exact_duplicate_groups": [
+    {
+      "members": [
+        {
+          "diagnosis": "MEL",
+          "filename": "BCN_0000014439.jpg",
+          "lesion_id": "BCN_0003560"
+        },
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000014930.jpg",
+          "lesion_id": "BCN_0000237"
+        }
+      ],
+      "sha256": "33d39335eecc56d338aafb996cddadfacc26cd92384f2c4a36212e47ab8659c6"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000007766.jpg",
+          "lesion_id": "BCN_0002049"
+        },
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000019155.jpg",
+          "lesion_id": "BCN_0002919"
+        }
+      ],
+      "sha256": "452fa99d942ec7196cc9f93e51d824aa857a300a03898ac20ce9f7ce10aa7dd8"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000010855.jpg",
+          "lesion_id": "BCN_0002049"
+        },
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000018923.jpg",
+          "lesion_id": "BCN_0002919"
+        }
+      ],
+      "sha256": "4653972726ce6e130a1fad524c31bbdf1601fcf03a7173401fc741c67232f737"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "BKL",
+          "filename": "BCN_0000010131.jpg",
+          "lesion_id": "BCN_0004816"
+        },
+        {
+          "diagnosis": "BKL",
+          "filename": "BCN_0000011138.jpg",
+          "lesion_id": "BCN_0001604"
+        }
+      ],
+      "sha256": "769f0b4d80dd1f01edcca77635053767fa50b43047d4b347c5a99dc443dfed03"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000009069.jpg",
+          "lesion_id": "BCN_0002049"
+        },
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000010052.jpg",
+          "lesion_id": "BCN_0002919"
+        }
+      ],
+      "sha256": "89c1771d792f51e4f264623c3b587f8ef88b2019797e7463ba71b7bdf2049a17"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "BKL",
+          "filename": "BCN_0000012473.jpg",
+          "lesion_id": "BCN_0001604"
+        },
+        {
+          "diagnosis": "BKL",
+          "filename": "BCN_0000012525.jpg",
+          "lesion_id": "BCN_0004816"
+        }
+      ],
+      "sha256": "8d0e36551e5275fe04c3dfd5c870c53bcd46d1a0f0ccb70fa96e43f4c0e401e8"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "BKL",
+          "filename": "BCN_0000003930.jpg",
+          "lesion_id": "BCN_0004816"
+        },
+        {
+          "diagnosis": "BKL",
+          "filename": "BCN_0000019120.jpg",
+          "lesion_id": "BCN_0001604"
+        }
+      ],
+      "sha256": "95277898ce8a39d286e13ede8dbdeef0a7a307e1497eed58ec959920cbba2854"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000010497.jpg",
+          "lesion_id": "BCN_0002049"
+        },
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000018118.jpg",
+          "lesion_id": "BCN_0002919"
+        }
+      ],
+      "sha256": "96332e512671f4bed75bca58945011ed4734a587fdd2d9af6196d04173b9855e"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000000581.jpg",
+          "lesion_id": "BCN_0002049"
+        },
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000011407.jpg",
+          "lesion_id": "BCN_0002919"
+        }
+      ],
+      "sha256": "c65ac4aa969e2d2372eac7e6a09a828632337ee7dfad443977b77f731b327281"
+    },
+    {
+      "members": [
+        {
+          "diagnosis": "NV",
+          "filename": "BCN_0000015995.jpg",
+          "lesion_id": "BCN_0000237"
+        },
+        {
+          "diagnosis": "MEL",
+          "filename": "BCN_0000018062.jpg",
+          "lesion_id": "BCN_0003560"
+        }
+      ],
+      "sha256": "d541d12ddc9cc7783ecf20e0c565e811e682634be5d8be9decca0032039f8ff8"
+    }
+  ],
+  "exact_ham_content_overlaps": [],
+  "excluded_records": 57,
+  "label_counts": {
+    "akiec": 729,
+    "bcc": 2802,
+    "bkl": 1121,
+    "df": 124,
+    "melanoma": 2847,
+    "nevus": 4191,
+    "scc": 431,
+    "vasc": 111
+  },
+  "manifest_sha256": "072047f359940620a20dc9f7a08f178c48bbf741bdea335a563064a96fe22098",
+  "n_lesions": 3570,
+  "n_records": 12356,
+  "redundant_same_lesion_exact_duplicates": [
+    "BCN_0000001391.jpg",
+    "BCN_0000002756.jpg",
+    "BCN_0000003400.jpg",
+    "BCN_0000007622.jpg",
+    "BCN_0000008083.jpg",
+    "BCN_0000008659.jpg",
+    "BCN_0000008899.jpg",
+    "BCN_0000009180.jpg",
+    "BCN_0000009183.jpg",
+    "BCN_0000009425.jpg",
+    "BCN_0000010515.jpg",
+    "BCN_0000011196.jpg",
+    "BCN_0000012298.jpg",
+    "BCN_0000013016.jpg",
+    "BCN_0000013124.jpg",
+    "BCN_0000013231.jpg",
+    "BCN_0000014277.jpg",
+    "BCN_0000014548.jpg",
+    "BCN_0000015207.jpg",
+    "BCN_0000015305.jpg",
+    "BCN_0000015316.jpg",
+    "BCN_0000016104.jpg",
+    "BCN_0000016594.jpg",
+    "BCN_0000016865.jpg",
+    "BCN_0000017375.jpg",
+    "BCN_0000018146.jpg",
+    "BCN_0000018237.jpg",
+    "BCN_0000018650.jpg",
+    "BCN_0000018670.jpg",
+    "BCN_0000018928.jpg",
+    "BCN_0000019355.jpg",
+    "BCN_0000019494.jpg",
+    "BCN_0000020092.jpg",
+    "BCN_0000020116.jpg",
+    "BCN_0000020198.jpg",
+    "BCN_0000020271.jpg",
+    "BCN_0000020296.jpg"
+  ],
+  "source_records": 12413,
+  "valid": true
+}

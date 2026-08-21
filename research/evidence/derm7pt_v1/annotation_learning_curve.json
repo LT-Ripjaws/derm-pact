@@ -1,0 +1,875 @@
+{
+  "protocol": "annotation_learning_curve_v1",
+  "generated_by": "scripts/dev/build_annotation_learning_curve.py",
+  "generated_at": "2026-08-15T13:56:56",
+  "thesis": "Every successful clinician override IS a per-criterion annotation. Deployment can therefore grow the world's scarcest asset in this problem -- expert 7-point criterion labels (Derm7pt train holds only 413 cases). This artefact measures what that accumulation is worth to the promoted criteria heads.",
+  "capture_machinery": {
+    "store": "medguard_v2/agent/annotation_store.py (append-only JSONL, schema-validated, last-write-wins replay via as_label_updates)",
+    "hook": "AgentTools(annotation_store=...) records every SUCCESSFUL override_criterion call with the contract's case_id, the prior value, and minimal contract provenance; default None = zero behaviour change",
+    "note": "This curve does NOT read the store; it simulates what the store would accumulate (see simulated_expert framing)."
+  },
+  "framing": {
+    "simulated_expert": "Derm7pt's ground-truth 7-point criteria on the VALID split stand in for a SIMULATED expert's accumulated overrides -- the values a clinician's corrections converge to. Same convention as correction_value_curves.json. This is NOT a human study; no clinician judgement is involved.",
+    "upper_bound_caveat": "Real clinician criterion labels are noisier than dataset consensus gold: interobserver agreement on dermoscopic 7-point criteria is only fair-to-moderate (cf. the Consensus Net Meeting on Dermoscopy interobserver study, Argenziano et al., J Am Acad Dermatol 2003), so this curve is an UPPER BOUND on the value of captured overrides.",
+    "test_hygiene": "TEST (n=395) is never trained on; it is scored once per (k, repeat)."
+  },
+  "config": {
+    "heads": "PROMOTED criteria recipe: dermlip_tta+metadata14 (526-d), lr_balanced, per-criterion C (run_cohort.PROMOTED_CRITERIA_C), seed 20260810 -- machinery imported bit-identical from scripts/dev/derm7pt_p2_safety_promote.py",
+    "per_criterion_C": {
+      "pigment_network": 100.0,
+      "blue_whitish_veil": 10.0,
+      "vascular_structures": 100.0,
+      "streaks": 100.0,
+      "pigmentation": 100.0,
+      "dots_and_globules": 10.0,
+      "regression_structures": 100.0
+    },
+    "n_train": 413,
+    "n_valid": 203,
+    "n_test": 395,
+    "k_values": [
+      25,
+      50,
+      100,
+      150,
+      203
+    ],
+    "annotation_unit": "one k = one fully-annotated CASE (all 7 per-criterion labels), i.e. k=203 corresponds to up to 7*203=1421 individual override annotations in annotation-store terms",
+    "sampling_seed": 20260815,
+    "n_repeats": 5,
+    "nesting": "within a repeat, subsets are prefixes of one seeded permutation of VALID, so k' > k trains on a superset of k's pool",
+    "k_full_note": "k=203 is the entire VALID split: all repeats coincide, std is 0 by construction",
+    "multiclass_labels": "per criterion, the label set observed in TEST gold (fixed across k for comparability)"
+  },
+  "baseline_self_check": {
+    "expected_binary_concept_f1": 0.7168,
+    "got": 0.7168,
+    "source": "perception_phase2_safety_preserving.json final_test_metrics",
+    "reproduced": true
+  },
+  "baseline_k0": {
+    "binary_f1": 0.7168,
+    "multiclass_macro_f1": 0.5491
+  },
+  "curve": {
+    "binary_concept_f1": [
+      {
+        "k": 25,
+        "mean": 0.7142,
+        "std": 0.0018,
+        "per_repeat": [
+          0.712,
+          0.7127,
+          0.7153,
+          0.7159,
+          0.7151
+        ]
+      },
+      {
+        "k": 50,
+        "mean": 0.7165,
+        "std": 0.0025,
+        "per_repeat": [
+          0.7162,
+          0.7132,
+          0.7203,
+          0.7165,
+          0.7162
+        ]
+      },
+      {
+        "k": 100,
+        "mean": 0.7191,
+        "std": 0.0023,
+        "per_repeat": [
+          0.7197,
+          0.7193,
+          0.7155,
+          0.7218,
+          0.7192
+        ]
+      },
+      {
+        "k": 150,
+        "mean": 0.7258,
+        "std": 0.0024,
+        "per_repeat": [
+          0.7272,
+          0.7289,
+          0.7235,
+          0.7234,
+          0.7263
+        ]
+      },
+      {
+        "k": 203,
+        "mean": 0.721,
+        "std": 0.0,
+        "per_repeat": [
+          0.721,
+          0.721,
+          0.721,
+          0.721,
+          0.721
+        ]
+      }
+    ],
+    "multiclass_macro_f1": [
+      {
+        "k": 25,
+        "mean": 0.547,
+        "std": 0.0043,
+        "per_repeat": [
+          0.5513,
+          0.544,
+          0.5472,
+          0.5513,
+          0.5415
+        ]
+      },
+      {
+        "k": 50,
+        "mean": 0.5519,
+        "std": 0.0027,
+        "per_repeat": [
+          0.5527,
+          0.5476,
+          0.5536,
+          0.5546,
+          0.5511
+        ]
+      },
+      {
+        "k": 100,
+        "mean": 0.5551,
+        "std": 0.0033,
+        "per_repeat": [
+          0.5552,
+          0.5561,
+          0.5498,
+          0.5553,
+          0.5589
+        ]
+      },
+      {
+        "k": 150,
+        "mean": 0.5643,
+        "std": 0.0045,
+        "per_repeat": [
+          0.5677,
+          0.5667,
+          0.5568,
+          0.5633,
+          0.5671
+        ]
+      },
+      {
+        "k": 203,
+        "mean": 0.565,
+        "std": 0.0,
+        "per_repeat": [
+          0.565,
+          0.565,
+          0.565,
+          0.565,
+          0.565
+        ]
+      }
+    ]
+  },
+  "per_criterion_f1_k0_vs_k203": {
+    "pigment_network": {
+      "binary_f1_k0": 0.7138,
+      "binary_f1_k203": 0.7058,
+      "binary_f1_delta": -0.008,
+      "multiclass_f1_k0": 0.6725,
+      "multiclass_f1_k203": 0.6755,
+      "multiclass_f1_delta": 0.0029
+    },
+    "blue_whitish_veil": {
+      "binary_f1_k0": 0.7565,
+      "binary_f1_k203": 0.7787,
+      "binary_f1_delta": 0.0222,
+      "multiclass_f1_k0": 0.7565,
+      "multiclass_f1_k203": 0.7787,
+      "multiclass_f1_delta": 0.0222
+    },
+    "vascular_structures": {
+      "binary_f1_k0": 0.6377,
+      "binary_f1_k203": 0.6567,
+      "binary_f1_delta": 0.019,
+      "multiclass_f1_k0": 0.3123,
+      "multiclass_f1_k203": 0.3505,
+      "multiclass_f1_delta": 0.0382
+    },
+    "streaks": {
+      "binary_f1_k0": 0.7176,
+      "binary_f1_k203": 0.717,
+      "binary_f1_delta": -0.0006,
+      "multiclass_f1_k0": 0.6395,
+      "multiclass_f1_k203": 0.6487,
+      "multiclass_f1_delta": 0.0091
+    },
+    "pigmentation": {
+      "binary_f1_k0": 0.7285,
+      "binary_f1_k203": 0.7226,
+      "binary_f1_delta": -0.0058,
+      "multiclass_f1_k0": 0.3738,
+      "multiclass_f1_k203": 0.3791,
+      "multiclass_f1_delta": 0.0053
+    },
+    "dots_and_globules": {
+      "binary_f1_k0": 0.7606,
+      "binary_f1_k203": 0.7538,
+      "binary_f1_delta": -0.0068,
+      "multiclass_f1_k0": 0.6043,
+      "multiclass_f1_k203": 0.6253,
+      "multiclass_f1_delta": 0.021
+    },
+    "regression_structures": {
+      "binary_f1_k0": 0.7031,
+      "binary_f1_k203": 0.7122,
+      "binary_f1_delta": 0.0092,
+      "multiclass_f1_k0": 0.4848,
+      "multiclass_f1_k203": 0.4973,
+      "multiclass_f1_delta": 0.0125
+    }
+  },
+  "headline_delta": {
+    "binary_f1_k0": 0.7168,
+    "binary_f1_k203_mean": 0.721,
+    "delta": 0.0042,
+    "paired_test_case_bootstrap": {
+      "point_estimate": 0.0042,
+      "ci95": [
+        -0.0087,
+        0.0168
+      ],
+      "excludes_zero": false,
+      "n_bootstrap": 2000,
+      "unit": "mean-over-criteria binary-concept F1, k=203 minus k=0, paired over test cases"
+    },
+    "max_sampling_std_across_k": 0.0025,
+    "n_k_points_below_baseline": 2,
+    "curve_shape": {
+      "monotone_nondecreasing": false,
+      "peak_k": 150,
+      "peak_mean": 0.7258,
+      "k_points_below_baseline": [
+        25,
+        50
+      ],
+      "note": "The registered headline endpoint is the FULL annotation pool (k=203); an interior peak is curve shape, not a tunable stopping point -- selecting it post hoc would be test-set peeking."
+    }
+  },
+  "per_repeat_detail": [
+    {
+      "repeat": 0,
+      "seed": 20260815,
+      "rows": [
+        {
+          "k": 25,
+          "binary_f1": 0.7119539797385742,
+          "multiclass_macro_f1": 0.5512596584591277,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6977430883769502,
+            "blue_whitish_veil": 0.7475265797030995,
+            "vascular_structures": 0.6460406546243456,
+            "streaks": 0.7241986966351908,
+            "pigmentation": 0.7249404434671065,
+            "dots_and_globules": 0.74931246033425,
+            "regression_structures": 0.6939159350290774
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6618777066068349,
+            "blue_whitish_veil": 0.7475265797030995,
+            "vascular_structures": 0.3202436851313581,
+            "streaks": 0.6718237016489444,
+            "pigmentation": 0.3729230769230769,
+            "dots_and_globules": 0.600800534585176,
+            "regression_structures": 0.4836223246154038
+          }
+        },
+        {
+          "k": 50,
+          "binary_f1": 0.7162489292837843,
+          "multiclass_macro_f1": 0.5526594759008506,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6976251513209428,
+            "blue_whitish_veil": 0.760912910346792,
+            "vascular_structures": 0.639119075478049,
+            "streaks": 0.7314977215699767,
+            "pigmentation": 0.7308148148148148,
+            "dots_and_globules": 0.7512281143720871,
+            "regression_structures": 0.7025447170838273
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.669370784468866,
+            "blue_whitish_veil": 0.760912910346792,
+            "vascular_structures": 0.3000384068818387,
+            "streaks": 0.6758566363763765,
+            "pigmentation": 0.36902619182436125,
+            "dots_and_globules": 0.6133366919659319,
+            "regression_structures": 0.48007470944178776
+          }
+        },
+        {
+          "k": 100,
+          "binary_f1": 0.7197492975692876,
+          "multiclass_macro_f1": 0.555227380033554,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.692725222666049,
+            "blue_whitish_veil": 0.7679448835718863,
+            "vascular_structures": 0.6506466416353776,
+            "streaks": 0.7212373202731084,
+            "pigmentation": 0.7282156023437556,
+            "dots_and_globules": 0.7710144927536231,
+            "regression_structures": 0.7064609197412135
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6589939632252081,
+            "blue_whitish_veil": 0.7679448835718863,
+            "vascular_structures": 0.33437355304310834,
+            "streaks": 0.6526943794380723,
+            "pigmentation": 0.36029331979997503,
+            "dots_and_globules": 0.6196199783534655,
+            "regression_structures": 0.4926715828031618
+          }
+        },
+        {
+          "k": 150,
+          "binary_f1": 0.7271898075526625,
+          "multiclass_macro_f1": 0.5676595213940118,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6972547380156076,
+            "blue_whitish_veil": 0.7858227299016772,
+            "vascular_structures": 0.6767312681746156,
+            "streaks": 0.7241986966351908,
+            "pigmentation": 0.7339373791365187,
+            "dots_and_globules": 0.768212357172527,
+            "regression_structures": 0.7041714838325008
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6685016111707841,
+            "blue_whitish_veil": 0.7858227299016772,
+            "vascular_structures": 0.35108674022154907,
+            "streaks": 0.6554856009176472,
+            "pigmentation": 0.3878576218595505,
+            "dots_and_globules": 0.6395523355463553,
+            "regression_structures": 0.4853100101405186
+          }
+        },
+        {
+          "k": 203,
+          "binary_f1": 0.720982078091008,
+          "multiclass_macro_f1": 0.5649914256510299,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7058319993836725,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.6567031918338133,
+            "streaks": 0.7169951164878241,
+            "pigmentation": 0.7226308125568228,
+            "dots_and_globules": 0.7538133508282762,
+            "regression_structures": 0.7122165879815818
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6754545955721483,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.35051907350798783,
+            "streaks": 0.648656241958379,
+            "pigmentation": 0.3790855557026512,
+            "dots_and_globules": 0.6252595291260235,
+            "regression_structures": 0.4972814961249531
+          }
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "seed": 20260816,
+      "rows": [
+        {
+          "k": 25,
+          "binary_f1": 0.7126949609407512,
+          "multiclass_macro_f1": 0.5439572863741701,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7065353250181368,
+            "blue_whitish_veil": 0.766196728368489,
+            "vascular_structures": 0.6309331007848511,
+            "streaks": 0.7057764244611973,
+            "pigmentation": 0.7237680038090704,
+            "dots_and_globules": 0.7521482685054921,
+            "regression_structures": 0.7035068756380232
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6539659704355706,
+            "blue_whitish_veil": 0.766196728368489,
+            "vascular_structures": 0.3042140046284741,
+            "streaks": 0.638182711537743,
+            "pigmentation": 0.37024481365255857,
+            "dots_and_globules": 0.5875161648293362,
+            "regression_structures": 0.4873806111670189
+          }
+        },
+        {
+          "k": 50,
+          "binary_f1": 0.7132180548151934,
+          "multiclass_macro_f1": 0.5476475396381041,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7158771929824561,
+            "blue_whitish_veil": 0.7572657605552342,
+            "vascular_structures": 0.6506466416353776,
+            "streaks": 0.6867565424266455,
+            "pigmentation": 0.7203044786687909,
+            "dots_and_globules": 0.7588522588522588,
+            "regression_structures": 0.7028235085855903
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6670103267636706,
+            "blue_whitish_veil": 0.7572657605552342,
+            "vascular_structures": 0.3191204993114611,
+            "streaks": 0.6179075275460818,
+            "pigmentation": 0.36737807463633654,
+            "dots_and_globules": 0.6064850182497241,
+            "regression_structures": 0.49836557040421997
+          }
+        },
+        {
+          "k": 100,
+          "binary_f1": 0.7192598708526977,
+          "multiclass_macro_f1": 0.556129687281979,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7247770345596433,
+            "blue_whitish_veil": 0.767075814894447,
+            "vascular_structures": 0.6536489950087684,
+            "streaks": 0.7176319989360287,
+            "pigmentation": 0.7017775334432839,
+            "dots_and_globules": 0.7473616885193476,
+            "regression_structures": 0.7225460306073649
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.682039607901677,
+            "blue_whitish_veil": 0.767075814894447,
+            "vascular_structures": 0.3079522756307299,
+            "streaks": 0.639806863005001,
+            "pigmentation": 0.3568136932192232,
+            "dots_and_globules": 0.616691690133374,
+            "regression_structures": 0.5225278661894007
+          }
+        },
+        {
+          "k": 150,
+          "binary_f1": 0.7288509101148614,
+          "multiclass_macro_f1": 0.5666968009721481,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7193569649292507,
+            "blue_whitish_veil": 0.7688623617000208,
+            "vascular_structures": 0.6701658117618992,
+            "streaks": 0.7224452921100181,
+            "pigmentation": 0.7237279244623186,
+            "dots_and_globules": 0.7654022806461831,
+            "regression_structures": 0.7319957351943394
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6780489808623434,
+            "blue_whitish_veil": 0.7688623617000208,
+            "vascular_structures": 0.32590065901624393,
+            "streaks": 0.6543730050159599,
+            "pigmentation": 0.3790848567818289,
+            "dots_and_globules": 0.6371879848569478,
+            "regression_structures": 0.5234197585716923
+          }
+        },
+        {
+          "k": 203,
+          "binary_f1": 0.720982078091008,
+          "multiclass_macro_f1": 0.5649914256510299,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7058319993836725,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.6567031918338133,
+            "streaks": 0.7169951164878241,
+            "pigmentation": 0.7226308125568228,
+            "dots_and_globules": 0.7538133508282762,
+            "regression_structures": 0.7122165879815818
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6754545955721483,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.35051907350798783,
+            "streaks": 0.648656241958379,
+            "pigmentation": 0.3790855557026512,
+            "dots_and_globules": 0.6252595291260235,
+            "regression_structures": 0.4972814961249531
+          }
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "seed": 20260817,
+      "rows": [
+        {
+          "k": 25,
+          "binary_f1": 0.7153483301089391,
+          "multiclass_macro_f1": 0.5471947035291828,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7038138332255979,
+            "blue_whitish_veil": 0.7617504343677137,
+            "vascular_structures": 0.6309331007848511,
+            "streaks": 0.7248680356828157,
+            "pigmentation": 0.7328926989943939,
+            "dots_and_globules": 0.7473775128734284,
+            "regression_structures": 0.7058026948337734
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6615174766151435,
+            "blue_whitish_veil": 0.7617504343677137,
+            "vascular_structures": 0.3072439838691577,
+            "streaks": 0.6499775294592598,
+            "pigmentation": 0.3722034238163271,
+            "dots_and_globules": 0.6027638160834488,
+            "regression_structures": 0.47490626049322837
+          }
+        },
+        {
+          "k": 50,
+          "binary_f1": 0.7203219482746543,
+          "multiclass_macro_f1": 0.5536370066785012,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7178964604236343,
+            "blue_whitish_veil": 0.7591117807432917,
+            "vascular_structures": 0.6555375607325278,
+            "streaks": 0.7158368466840661,
+            "pigmentation": 0.7283912687265918,
+            "dots_and_globules": 0.743125232255667,
+            "regression_structures": 0.7223544883568012
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6803157284271512,
+            "blue_whitish_veil": 0.7591117807432917,
+            "vascular_structures": 0.3112386822913139,
+            "streaks": 0.6502517343910714,
+            "pigmentation": 0.37145541171725427,
+            "dots_and_globules": 0.6069682330551895,
+            "regression_structures": 0.49611747612423635
+          }
+        },
+        {
+          "k": 100,
+          "binary_f1": 0.7155187167555797,
+          "multiclass_macro_f1": 0.5498284575682719,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6970049558284852,
+            "blue_whitish_veil": 0.7803666236188835,
+            "vascular_structures": 0.6432353307586894,
+            "streaks": 0.7169951164878241,
+            "pigmentation": 0.7248185776487663,
+            "dots_and_globules": 0.7449934123847167,
+            "regression_structures": 0.7012170005616927
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6667497239158476,
+            "blue_whitish_veil": 0.7803666236188835,
+            "vascular_structures": 0.2901496968066844,
+            "streaks": 0.6582660343027279,
+            "pigmentation": 0.37184922534547854,
+            "dots_and_globules": 0.6045338885033541,
+            "regression_structures": 0.4768840104849279
+          }
+        },
+        {
+          "k": 150,
+          "binary_f1": 0.7234575125246042,
+          "multiclass_macro_f1": 0.5567855726362764,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.699370372932955,
+            "blue_whitish_veil": 0.7723060277932974,
+            "vascular_structures": 0.6669701875084311,
+            "streaks": 0.7203846998803916,
+            "pigmentation": 0.7226123595505618,
+            "dots_and_globules": 0.7634092240454422,
+            "regression_structures": 0.7191497159611508
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6759677655296211,
+            "blue_whitish_veil": 0.7723060277932974,
+            "vascular_structures": 0.31771040095725045,
+            "streaks": 0.6663050002257661,
+            "pigmentation": 0.359527159460648,
+            "dots_and_globules": 0.6182074364942851,
+            "regression_structures": 0.487475217993066
+          }
+        },
+        {
+          "k": 203,
+          "binary_f1": 0.720982078091008,
+          "multiclass_macro_f1": 0.5649914256510299,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7058319993836725,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.6567031918338133,
+            "streaks": 0.7169951164878241,
+            "pigmentation": 0.7226308125568228,
+            "dots_and_globules": 0.7538133508282762,
+            "regression_structures": 0.7122165879815818
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6754545955721483,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.35051907350798783,
+            "streaks": 0.648656241958379,
+            "pigmentation": 0.3790855557026512,
+            "dots_and_globules": 0.6252595291260235,
+            "regression_structures": 0.4972814961249531
+          }
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "seed": 20260818,
+      "rows": [
+        {
+          "k": 25,
+          "binary_f1": 0.715910750143651,
+          "multiclass_macro_f1": 0.5512523581771227,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7044168009226246,
+            "blue_whitish_veil": 0.7626705308545982,
+            "vascular_structures": 0.6336210284708139,
+            "streaks": 0.7044986035377045,
+            "pigmentation": 0.7331655642904334,
+            "dots_and_globules": 0.756211261687152,
+            "regression_structures": 0.7167914612422296
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6756390133583116,
+            "blue_whitish_veil": 0.7626705308545982,
+            "vascular_structures": 0.3123022005916501,
+            "streaks": 0.636081185661201,
+            "pigmentation": 0.3659035799587913,
+            "dots_and_globules": 0.6116279261276832,
+            "regression_structures": 0.49454207068762324
+          }
+        },
+        {
+          "k": 50,
+          "binary_f1": 0.7165495639642422,
+          "multiclass_macro_f1": 0.5545902564747032,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6996302738420929,
+            "blue_whitish_veil": 0.7538809371216977,
+            "vascular_structures": 0.660742600422833,
+            "streaks": 0.7092284012581141,
+            "pigmentation": 0.7331655642904334,
+            "dots_and_globules": 0.749762432689262,
+            "regression_structures": 0.7094367381252626
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6796236189666551,
+            "blue_whitish_veil": 0.7538809371216977,
+            "vascular_structures": 0.3207071760124503,
+            "streaks": 0.644201981868016,
+            "pigmentation": 0.377810226303377,
+            "dots_and_globules": 0.6207592104743863,
+            "regression_structures": 0.48514864457634005
+          }
+        },
+        {
+          "k": 100,
+          "binary_f1": 0.7218460240646338,
+          "multiclass_macro_f1": 0.5553049354312358,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6928677458118329,
+            "blue_whitish_veil": 0.7793119961688881,
+            "vascular_structures": 0.660742600422833,
+            "streaks": 0.7049789780213325,
+            "pigmentation": 0.721471383241274,
+            "dots_and_globules": 0.7686090213191688,
+            "regression_structures": 0.7249404434671065
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.663547415562722,
+            "blue_whitish_veil": 0.7793119961688881,
+            "vascular_structures": 0.3214365474145122,
+            "streaks": 0.6427371447747411,
+            "pigmentation": 0.3615548685901698,
+            "dots_and_globules": 0.6288065647395699,
+            "regression_structures": 0.4897400107680482
+          }
+        },
+        {
+          "k": 150,
+          "binary_f1": 0.723381165243563,
+          "multiclass_macro_f1": 0.5632594190382884,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7017470773556904,
+            "blue_whitish_veil": 0.7820088300220751,
+            "vascular_structures": 0.6669701875084311,
+            "streaks": 0.7266208046695851,
+            "pigmentation": 0.7226123595505618,
+            "dots_and_globules": 0.7630036460977523,
+            "regression_structures": 0.7007052515008452
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6648393681541271,
+            "blue_whitish_veil": 0.7820088300220751,
+            "vascular_structures": 0.34258488673882975,
+            "streaks": 0.668291291980499,
+            "pigmentation": 0.3633287057641785,
+            "dots_and_globules": 0.6414679070844609,
+            "regression_structures": 0.4802949435238482
+          }
+        },
+        {
+          "k": 203,
+          "binary_f1": 0.720982078091008,
+          "multiclass_macro_f1": 0.5649914256510299,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7058319993836725,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.6567031918338133,
+            "streaks": 0.7169951164878241,
+            "pigmentation": 0.7226308125568228,
+            "dots_and_globules": 0.7538133508282762,
+            "regression_structures": 0.7122165879815818
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6754545955721483,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.35051907350798783,
+            "streaks": 0.648656241958379,
+            "pigmentation": 0.3790855557026512,
+            "dots_and_globules": 0.6252595291260235,
+            "regression_structures": 0.4972814961249531
+          }
+        }
+      ]
+    },
+    {
+      "repeat": 4,
+      "seed": 20260819,
+      "rows": [
+        {
+          "k": 25,
+          "binary_f1": 0.7151331994264287,
+          "multiclass_macro_f1": 0.541508607736547,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6882623044913188,
+            "blue_whitish_veil": 0.766196728368489,
+            "vascular_structures": 0.6404714521528517,
+            "streaks": 0.7134459036898061,
+            "pigmentation": 0.7249404434671065,
+            "dots_and_globules": 0.7488475600063582,
+            "regression_structures": 0.7237680038090704
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6554203504889237,
+            "blue_whitish_veil": 0.766196728368489,
+            "vascular_structures": 0.26216563206088644,
+            "streaks": 0.6417522716403634,
+            "pigmentation": 0.3622158899633793,
+            "dots_and_globules": 0.5904862077342697,
+            "regression_structures": 0.5123231738995175
+          }
+        },
+        {
+          "k": 50,
+          "binary_f1": 0.7162237463559666,
+          "multiclass_macro_f1": 0.5511403985103894,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6905070033189833,
+            "blue_whitish_veil": 0.7679448835718863,
+            "vascular_structures": 0.6432353307586894,
+            "streaks": 0.7235009758789086,
+            "pigmentation": 0.7202896752104306,
+            "dots_and_globules": 0.750197628458498,
+            "regression_structures": 0.7178907272943698
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6554693702212658,
+            "blue_whitish_veil": 0.7679448835718863,
+            "vascular_structures": 0.29570799165900696,
+            "streaks": 0.662601535551352,
+            "pigmentation": 0.35784577163190784,
+            "dots_and_globules": 0.6175669740887133,
+            "regression_structures": 0.5008462628485933
+          }
+        },
+        {
+          "k": 100,
+          "binary_f1": 0.7192451547841868,
+          "multiclass_macro_f1": 0.5589466705207168,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.6929640384185839,
+            "blue_whitish_veil": 0.7715442452284558,
+            "vascular_structures": 0.6460406546243456,
+            "streaks": 0.7128601638910916,
+            "pigmentation": 0.7305515239477504,
+            "dots_and_globules": 0.7582094267717158,
+            "regression_structures": 0.7225460306073649
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6678334071776696,
+            "blue_whitish_veil": 0.7715442452284558,
+            "vascular_structures": 0.31233040778898846,
+            "streaks": 0.6555262191550509,
+            "pigmentation": 0.3757944279054775,
+            "dots_and_globules": 0.6192531888451519,
+            "regression_structures": 0.5103447975442224
+          }
+        },
+        {
+          "k": 150,
+          "binary_f1": 0.7262812876999405,
+          "multiclass_macro_f1": 0.567078548719468,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.697461902120804,
+            "blue_whitish_veil": 0.7820088300220751,
+            "vascular_structures": 0.6567031918338133,
+            "streaks": 0.7241986966351908,
+            "pigmentation": 0.7203044786687909,
+            "dots_and_globules": 0.7586098133144085,
+            "regression_structures": 0.7446821013045011
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6699186940415011,
+            "blue_whitish_veil": 0.7820088300220751,
+            "vascular_structures": 0.33307817862683287,
+            "streaks": 0.6605659485990927,
+            "pigmentation": 0.37992788851665066,
+            "dots_and_globules": 0.6265654894053919,
+            "regression_structures": 0.5174848118247315
+          }
+        },
+        {
+          "k": 203,
+          "binary_f1": 0.720982078091008,
+          "multiclass_macro_f1": 0.5649914256510299,
+          "per_criterion_binary_f1": {
+            "pigment_network": 0.7058319993836725,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.6567031918338133,
+            "streaks": 0.7169951164878241,
+            "pigmentation": 0.7226308125568228,
+            "dots_and_globules": 0.7538133508282762,
+            "regression_structures": 0.7122165879815818
+          },
+          "per_criterion_multiclass_f1": {
+            "pigment_network": 0.6754545955721483,
+            "blue_whitish_veil": 0.7786834875650666,
+            "vascular_structures": 0.35051907350798783,
+            "streaks": 0.648656241958379,
+            "pigmentation": 0.3790855557026512,
+            "dots_and_globules": 0.6252595291260235,
+            "regression_structures": 0.4972814961249531
+          }
+        }
+      ]
+    }
+  ],
+  "verdict_class": "positive-point-estimate-only",
+  "verdict": "POSITIVE POINT ESTIMATE, NOT TEST-SET SIGNIFICANT: 0.7168 -> 0.7210 (+0.0042), but the paired test-case bootstrap CI [-0.0087, 0.0168] includes zero. Report as a trend, not a supported growth claim. Curve shape is NON-monotone: the mean dips below baseline at k=[25, 50] and peaks at k=150 (0.7258) before the k=203 endpoint -- reported as shape; the endpoint is not cherry-picked.",
+  "headline": "203 per-case annotation sets captured from simulated deployment lift test criteria binary-concept F1 from 0.7168 to 0.7210 (+0.0042); multiclass macro-F1 0.5491 -> 0.5650."
+}

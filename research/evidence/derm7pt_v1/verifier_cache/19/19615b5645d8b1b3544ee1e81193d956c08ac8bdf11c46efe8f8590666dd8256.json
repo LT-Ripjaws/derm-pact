@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the new 7-point score is [3, 7], but the contract does not provide any mechanism for computing a revised score after overriding criteria. The original score range was [1,5] with unresolved criteria; the agent fabricates a new score range without justification or evidence from the contract.",
+    "CRITERION ACCURACY: The agent incorrectly assumes that changing 'blue_whitish_veil' from 'absent' to 'present' adds 2 points. However, the contract does not allow for dynamic recalculation of scores based on clinician overrides; the agent fabricates this calculation.",
+    "MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision', but the contract's guideline section explicitly states there are no recommendations for 'NEV'. The agent fabricates management advice not grounded in the contract's deterministic ladder or guideline binding.",
+    "CONFLICT REPORTING: The agent does not report any conflict state change. The contract's conflict section indicates that agreement cannot be assessed due to undecidability, and overriding criteria would require re-evaluation \u2014 the agent ignores this and proceeds as if a valid decision can be made."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the new 7-point score is [3, 7], but the contract does not provide any mechanism for computing a revised score after overriding criteria. The original score range was [1,5] with unresolved criteria; the agent fabricates a new score range without justification or evidence from the contract.\",\n    \"CRITERION ACCURACY: The agent incorrectly assumes that changing 'blue_whitish_veil' from 'absent' to 'present' adds 2 points. However, the contract does not allow for dynamic recalculation of scores based on clinician overrides; the agent fabricates this calculation.\",\n    \"MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision', but the contract's guideline section explicitly states there are no recommendations for 'NEV'. The agent fabricates management advice not grounded in the contract's deterministic ladder or guideline binding.\",\n    \"CONFLICT REPORTING: The agent does not report any conflict state change. The contract's conflict section indicates that agreement cannot be assessed due to undecidability, and overriding criteria would require re-evaluation \u2014 the agent ignores this and proceeds as if a valid decision can be made.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.205,
+  "usage": {
+    "prompt_tokens": 1246,
+    "completion_tokens": 271,
+    "total_tokens": 1517
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score recomputed to 3 after overriding 'blue_whitish_veil' to 'present', but the contract does not provide any information about how the score would change under this override. The contract only states the original score was 1 (with all criteria determinate). The agent is fabricating a recomputed score without basis in the provided contract.",
+    "MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision' after the score reaches 3, but the contract's guideline section explicitly states that there are no recommendations for 'NEV' (covered: false, n_recommendations: 0). The agent incorrectly implies a management action ('excision') based on score threshold, which is not supported by the contract\u2019s guideline binding or deterministic ladder. This is fabricated advice.",
+    "CRITERION ACCURACY: The agent correctly identifies the original value of 'blue_whitish_veil' as 'absent', but then overrides it to 'present'. However, the contract does not contain any mechanism or instruction for such an override \u2014 the agent is simulating a hypothetical scenario not grounded in the provided data. While this may be reasonable contextually, it introduces unverified computations into the answer."
+  ],
+  "confidence": "low",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score recomputed to 3 after overriding 'blue_whitish_veil' to 'present', but the contract does not provide any information about how the score would change under this override. The contract only states the original score was 1 (with all criteria determinate). The agent is fabricating a recomputed score without basis in the provided contract.\",\n    \"MANAGEMENT FIDELITY: The agent states the recommendation changes to 'excision' after the score reaches 3, but the contract's guideline section explicitly states that there are no recommendations for 'NEV' (covered: false, n_recommendations: 0). The agent incorrectly implies a management action ('excision') based on score threshold, which is not supported by the contract\u2019s guideline binding or deterministic ladder. This is fabricated advice.\",\n    \"CRITERION ACCURACY: The agent correctly identifies the original value of 'blue_whitish_veil' as 'absent', but then overrides it to 'present'. However, the contract does not contain any mechanism or instruction for such an override \u2014 the agent is simulating a hypothetical scenario not grounded in the provided data. While this may be reasonable contextually, it introduces unverified computations into the answer.\"\n  ],\n  \"confidence\": \"low\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.192,
+  "usage": {
+    "prompt_tokens": 1164,
+    "completion_tokens": 283,
+    "total_tokens": 1447
+  }
+}

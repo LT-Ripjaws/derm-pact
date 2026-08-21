@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus recommends the following for basal cell carcinoma (BCC):\\n\\n1. For low-risk primary BCC, surgical excision with 4-mm clinical margins and histologic margin assessment is recommended.\\n2. A treatment plan should consider recurrence rate, preservation of function, patient expectations, and potential adverse effects.\\n3. For high-risk BCC (recurrent, aggressive subtypes, location in critical anatomical sites, or poorly defined margins), micrographically controlled surgery (3D histology) is an evidence-based recommendation.\\n\\nThese recommendations are derived from authoritative clinical practice guidelines from the American Academy of Dermatology (AAD) and the European Association of Dermato-Oncology (EADO).\", \"citations\": [\"aad:pmid:29331385:table-vii-low-risk-excision\", \"aad:pmid:29331385:table-vii-treatment-plan\", \"eado:pmid:37604067:box-10\"]}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

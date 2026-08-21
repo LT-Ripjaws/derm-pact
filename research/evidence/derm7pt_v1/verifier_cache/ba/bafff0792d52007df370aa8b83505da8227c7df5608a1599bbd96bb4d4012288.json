@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score range after override is [2,3], but the contract does not contain any recomputed score. The original score was [0,1]. The agent fabricated a new score range without evidence in the contract.",
+    "CRITERION ACCURACY: The agent overrides 'blue_whitish_veil' from 'absent' to 'present', which is not reflected in the contract's criteria. The contract's criteria are fixed; no override mechanism is documented, so reporting a new score based on an override is not grounded in the data.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' and that it did not change. However, since the contract's guideline has no recommendations for NEV, and the agent fabricates a new score range, the management advice is not grounded in the contract's deterministic ladder or guideline binding.",
+    "CONFLICT REPORTING: The agent does not report any conflict, but the clinician's correction introduces a discrepancy between clinician input and system criteria. This should be flagged as a potential conflict, yet the contract's conflict state remains unchanged (no escalation), and the agent ignores this."
+  ],
+  "confidence": "low",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score range after override is [2,3], but the contract does not contain any recomputed score. The original score was [0,1]. The agent fabricated a new score range without evidence in the contract.\",\n    \"CRITERION ACCURACY: The agent overrides 'blue_whitish_veil' from 'absent' to 'present', which is not reflected in the contract's criteria. The contract's criteria are fixed; no override mechanism is documented, so reporting a new score based on an override is not grounded in the data.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' and that it did not change. However, since the contract's guideline has no recommendations for NEV, and the agent fabricates a new score range, the management advice is not grounded in the contract's deterministic ladder or guideline binding.\",\n    \"CONFLICT REPORTING: The agent does not report any conflict, but the clinician's correction introduces a discrepancy between clinician input and system criteria. This should be flagged as a potential conflict, yet the contract's conflict state remains unchanged (no escalation), and the agent ignores this.\"\n  ],\n  \"confidence\": \"low\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.269,
+  "usage": {
+    "prompt_tokens": 1184,
+    "completion_tokens": 271,
+    "total_tokens": 1455
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the updated 7-point score range is [2,5], but the contract does not provide any mechanism for recalculating scores based on clinician overrides. The original score range was [0,3] due to unresolved criteria; changing 'blue_whitish_veil' from 'absent' to 'present' would add 2 points, making the minimum score 2 and maximum 5 only if all other criteria were determinate \u2014 but they are not. The contract does not support this recalculation, so quoting [2,5] is fabricated.",
+    "CRITERION ACCURACY: The agent implies that overriding 'blue_whitish_veil' to 'present' changes its value, but the contract's criteria table shows it as 'absent'. The agent is fabricating a change not grounded in the provided contract data.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', which matches the contract\u2019s 'criteria_implied_action', but justifies it with an incorrect score range [2,5]. Since the score range is misrepresented, the justification is invalid, even if the conclusion coincidentally matches.",
+    "CONFLICT REPORTING: The agent does not address whether the conflict state changes after the override. The contract originally stated no conflict (present: false), but with a clinician override, the conflict status should be reassessed \u2014 yet the agent makes no mention of this, implying fidelity to the original contract while ignoring the new input."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the updated 7-point score range is [2,5], but the contract does not provide any mechanism for recalculating scores based on clinician overrides. The original score range was [0,3] due to unresolved criteria; changing 'blue_whitish_veil' from 'absent' to 'present' would add 2 points, making the minimum score 2 and maximum 5 only if all other criteria were determinate \u2014 but they are not. The contract does not support this recalculation, so quoting [2,5] is fabricated.\",\n    \"CRITERION ACCURACY: The agent implies that overriding 'blue_whitish_veil' to 'present' changes its value, but the contract's criteria table shows it as 'absent'. The agent is fabricating a change not grounded in the provided contract data.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up', which matches the contract\u2019s 'criteria_implied_action', but justifies it with an incorrect score range [2,5]. Since the score range is misrepresented, the justification is invalid, even if the conclusion coincidentally matches.\",\n    \"CONFLICT REPORTING: The agent does not address whether the conflict state changes after the override. The contract originally stated no conflict (present: false), but with a clinician override, the conflict status should be reassessed \u2014 yet the agent makes no mention of this, implying fidelity to the original contract while ignoring the new input.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.893,
+  "usage": {
+    "prompt_tokens": 1247,
+    "completion_tokens": 339,
+    "total_tokens": 1586
+  }
+}

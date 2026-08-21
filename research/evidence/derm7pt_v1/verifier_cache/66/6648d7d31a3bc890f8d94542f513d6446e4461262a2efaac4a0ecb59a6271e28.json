@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the contract does not support this calculation. The contract only provides the original score of 0 and does not include a mechanism to compute scores based on overridden criteria. The agent fabricated the new score.",
+    "CRITERION ACCURACY: The agent states 'blue_whitish_veil' was overridden to 'present', which is plausible, but the contract does not contain any record of such an override or updated criterion values. The agent introduced data not in the contract.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' because the score is below 3. However, the contract's guideline section indicates there are no recommendations for NEV, and the criteria-implied action was 'clinical follow up' due to score < 3. While the reasoning aligns with the contract\u2019s logic, the agent applied it to a modified scenario (overridden criterion) that was not part of the contract, making the management advice ungrounded in the provided data.",
+    "CONFLICT REPORTING: The agent does not mention conflict status, but since the clinician has overridden a criterion, this creates a potential classifier-criteria conflict. The contract reports no conflict ('present': false), but the agent\u2019s override introduces a new state not reflected in the contract. This omission or misrepresentation of conflict status is an issue."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the contract does not support this calculation. The contract only provides the original score of 0 and does not include a mechanism to compute scores based on overridden criteria. The agent fabricated the new score.\",\n    \"CRITERION ACCURACY: The agent states 'blue_whitish_veil' was overridden to 'present', which is plausible, but the contract does not contain any record of such an override or updated criterion values. The agent introduced data not in the contract.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up' because the score is below 3. However, the contract's guideline section indicates there are no recommendations for NEV, and the criteria-implied action was 'clinical follow up' due to score < 3. While the reasoning aligns with the contract\u2019s logic, the agent applied it to a modified scenario (overridden criterion) that was not part of the contract, making the management advice ungrounded in the provided data.\",\n    \"CONFLICT REPORTING: The agent does not mention conflict status, but since the clinician has overridden a criterion, this creates a potential classifier-criteria conflict. The contract reports no conflict ('present': false), but the agent\u2019s override introduces a new state not reflected in the contract. This omission or misrepresentation of conflict status is an issue.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 6.317,
+  "usage": {
+    "prompt_tokens": 1092,
+    "completion_tokens": 323,
+    "total_tokens": 1415
+  }
+}

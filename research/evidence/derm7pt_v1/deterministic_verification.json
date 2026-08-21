@@ -1,0 +1,2615 @@
+{
+  "protocol": "deterministic_verification_v1",
+  "source_report": "research\\evidence\\derm7pt_v1\\agent_eval_report_v3.json",
+  "n_rows": 297,
+  "n_answers_checked": 194,
+  "n_refusals_skipped": 103,
+  "n_answers_with_issues": 12,
+  "issue_rate": 0.0619,
+  "issue_type_counts": {
+    "Answer states score(s) [0] outside the contract's range [3, ": 2,
+    "Answer may misstate pigmentation": 7,
+    "Answer states score(s) [0] outside the contract's range [1, ": 1,
+    "Answer may misstate pigment_network": 2,
+    "Answer may misstate streaks": 2
+  },
+  "total_issues_found": 14,
+  "per_answer": [
+    {
+      "case_id": "derm7pt-602",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer states score(s) [0] outside the contract's range [3, 3]"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-602",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-602",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-20",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-20",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-20",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-608",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-608",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-608",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-37",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-37",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-37",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-613",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-613",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-613",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-57",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-57",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-57",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-614",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-614",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-59",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-59",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-59",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-626",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-626",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-626",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-76",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-76",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-76",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-630",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-630",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-630",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-638",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-638",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-638",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-105",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-105",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-105",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-122",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-122",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-122",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-128",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-128",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-128",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-655",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-655",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-655",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-131",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-131",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-131",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-659",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer states score(s) [0] outside the contract's range [3, 3]"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-659",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-659",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-665",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-665",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-665",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-143",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-143",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-143",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-667",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-667",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-667",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-678",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-678",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-682",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-682",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: pigment network is 'atypical', not 'absent'. Apply",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-682",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-687",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-687",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-687",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-690",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-690",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-690",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-190",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-190",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-190",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-698",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-698",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-698",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-195",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-195",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-195",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-204",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-204",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-204",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-706",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-706",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-706",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-211",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-211",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-211",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-217",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-217",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-217",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-719",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-719",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-234",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-234",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-234",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-740",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-740",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-743",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-743",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-245",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-245",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-245",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-750",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-750",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: pigment network is 'atypical', not 'absent'. Apply",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-750",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-751",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-751",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-751",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-248",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-248",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-248",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-765",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer states score(s) [0] outside the contract's range [1, 2]",
+        "Answer may misstate pigment_network: contract says 'absent' but text mentions 'atypical'",
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'localized irregular'"
+      ],
+      "n_issues": 3
+    },
+    {
+      "case_id": "derm7pt-765",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-765",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-768",
+      "kind": "why",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-768",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-768",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-278",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-278",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-278",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-770",
+      "kind": "why",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-770",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-770",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-779",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-779",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: pigment network is 'atypical', not 'absent'. Apply",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-779",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-318",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-318",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-318",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-323",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-323",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-323",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-785",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-785",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-785",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-330",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-330",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-330",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-332",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-332",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-332",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-803",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-803",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-346",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-346",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-346",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-356",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-356",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-356",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-807",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-807",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: pigment network is 'atypical', not 'absent'. Apply",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-807",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-375",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-375",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-375",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-814",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-814",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-814",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-376",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-376",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-376",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-378",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-378",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-378",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-828",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-828",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-828",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-396",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-396",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-396",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-398",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-398",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-398",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-839",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-839",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-839",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-407",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-407",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-407",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-412",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-412",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-412",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-860",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-860",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-860",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-875",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-875",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-875",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-876",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate streaks: contract says 'absent' but text mentions 'irregular'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-876",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-876",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-877",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-877",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-877",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-437",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-437",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-437",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-879",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-879",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-879",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-440",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-440",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-440",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-882",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate streaks: contract says 'irregular' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-882",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-882",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-442",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-442",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-442",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-892",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-892",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-892",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-894",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-894",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-894",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-466",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-466",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-466",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-896",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-896",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-896",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-902",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-902",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-902",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-479",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-479",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-479",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-925",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-925",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-925",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-507",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-507",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-507",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-513",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-513",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-513",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-520",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-520",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-520",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-939",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-939",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-939",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-950",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-950",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: pigment network is 'atypical', not 'absent'. Apply",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-950",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-529",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-529",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-529",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-538",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-538",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-538",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-966",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-966",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-966",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-541",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigmentation: contract says 'indeterminate' but text mentions 'absent'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-541",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-541",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-545",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-545",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-545",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-969",
+      "kind": "why",
+      "question": "Some criteria could not be assessed. Which ones, and does that change the verdict?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-969",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-969",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-976",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-976",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-976",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-552",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-552",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-552",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-988",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-988",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-988",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-554",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-554",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-554",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-555",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-555",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-555",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-558",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-558",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-558",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-999",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-999",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-999",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-571",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [
+        "Answer may misstate pigment_network: contract says 'absent' but text mentions 'atypical'"
+      ],
+      "n_issues": 1
+    },
+    {
+      "case_id": "derm7pt-571",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-571",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-1006",
+      "kind": "guideline",
+      "question": "What does the guideline corpus say I should do for this lesion?",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-1006",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-1006",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    },
+    {
+      "case_id": "derm7pt-587",
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-587",
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: blue whitish veil is 'present', not 'absent'. Appl",
+      "answer_kind": "answer",
+      "skipped": false,
+      "issues": [],
+      "n_issues": 0
+    },
+    {
+      "case_id": "derm7pt-587",
+      "kind": "out_of_scope",
+      "answer_kind": "refusal",
+      "skipped": true,
+      "reason": "refusal or empty answer",
+      "issues": []
+    }
+  ]
+}

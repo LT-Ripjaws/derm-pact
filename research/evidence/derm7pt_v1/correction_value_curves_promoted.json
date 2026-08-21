@@ -1,0 +1,384 @@
+{
+  "protocol": "correction_value_curves_PROMOTED_v1",
+  "generated_by": "scripts/dev/build_correction_value_curves_promoted.py",
+  "base_reference": "research/evidence/derm7pt_v1/correction_value_curves.json (ORIGINAL heads)",
+  "difference_from_base": "Identical five-policy protocol and imported policy logic; the ONLY change is the criteria head source -- promoted dermlip_tta+metadata14 (526-d, lr_balanced, per-head C) via run_cohort.fit_readers_promoted, instead of the original 512-d dermlip heads. Predicted starting criteria and head margins therefore change; the deterministic aggregation, the correction protocol, and the bootstrap are unchanged.",
+  "boundaries": {
+    "paid_calls": 0,
+    "images_encoded": 0,
+    "criteria_heads": "PROMOTED dermlip_tta+metadata14 (526-d, lr_balanced, per-head C)",
+    "fit_split": "train",
+    "n_fit_cases": 413,
+    "evaluated_split": "test",
+    "n_test_cases": 395,
+    "n_melanoma_test": 101,
+    "melanoma_threshold": 3,
+    "seed": 20260810,
+    "random_policy_replicates": 20,
+    "bootstrap_replicates": 2000
+  },
+  "mirror_policy_caveat": "uncertainty_gated_hinge_ranked reuses criterion_abstention_v1.json thresholds (fit on the ORIGINAL heads) as its uncertainty gate; on the promoted balanced-head margin scale that gate is mis-calibrated. Reported for parity with the base, NOT as a clean comparison. The core policy hinge_gated_uncertainty_ranked does not use those thresholds and is clean on the promoted base.",
+  "policies": {
+    "hinge_guided": {
+      "accuracy_vs_k": [
+        0.757,
+        0.8759,
+        0.8785,
+        0.9241,
+        0.9316,
+        0.9241,
+        0.9722,
+        1.0
+      ],
+      "sensitivity_vs_k": [
+        0.7383,
+        0.8591,
+        0.8121,
+        0.8658,
+        0.8859,
+        0.9195,
+        0.9799,
+        1.0
+      ],
+      "specificity_vs_k": [
+        0.7683,
+        0.8862,
+        0.9187,
+        0.9593,
+        0.9593,
+        0.9268,
+        0.9675,
+        1.0
+      ],
+      "mean_corrections_to_correct_verdict": 0.5063
+    },
+    "uncertainty_guided": {
+      "accuracy_vs_k": [
+        0.757,
+        0.7823,
+        0.8253,
+        0.8734,
+        0.9291,
+        0.962,
+        0.9848,
+        1.0
+      ],
+      "sensitivity_vs_k": [
+        0.7383,
+        0.7718,
+        0.8255,
+        0.8456,
+        0.9396,
+        0.9799,
+        0.9866,
+        1.0
+      ],
+      "specificity_vs_k": [
+        0.7683,
+        0.7886,
+        0.8252,
+        0.8902,
+        0.9228,
+        0.9512,
+        0.9837,
+        1.0
+      ],
+      "mean_corrections_to_correct_verdict": 0.8051
+    },
+    "random": {
+      "accuracy_vs_k": {
+        "mean": [
+          0.757,
+          0.7848,
+          0.8092,
+          0.8392,
+          0.8722,
+          0.9086,
+          0.952,
+          1.0
+        ],
+        "std": [
+          0.0,
+          0.0083,
+          0.0113,
+          0.0159,
+          0.0153,
+          0.0134,
+          0.0104,
+          0.0
+        ]
+      },
+      "sensitivity_vs_k": {
+        "mean": [
+          0.7383,
+          0.7758,
+          0.8117,
+          0.846,
+          0.8822,
+          0.9191,
+          0.9567,
+          1.0
+        ],
+        "std": [
+          0.0,
+          0.0225,
+          0.0295,
+          0.0268,
+          0.0285,
+          0.0202,
+          0.0144,
+          0.0
+        ]
+      },
+      "specificity_vs_k": {
+        "mean": [
+          0.7683,
+          0.7902,
+          0.8077,
+          0.8352,
+          0.8661,
+          0.9022,
+          0.9492,
+          1.0
+        ],
+        "std": [
+          0.0,
+          0.0085,
+          0.0114,
+          0.0181,
+          0.016,
+          0.0151,
+          0.0141,
+          0.0
+        ]
+      },
+      "mean_corrections_to_correct_verdict": {
+        "mean": 0.9677,
+        "std": 0.0492
+      },
+      "replicates": 20
+    },
+    "hinge_gated_uncertainty_ranked": {
+      "hinge_gate_nonempty_fraction_of_steps": 0.3389,
+      "accuracy_vs_k": [
+        0.757,
+        0.8354,
+        0.8886,
+        0.9367,
+        0.9595,
+        0.9722,
+        0.9924,
+        1.0
+      ],
+      "sensitivity_vs_k": [
+        0.7383,
+        0.7852,
+        0.8591,
+        0.9463,
+        0.9732,
+        0.9866,
+        1.0,
+        1.0
+      ],
+      "specificity_vs_k": [
+        0.7683,
+        0.8659,
+        0.9065,
+        0.9309,
+        0.9512,
+        0.9634,
+        0.9878,
+        1.0
+      ],
+      "mean_corrections_to_correct_verdict": 0.5266
+    },
+    "uncertainty_gated_hinge_ranked": {
+      "uncertainty_gate_nonempty_fraction_of_steps": 0.1345,
+      "accuracy_vs_k": [
+        0.757,
+        0.8,
+        0.843,
+        0.8987,
+        0.9418,
+        0.9722,
+        0.9772,
+        1.0
+      ],
+      "sensitivity_vs_k": [
+        0.7383,
+        0.8121,
+        0.8121,
+        0.8725,
+        0.9262,
+        0.9799,
+        0.9799,
+        1.0
+      ],
+      "specificity_vs_k": [
+        0.7683,
+        0.7927,
+        0.8618,
+        0.9146,
+        0.9512,
+        0.9675,
+        0.9756,
+        1.0
+      ],
+      "mean_corrections_to_correct_verdict": 0.6759
+    }
+  },
+  "already_correct_at_k0": {
+    "fraction": 0.757,
+    "n_cases": 299
+  },
+  "hinge_vs_random_area_between_curves": {
+    "point_estimate": 0.0425,
+    "bootstrap_mean": 0.0427,
+    "bootstrap_std": 0.0069,
+    "ci95": [
+      0.0292,
+      0.0561
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "resample_unit": "case"
+  },
+  "hinge_vs_uncertainty_area_between_curves": {
+    "point_estimate": 0.0187,
+    "bootstrap_mean": 0.0187,
+    "bootstrap_std": 0.0074,
+    "ci95": [
+      0.0041,
+      0.0329
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "resample_unit": "case"
+  },
+  "combined_policy_comparisons": {
+    "hinge_gated_uncertainty_ranked_vs_random": {
+      "point_estimate": 0.0523,
+      "bootstrap_mean": 0.0524,
+      "bootstrap_std": 0.006,
+      "ci95": [
+        0.0409,
+        0.0648
+      ],
+      "excludes_zero": true,
+      "n_boot": 2000,
+      "resample_unit": "case"
+    },
+    "hinge_gated_uncertainty_ranked_vs_uncertainty_guided": {
+      "point_estimate": 0.0285,
+      "bootstrap_mean": 0.0286,
+      "bootstrap_std": 0.0054,
+      "ci95": [
+        0.018,
+        0.0399
+      ],
+      "excludes_zero": true,
+      "n_boot": 2000,
+      "resample_unit": "case"
+    },
+    "hinge_gated_uncertainty_ranked_vs_hinge_guided": {
+      "point_estimate": 0.0098,
+      "bootstrap_mean": 0.0096,
+      "bootstrap_std": 0.0045,
+      "ci95": [
+        0.0006,
+        0.0187
+      ],
+      "excludes_zero": true,
+      "n_boot": 2000,
+      "resample_unit": "case"
+    },
+    "uncertainty_gated_hinge_ranked_vs_random": {
+      "point_estimate": 0.0334,
+      "bootstrap_mean": 0.0332,
+      "bootstrap_std": 0.0054,
+      "ci95": [
+        0.0229,
+        0.0439
+      ],
+      "excludes_zero": true,
+      "n_boot": 2000,
+      "resample_unit": "case"
+    },
+    "uncertainty_gated_hinge_ranked_vs_uncertainty_guided": {
+      "point_estimate": 0.0095,
+      "bootstrap_mean": 0.0094,
+      "bootstrap_std": 0.0049,
+      "ci95": [
+        0.0003,
+        0.0196
+      ],
+      "excludes_zero": true,
+      "n_boot": 2000,
+      "resample_unit": "case"
+    },
+    "uncertainty_gated_hinge_ranked_vs_hinge_guided": {
+      "point_estimate": -0.0092,
+      "bootstrap_mean": -0.009,
+      "bootstrap_std": 0.0051,
+      "ci95": [
+        -0.019,
+        0.0013
+      ],
+      "excludes_zero": false,
+      "n_boot": 2000,
+      "resample_unit": "case"
+    }
+  },
+  "dataset_property_aside_checklist_vs_diagnosis": {
+    "sensitivity": 0.9406,
+    "specificity": 0.8163,
+    "accuracy": 0.8481,
+    "confusion": {
+      "tp": 95,
+      "fn": 6,
+      "fp": 54,
+      "tn": 240
+    },
+    "note": "Gold-criteria verdict vs diagnosis label. Independent of which heads produced the predicted criteria, so identical to the base (a wiring check)."
+  },
+  "verdict_vs_base": {
+    "core_comparisons_vs_base": {
+      "vs random": {
+        "promoted_point_estimate": 0.0523,
+        "promoted_ci95": [
+          0.0409,
+          0.0648
+        ],
+        "promoted_excludes_zero": true,
+        "base_point_estimate": 0.0576,
+        "classification": "holds"
+      },
+      "vs uncertainty": {
+        "promoted_point_estimate": 0.0285,
+        "promoted_ci95": [
+          0.018,
+          0.0399
+        ],
+        "promoted_excludes_zero": true,
+        "base_point_estimate": 0.0171,
+        "classification": "strengthens"
+      },
+      "vs hinge": {
+        "promoted_point_estimate": 0.0098,
+        "promoted_ci95": [
+          0.0006,
+          0.0187
+        ],
+        "promoted_excludes_zero": true,
+        "base_point_estimate": 0.0291,
+        "classification": "holds"
+      }
+    },
+    "still_beats_all_three": true,
+    "nuances": [
+      "The edge over hinge-guided ALONE is marginal on promoted heads: point +0.0098, 95% CI [+0.0006, +0.0187] -- the lower bound sits essentially at zero, within bootstrap noise, so 'beats hinge-guided' is not robust here (it WAS robust on the base at 0.0291).",
+      "By the mean-corrections metric the two even swap: hinge-guided ALONE reaches the correct verdict in 0.5063 corrections vs 0.5266 for the combined policy. The promoted heads give a better starting point (already-correct@k0 0.757), which strengthens hinge-guidance on its own; the combined policy's remaining, robust advantage is over UNCERTAINTY-guided (which it strengthens vs base), not over hinge-guided."
+    ],
+    "headline": "HOLDS on the promoted heads: hinge-gated, uncertainty-ranked still beats random, uncertainty-guided, AND hinge-guided, all three bootstrap CIs excluding zero in its favour. Mean corrections-to-correct-verdict 0.5266 (vs 0.8051 for uncertainty-guided alone; base was 0.5418). Its edge over UNCERTAINTY-guided STRENGTHENS vs the base (+0.0285 vs base 0.0171). NUANCES: The edge over hinge-guided ALONE is marginal on promoted heads: point +0.0098, 95% CI [+0.0006, +0.0187] -- the lower bound sits essentially at zero, within bootstrap noise, so 'beats hinge-guided' is not robust here (it WAS robust on the base at 0.0291). By the mean-corrections metric the two even swap: hinge-guided ALONE reaches the correct verdict in 0.5063 corrections vs 0.5266 for the combined policy. The promoted heads give a better starting point (already-correct@k0 0.757), which strengthens hinge-guidance on its own; the combined policy's remaining, robust advantage is over UNCERTAINTY-guided (which it strengthens vs base), not over hinge-guided."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "medguard-design-freeze-receipt-v2",
+  "spec_id": "medguard-derm-evidence-contract-h2h-v2",
+  "created": "2026-07-17",
+  "supersedes": "research/EXPERIMENT_SPEC_V1.receipt.json",
+  "supersession_reason": "The v1 receipt became historical under its own change_control rule: RESULTS_LEDGER.json, notes/MEDGUARD_MASTER_EXECUTION_PLAN.md and notes/TARGETS_TO_BEAT.md all changed after it was created. v1 and its receipt are preserved byte-identical and must never be edited: five frozen artifacts pin the v1 receipt hash 5a990ece1c41b21d491b4919b5f31817c1522306846fbcd0058c84d1a05bbfd8.",
+  "hash_convention": "SHA-256 of raw file bytes exactly as stored",
+  "status": "design_frozen_runtime_lock_pending",
+  "source_tree_revision": "3992934",
+  "source_tree_revision_note": "v1 recorded this as pending because .git existed but was an empty directory and git rev-parse reported not a git repository. medguard/.env was excluded before the first commit and is absent from all history. The exact revision for any run is recorded by that run, not by this receipt; this value states when the repository became pinnable.",
+  "two_tier_rationale": "v1 pinned the results ledger and the working notes with the same force as the specification, so ordinary appends and edits silently invalidated it -- which is exactly how it died. A ledger that is append-only by design and notes that are meant to evolve cannot be design-binding without guaranteeing false breakage. Splitting the tiers keeps the freeze meaningful: design_binding_files must not change without a version bump, while observed_files are recorded for provenance and are expected to drift.",
+  "design_binding_files": [
+    {
+      "path": "research/EXPERIMENT_SPEC_V2.json",
+      "bytes": 31758,
+      "sha256": "ec2c4bda528bac14d4aa41c684c2e0ea0de2d2bf9f196c1c215bc17492783231"
+    },
+    {
+      "path": "research/PREREGISTRATION.json",
+      "bytes": 10573,
+      "sha256": "1e4e2bfe69800ac79d55cd55ba8d68329af7caf8d37440badc78aa9b21b0b43a"
+    },
+    {
+      "path": "research/RIVAL_LEDGER.json",
+      "bytes": 14380,
+      "sha256": "dd15daf3cf58367ed022e8f32df12ca51edbc1236afee0dd9248436f6c79d46e"
+    }
+  ],
+  "design_binding_rule": "These carry the freeze. If any one changes, this receipt becomes historical: issue v3 and state the reason. Never edit a version in place after viewing current-paper results.",
+  "observed_files": [
+    {
+      "path": "research/RESULTS_LEDGER.json",
+      "bytes": 351715,
+      "sha256": "0bf9b894c3d34f99ced6b4309e8aadd42e43940dfbfae8d37d857555dd238fff"
+    },
+    {
+      "path": "research/implementation_cards/H2H_IMPLEMENTATION_CARDS_V1.json",
+      "bytes": 43739,
+      "sha256": "bc89bb39fbaa55269af3ece582d2cddd775ac6d54c3e1d7d26663eff4e4d54ba"
+    },
+    {
+      "path": "notes/MEDGUARD_MASTER_EXECUTION_PLAN.md",
+      "bytes": 21634,
+      "sha256": "fefeb3d25c3e8c549a7fd8c7ad8577fea3b910dc0d18d86080a5870a01f1f677"
+    },
+    {
+      "path": "notes/TARGETS_TO_BEAT.md",
+      "bytes": 15456,
+      "sha256": "c4fa49ca9186a0fbe5d7c0bfe314d355638e3cdfd32854fb0a8d2830ad1587f7"
+    },
+    {
+      "path": "notes/GAP_MATRIX_FINAL.md",
+      "bytes": 15495,
+      "sha256": "97f676da2927fed57048cbea292920c3dca20c286aa2b2970f93302ea22ef1e3"
+    }
+  ],
+  "observed_rule": "Recorded for provenance at receipt creation. Drift is expected and does not invalidate this receipt. RESULTS_LEDGER.json is append-only; the notes evolve with the work; the implementation cards are a declared living_prelock_specification. The cards become design-binding at the pre-H2H lock and must be re-pinned into design_binding_files at that point.",
+  "historical_v1": {
+    "path": "research/EXPERIMENT_SPEC_V1.receipt.json",
+    "sha256": "5a990ece1c41b21d491b4919b5f31817c1522306846fbcd0058c84d1a05bbfd8",
+    "status": "historical_but_load_bearing",
+    "pinned_by": [
+      "research/evidence/dermatology_corpus_v1/receipt.json",
+      "research/experiments/medguard_h2h_v1/perception/dermlip_v1/receipt.json",
+      "research/manifests/medguard_h2h_development_v1.json",
+      "research/manifests/medguard_h2h_development_v1.audit.json",
+      "research/manifests/medguard_h2h_development_v1.receipt.json"
+    ]
+  },
+  "authorization": "This receipt freezes the design only. It does not authorize paid generation or sealed-test access."
+}

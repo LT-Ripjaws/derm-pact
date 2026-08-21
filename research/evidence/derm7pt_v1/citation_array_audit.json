@@ -1,0 +1,486 @@
+{
+  "protocol": "citation-array-audit-and-uncited-specifics-reconciliation-rescore",
+  "generated_utc": "2026-08-14T11:33:23+00:00",
+  "catalog_n_records": 66,
+  "note": "Zero API cost: re-scores stored rows against a fresh catalog. Part 1 audits whether the reported citation_resolvability survives independent array re-resolution (see the module docstring for why the scored dict is conclusive without the raw id list). Part 2 measures the uncited-specifics false-positive reduction from channel reconciliation. score_citations and score_fabrication metric definitions are untouched.",
+  "headline": {
+    "citation_resolvability_holds": {
+      "v5_2": true,
+      "v5_3": true
+    },
+    "unresolved_array_citations_found": {
+      "v5_2": 0,
+      "v5_3": 0
+    },
+    "uncited_specifics_false_positives_cleared": {
+      "v5_2": 14,
+      "v5_3": 15
+    }
+  },
+  "sources": {
+    "v5_2": {
+      "source_report": "agent_eval_report_v5_2.json",
+      "status": "loaded",
+      "report_prompt_version": "clinician-agent-v5.2",
+      "reported_citation_resolvability": {
+        "answers_with_citations": 90,
+        "resolvability": 1.0,
+        "all_intact": true,
+        "exact": true
+      },
+      "array_resolution_audit": {
+        "answers_with_citations": 90,
+        "answers_with_unresolved_array_citation": 0,
+        "offending_case_ids": [],
+        "arithmetic_inconsistent_rows": [],
+        "recorded_unresolvable_that_actually_resolve": [],
+        "recomputed_resolvability": 1.0,
+        "resolvability_holds": true
+      },
+      "uncited_specifics_reconciliation": {
+        "answers": 393,
+        "old_check_flagged": 14,
+        "new_check_flagged": 0,
+        "false_positives_cleared": 14,
+        "cleared_case_ids": [
+          {
+            "case_id": "derm7pt-2",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-14",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-602",
+            "kind": "why",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-20",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-37",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-654",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-699",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-734",
+            "kind": "override",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-803",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-894",
+            "kind": "override",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-918",
+            "kind": "override",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-520",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-966",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": null
+          },
+          {
+            "case_id": "derm7pt-969",
+            "kind": "override",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": null
+          }
+        ],
+        "still_flagged_case_ids": []
+      }
+    },
+    "v5_3": {
+      "source_report": "agent_eval_report_v5_3.json",
+      "status": "loaded",
+      "report_prompt_version": "clinician-agent-v5.3",
+      "reported_citation_resolvability": {
+        "answers_with_citations": 93,
+        "resolvability": 1.0,
+        "all_intact": true,
+        "exact": true
+      },
+      "array_resolution_audit": {
+        "answers_with_citations": 93,
+        "answers_with_unresolved_array_citation": 0,
+        "offending_case_ids": [],
+        "arithmetic_inconsistent_rows": [],
+        "recorded_unresolvable_that_actually_resolve": [],
+        "recomputed_resolvability": 1.0,
+        "resolvability_holds": true
+      },
+      "uncited_specifics_reconciliation": {
+        "answers": 393,
+        "old_check_flagged": 15,
+        "new_check_flagged": 0,
+        "false_positives_cleared": 15,
+        "cleared_case_ids": [
+          {
+            "case_id": "derm7pt-14",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-26",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-37",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-626",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-667",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-204",
+            "kind": "why",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 1
+          },
+          {
+            "case_id": "derm7pt-783",
+            "kind": "override",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 1
+          },
+          {
+            "case_id": "derm7pt-803",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-809",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-851",
+            "kind": "why",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 1
+          },
+          {
+            "case_id": "derm7pt-436",
+            "kind": "override",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 1
+          },
+          {
+            "case_id": "derm7pt-520",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-950",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-955",
+            "kind": "guideline",
+            "specifics": [
+              "sentinel",
+              "lymph node"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:30392755:table-x-excision-first-line",
+              "aad:pmid:30392755:table-x-slnb-timing",
+              "eado:pmid:39709737:recommendation-1"
+            ],
+            "revisions": 2
+          },
+          {
+            "case_id": "derm7pt-966",
+            "kind": "guideline",
+            "specifics": [
+              "mm clinical margin",
+              "4-mm"
+            ],
+            "resolvable_inline_ids": [
+              "aad:pmid:29331385:table-vii-low-risk-excision",
+              "aad:pmid:29331385:table-vii-treatment-plan",
+              "eado:pmid:37604067:box-10"
+            ],
+            "revisions": 2
+          }
+        ],
+        "still_flagged_case_ids": []
+      }
+    }
+  }
+}

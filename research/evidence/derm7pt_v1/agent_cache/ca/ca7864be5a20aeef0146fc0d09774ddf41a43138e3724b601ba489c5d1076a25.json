@@ -1,0 +1,5 @@
+{
+  "reply": "{\"action\": \"tool\", \"tool\": \"get_decision\", \"args\": {}}",
+  "usage": {},
+  "model": "qwen/qwen3-vl-32b-instruct"
+}

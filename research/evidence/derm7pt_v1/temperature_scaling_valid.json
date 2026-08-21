@@ -1,0 +1,658 @@
+{
+  "protocol": {
+    "analysis_type": "post-hoc, report-only; T fit on VALID only; deployed system unchanged",
+    "artifact": "derm7pt-temperature-scaling-valid-v1",
+    "generated_at": "2026-08-16T01:15:20",
+    "reviewer_finding": "notes/PRE_WRITING_PEER_REVIEW_2026-08-16.md #M6",
+    "seed": 20260810,
+    "n_bins": 10,
+    "splits": {
+      "train": 413,
+      "valid": 203,
+      "test": 395
+    },
+    "fitting_source": "scripts/dev/derm7pt_p2_safety_promote.py Features/_fit/SEED, imported bit-identically by file path (same pattern as build_annotation_learning_curve.py); promoted=_fit(F.dermlip_meta_mat, train, C=100.0, class_weight=None), base=_fit(F.dermlip_mat, train, C=10.0, class_weight=None)",
+    "wiring_self_checks": {
+      "promoted_test_accuracy_argmax": {
+        "got": 0.762,
+        "expected": 0.762,
+        "source": "paper_metrics_summary.json perception_derm7pt.classifier_5class.argmax.accuracy",
+        "reproduced": true
+      },
+      "promoted_test_mel_auroc": {
+        "got": 0.9151,
+        "expected": 0.9151,
+        "source": "paper_metrics_summary.json perception_derm7pt.melanoma_auroc.point",
+        "reproduced": true
+      },
+      "base_test_accuracy_argmax": {
+        "got": 0.7392,
+        "expected": 0.7392,
+        "source": "perception_baseline.json metrics.diagnosis.test.accuracy",
+        "reproduced": true
+      },
+      "base_test_mel_auroc": {
+        "got": 0.895,
+        "expected": 0.895,
+        "source": "paper_metrics_summary.json perception_derm7pt.melanoma_auroc.base_arm_reference.point",
+        "reproduced": true
+      }
+    }
+  },
+  "promoted_head": {
+    "features": "dermlip+metadata14 (526-d)",
+    "fit_hyperparameters": {
+      "C": 100.0,
+      "class_weight": null,
+      "seed": 20260810
+    },
+    "classes_order": [
+      "BCC",
+      "MEL",
+      "MISC",
+      "NEV",
+      "SK"
+    ],
+    "n_valid": 203,
+    "n_test": 395,
+    "decision_function_softmax_matches_predict_proba": {
+      "max_abs_diff": 0.0,
+      "assert_threshold": 1e-06,
+      "passed": true
+    },
+    "temperature": {
+      "T_fit_on_valid": 1.781443,
+      "fit_diagnostics": {
+        "nll_at_optimum": 0.677783,
+        "hit_search_bound": false
+      }
+    },
+    "argmax_invariance_under_T": {
+      "identical_predictions": true,
+      "n_mismatches": 0,
+      "n_test": 395,
+      "why_guaranteed": "dividing every class logit in a row by the same T > 0 preserves the row's logit order, and softmax is order-preserving in its inputs, so argmax(softmax(z/T)) == argmax(z) for any T > 0."
+    },
+    "nll_test": {
+      "before": 0.655395,
+      "after": 0.598267,
+      "delta_after_minus_before": -0.057128
+    },
+    "brier_test": {
+      "before": 0.332624,
+      "after": 0.32184,
+      "delta_after_minus_before": -0.010785
+    },
+    "ece_argmax_confidence": {
+      "before": 0.0969,
+      "after": 0.0416
+    },
+    "aurc_argmax_confidence": {
+      "before": 0.096,
+      "after": 0.0965
+    },
+    "reliability_argmax_confidence": {
+      "before": [
+        {
+          "bin_center": 0.05,
+          "accuracy": 0.0,
+          "confidence": 0.05,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.15,
+          "accuracy": 0.0,
+          "confidence": 0.15,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.25,
+          "accuracy": 0.0,
+          "confidence": 0.25,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.35,
+          "accuracy": 0.25,
+          "confidence": 0.3673,
+          "count": 4,
+          "weight": 0.0101
+        },
+        {
+          "bin_center": 0.45,
+          "accuracy": 0.25,
+          "confidence": 0.4691,
+          "count": 12,
+          "weight": 0.0304
+        },
+        {
+          "bin_center": 0.55,
+          "accuracy": 0.4,
+          "confidence": 0.5601,
+          "count": 35,
+          "weight": 0.0886
+        },
+        {
+          "bin_center": 0.65,
+          "accuracy": 0.5357,
+          "confidence": 0.6507,
+          "count": 28,
+          "weight": 0.0709
+        },
+        {
+          "bin_center": 0.75,
+          "accuracy": 0.6176,
+          "confidence": 0.7394,
+          "count": 34,
+          "weight": 0.0861
+        },
+        {
+          "bin_center": 0.85,
+          "accuracy": 0.82,
+          "confidence": 0.851,
+          "count": 50,
+          "weight": 0.1266
+        },
+        {
+          "bin_center": 0.95,
+          "accuracy": 0.8879,
+          "confidence": 0.977,
+          "count": 232,
+          "weight": 0.5873
+        }
+      ],
+      "after": [
+        {
+          "bin_center": 0.05,
+          "accuracy": 0.0,
+          "confidence": 0.05,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.15,
+          "accuracy": 0.0,
+          "confidence": 0.15,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.25,
+          "accuracy": 0.5,
+          "confidence": 0.2939,
+          "count": 2,
+          "weight": 0.0051
+        },
+        {
+          "bin_center": 0.35,
+          "accuracy": 0.2308,
+          "confidence": 0.3711,
+          "count": 13,
+          "weight": 0.0329
+        },
+        {
+          "bin_center": 0.45,
+          "accuracy": 0.4211,
+          "confidence": 0.4632,
+          "count": 38,
+          "weight": 0.0962
+        },
+        {
+          "bin_center": 0.55,
+          "accuracy": 0.6207,
+          "confidence": 0.546,
+          "count": 58,
+          "weight": 0.1468
+        },
+        {
+          "bin_center": 0.65,
+          "accuracy": 0.8,
+          "confidence": 0.6519,
+          "count": 40,
+          "weight": 0.1013
+        },
+        {
+          "bin_center": 0.75,
+          "accuracy": 0.7451,
+          "confidence": 0.7476,
+          "count": 51,
+          "weight": 0.1291
+        },
+        {
+          "bin_center": 0.85,
+          "accuracy": 0.8289,
+          "confidence": 0.8507,
+          "count": 76,
+          "weight": 0.1924
+        },
+        {
+          "bin_center": 0.95,
+          "accuracy": 0.9573,
+          "confidence": 0.9526,
+          "count": 117,
+          "weight": 0.2962
+        }
+      ]
+    },
+    "mel_auroc": {
+      "before": 0.9151,
+      "after": 0.9155,
+      "delta_after_minus_before": 0.0004,
+      "note": "MEL AUROC is NOT guaranteed invariant to T the way argmax is: it ranks the MEL posterior column ACROSS cases, and each case's softmax renormalisation is a case-specific nonlinear function of the full logit row, so the cross-case order of MEL mass can move slightly under T even though no within-case argmax can."
+    },
+    "operating_point_label_confidence": {
+      "policy": {
+        "rule": "argmax(posterior / weight)",
+        "weights": {
+          "SK": 0.5,
+          "MISC": 0.7
+        }
+      },
+      "confidence_definition": "raw (un-reweighted) posterior mass on the label chosen after reweighting -- exactly what apply_operating_point() returns and what run_cohort(promoted=True) writes into contracts",
+      "ece": {
+        "before": 0.0891,
+        "after": 0.043
+      },
+      "aurc": {
+        "before": 0.0958,
+        "after": 0.0956
+      },
+      "reliability": {
+        "before": [
+          {
+            "bin_center": 0.05,
+            "accuracy": 0.0,
+            "confidence": 0.05,
+            "count": 0,
+            "weight": 0.0
+          },
+          {
+            "bin_center": 0.15,
+            "accuracy": 0.0,
+            "confidence": 0.15,
+            "count": 0,
+            "weight": 0.0
+          },
+          {
+            "bin_center": 0.25,
+            "accuracy": 0.5,
+            "confidence": 0.2694,
+            "count": 2,
+            "weight": 0.0051
+          },
+          {
+            "bin_center": 0.35,
+            "accuracy": 0.2,
+            "confidence": 0.3529,
+            "count": 5,
+            "weight": 0.0127
+          },
+          {
+            "bin_center": 0.45,
+            "accuracy": 0.4615,
+            "confidence": 0.4694,
+            "count": 13,
+            "weight": 0.0329
+          },
+          {
+            "bin_center": 0.55,
+            "accuracy": 0.4242,
+            "confidence": 0.5618,
+            "count": 33,
+            "weight": 0.0835
+          },
+          {
+            "bin_center": 0.65,
+            "accuracy": 0.5385,
+            "confidence": 0.6537,
+            "count": 26,
+            "weight": 0.0658
+          },
+          {
+            "bin_center": 0.75,
+            "accuracy": 0.6176,
+            "confidence": 0.7394,
+            "count": 34,
+            "weight": 0.0861
+          },
+          {
+            "bin_center": 0.85,
+            "accuracy": 0.82,
+            "confidence": 0.851,
+            "count": 50,
+            "weight": 0.1266
+          },
+          {
+            "bin_center": 0.95,
+            "accuracy": 0.8879,
+            "confidence": 0.977,
+            "count": 232,
+            "weight": 0.5873
+          }
+        ],
+        "after": [
+          {
+            "bin_center": 0.05,
+            "accuracy": 0.0,
+            "confidence": 0.05,
+            "count": 0,
+            "weight": 0.0
+          },
+          {
+            "bin_center": 0.15,
+            "accuracy": 1.0,
+            "confidence": 0.1732,
+            "count": 1,
+            "weight": 0.0025
+          },
+          {
+            "bin_center": 0.25,
+            "accuracy": 0.2222,
+            "confidence": 0.266,
+            "count": 9,
+            "weight": 0.0228
+          },
+          {
+            "bin_center": 0.35,
+            "accuracy": 0.3333,
+            "confidence": 0.3671,
+            "count": 12,
+            "weight": 0.0304
+          },
+          {
+            "bin_center": 0.45,
+            "accuracy": 0.5152,
+            "confidence": 0.4613,
+            "count": 33,
+            "weight": 0.0835
+          },
+          {
+            "bin_center": 0.55,
+            "accuracy": 0.6429,
+            "confidence": 0.5474,
+            "count": 56,
+            "weight": 0.1418
+          },
+          {
+            "bin_center": 0.65,
+            "accuracy": 0.8,
+            "confidence": 0.6519,
+            "count": 40,
+            "weight": 0.1013
+          },
+          {
+            "bin_center": 0.75,
+            "accuracy": 0.7451,
+            "confidence": 0.7476,
+            "count": 51,
+            "weight": 0.1291
+          },
+          {
+            "bin_center": 0.85,
+            "accuracy": 0.8289,
+            "confidence": 0.8507,
+            "count": 76,
+            "weight": 0.1924
+          },
+          {
+            "bin_center": 0.95,
+            "accuracy": 0.9573,
+            "confidence": 0.9526,
+            "count": 117,
+            "weight": 0.2962
+          }
+        ]
+      },
+      "n_predictions_changed_by_T": 9,
+      "sealed_reproduction_check": {
+        "got": 0.0891,
+        "expected": 0.0891,
+        "tolerance": 0.001,
+        "reproduced": true,
+        "source": "paper_metrics_summary.json perception_derm7pt.calibration.ece_uncalibrated == promoted_two_view_ablation.json calibration.ece_uncalibrated"
+      }
+    },
+    "oracle_T_on_test (not usable)": {
+      "warning": "T fit directly on TEST logits AND TEST labels: this is test-set leakage and is NOT a deployable calibration. Reported only as a best-case lower bound, to show how much further NLL/ECE could fall if T could see TEST, i.e. how much the honest VALID-fit T above is leaving on the table.",
+      "temperature": 1.559499,
+      "fit_diagnostics": {
+        "nll_at_optimum": 0.593017,
+        "hit_search_bound": false
+      },
+      "nll_test_after_oracle_T": 0.593017,
+      "ece_argmax_after_oracle_T": 0.0514
+    }
+  },
+  "base_head": {
+    "features": "dermlip (512-d)",
+    "fit_hyperparameters": {
+      "C": 10.0,
+      "class_weight": null,
+      "seed": 20260810
+    },
+    "classes_order": [
+      "BCC",
+      "MEL",
+      "MISC",
+      "NEV",
+      "SK"
+    ],
+    "n_valid": 203,
+    "n_test": 395,
+    "decision_function_softmax_matches_predict_proba": {
+      "max_abs_diff": 0.0,
+      "assert_threshold": 1e-06,
+      "passed": true
+    },
+    "temperature": {
+      "T_fit_on_valid": 0.99719,
+      "fit_diagnostics": {
+        "nll_at_optimum": 0.72169,
+        "hit_search_bound": false
+      }
+    },
+    "argmax_invariance_under_T": {
+      "identical_predictions": true,
+      "n_mismatches": 0,
+      "n_test": 395,
+      "why_guaranteed": "dividing every class logit in a row by the same T > 0 preserves the row's logit order, and softmax is order-preserving in its inputs, so argmax(softmax(z/T)) == argmax(z) for any T > 0."
+    },
+    "nll_test": {
+      "before": 0.612633,
+      "after": 0.612369,
+      "delta_after_minus_before": -0.000264
+    },
+    "brier_test": {
+      "before": 0.337848,
+      "after": 0.337838,
+      "delta_after_minus_before": -1e-05
+    },
+    "ece_argmax_confidence": {
+      "before": 0.0393,
+      "after": 0.0392
+    },
+    "aurc_argmax_confidence": {
+      "before": 0.0972,
+      "after": 0.0972
+    },
+    "reliability_argmax_confidence": {
+      "before": [
+        {
+          "bin_center": 0.05,
+          "accuracy": 0.0,
+          "confidence": 0.05,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.15,
+          "accuracy": 0.0,
+          "confidence": 0.15,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.25,
+          "accuracy": 0.0,
+          "confidence": 0.2841,
+          "count": 4,
+          "weight": 0.0101
+        },
+        {
+          "bin_center": 0.35,
+          "accuracy": 0.3,
+          "confidence": 0.3489,
+          "count": 20,
+          "weight": 0.0506
+        },
+        {
+          "bin_center": 0.45,
+          "accuracy": 0.5556,
+          "confidence": 0.4525,
+          "count": 45,
+          "weight": 0.1139
+        },
+        {
+          "bin_center": 0.55,
+          "accuracy": 0.4872,
+          "confidence": 0.5499,
+          "count": 39,
+          "weight": 0.0987
+        },
+        {
+          "bin_center": 0.65,
+          "accuracy": 0.6304,
+          "confidence": 0.6535,
+          "count": 46,
+          "weight": 0.1165
+        },
+        {
+          "bin_center": 0.75,
+          "accuracy": 0.6889,
+          "confidence": 0.7467,
+          "count": 45,
+          "weight": 0.1139
+        },
+        {
+          "bin_center": 0.85,
+          "accuracy": 0.8657,
+          "confidence": 0.8502,
+          "count": 67,
+          "weight": 0.1696
+        },
+        {
+          "bin_center": 0.95,
+          "accuracy": 0.9612,
+          "confidence": 0.9487,
+          "count": 129,
+          "weight": 0.3266
+        }
+      ],
+      "after": [
+        {
+          "bin_center": 0.05,
+          "accuracy": 0.0,
+          "confidence": 0.05,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.15,
+          "accuracy": 0.0,
+          "confidence": 0.15,
+          "count": 0,
+          "weight": 0.0
+        },
+        {
+          "bin_center": 0.25,
+          "accuracy": 0.0,
+          "confidence": 0.2844,
+          "count": 4,
+          "weight": 0.0101
+        },
+        {
+          "bin_center": 0.35,
+          "accuracy": 0.3,
+          "confidence": 0.3492,
+          "count": 20,
+          "weight": 0.0506
+        },
+        {
+          "bin_center": 0.45,
+          "accuracy": 0.5556,
+          "confidence": 0.4531,
+          "count": 45,
+          "weight": 0.1139
+        },
+        {
+          "bin_center": 0.55,
+          "accuracy": 0.4872,
+          "confidence": 0.5506,
+          "count": 39,
+          "weight": 0.0987
+        },
+        {
+          "bin_center": 0.65,
+          "accuracy": 0.6304,
+          "confidence": 0.6544,
+          "count": 46,
+          "weight": 0.1165
+        },
+        {
+          "bin_center": 0.75,
+          "accuracy": 0.6889,
+          "confidence": 0.7477,
+          "count": 45,
+          "weight": 0.1139
+        },
+        {
+          "bin_center": 0.85,
+          "accuracy": 0.8657,
+          "confidence": 0.8511,
+          "count": 67,
+          "weight": 0.1696
+        },
+        {
+          "bin_center": 0.95,
+          "accuracy": 0.9612,
+          "confidence": 0.9492,
+          "count": 129,
+          "weight": 0.3266
+        }
+      ]
+    },
+    "mel_auroc": {
+      "before": 0.895,
+      "after": 0.895,
+      "delta_after_minus_before": -0.0,
+      "note": "MEL AUROC is NOT guaranteed invariant to T the way argmax is: it ranks the MEL posterior column ACROSS cases, and each case's softmax renormalisation is a case-specific nonlinear function of the full logit row, so the cross-case order of MEL mass can move slightly under T even though no within-case argmax can."
+    },
+    "oracle_T_on_test (not usable)": {
+      "warning": "T fit directly on TEST logits AND TEST labels: this is test-set leakage and is NOT a deployable calibration. Reported only as a best-case lower bound, to show how much further NLL/ECE could fall if T could see TEST, i.e. how much the honest VALID-fit T above is leaving on the table.",
+      "temperature": 0.859103,
+      "fit_diagnostics": {
+        "nll_at_optimum": 0.605404,
+        "hit_search_bound": false
+      },
+      "nll_test_after_oracle_T": 0.605404,
+      "ece_argmax_after_oracle_T": 0.0569
+    }
+  },
+  "cross_head_notes": {
+    "base_ts_calibrated_ece_vs_sealed": {
+      "recomputed_ece_argmax_after_valid_fit_T": 0.0392,
+      "sealed_ece_calibrated": 0.0455,
+      "sealed_source": "perception_baseline.json probe.targets.diagnosis.temperature (T fit on 5-fold OUT-OF-FOLD TRAIN logits) / test_metrics_complete.json calibration.ece",
+      "match_within_0_001": false,
+      "note": "NOT forced to agree, per the task's own instruction -- reported side by side instead. The sealed 0.0455 used a DIFFERENT temperature, fit on 5-fold out-of-fold TRAIN logits (never touching valid or test); this artefact fits T on the official VALID split instead, as this analysis was asked to. Both are legitimate temperature-scaling procedures fit on disjoint data from TEST; they are not expected to produce a bit-identical T or ECE, and the difference reported here is exactly that -- a difference, not an error."
+    },
+    "base_raw_ece_sanity_check": {
+      "recomputed_ece_argmax_before_T_uncalibrated": 0.0393,
+      "perception_baseline_json_ece_uncalibrated": 0.0393,
+      "note": "Both use the SAME model spec (C=10, unbalanced, seed 20260810, argmax confidence, T=1/no calibration) fit on the same train split, so this is expected to closely corroborate perception_baseline.json even though the feature-loading path differs (promote.Features().dermlip npz vs perception/encode.py's FeatureBundle) -- included as a sanity cross-check, not a hard assertion."
+    }
+  }
+}

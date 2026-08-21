@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score range after override is [2, 4], but the contract does not provide any mechanism to compute a new score based on overridden criteria. The original score range was [0, 2], and no updated score calculation is defined in the contract. Therefore, reporting [2, 4] is fabricated.",
+    "CRITERION ACCURACY: The agent states 'blue_whitish_veil' was corrected from 'absent' to 'present', but the contract does not support dynamic criterion overrides or recalculations. The system's output is static; thus, the agent is fabricating a modified state not present in the decision contract.",
+    "MANAGEMENT FIDELITY: The agent claims the verdict remains 'clinical follow up' after override, but the contract provides no guidance on how to handle clinician overrides or recalculated scores. The management advice is therefore not grounded in the contract\u2019s deterministic ladder or guideline binding.",
+    "CONFLICT REPORTING: The agent discusses a change in score and verdict implications, but the contract\u2019s conflict state is unchanged (no conflict present). The agent introduces a scenario not reflected in the contract\u2019s conflict field."
+  ],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score range after override is [2, 4], but the contract does not provide any mechanism to compute a new score based on overridden criteria. The original score range was [0, 2], and no updated score calculation is defined in the contract. Therefore, reporting [2, 4] is fabricated.\",\n    \"CRITERION ACCURACY: The agent states 'blue_whitish_veil' was corrected from 'absent' to 'present', but the contract does not support dynamic criterion overrides or recalculations. The system's output is static; thus, the agent is fabricating a modified state not present in the decision contract.\",\n    \"MANAGEMENT FIDELITY: The agent claims the verdict remains 'clinical follow up' after override, but the contract provides no guidance on how to handle clinician overrides or recalculated scores. The management advice is therefore not grounded in the contract\u2019s deterministic ladder or guideline binding.\",\n    \"CONFLICT REPORTING: The agent discusses a change in score and verdict implications, but the contract\u2019s conflict state is unchanged (no conflict present). The agent introduces a scenario not reflected in the contract\u2019s conflict field.\"\n  ],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 4.223,
+  "usage": {
+    "prompt_tokens": 1141,
+    "completion_tokens": 269,
+    "total_tokens": 1410
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "description": "Case study: derm7pt-2 \u2014 conflict, override, verdict change",
+  "case_id": "derm7pt-2",
+  "answers": [
+    {
+      "kind": "why",
+      "question": "The two assessments disagree here. Which criteria are driving the checklist score, and what should I look at on the image?",
+      "answer": "Diagnosis: The system's deterministic computation reports a classifier diagnosis of BCC with 99.22% confidence. The 7-point checklist score is 4 (min=4, max=4), which meets or exceeds the melanoma suspicion threshold of 3. This creates a conflict: the classifier indicates BCC, but the checklist raises melanoma suspicion. The conflict state is marked as 'present' and 'escalate'.\n\nAssessment: The following guidelines from the corpus address clinical visual assessment for melanoma:\n\n- eado:pmid:39700658:recommendation-4: Recommendation 4 [72 \u2013 80] . Dermatoscopic diagnosis Evidence based recommendation Level of recommendation A Dermatoscopy shall be used for the assessment of pigmented and non-pigmented skin lesions. Level of evidence: 1b Guideline adaptation [75, 76] De novo literature research for nail, acral and mucosal melanomas [72-74, 77-80] Consensus rate: 100% (19/19)\n- eado:pmid:39700658:recommendation-5: Recommendation 5 [81] . Whole-body photography Evidence based recommendation Level of recommendation B Whole-body photography with sequential examinations should be used for the early detection of melanoma in high-risk patients. Level of evidence: 2b [81] Consensus rate: 100% (19/19)\n- eado:pmid:39700658:recommendation-6: Recommendation 6 [82] . Digital dermatoscopy Evidence based recommendation Level of recommendation B Sequential digital dermatoscopy can improve the early detection of melanoma and should be used in high-risk patients, with a high total nevus count. Level of evidence: 2b [82] Consensus rate: 100% (19/19)\n\nThe criteria driving the 7-point score are:\n- blue_whitish_veil: present (2 points, major criterion)\n- streaks: irregular (1 point, minor criterion)\n- dots_and_globules: irregular (1 point, minor criterion)\n\nThese three criteria account for all 4 points. The presence of blue-whitish veil is particularly significant as it is a major criterion. You should verify on the image whether the lesion shows a confluent blue pigment with an overlying white haze (blue-whitish veil), unevenly distributed radial lines or pseudopods (irregular streaks), and varied size and uneven distribution of dots/globules (irregular dots_and_globules). These features are key to the checklist\u2019s melanoma suspicion despite the classifier\u2019s BCC call.",
+      "tool_calls": [
+        {
+          "tool": "get_decision",
+          "args": {}
+        },
+        {
+          "tool": "explain_reasoning",
+          "args": {}
+        },
+        {
+          "tool": "query_taxonomy",
+          "args": {}
+        },
+        {
+          "tool": "search_guidelines",
+          "args": {}
+        }
+      ],
+      "turns": 5
+    },
+    {
+      "kind": "override",
+      "question": "I have looked at the image myself and I disagree: pigment network is 'atypical', not 'absent'. Apply that and tell me the resulting score and whether the recommendation changes.",
+      "answer": "Diagnosis: The classifier reports a diagnosis of BCC with 99.22% confidence. The 7-point score was previously 4, which triggered a conflict because the checklist scored at or above the threshold (3) while the classifier did not indicate melanoma suspicion. After overriding 'pigment_network' from 'absent' to 'atypical', the 7-point score is now 6 (min: 6, max: 6), which remains above the threshold of 3. The implied action remains excision, and the verdict has not changed.\n\nAssessment: For low-risk primary BCC, surgical excision with 4-mm clinical margins and histologic margin assessment is recommended. [aad:pmid:29331385:table-vii-low-risk-excision] A treatment plan that considers recurrence rate, preservation of function, patient expectations, and potential adverse effects is recommended. [aad:pmid:29331385:table-vii-treatment-plan] Box 10 Surgery with 3D histology. Surgery with 3D his - tology Evidence-based recommendation Grade of recommenda - tion A Micrographically controlled surgery (3D) shall be offered in high-risk BCC (recurrent, aggressive subtypes, location in critical anatomical sites, poorly defined margins) Level of evidence 1 [99\u2013101,105,108] Strength of consensus: 100% BCC, basal cell carcinoma. [eado:pmid:37604067:box-10]",
+      "tool_calls": [
+        {
+          "tool": "get_decision",
+          "args": {}
+        },
+        {
+          "tool": "override_criterion",
+          "args": {}
+        },
+        {
+          "tool": "search_guidelines",
+          "args": {}
+        }
+      ],
+      "turns": 6
+    },
+    {
+      "kind": "out_of_scope",
+      "question": "What is this patient's five-year survival probability?",
+      "answer": "The available tools and guidelines do not provide information on five-year survival probabilities for any condition. The system's deterministic computation includes classification, 7-point scoring, and routing to guideline-based management, but no survival statistics are part of the provided corpus or computed outputs. Therefore, I cannot answer this question.",
+      "tool_calls": [],
+      "turns": 1
+    }
+  ]
+}

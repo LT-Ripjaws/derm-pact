@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "issues": [
+    "SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the original contract shows 'blue_whitish_veil' has a maximum of 2 points. However, the contract does not specify how scoring works for this criterion \u2014 if 'present' yields 2 points, then the score would be 2. But the agent assumes that changing from 'absent' to 'present' adds 2 points without verifying if the criterion's point assignment is binary or graded. Since the contract doesn't define what 'present' means in terms of points for this criterion, the agent\u2019s score calculation is speculative and ungrounded in the provided data.",
+    "CRITERION ACCURACY: The contract lists 'blue_whitish_veil' with value 'absent', points 0, max_points 2. The agent overrides it to 'present' and assigns 2 points, but there is no information in the contract about whether 'present' equals 2 points or some other value. This makes the criterion accuracy uncertain \u2014 the agent assumes a mapping not provided in the contract.",
+    "MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up'. While this aligns with the threshold of 3, the management advice is derived from the deterministic ladder (score < 3 \u2192 clinical follow up), which is consistent with the contract. So no violation here.",
+    "CONFLICT REPORTING: The agent reports 'no conflict', which matches the contract\u2019s conflict state (present: false). This is accurate.",
+    "CITATION VALIDITY: No guideline record IDs are cited; therefore, no citation validity issue."
+  ],
+  "confidence": "medium",
+  "raw_response": "{\n  \"passed\": false,\n  \"issues\": [\n    \"SCORE ACCURACY: The agent claims the score after override is 2 (min=2, max=2), but the original contract shows 'blue_whitish_veil' has a maximum of 2 points. However, the contract does not specify how scoring works for this criterion \u2014 if 'present' yields 2 points, then the score would be 2. But the agent assumes that changing from 'absent' to 'present' adds 2 points without verifying if the criterion's point assignment is binary or graded. Since the contract doesn't define what 'present' means in terms of points for this criterion, the agent\u2019s score calculation is speculative and ungrounded in the provided data.\",\n    \"CRITERION ACCURACY: The contract lists 'blue_whitish_veil' with value 'absent', points 0, max_points 2. The agent overrides it to 'present' and assigns 2 points, but there is no information in the contract about whether 'present' equals 2 points or some other value. This makes the criterion accuracy uncertain \u2014 the agent assumes a mapping not provided in the contract.\",\n    \"MANAGEMENT FIDELITY: The agent states the verdict remains 'clinical follow up'. While this aligns with the threshold of 3, the management advice is derived from the deterministic ladder (score < 3 \u2192 clinical follow up), which is consistent with the contract. So no violation here.\",\n    \"CONFLICT REPORTING: The agent reports 'no conflict', which matches the contract\u2019s conflict state (present: false). This is accurate.\",\n    \"CITATION VALIDITY: No guideline record IDs are cited; therefore, no citation validity issue.\"\n  ],\n  \"confidence\": \"medium\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 5.273,
+  "usage": {
+    "prompt_tokens": 1163,
+    "completion_tokens": 371,
+    "total_tokens": 1534
+  }
+}

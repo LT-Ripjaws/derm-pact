@@ -1,0 +1,26 @@
+# Active MedGuard-RAG research environment (Python 3.11+).
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+scikit-image>=0.23
+pillow>=10.0
+joblib>=1.3
+
+# Retrieval and frozen perception.
+faiss-cpu>=1.8
+sentence-transformers>=3.0
+torch>=2.2
+open-clip-torch>=2.24
+rank-bm25>=0.2
+
+# Source ingestion.
+pypdf>=4.0
+openpyxl>=3.1
+
+# Gateway and local configuration.
+openai>=1.30
+python-dotenv>=1.0
+
+# Evaluation.
+ragas>=0.2
+pytest>=8.0

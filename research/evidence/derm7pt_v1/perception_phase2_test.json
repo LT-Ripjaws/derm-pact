@@ -1,0 +1,308 @@
+{
+  "protocol": "derm7pt-perception-phase2-test-read-v1",
+  "generated_at": "2026-08-14T18:00:41",
+  "one_shot": true,
+  "authorization": "The sealed TEST split may be re-read: this is evaluation, not training. Heads are fit on TRAIN only; TEST is scored once, here.",
+  "caliber_safe_framing": "NOT an accuracy-SOTA claim and NOT a claim to beat any prior frozen-probe work. CALIBER/DERM-GATE is our own prior paper on the SAME frozen DermLIP probe, so we do not (and cannot) position on beating it on accuracy. The publishable value of this promotion is minority-class recall (SK/MISC) + calibration + downstream decision-contract quality, delivered by clinical metadata, horizontal-flip TTA multi-view fusion, and class-balanced heads -- not a higher headline accuracy.",
+  "config": {
+    "diagnosis": {
+      "features": "dermlip_tta+dermlip_clinic_tta",
+      "family": "lr_balanced",
+      "C": 10.0,
+      "operating_point": {
+        "SK": 0.5,
+        "MISC": 0.7
+      },
+      "feature_dim": 1024
+    },
+    "criteria": {
+      "features": "dermlip_tta+metadata14",
+      "family": "lr_balanced",
+      "C_per_head": {
+        "pigment_network": 100.0,
+        "blue_whitish_veil": 10.0,
+        "vascular_structures": 100.0,
+        "streaks": 100.0,
+        "pigmentation": 100.0,
+        "dots_and_globules": 10.0,
+        "regression_structures": 100.0
+      },
+      "feature_dim": 526
+    },
+    "fit_split": "train",
+    "n_fit_cases": 413,
+    "seed": 20260810
+  },
+  "valid_reproduction_self_check": {
+    "diagnosis_balanced_accuracy": 0.7151,
+    "phase1_frozen_diagnosis_balanced_accuracy": 0.7151,
+    "criteria_macro_binary_concept_f1": 0.7287,
+    "phase1_frozen_criteria_macro_binary_concept_f1": 0.7287,
+    "reproduces_phase1": true,
+    "note": "If this ever drifts, the promotion wiring is wrong; the script raises rather than emit an untrustworthy test read."
+  },
+  "valid": {
+    "diagnosis": {
+      "argmax": {
+        "n": 203,
+        "accuracy": 0.7488,
+        "balanced_accuracy": 0.7151,
+        "macro_f1": 0.6978,
+        "per_class_recall": {
+          "BCC": 0.8571,
+          "NEV": 0.81,
+          "MEL": 0.6885,
+          "SK": 0.5,
+          "MISC": 0.72
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        },
+        "mel_auroc": 0.8909
+      },
+      "operating_point": {
+        "policy": {
+          "rule": "argmax(posterior / weight)",
+          "weights": {
+            "SK": 0.5,
+            "MISC": 0.7
+          }
+        },
+        "n": 203,
+        "accuracy": 0.7488,
+        "balanced_accuracy": 0.6967,
+        "macro_f1": 0.6645,
+        "per_class_recall": {
+          "BCC": 0.5714,
+          "NEV": 0.8,
+          "MEL": 0.6721,
+          "SK": 0.6,
+          "MISC": 0.84
+        },
+        "per_class_support": {
+          "BCC": 7,
+          "NEV": 100,
+          "MEL": 61,
+          "SK": 10,
+          "MISC": 25
+        },
+        "mel_auroc": 0.8909,
+        "note": "MEL AUROC is threshold-free, so re-ranking SK/MISC does not change it."
+      }
+    },
+    "criteria": {
+      "macro_binary_concept_f1": 0.7287,
+      "macro_multiclass_f1": 0.5774,
+      "per_criterion": {
+        "pigment_network": {
+          "scoring_values": [
+            "atypical"
+          ],
+          "binary_concept_f1": 0.738,
+          "multiclass_macro_f1": 0.6681
+        },
+        "blue_whitish_veil": {
+          "scoring_values": [
+            "present"
+          ],
+          "binary_concept_f1": 0.7574,
+          "multiclass_macro_f1": 0.7574
+        },
+        "vascular_structures": {
+          "scoring_values": [
+            "dotted",
+            "linear irregular"
+          ],
+          "binary_concept_f1": 0.7009,
+          "multiclass_macro_f1": 0.3924
+        },
+        "streaks": {
+          "scoring_values": [
+            "irregular"
+          ],
+          "binary_concept_f1": 0.7805,
+          "multiclass_macro_f1": 0.7063
+        },
+        "pigmentation": {
+          "scoring_values": [
+            "diffuse irregular",
+            "localized irregular"
+          ],
+          "binary_concept_f1": 0.7081,
+          "multiclass_macro_f1": 0.4157
+        },
+        "dots_and_globules": {
+          "scoring_values": [
+            "irregular"
+          ],
+          "binary_concept_f1": 0.742,
+          "multiclass_macro_f1": 0.649
+        },
+        "regression_structures": {
+          "scoring_values": [
+            "blue areas",
+            "combinations",
+            "white areas"
+          ],
+          "binary_concept_f1": 0.6741,
+          "multiclass_macro_f1": 0.4531
+        }
+      }
+    }
+  },
+  "test": {
+    "n": 395,
+    "diagnosis": {
+      "argmax": {
+        "n": 395,
+        "accuracy": 0.7544,
+        "balanced_accuracy": 0.7018,
+        "macro_f1": 0.6702,
+        "per_class_recall": {
+          "BCC": 0.6875,
+          "NEV": 0.8265,
+          "MEL": 0.6832,
+          "SK": 0.7368,
+          "MISC": 0.575
+        },
+        "per_class_support": {
+          "BCC": 16,
+          "NEV": 219,
+          "MEL": 101,
+          "SK": 19,
+          "MISC": 40
+        },
+        "mel_auroc": 0.8674
+      },
+      "operating_point": {
+        "policy": {
+          "rule": "argmax(posterior / weight)",
+          "weights": {
+            "SK": 0.5,
+            "MISC": 0.7
+          }
+        },
+        "n": 395,
+        "accuracy": 0.7468,
+        "balanced_accuracy": 0.7404,
+        "macro_f1": 0.6674,
+        "per_class_recall": {
+          "BCC": 0.6875,
+          "NEV": 0.8082,
+          "MEL": 0.6337,
+          "SK": 0.9474,
+          "MISC": 0.625
+        },
+        "per_class_support": {
+          "BCC": 16,
+          "NEV": 219,
+          "MEL": 101,
+          "SK": 19,
+          "MISC": 40
+        },
+        "mel_auroc": 0.8674,
+        "note": "MEL AUROC is threshold-free, so re-ranking SK/MISC does not change it."
+      }
+    },
+    "criteria": {
+      "macro_binary_concept_f1": 0.7168,
+      "macro_multiclass_f1": 0.5435,
+      "per_criterion": {
+        "pigment_network": {
+          "scoring_values": [
+            "atypical"
+          ],
+          "binary_concept_f1": 0.7138,
+          "multiclass_macro_f1": 0.6725
+        },
+        "blue_whitish_veil": {
+          "scoring_values": [
+            "present"
+          ],
+          "binary_concept_f1": 0.7565,
+          "multiclass_macro_f1": 0.7565
+        },
+        "vascular_structures": {
+          "scoring_values": [
+            "dotted",
+            "linear irregular"
+          ],
+          "binary_concept_f1": 0.6377,
+          "multiclass_macro_f1": 0.2733
+        },
+        "streaks": {
+          "scoring_values": [
+            "irregular"
+          ],
+          "binary_concept_f1": 0.7176,
+          "multiclass_macro_f1": 0.6395
+        },
+        "pigmentation": {
+          "scoring_values": [
+            "diffuse irregular",
+            "localized irregular"
+          ],
+          "binary_concept_f1": 0.7285,
+          "multiclass_macro_f1": 0.3738
+        },
+        "dots_and_globules": {
+          "scoring_values": [
+            "irregular"
+          ],
+          "binary_concept_f1": 0.7606,
+          "multiclass_macro_f1": 0.6043
+        },
+        "regression_structures": {
+          "scoring_values": [
+            "blue areas",
+            "combinations",
+            "white areas"
+          ],
+          "binary_concept_f1": 0.7031,
+          "multiclass_macro_f1": 0.4848
+        }
+      }
+    }
+  },
+  "comparison": {
+    "reference_current_test_pre_promotion": {
+      "diagnosis_accuracy": 0.7392,
+      "mel_auroc": 0.895,
+      "criteria_binary_concept_f1": 0.6623,
+      "source": "perception_baseline.json / test_metrics_complete.json (frozen; not re-run here)"
+    },
+    "reference_valid_selected_phase1": {
+      "diagnosis_balanced_accuracy": 0.7151,
+      "criteria_binary_concept_f1": 0.7287
+    },
+    "promoted_test": {
+      "diagnosis_accuracy_argmax": 0.7544,
+      "diagnosis_balanced_accuracy_argmax": 0.7018,
+      "diagnosis_macro_f1_argmax": 0.6702,
+      "mel_auroc": 0.8674,
+      "recall_SK_argmax": 0.7368,
+      "recall_MISC_argmax": 0.575,
+      "recall_SK_operating_point": 0.9474,
+      "recall_MISC_operating_point": 0.625,
+      "criteria_binary_concept_f1": 0.7168,
+      "criteria_multiclass_macro_f1": 0.5435
+    },
+    "deltas_test": {
+      "diagnosis_accuracy_vs_current": 0.0152,
+      "mel_auroc_vs_current": -0.0276,
+      "criteria_binary_concept_f1_vs_current": 0.0545
+    },
+    "note": "Expect the TEST gain to be SMALLER than the valid gain (selection optimism): the phase-1 levers and head/family were chosen on valid. A smaller-but-positive test gain is the expected, publishable outcome. Diagnosis accuracy is reported at plain argmax to match how the valid numbers were selected; the operating point trades a little balanced accuracy for SK/MISC recall and is reported separately."
+  },
+  "verdict": {
+    "diagnosis_accuracy_transferred": true,
+    "criteria_binary_f1_transferred": true,
+    "mel_auroc_regressed": true,
+    "minority_recall_improved": true,
+    "summary": "Two of three headline gains transferred to the untouched test split, both smaller than on valid (selection optimism, as expected): 5-class accuracy 0.7544 (+0.0152 vs current) and criteria binary-concept F1 0.7168 (+0.0545 vs current). SK recall rose to 0.7368 at argmax and 0.9474 at the SK/MISC operating point (SK n=19). THE HONEST COST: MEL AUROC regressed to 0.8674 (-0.0276 vs the current 0.895) -- class-balancing plus the lower-AUROC clinic view distorts the melanoma-score ranking. On valid MEL AUROC was ~flat (0.8909 vs 0.8921), so this regression only shows up out-of-sample. Notably the SK/MISC operating point raised balanced accuracy on test (0.7404 vs 0.7018 at argmax), the opposite of its small valid cost. Consistent with the CALIBER-safe framing: the win is minority recall + contract quality, not a uniformly better classifier -- MEL ranking is a real trade-off to disclose, not hide."
+  }
+}

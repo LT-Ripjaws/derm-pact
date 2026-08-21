@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "issues": [],
+  "confidence": "high",
+  "raw_response": "{\n  \"passed\": true,\n  \"issues\": [],\n  \"confidence\": \"high\"\n}",
+  "model": "qwen/qwen3-vl-32b-instruct",
+  "elapsed_s": 1.313,
+  "usage": {
+    "prompt_tokens": 1923,
+    "completion_tokens": 21,
+    "total_tokens": 1944
+  }
+}

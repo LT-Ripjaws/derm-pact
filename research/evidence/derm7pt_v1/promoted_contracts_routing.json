@@ -1,0 +1,158 @@
+{
+  "protocol": "derm7pt-promoted-contracts-routing-v1",
+  "generated_at": "2026-08-15T00:35:10",
+  "source": "research/evidence/derm7pt_v1/cdss_contracts_valid_promoted.json",
+  "split": "valid",
+  "n_cases": 203,
+  "perception": "dermlip+metadata14, UNBALANCED LR C=100, operating point w_SK=0.5 w_MISC=0.7 (TEST MEL AUROC 0.9151 >= production 0.895)",
+  "recomputation_note": "Every rate below is recomputed from the individual promoted contracts (criterion values re-aggregated, router state re-derived via classify_state/route against the hash-pinned catalog) and cross-checked against the summary blocks run_cohort wrote into the artifact. Local lookups only; zero paid calls.",
+  "decision_behaviour": {
+    "safe_to_display": 203,
+    "safe_to_display_rate": 1.0,
+    "withheld": 0,
+    "conflict_cases": 54,
+    "conflict_rate": 0.266,
+    "escalation_cases": 54,
+    "escalation_rate": 0.266,
+    "undecidable_cases": 0,
+    "undecidable_rate": 0.0
+  },
+  "abstention": {
+    "criterion_abstention_rate": 0.0,
+    "undecidable_rate": 0.0,
+    "by_construction": true,
+    "note": "The promoted path reads the balanced 526-d criterion heads by ARGMAX with no abstention gating: every criterion is determinate, so score_min == score_max and every case is decidable -- undecidable and abstention rates are 0.0 BY CONSTRUCTION, not by measurement. The criterion_abstention_v1 cutoffs were fit on the pre-promotion 512-d dermlip head and would mis-abstain on these heads; per-criterion top-minus-second margins are plumbed into each contract (criterion_margins) so a future abstention policy can be re-fit for the promoted heads.",
+    "determinate_cases": 203
+  },
+  "router": {
+    "state_distribution": {
+      "NO_COVERAGE": {
+        "cases": 100,
+        "rate": 0.4926
+      },
+      "CONFLICT": {
+        "cases": 55,
+        "rate": 0.2709
+      },
+      "UNDECIDABLE": {
+        "cases": 0,
+        "rate": 0.0
+      },
+      "ROUTINE": {
+        "cases": 48,
+        "rate": 0.2365
+      }
+    },
+    "conflict_state_vs_contract_conflict_note": "Router CONFLICT (55) exceeds contract-level conflicts (54) by 1: classifier confidence below 0.40 is routed as an unresolved differential even when the checklist agrees.",
+    "cases_needing_retrieval": 103,
+    "case_level_retrieval_rate": 0.5074,
+    "case_level_retrieval_avoided": 0.4926,
+    "calls_a_gated_deployment_would_make": 106,
+    "calls_this_pipeline_made": 203,
+    "call_level_hypothetical_savings": 0.4778,
+    "call_vs_case_note": "CONFLICT cases can request guidance for both candidate conditions, so gated CALLS can exceed retrieving CASES; both denominators are reported. The saving is hypothetical: binding is a free local lookup that ran for every case here."
+  },
+  "guideline_citation": {
+    "cases_with_a_citable_recommendation": 57,
+    "citation_rate": 0.2808,
+    "cases_with_contingent_melanoma_guidance": 48,
+    "contingent_rate": 0.2365,
+    "coverage_denominator": {
+      "n_cases": 203,
+      "n_guideline_eligible": 68,
+      "eligible_fraction": 0.335,
+      "by_group": {
+        "BCC": 7,
+        "NEV": 100,
+        "MISC": 25,
+        "MEL": 61,
+        "SK": 10
+      },
+      "covered_groups": [
+        "BCC",
+        "MEL"
+      ],
+      "uncovered_groups": [
+        "MISC",
+        "NEV",
+        "SK"
+      ]
+    },
+    "note": "Citation rate is bounded by corpus coverage, not by retrieval quality. Naevi, seborrhoeic keratoses and the miscellaneous group have no formal guideline; the system reports that rather than generating management text."
+  },
+  "base_arm_reference": {
+    "label": "PRE-PROMOTION pipeline (dermlip 512-d readers + criterion_abstention_v1)",
+    "valid_n203": {
+      "conflict_rate": 0.1724,
+      "escalation_rate": 0.1724,
+      "undecidable_rate_contracts_artifact": 0.0,
+      "source": "cdss_contracts_valid.json (frozen, protocol v1)"
+    },
+    "test_n395": {
+      "conflict_rate": 0.1544,
+      "escalation_rate": 0.1544,
+      "undecidable_rate": 0.0,
+      "citation_rate": 0.2785,
+      "source": "ablation_table.json contract_layer_context (confirmatory run)"
+    },
+    "router_and_abstention_valid_n203": {
+      "retrieval_rate": 0.3,
+      "retrieval_avoided": 0.7,
+      "router_states": "NO_COVERAGE 55.7%, UNDECIDABLE 20.7%, ROUTINE 14.3%, CONFLICT 9.4%",
+      "criterion_abstention_rate": 0.158,
+      "source": "efficiency_analysis.json (pre-promotion seed values)"
+    },
+    "note": "Base-arm numbers are kept for comparison only; they describe the pre-promotion readers and the margin-based abstention policy that the promoted path does not use. The split differs across base references (valid n=203 vs test n=395) -- the promoted block above is valid n=203."
+  },
+  "cross_checks": {
+    "conflict_rate": {
+      "recomputed": 0.266,
+      "artifact": 0.266,
+      "match": true
+    },
+    "escalation_rate": {
+      "recomputed": 0.266,
+      "artifact": 0.266,
+      "match": true
+    },
+    "undecidable_rate": {
+      "recomputed": 0.0,
+      "artifact": 0.0,
+      "match": true
+    },
+    "safe_to_display": {
+      "recomputed": 203,
+      "artifact": 203,
+      "match": true
+    },
+    "state_distribution": {
+      "recomputed": {
+        "CONFLICT": 55,
+        "NO_COVERAGE": 100,
+        "ROUTINE": 48
+      },
+      "artifact": {
+        "CONFLICT": 55,
+        "NO_COVERAGE": 100,
+        "ROUTINE": 48
+      },
+      "match": true
+    },
+    "gated_calls": {
+      "recomputed": 106,
+      "artifact": 106,
+      "match": true
+    },
+    "citation_rate": {
+      "recomputed": 0.2808,
+      "artifact": 0.2808,
+      "match": true
+    },
+    "contingent_cases": {
+      "recomputed": 48,
+      "artifact": 48,
+      "match": true
+    }
+  },
+  "runtime_seconds": 0.0
+}
