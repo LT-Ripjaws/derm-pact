@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 83.57% confidence. The 7-point score is in the range [0, 3], which spans the threshold of 3, and is therefore undecidable. This state is due to unresolved criteria: 'pigment_network' and 'dots_and_globules', both marked as indeterminate. The system's deterministic computation reports that because the score range includes the threshold, no verdict can be reached without resolving these criteria.\\n\\nThe unresolved criteria are: pigment_network and dots_and_globules. Their indeterminate status prevents a definitive 7-point score from being computed, and thus the verdict remains undecidable. Without resolving these, the system cannot determine whether the lesion meets or exceeds the threshold for concern.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue_whitish_veil' has been overridden from 'absent' to 'present'. The 7-point score has been recomputed: the minimum score is now 2 and the maximum score is 2. The threshold for referral is 3, so the verdict remains 'clinical follow up' because the score (2) is below the threshold. The recommendation does not change.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as NEV with 98.72% confidence. The 7-point score is 1 (min 0, max 1), which is undeterminate due to the 'pigmentation' criterion being indeterminate. The score is below the threshold of 3, implying clinical follow up. There is no conflict between views.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

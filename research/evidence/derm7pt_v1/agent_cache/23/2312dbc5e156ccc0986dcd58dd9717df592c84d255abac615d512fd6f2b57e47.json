@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue whitish veil' has been overridden from 'absent' to 'present'. The system's deterministic computation now yields a 7-point score range of 4 to 6, which exceeds the threshold of 3. As a result, the verdict has changed from 'clinical follow up' to 'excision'.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"tool\", \"tool\": \"query_taxonomy\", \"args\": {\"topic\": \"criteria\", \"subtopic\": \"names\"}}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

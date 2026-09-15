@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus recommends surgical excision as the first-line treatment for this lesion, which is classified as melanoma (MEL) with a 7-point score of 4. The recommended management includes complete excision with histologically negative margins based on tumor thickness (guideline ID: aad:pmid:30392755:table-x-excision-first-line). For lesions suspected to be melanoma, primary excision with a narrow margin (1\u20133 mm) is advised to allow histological diagnosis (guideline ID: eado:pmid:39709737:recommendation-1). If sentinel lymph node biopsy is indicated, it should be performed before wide excision and ideally in the same operative setting (guideline ID: aad:pmid:30392755:table-x-slnb-timing).\", \"citations\": [\"aad:pmid:30392755:table-x-excision-first-line\", \"eado:pmid:39709737:recommendation-1\", \"aad:pmid:30392755:table-x-slnb-timing\"]}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

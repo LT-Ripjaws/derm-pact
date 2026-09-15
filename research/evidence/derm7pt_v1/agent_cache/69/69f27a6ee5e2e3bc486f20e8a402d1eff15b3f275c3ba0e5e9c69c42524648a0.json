@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier diagnosed NEV with 61.52% confidence. After overriding 'blue_whitish_veil' from 'absent' to 'present', the 7-point score changed from 2 to 4. The threshold is 3, so the verdict changed from 'clinical follow up' to 'excision'.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

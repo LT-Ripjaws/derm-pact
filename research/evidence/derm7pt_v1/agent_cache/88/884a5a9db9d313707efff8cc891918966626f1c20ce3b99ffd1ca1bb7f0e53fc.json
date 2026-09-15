@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigment_network' and 'dots_and_globules', both marked as 'indeterminate'. This affects the 7-point score, which is reported as undecidable because it spans the threshold of 3 (score range [0,3]). The decision system flags this as a conflict in determinacy, leading to an implied action of 'clinical follow up'. Since the score is undecidable, no definitive verdict can be rendered based on the current assessment. Additionally, there is no guideline recommendation available for 'NEV' in the licensed corpus, so management advice cannot be derived from guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

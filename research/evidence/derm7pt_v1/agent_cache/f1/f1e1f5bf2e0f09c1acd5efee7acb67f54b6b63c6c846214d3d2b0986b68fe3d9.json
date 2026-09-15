@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 81.22% confidence. The 7-point score range is [1, 4], which spans the threshold of 3. The score is undecidable due to unresolved criteria: 'pigment_network' and 'pigmentation'. The conflict state indicates that agreement cannot be assessed because the checklist has not reached a verdict. The system's deterministic computation shows that the unresolved criteria prevent a definitive decision.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

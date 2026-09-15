@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as 'MISC' with a confidence of 0.4032. The 7-point score is 0/7, which is below the threshold of 3. The criteria are all absent and determinate, leading to a 'clinical follow up' recommendation based on the score. There is no conflict in the assessment.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

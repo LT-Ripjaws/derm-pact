@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier reports a diagnosis of NEV with 69.36% confidence. The 7-point score range is now [2,5], which spans the threshold of 3. The criteria 'pigment_network' and 'dots_and_globules' remain unresolved, making the score undecidable. The verdict remains 'clinical follow up'. The override changed the 'blue_whitish_veil' criterion from 'absent' to 'present', increasing the minimum score from 0 to 2, but the verdict did not change because the score still spans the threshold.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

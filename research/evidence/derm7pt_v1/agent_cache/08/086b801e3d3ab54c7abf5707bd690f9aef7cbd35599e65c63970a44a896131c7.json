@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier diagnosed NEV with 97.08% confidence. The 7-point score was recomputed after overriding 'pigment_network' from 'typical' to 'atypical'. Before the override, the score was 2 (min=2, max=2), which was below the threshold of 3, leading to a recommendation for clinical follow up. After the override, the score is now 4 (min=4, max=4), which meets or exceeds the threshold of 3, changing the verdict to excision.\\n\\nThe system's deterministic computation confirms that the override altered the score and the resulting management recommendation.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

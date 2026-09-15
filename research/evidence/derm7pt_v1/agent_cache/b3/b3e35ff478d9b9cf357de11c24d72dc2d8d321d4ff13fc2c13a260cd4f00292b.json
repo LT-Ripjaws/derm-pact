@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue whitish veil' has been overridden from 'absent' to 'present'. The 7-point score has updated from 5 to 7. The recommendation remains unchanged: excision, as the score of 7 meets or exceeds the threshold of 3.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

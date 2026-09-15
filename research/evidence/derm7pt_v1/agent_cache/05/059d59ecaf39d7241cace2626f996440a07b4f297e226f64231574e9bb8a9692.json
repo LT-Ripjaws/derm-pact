@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate') and thus contribute to the undecidable 7-point score: pigment_network, pigmentation, and regression_structures. The system's deterministic computation reports that the 7-point score is in the range [1,5], which spans the threshold of 3, making the verdict undecidable. Because the score spans the threshold, the implied action is clinical follow up. This outcome is due to unresolved criteria \u2014 if these were determinate, the score might fall entirely above or below the threshold, changing the verdict.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as NEV with 88.81% confidence. The 7-point score is now 3 (minimum 3, maximum 4), which meets or exceeds the threshold of 3. The criterion 'blue_whitish_veil' was overridden from 'absent' to 'present', resulting in a change of verdict from 'clinical follow up' to 'excision'.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

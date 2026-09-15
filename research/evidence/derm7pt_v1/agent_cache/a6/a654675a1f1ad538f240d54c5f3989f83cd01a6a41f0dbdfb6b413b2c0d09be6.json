@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion that could not be assessed is 'pigment_network', which was marked as 'indeterminate' and thus unresolved. The system's deterministic computation indicates that this unresolved criterion prevents a decidable 7-point score, resulting in a score range of [2,4], which spans the threshold of 3. Because the score is undecidable due to the unresolved criterion, the verdict cannot be determined definitively. The implied action from the criteria is 'clinical follow up' due to the undecidability. There are no guideline recommendations for 'SK' in the licensed corpus, so no management advice can be derived from guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

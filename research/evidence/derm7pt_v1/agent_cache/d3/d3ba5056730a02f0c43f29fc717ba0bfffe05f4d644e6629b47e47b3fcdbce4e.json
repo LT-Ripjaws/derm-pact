@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Before override: the 7-point score was 0 (min=0, max=0), below the threshold of 3, leading to a 'clinical follow up' recommendation.\\n\\nAfter overriding 'blue_whitish_veil' from 'absent' to 'present':\\n- The new 7-point score is 2 (min=2, max=2).\\n- The verdict remains 'clinical follow up' because 2 < 3.\\n- The threshold verdict did not change.\\n- The previous score was incorrect given the clinician's correction, as 'blue_whitish_veil' being present adds 2 points.\\n\\nThe system's deterministic computation now reflects the updated criterion. However, no guideline recommendations are available for NEV in the licensed corpus (as per get_decision). Therefore, no management advice can be provided from guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

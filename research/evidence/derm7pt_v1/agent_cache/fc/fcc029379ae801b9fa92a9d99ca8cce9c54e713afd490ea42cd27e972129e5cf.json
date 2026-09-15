@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as 'MISC' with a confidence of 0.2877. The 7-point score is 2 (out of a maximum of 7), with 2 points assigned determinately and 5 points indeterminate due to unresolved criteria ('pigmentation', 'dots_and_globules'). The score is below the threshold of 3, so the criteria-implied action is 'clinical follow up'. There is no conflict between views.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

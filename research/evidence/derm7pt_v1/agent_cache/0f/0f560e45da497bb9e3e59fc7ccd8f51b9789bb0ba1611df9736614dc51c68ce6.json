@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any management recommendations for this lesion, which is classified as a nevus (NEV). The 7-point score is 0, which is below the threshold of 3, implying clinical follow-up. However, because the licensed guideline corpus holds no recommendations for NEV, no specific management advice can be provided from the guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

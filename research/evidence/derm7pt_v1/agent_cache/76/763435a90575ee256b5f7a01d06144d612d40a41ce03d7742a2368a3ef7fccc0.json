@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as MISC with a confidence of 0.4032. The 7-point score is 0/7, which is below the threshold of 3, leading to an implied action of clinical follow up. There are no conflicting views, and the criteria are determinate.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

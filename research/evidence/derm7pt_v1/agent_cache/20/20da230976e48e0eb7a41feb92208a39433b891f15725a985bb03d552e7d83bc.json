@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The classifier diagnosis remains 'NEV' with confidence 0.8955. The 7-point score range is now [2,5], which still spans the threshold of 3. The conflict state remains absent. The system's deterministic computation indicates that the verdict remains 'clinical follow up' because the score range [2,5] spans the threshold and unresolved criteria ['streaks', 'pigmentation', 'dots_and_globules'] persist.\", \"Assessment\": \"\"}, \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

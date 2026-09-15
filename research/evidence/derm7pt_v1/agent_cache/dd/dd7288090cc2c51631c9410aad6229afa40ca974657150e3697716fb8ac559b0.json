@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed: 'pigment_network' and 'dots_and_globules'. Both were marked as 'indeterminate', which prevented the 7-point score from being determinate. The system's deterministic computation reports a score range of [0,3], which spans the threshold of 3. Because the score range includes values both below and at or above the threshold, the verdict is undecidable. The classifier assigned a diagnosis of 'MISC' with 47.54% confidence, but this does not override the checklist\u2019s inability to reach a verdict due to unresolved criteria. As a result, the system recommends clinical follow-up until the unresolved criteria are resolved.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

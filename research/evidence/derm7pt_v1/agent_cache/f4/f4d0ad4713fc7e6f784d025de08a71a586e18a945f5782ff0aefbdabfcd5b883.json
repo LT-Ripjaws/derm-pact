@@ -1,5 +1,0 @@
-{
-  "reply": "The seven-point score is 0, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnostic classifier assigned a diagnosis of SK with a confidence of 0.1959. No guideline recommendations are available for this condition, as the licensed corpus does not cover SK.",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

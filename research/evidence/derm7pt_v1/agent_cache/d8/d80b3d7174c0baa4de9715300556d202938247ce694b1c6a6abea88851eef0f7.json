@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate' and unresolved): 'pigment_network' and 'pigmentation'. These unresolved criteria prevent the 7-point score from being decidable, as the score range [1,4] spans the threshold of 3. The system's deterministic computation indicates that without resolving these criteria, the verdict cannot be determined definitively \u2014 the case is classified as 'undecidable' with a score range of 1 to 4. The initial classifier result is 'NEV' with confidence 0.8122, but because the guideline corpus holds no recommendations for 'NEV', no management advice can be provided.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigment_network' and 'pigmentation'. Both were marked as indeterminate, which contributes to the 7-point score being undecidable (range [1,4], spanning the threshold of 3). This uncertainty prevents a definitive verdict, and the system recommends clinical follow-up. The conflict state is resolved (no conflict), but because the guidelines corpus contains no recommendations for 'NEV', there is no formal management advice available.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

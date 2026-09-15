@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue_whitish_veil' was corrected from 'absent' to 'present'.\\n\\nBefore override: 7-point score range was [0, 1], verdict was 'clinical follow up'.\\nAfter override: 7-point score range is now [2, 3], verdict remains 'clinical follow up'.\\n\\nThe threshold for referral is 3; the new score range [2, 3] spans this threshold, and because the criterion 'pigmentation' remains unresolved (indeterminate), the system cannot decide definitively whether to refer. Therefore, the verdict does not change \u2014 it remains 'clinical follow up' due to undecidability.\\n\\nThe previous score was incorrect given the clinician's correction: 'absent' was misclassified as 'present', which increased the score range by 2 points.\\n\\nNote: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

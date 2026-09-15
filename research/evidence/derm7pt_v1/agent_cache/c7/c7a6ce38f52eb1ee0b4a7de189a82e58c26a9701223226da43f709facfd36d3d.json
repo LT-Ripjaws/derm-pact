@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as NEV with a confidence of 0.4628. The 7-point score is 1 (min: 0, max: 1), which is below the threshold of 3. The criteria are mostly absent or indeterminate, with 'dots_and_globules' being the only indeterminate criterion. The conflict state is false; both views agree. The system's deterministic computation indicates that this case implies clinical follow up due to the score being less than 3.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for this lesion, which is classified as a nevus (NEV). The licensed guidelines focus primarily on malignant and pre-malignant conditions such as BCC, MEL, SK, and MISC. As stated in the decision, 'The licensed guideline corpus holds no recommendation for NEV.' Therefore, I cannot provide specific management advice from the corpus for this case.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

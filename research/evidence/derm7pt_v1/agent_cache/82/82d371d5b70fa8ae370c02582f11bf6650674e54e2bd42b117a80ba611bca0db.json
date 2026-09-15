@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The classifier assigned a diagnosis of 'MISC' with 61.04% confidence. After overriding the 'blue_whitish_veil' criterion from 'absent' to 'present', the 7-point score range is now [2,5], which still spans the threshold of 3. The system's deterministic computation indicates that the verdict remains 'clinical follow up' due to undecidability caused by unresolved criteria: 'pigment_network' and 'dots_and_globules'. The conflict state remains unchanged (no conflict present).\", \"Assessment\": \"\"}, \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

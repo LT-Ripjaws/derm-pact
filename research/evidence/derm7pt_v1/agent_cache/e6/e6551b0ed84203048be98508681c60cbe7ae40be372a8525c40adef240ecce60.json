@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed: 'pigment_network' and 'pigmentation'. Both are marked as indeterminate in the system's deterministic computation.\\n\\nThis affects the verdict because the 7-point score range is [1,4], which spans the threshold of 3. The system reports that the checklist has not reached a verdict due to unresolved criteria, so no definitive decision can be made without resolving these. The current state is undecidable, and the implied action is clinical follow-up until the criteria are resolved.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

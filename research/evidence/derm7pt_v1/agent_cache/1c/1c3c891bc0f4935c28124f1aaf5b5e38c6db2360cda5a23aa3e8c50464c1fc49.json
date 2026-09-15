@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate') and thus contribute to the undecidable 7-point score: 'pigment_network' and 'pigmentation'.\\n\\nBefore override, the system's deterministic computation yielded a 7-point score of [0, 3], which spans the threshold of 3. Because the score range includes values both below and at or above the threshold, the verdict is undecidable. The unresolved criteria directly cause this state.\\n\\nThe system\u2019s deterministic computation indicates that without resolving these indeterminate criteria, no definitive management recommendation can be derived from the scoring pipeline. Since no guidelines exist for NEV in the licensed corpus (as noted in the decision), there is no guideline-sourced advice to fall back on.\\n\\nTherefore, the verdict remains undecidable until the clinician resolves the indeterminate criteria via override.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for the condition 'MISC'. Formal dermatology guidelines focus primarily on malignant and pre-malignant lesions, and this case falls outside the covered conditions. Therefore, no specific management advice can be provided from the corpus.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

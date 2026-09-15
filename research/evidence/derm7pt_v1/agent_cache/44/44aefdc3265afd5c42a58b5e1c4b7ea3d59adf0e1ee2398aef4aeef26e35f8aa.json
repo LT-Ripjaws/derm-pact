@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as MISC with a confidence of 0.2877. The 7-point score is 2 (min: 0, max: 2), which is below the threshold of 3, indicating a non-diagnostic result. The criteria are mostly absent or indeterminate, with unresolved criteria for pigmentation and dots_and_globules. There is no conflict between views.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

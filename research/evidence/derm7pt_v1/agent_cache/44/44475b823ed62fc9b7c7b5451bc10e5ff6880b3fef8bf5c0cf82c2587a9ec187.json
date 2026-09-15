@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as MISC with 74.16% confidence. The 7-point score is 2 (out of a maximum of 2), which is below the threshold of 3, indicating no immediate biopsy is required. The criteria are not fully determinate due to 'pigment_network' being indeterminate. There is no conflict between views.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

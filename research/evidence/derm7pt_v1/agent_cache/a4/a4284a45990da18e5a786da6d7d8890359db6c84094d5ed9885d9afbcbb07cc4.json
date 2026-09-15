@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier diagnosed NEV with 93.9% confidence. Before the override, the 7-point score was 0/0 (determinate), leading to a 'clinical follow up' recommendation. After overriding 'blue_whitish_veil' from 'absent' to 'present', the score updated to 2/2 (determinate). The threshold for referral remains at 3, so the verdict did not change \u2014 it is still 'clinical follow up' because 2 < 3. The previous score was incorrect given the clinician's correction.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

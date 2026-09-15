@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate'): pigment_network, pigmentation, and dots_and_globules. These unresolved criteria affect the 7-point score, which is undecidable because the computed range [0,4] spans the threshold of 3. The system's deterministic computation indicates that the case cannot be definitively classified as low or high risk due to these unassessed features. As a result, the implied action is clinical follow up, per the system's logic for undecidable cases.\\n\\nNo guideline recommendations are available for NEV in the licensed corpus, so no management advice can be provided from guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

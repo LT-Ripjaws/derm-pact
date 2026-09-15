@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation reports a classifier diagnosis of MISC with 88.87% confidence. The 7-point checklist score is 3 (min 3, max 3), which meets the melanoma suspicion threshold of 3. This triggers a conflict state: the classifier does not flag melanoma suspicion, but the checklist does. The criteria driving the score are blue_whitish_veil (present, 2 points) and pigmentation (diffuse irregular, 1 point). The other criteria contribute 0 points.\\n\\nAssessment: No guideline recommendations are available for clinical visual assessment under either MEL or MISC conditions, as the corpus is suppressed for these condition groups.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

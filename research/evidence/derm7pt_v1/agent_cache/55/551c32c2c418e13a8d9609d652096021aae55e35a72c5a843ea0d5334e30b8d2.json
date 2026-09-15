@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'pigment network' has been overridden from 'absent' to 'atypical'. The 7-point score has changed from a range of 3\u20134 to 5\u20136. The recommendation remains 'excision', as the score (5) is still at or above the threshold of 3. No change in management recommendation was triggered.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

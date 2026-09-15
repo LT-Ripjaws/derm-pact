@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any management recommendations for the condition 'NEV' (nevus). While the automated assessment classifies the lesion as a nevus with high confidence and assigns a 7-point score of 0 (which is below the threshold of 3, indicating low suspicion), there are no formal guidelines in the licensed corpus for clinical follow-up or management specific to nevi. This is a known coverage boundary: dermatology guidelines typically focus on malignant or pre-malignant lesions such as melanoma or basal cell carcinoma.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

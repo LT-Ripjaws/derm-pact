@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 0.572 confidence. The 7-point score range is [1, 5], which spans the threshold of 3, making the verdict undecidable. This is due to unresolved criteria: pigment_network, pigmentation, and regression_structures. The system's deterministic computation indicates that because the score range includes both below- and above-threshold values, no definitive verdict can be reached without resolving these indeterminate criteria.\\n\\nThe unresolved criteria are: pigment_network, pigmentation, and regression_structures. Their indeterminate status prevents the 7-point score from being fixed, hence the verdict remains undecidable. Resolving them would allow the system to compute a single score and determine whether it meets or exceeds the threshold.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

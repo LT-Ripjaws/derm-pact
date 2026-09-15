@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigment_network' and 'pigmentation', both marked as 'indeterminate'. This affects the verdict because the 7-point score is undecidable, falling in the range [1,4], which spans the threshold of 3. The system states: 'undecidable: score in [1,4] spans the threshold of 3; unresolved [pigment_network, pigmentation]'. As a result, the implied action is clinical follow-up.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

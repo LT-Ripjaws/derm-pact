@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigmentation' and 'dots_and_globules'. These were marked as indeterminate, which affects the 7-point score. The system reports a score range of [1, 3], with the threshold set at 3. Because the score spans the threshold and cannot be resolved due to the unresolved criteria, the verdict is undecidable. The implied action is clinical follow-up, as stated in the decision output.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

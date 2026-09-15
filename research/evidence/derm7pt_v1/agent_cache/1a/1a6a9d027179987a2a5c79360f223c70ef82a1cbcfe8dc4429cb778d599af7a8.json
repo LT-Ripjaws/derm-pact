@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 94.64% confidence. The 7-point score is 2/7, which is below the threshold of 3, indicating a low risk for malignancy. The score is indeterminate due to unresolved criteria (pigment_network). There is no conflict between views.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

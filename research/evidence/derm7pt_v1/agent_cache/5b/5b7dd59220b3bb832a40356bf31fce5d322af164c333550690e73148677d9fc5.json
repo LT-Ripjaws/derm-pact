@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for the condition 'NEV' (nevus). As stated in the system, formal dermatology guidelines focus primarily on malignant and pre-malignant lesions, and this is a known coverage boundary of the licensed guideline corpus. Therefore, no management advice can be derived from the corpus for this lesion.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

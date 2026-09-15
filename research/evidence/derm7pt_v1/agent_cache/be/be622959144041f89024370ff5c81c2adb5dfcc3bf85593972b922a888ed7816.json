@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue whitish veil' has been overridden from 'absent' to 'present'. The 7-point score has changed from a range of 2\u20134 to 4\u20136. The threshold for intervention is 3, and the new score (minimum 4) meets or exceeds this threshold. As a result, the recommendation has changed from 'clinical follow up' to 'excision'. This change is based on the updated criteria assessment and the deterministic scoring logic.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

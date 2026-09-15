@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of 'MISC' with 0.2877 confidence. The 7-point score is now in the range [2,4], which spans the threshold of 3, making the verdict undecidable. The criteria include: pigment_network (absent, 0/2), blue_whitish_veil (now present, 2/2), vascular_structures (absent, 0/2), streaks (absent, 0/1), pigmentation (indeterminate, 0/1), dots_and_globules (indeterminate, 0/1), regression_structures (absent, 0/1). The unresolved criteria remain 'pigmentation' and 'dots_and_globules'. The system's deterministic computation indicates that the verdict has not changed from 'clinical follow up' despite the override, because the score range still spans the threshold.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

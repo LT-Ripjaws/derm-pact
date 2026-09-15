@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for the condition 'NEV' (nevus). While the 7-point score is 0, which implies clinical follow-up, there are no formal guidelines in the licensed corpus to guide management for this condition. This is a known coverage boundary of the corpus, as formal dermatology guidelines typically focus on malignant and pre-malignant lesions.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigment_network' and 'regression_structures', both marked as 'indeterminate'. This affects the verdict because the 7-point score is undecidable: it spans the threshold of 3 (score range [0,3]), and the unresolved criteria prevent a definitive classification. The system implies 'clinical follow up' as the recommended action due to this uncertainty.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

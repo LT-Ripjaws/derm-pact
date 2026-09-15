@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as NEV with 99.93% confidence. The 7-point score is computed as 2/7, which is below the threshold of 3. The criteria driving this score are: blue_whitish_veil (present, 2 points), pigment_network (typical, 0 points), vascular_structures (absent, 0 points), streaks (absent, 0 points), pigmentation (absent, 0 points), dots_and_globules (regular, 0 points), and regression_structures (absent, 0 points). The verdict from the deterministic management ladder is 'clinical follow up' because the score is less than 3.\\n\\nThe licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

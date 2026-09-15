@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 79.98% confidence. The 7-point score range is [1, 3], which spans the threshold of 3. The system's deterministic computation indicates that the score is undecidable due to unresolved criteria. The unresolved criterion is 'pigment_network', which was assessed as 'indeterminate'. This unresolved criterion prevents a definitive verdict from being reached.\\n\\nThe conflict state reports that agreement cannot be assessed because the checklist has not reached a verdict due to the unresolved criterion. The implied action is clinical follow-up.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV' (absence_reason: 'The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.'). Therefore, no guideline-sourced recommendations are available for this condition.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

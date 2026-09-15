@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigment_network' and 'pigmentation'. Both were marked as indeterminate, which contributes to the 7-point score being undecidable. The system's deterministic computation reports a 7-point score range of [2,5], which spans the threshold of 3, making the verdict undecidable. Because the score spans the threshold and includes unresolved criteria, the implied action is clinical follow up. The conflict state is false \u2014 both views agree \u2014 and there is no guideline recommendation available for NEV in the licensed corpus.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

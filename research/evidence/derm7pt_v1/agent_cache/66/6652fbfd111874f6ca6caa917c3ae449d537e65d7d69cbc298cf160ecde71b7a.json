@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The system's deterministic computation assigns a 7-point score of 2, which is below the threshold of 3, leading to the implied action of 'clinical follow up'. However, the guideline corpus holds no recommendation for 'NEV' (nevus). Formal dermatology guidelines in the corpus concentrate on malignant and pre-malignant lesions, and this condition falls outside their coverage. Therefore, no specific management advice can be derived from the guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any management recommendations for this lesion, which is classified as a nevus (NEV). The licensed guidelines focus primarily on malignant and pre-malignant conditions such as BCC, MEL, SK, and MISC; benign lesions like nevi are outside the scope of the current corpus. Therefore, no specific management advice can be provided from the guidelines.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

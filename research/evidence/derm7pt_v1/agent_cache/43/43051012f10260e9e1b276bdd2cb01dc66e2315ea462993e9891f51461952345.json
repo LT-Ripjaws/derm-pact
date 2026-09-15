@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier diagnosed NEV with 85.39% confidence. The 7-point score was recomputed after overriding 'blue_whitish_veil' from 'absent' to 'present'. Before the override, the score ranged from 1 to 2 (below the threshold of 3), leading to a 'clinical follow up' recommendation. After the override, the score ranges from 3 to 4 (meeting or exceeding the threshold of 3), changing the verdict to 'excision'. The system's deterministic computation confirms this change.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

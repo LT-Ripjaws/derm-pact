@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Based on the guideline corpus, for this lesion classified as melanoma (MEL), the recommended initial local management is surgical excision. The guidelines specify that when melanoma is suspected, the entire lesion should be completely excised with a narrow margin (1\u20133 mm) to allow histological diagnosis. For larger lesions\u2014such as those on the face, acral regions, or genitalia\u2014an incisional biopsy may be considered. Additionally, if sentinel lymph node biopsy is indicated, it should be performed before wide excision and, whenever possible, in the same operative setting. These recommendations are drawn from authoritative clinical practice guidelines.\", \"citations\": [\"aad:pmid:30392755:table-x-excision-first-line\", \"aad:pmid:30392755:table-x-slnb-timing\", \"eado:pmid:39709737:recommendation-1\"]}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 85.39% confidence. The 7-point score is computed as a range from 1 to 2, which is below the threshold of 3. The score is indeterminate due to the 'streaks' criterion being marked as indeterminate. The conflict state is resolved (no conflict). The criteria-implied action is clinical follow up because the score is less than 3.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

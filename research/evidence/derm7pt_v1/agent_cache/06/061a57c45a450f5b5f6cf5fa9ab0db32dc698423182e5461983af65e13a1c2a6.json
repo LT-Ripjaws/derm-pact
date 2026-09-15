@@ -1,5 +1,0 @@
-{
-  "reply": "The seven-point score is 0, which is below the threshold of 3, and the verdict is decidable. The criteria_implied_action is clinical follow up due to a score less than 3. No guideline recommendations are available for this case as the condition group 'MISC' is not covered in the licensed guideline corpus.",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

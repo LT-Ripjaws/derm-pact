@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier reports a diagnosis of NEV with 88.2% confidence. The 7-point score range is [2,5], which spans the threshold of 3, making the verdict undecidable due to unresolved criteria ['pigment_network', 'dots_and_globules']. The system's deterministic computation indicates that the override of 'blue_whitish_veil' from 'absent' to 'present' increased the minimum score from 0 to 2, but the maximum score remains 5 and the verdict remains 'clinical follow up'. The previous score range was [0,3]; the new score range is [2,5]. The threshold verdict did not change.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

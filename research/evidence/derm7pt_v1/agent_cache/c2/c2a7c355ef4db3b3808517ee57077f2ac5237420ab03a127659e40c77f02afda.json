@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 79.14% confidence. The 7-point score is 1 (minimum 0, maximum 1), which is below the threshold of 3. The score is undetermined due to an indeterminate criterion ('dots_and_globules'), but the case is decidable. There is no conflict between views. The criteria-implied action is clinical follow up because the score is less than 3.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

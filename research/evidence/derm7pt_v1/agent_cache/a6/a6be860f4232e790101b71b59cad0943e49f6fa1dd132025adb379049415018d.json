@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion that could not be assessed is 'pigment_network', which was marked as 'indeterminate'. This unresolved criterion prevents a definitive 7-point score from being assigned. The current score range is [1, 3], which spans the threshold of 3, making the case undecidable. As a result, the implied action is 'clinical follow up' due to the uncertainty introduced by the unresolved criterion. The verdict is therefore not final and requires further clinical evaluation.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

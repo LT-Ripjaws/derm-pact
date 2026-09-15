@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate') and thus contribute to the undecidable 7-point score: 'pigment_network', 'pigmentation', and 'regression_structures'.\\n\\nAccording to the system's deterministic computation, these unresolved criteria prevent a definitive verdict because the 7-point score falls within the range [1,5], which spans the threshold of 3. The system reports that the score is 'undecidable' due to unresolved criteria.\\n\\nThe implied action from the criteria is 'clinical follow up', as stated by the system's deterministic computation.\\n\\nAdditionally, the licensed guideline corpus holds no recommendation for 'NEV', so there is no guideline-based management advice available for this case.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

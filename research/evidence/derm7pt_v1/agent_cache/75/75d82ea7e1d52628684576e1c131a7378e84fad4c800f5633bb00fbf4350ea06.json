@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 57.29% confidence. The 7-point score range is [2, 3], which spans the threshold of 3. The score is undecidable due to unresolved criteria. Specifically, the criterion 'pigmentation' is indeterminate and thus not assessable. The system's deterministic computation indicates that because the score range includes both below- and above-threshold values, no verdict can be reached without resolving the indeterminate criterion.\\n\\nThe unresolved criterion is 'pigmentation'. Its indeterminacy prevents a final decision on the 7-point score, as the computed range [2, 3] straddles the threshold of 3. Therefore, the verdict cannot be determined until this criterion is resolved.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

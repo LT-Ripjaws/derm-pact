@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier diagnosed NEV with 99.9% confidence. Before the override, the 7-point score was 1 (below threshold 3), leading to a 'clinical follow up' recommendation. After overriding 'blue_whitish_veil' from 'absent' to 'present', the 7-point score is now 3 (meeting the threshold of 3), changing the verdict to 'excision'. This change is due to the system's deterministic computation: the criterion 'blue_whitish_veil' contributes 2 points when present, raising the total from 1 to 3.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

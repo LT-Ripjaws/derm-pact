@@ -1,12 +1,20 @@
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache/
 venv/
 venv_win/
+.venv/
 .env
 .env.*
 *.pem
+*.key
 
-# local dataset copies (never committed; obtain from the custodians)
-research/data/
-research/datasets/
+# Local dataset copies, checkpoints, and guideline data (obtain separately).
 datasets/
+data/corpus/
+*.pt
+*.pth
+*.joblib
+*.faiss
+logs/

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 94.49% confidence. The 7-point score is computed as 1 out of a possible 7, with the score being indeterminate due to one unresolved criterion ('dots_and_globules'). The minimum score is 0, maximum is 1, and the threshold for concern is 3. Since the score is below the threshold, the criteria imply clinical follow-up. There is no conflict between views.\\n\\nThe licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

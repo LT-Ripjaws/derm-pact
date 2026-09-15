@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"tool\", \"tool\": \"override_criterion\", \"args\": {\"criterion\": \"blue_whitish_veil\", \"value\": \"present\"}}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

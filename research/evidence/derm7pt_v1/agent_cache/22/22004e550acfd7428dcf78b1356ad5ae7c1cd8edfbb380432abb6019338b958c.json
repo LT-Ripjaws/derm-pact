@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue whitish veil' has been overridden from 'absent' to 'present'. The 7-point score range has updated from [0,1] to [2,3]. The threshold for referral is 3, and since the score range now spans this threshold (i.e., includes values both below and at or above it), the verdict remains 'clinical follow up' due to unresolved uncertainty in the criterion 'pigmentation'. The recommendation does not change.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

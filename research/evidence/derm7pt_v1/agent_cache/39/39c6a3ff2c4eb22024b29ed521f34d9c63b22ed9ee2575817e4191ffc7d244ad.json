@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 0.517 confidence. The 7-point score was recomputed after overriding 'blue_whitish_veil' from 'absent' to 'present'.\\n\\nBefore override: score range [0, 2], verdict: clinical follow up.\\nAfter override: score range [2, 4], verdict: clinical follow up (unchanged).\\n\\nThe threshold for referral is 3; the new score range spans this threshold due to unresolved criteria ('pigmentation', 'dots_and_globules'), so the verdict remains 'clinical follow up' as the system cannot decide definitively.\\n\\nThe previous score was incorrect given the clinician's correction, as 'blue_whitish_veil' was misclassified as absent when it is present. However, because two other criteria remain indeterminate, the overall decision remains undecidable.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier output is NEV with 73.64% confidence. The 7-point score was previously 0/0 (all criteria absent), and after overriding 'blue_whitish_veil' from 'absent' to 'present', the new score is 2/2. The threshold for referral is 3, so the verdict remains 'clinical follow up' \u2014 no change in recommendation.\\n\\nThe system's deterministic computation shows that the override increased the score from 0 to 2, but since 2 is still below the 3-point threshold, the management recommendation does not change.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

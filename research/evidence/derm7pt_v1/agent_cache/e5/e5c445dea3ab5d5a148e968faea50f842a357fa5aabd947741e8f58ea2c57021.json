@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion that could not be assessed is 'pigment_network', which was marked as 'indeterminate' and thus unresolved. This affects the 7-point score, which is reported as undecidable with a range of [1,3] and spans the threshold of 3. The system's deterministic computation indicates that because the score spans the threshold and the unresolved criterion prevents a definitive verdict, the implied action is 'clinical follow up'.\\n\\nThe conflict state is 'absent', meaning there is no disagreement between views.\\n\\nNo guideline recommendations are available for NEV, as the licensed corpus does not cover benign nevi; this is explicitly noted as a coverage boundary.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

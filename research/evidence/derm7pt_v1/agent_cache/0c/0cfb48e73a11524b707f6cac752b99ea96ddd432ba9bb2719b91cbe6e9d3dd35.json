@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The classifier diagnosis remains 'NEV' with confidence 0.5089. After overriding 'blue_whitish_veil' from 'absent' to 'present', the 7-point score range is now [2,4]. The threshold for referral is 3. The system's deterministic computation indicates that the verdict remains 'clinical follow up' because the score range spans the threshold and unresolved criteria ('pigmentation', 'dots_and_globules') prevent a decisive outcome. The conflict state remains unchanged: no conflict detected.\", \"Assessment\": \"\"}, \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

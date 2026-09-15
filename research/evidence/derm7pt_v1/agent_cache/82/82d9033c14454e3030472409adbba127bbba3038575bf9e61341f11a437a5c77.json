@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"tool\", \"tool\": \"search_guidelines\", \"args\": {\"condition\": \"BCC\", \"question_type\": \"clinical_visual_assessment\"}}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

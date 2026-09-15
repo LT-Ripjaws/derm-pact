@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue_whitish_veil' was overridden from 'absent' to 'present'.\\n\\nBefore override: 7-point score was 0 (min=0, max=0), verdict: clinical follow up.\\nAfter override: 7-point score is now 2 (min=2, max=2), verdict remains clinical follow up.\\n\\nThe threshold for referral is 3, so the score did not cross it. The recommendation does not change because the score remains below the threshold.\\n\\nNote: The system's deterministic computation shows that even with this correction, the lesion remains below the referral threshold. The guideline corpus holds no recommendations for 'NEV', as noted in the initial assessment.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

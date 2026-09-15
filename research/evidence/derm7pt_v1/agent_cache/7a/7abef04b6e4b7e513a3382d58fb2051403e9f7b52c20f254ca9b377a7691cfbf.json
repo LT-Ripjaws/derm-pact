@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier reports a diagnosis of SK with 0.3989 confidence. The 7-point score range is [2, 4], which spans the threshold of 3, and is undecidable due to unresolved criteria. The unresolved criterion is 'pigment_network', which has an indeterminate value and contributes 0 points (out of 2). The system's deterministic computation indicates that because the score range includes both below- and above-threshold values, no verdict can be reached without resolving the indeterminate criterion.\\n\\nThe conflict state is present: the pattern model reports SK, but the checklist score range [2,4] spans the threshold of 3 due to the unresolved 'pigment_network' criterion. The system cannot assess agreement between the classifier and checklist until the criterion is resolved.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'SK'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

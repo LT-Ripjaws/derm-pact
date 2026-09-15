@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as NEV with 0.407 confidence. The 7-point score is computed as a range from 1 to 2, with a determinate status of false and a threshold of 3. The criteria-implied action is 'clinical follow up' because the score (2) is below the threshold (3). There is no conflict; both views agree.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

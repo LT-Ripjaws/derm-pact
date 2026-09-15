@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as 'MISC' with 96.38% confidence. The 7-point score is 0/7 (determinate, decidable), below the threshold of 3. No conflict was detected between views.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

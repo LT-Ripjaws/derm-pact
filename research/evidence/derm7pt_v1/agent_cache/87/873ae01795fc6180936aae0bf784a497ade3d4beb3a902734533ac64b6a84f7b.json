@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of 'MISC' with 0.2719 confidence. The 7-point score is now 3 (minimum and maximum both 3), which meets or exceeds the threshold of 3. This change occurred after overriding the 'blue_whitish_veil' criterion from 'absent' to 'present'. The previous score was 1, which was below the threshold and recommended 'clinical follow up'. The new score of 3 triggers a change in verdict to 'excision'.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

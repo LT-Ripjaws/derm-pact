@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate') and thus contribute to the undecidable 7-point score: 'pigment_network' and 'pigmentation'.\\n\\nThe system's deterministic computation shows that the 7-point score range is [1,4], which spans the threshold of 3. Because the score range includes both below- and above-threshold values due to unresolved criteria, the verdict is undecidable.\\n\\nBefore the override, the system\u2019s verdict was undecidable due to these unresolved criteria. Since the clinician has not yet overridden any criterion, the current state remains unchanged. If the clinician overrides either 'pigment_network' or 'pigmentation' with a determinate value, the system will recompute the score and may resolve the verdict.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

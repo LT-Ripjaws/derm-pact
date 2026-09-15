@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion that could not be assessed is 'dots_and_globules', which was marked as indeterminate. This unresolved criterion prevents the 7-point score from being determinate, resulting in a score range of [2,3]. Since this range spans the threshold of 3, the system cannot deliver a definitive verdict (the score is undecidable). The system's deterministic computation indicates that resolving this criterion is necessary to decide whether the lesion requires clinical follow-up or can be managed otherwise.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

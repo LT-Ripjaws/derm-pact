@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 95.72% confidence. The 7-point score is 2/7, which is below the threshold of 3, indicating that the lesion is not suspicious for melanoma based on dermoscopic criteria. All criteria except 'pigment_network' were determinate; 'pigment_network' was assessed as 'indeterminate'. There is no conflict between views, and the case is safe to display.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

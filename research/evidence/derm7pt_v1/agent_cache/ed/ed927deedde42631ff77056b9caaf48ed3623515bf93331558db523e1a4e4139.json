@@ -1,5 +1,0 @@
-{
-  "reply": "The seven-point score is 0, which is below the threshold of 3, and the criteria_implied_action is clinical follow up. The diagnosis is BCC with a classifier confidence of 0.8138. Guideline recommendations include a treatment plan that considers recurrence rate, preservation of function, patient expectations, and potential adverse effects (citation ID: DOI:10.1016/j.jaad.2017.10.006).",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

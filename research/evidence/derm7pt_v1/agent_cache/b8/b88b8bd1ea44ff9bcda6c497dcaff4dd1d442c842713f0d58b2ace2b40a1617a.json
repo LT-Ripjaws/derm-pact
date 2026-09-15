@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue_whitish_veil' was overridden from 'absent' to 'present'.\\n\\nBefore override: 7-point score was 0 (min 0, max 0), verdict: clinical follow up.\\nAfter override: 7-point score is now 2 (min 2, max 2), verdict remains clinical follow up because the score (2) is still below the threshold of 3.\\n\\nThe threshold verdict did not change. The previous score was correct given the original criterion values; the override has increased the score but not crossed the threshold.\\n\\nDiagnosis: Classifier output is NEV with confidence 0.5427. The 7-point score after override is 2, which is below the 3-point threshold. Conflict state: no conflict detected. No guideline recommendations are available for NEV in the licensed corpus.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

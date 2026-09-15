@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The system classified the lesion as a Nevus (NEV) with a confidence of 0.6152. The 7-point score is 2, which is below the threshold of 3, leading to the implied action of clinical follow up. There is no conflict in the assessment; both views agree. The criteria contributing to the score include: pigment_network (absent, 0/2), blue_whitish_veil (absent, 0/2), vascular_structures (absent, 0/2), streaks (irregular, 1/1), pigmentation (absent, 0/1), dots_and_globules (irregular, 1/1), and regression_structures (absent, 0/1). The total score is computed deterministically from these criteria.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

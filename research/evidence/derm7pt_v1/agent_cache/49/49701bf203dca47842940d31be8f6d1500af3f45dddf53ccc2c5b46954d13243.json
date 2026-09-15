@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"refuse\", \"text\": \"The available tools and guidelines do not provide survival probability estimates for any condition. The system is designed for clinical decision support, including diagnosis, management, and referral guidance, but does not contain prognostic data such as five-year survival rates.\"}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

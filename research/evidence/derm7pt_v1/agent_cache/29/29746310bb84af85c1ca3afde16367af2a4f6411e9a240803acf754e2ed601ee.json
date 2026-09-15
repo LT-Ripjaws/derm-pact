@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The system classified the lesion as 'MISC' with a confidence of 0.4841. The 7-point score is 0/7, which is below the threshold of 3, leading to the implied action of 'clinical follow up'. There are no unresolved criteria or conflicts; both views agree. The system's deterministic computation assigns this case to the 'MISC' condition group, which is not covered by any formal guideline in the corpus.\", \"Assessment\": \"\"}, \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

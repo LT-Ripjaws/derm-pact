@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for the condition 'NEV' (nevus). While the lesion was classified as a nevus with high confidence and scored 0 on the 7-point scale (below the 3-point threshold), there is no formal management guidance available in the licensed guidelines for this condition. The corpus focuses primarily on malignant or pre-malignant lesions such as BCC, MEL, and SK. Therefore, I cannot provide a guideline-based recommendation for this case.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

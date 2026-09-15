@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of 'MISC' with confidence 0.4754. The 7-point score range is [2,5], which spans the threshold of 3, making the verdict undecidable. The unresolved criteria are 'pigment_network' and 'dots_and_globules'. The conflict state remains: the pattern model reports MISC, but the checklist score range spans the threshold due to unresolved criteria; agreement cannot be assessed. The system's deterministic computation confirms that overriding 'blue_whitish_veil' from 'absent' to 'present' increased the score range from [0,3] to [2,5], but the verdict did not change \u2014 it remains 'clinical follow up' because the score still spans the threshold.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

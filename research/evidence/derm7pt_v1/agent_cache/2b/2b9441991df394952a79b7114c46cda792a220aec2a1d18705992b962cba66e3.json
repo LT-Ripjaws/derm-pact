@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criteria that could not be assessed are 'pigment_network' and 'dots_and_globules', both marked as indeterminate. This impacts the 7-point score, which the system computed as ranging from 1 to 4, with the score being undecidable because it spans the threshold of 3. The system's deterministic computation indicates that due to unresolved criteria, the case falls into a clinical follow-up category. The verdict is therefore not definitive, and no guideline-based management recommendation is available for this condition (NEV), as stated in the system\u2019s output: 'The licensed guideline corpus holds no recommendation for NEV.'\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue_whitish_veil' has been overridden from 'absent' to 'present'. The 7-point score has changed from a range of 1\u20132 to 3\u20134. Since the threshold for intervention is 3, the recommendation has changed from 'clinical follow up' to 'excision'.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

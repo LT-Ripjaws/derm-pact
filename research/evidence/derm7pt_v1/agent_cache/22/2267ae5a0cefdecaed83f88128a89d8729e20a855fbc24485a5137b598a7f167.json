@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"tool\", \"tool\": \"search_guidelines\", \"args\": {\"condition\": \"NEV\", \"question_type\": \"referral_triage\"}}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

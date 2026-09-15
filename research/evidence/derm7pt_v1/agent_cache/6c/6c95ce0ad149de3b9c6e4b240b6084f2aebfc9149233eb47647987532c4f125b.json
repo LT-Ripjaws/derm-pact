@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as a nevus (NEV) with 57.23% confidence. The 7-point score is computed as a range from 1 to 2, with no determinate value due to an indeterminate criterion ('pigmentation'). The minimum score is 1, maximum is 2, and the threshold for referral is 3. Since the score is below the threshold, the criteria-implied action is clinical follow-up. There is no conflict between views.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

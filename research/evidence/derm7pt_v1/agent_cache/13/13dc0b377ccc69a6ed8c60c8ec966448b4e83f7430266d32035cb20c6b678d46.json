@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as MISC with a confidence of 0.4548. The 7-point score is 1 (min: 0, max: 1), which is below the threshold of 3, indicating a non-malignant or low-risk profile. The criteria are mostly absent or indeterminate, with dots_and_globules being the only unresolved criterion. There is no conflict between views.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

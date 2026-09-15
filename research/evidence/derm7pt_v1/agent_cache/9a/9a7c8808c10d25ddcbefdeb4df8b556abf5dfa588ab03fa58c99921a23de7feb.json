@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The classifier diagnosis remains 'NEV' with confidence 0.9424. The criterion 'blue_whitish_veil' has been overridden from 'absent' to 'present'. The 7-point score is now in the range [2, 4], with a threshold of 3. The system's deterministic computation indicates that the verdict remains 'clinical follow up' because the score spans the threshold and unresolved criteria ('pigmentation', 'dots_and_globules') prevent a decidable outcome. The conflict state remains absent.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

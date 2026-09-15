@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed: 'pigment_network' and 'dots_and_globules'. Both were marked as 'indeterminate', which prevented the 7-point score from being determinate. The system's deterministic computation reports a score range of [0,3], which spans the threshold of 3. Because the score range includes both below- and above-threshold values due to unresolved criteria, the verdict is undecidable. This means the case cannot reach a conclusive decision without resolving these criteria.\\n\\nThe conflict state indicates that while the classifier suggests a diagnosis of NEV, the checklist has not reached a verdict due to unresolved criteria. The system recommends resolving the indeterminate criteria to decide.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

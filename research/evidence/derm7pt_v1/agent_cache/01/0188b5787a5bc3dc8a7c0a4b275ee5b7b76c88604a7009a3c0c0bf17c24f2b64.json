@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 72.92% confidence. The 7-point score is in the range [0,3], which spans the threshold of 3, making the verdict undecidable. This is due to two unresolved criteria: 'pigment_network' and 'regression_structures', both marked as 'indeterminate'. The system's deterministic computation reports that the checklist has not reached a verdict because these criteria are unresolved.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure. Therefore, no guideline-sourced management recommendations can be provided for this condition.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

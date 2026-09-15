@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as SK (seborrheic keratosis) with a confidence of 0.5612. The 7-point score is 2/7, which is below the threshold of 3. The criteria are all determinate, and there is no conflict. The criteria-implied action is clinical follow up because the score is less than 3.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'SK'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

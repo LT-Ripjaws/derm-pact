@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system classified the lesion as NEV with 64.71% confidence. The 7-point score is 1 (minimum 0, maximum 1), which is below the threshold of 3. The criteria are mostly determinate, except for 'pigmentation', which is indeterminate. There is no conflict between views. The system's deterministic computation implies clinical follow up due to the score being less than 3.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

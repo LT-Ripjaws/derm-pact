@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier diagnosed 'MISC' with 85.53% confidence. Before the override, the 7-point score was 0/0 (determinate). After overriding 'blue_whitish_veil' from 'absent' to 'present', the 7-point score is now 2/2. The threshold for referral is 3, so the verdict remains 'clinical follow up'. The previous score of 0 was incorrect given the clinician's correction; the new score of 2 reflects the updated criterion value.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'MISC'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

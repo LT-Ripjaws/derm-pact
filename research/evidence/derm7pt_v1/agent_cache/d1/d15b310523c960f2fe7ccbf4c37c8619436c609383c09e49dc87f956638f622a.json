@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus recommends surgical excision as the first-line management for melanoma. Specifically, when melanoma is suspected, the whole lesion should be completely excised with a narrow (1\u20133 mm) margin to perform histological diagnosis. For primary cutaneous melanoma of any thickness or melanoma in situ, surgical excision with histologically negative margins is recommended, and margins should be based on tumor thickness. If sentinel lymph node biopsy is indicated, it should be performed before wide excision, preferably in the same operative setting.\\n\\nThese recommendations are supported by the following guideline records:\\n- aad:pmid:30392755:table-x-excision-first-line\\n- aad:pmid:30392755:table-x-slnb-timing\\n- eado:pmid:39709737:recommendation-1\", \"citations\": [\"aad:pmid:30392755:table-x-excision-first-line\", \"aad:pmid:30392755:table-x-slnb-timing\", \"eado:pmid:39709737:recommendation-1\"]}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

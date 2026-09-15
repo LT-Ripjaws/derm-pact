@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus holds no recommendation for this lesion, which is classified as a nevus (NEV). Formal dermatology guidelines focus primarily on malignant and pre-malignant lesions, and this condition falls outside the covered scope of the licensed guideline corpus. Therefore, no specific management advice can be provided from the corpus.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

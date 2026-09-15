@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as MISC with 94.46% confidence. The 7-point checklist score is 3 (minimum and maximum both 3), which meets the threshold of 3, triggering a recommendation for excision. A conflict is present because the classifier does not raise melanoma suspicion (MISC) while the checklist does (score \u22653). This conflict requires escalation.\\n\\nAssessment: The guideline corpus contains no recommendations for clinical visual assessment under either MEL or MISC conditions. The absence reason is '[evidence-influence probe] guideline corpus suppressed for 'MEL'' and '[evidence-influence probe] guideline corpus suppressed for 'MISC''. Therefore, no guideline-sourced management advice can be provided.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

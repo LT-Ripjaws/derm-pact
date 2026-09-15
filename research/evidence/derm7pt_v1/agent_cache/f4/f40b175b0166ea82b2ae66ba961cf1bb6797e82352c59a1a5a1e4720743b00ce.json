@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion that could not be assessed is 'dots_and_globules', which was marked as indeterminate. This unresolved criterion affects the 7-point score, making it undecidable: the score falls within the range [2,3], which spans the threshold of 3. As a result, the system's deterministic computation implies clinical follow-up due to the inability to reach a definitive verdict. The conflict state is absent, and no guideline recommendations are available for NEV in the licensed corpus.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

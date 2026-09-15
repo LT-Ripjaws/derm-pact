@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Before override: blue_whitish_veil was 'absent', contributing 0 points to the 7-point score, which was 0/0. The verdict was 'clinical follow up' because the score was below the threshold of 3.\\n\\nAfter override: blue_whitish_veil is now 'present', contributing 2 points. The recomputed 7-point score is 2/2. The verdict remains 'clinical follow up' because the score (2) is still below the threshold (3). The previous score was not incorrect given the clinician's correction \u2014 it was simply updated based on the new criterion value.\\n\\nThe recommendation does not change because the score remains below the decision threshold.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

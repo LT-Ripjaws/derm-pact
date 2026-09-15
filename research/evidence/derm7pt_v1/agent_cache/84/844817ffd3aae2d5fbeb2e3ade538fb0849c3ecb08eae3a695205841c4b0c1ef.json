@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus does not contain any recommendations for this lesion, which is classified as a nevus (NEV). The licensed guidelines focus primarily on malignant and pre-malignant conditions such as basal cell carcinoma (BCC), melanoma (MEL), and squamous cell carcinoma (SK). As such, there is no formal management advice available in the corpus for this case. The 7-point score is 1 (out of a threshold of 3), indicating low suspicion, and the criteria imply clinical follow-up. However, since no guideline recommendation exists for NEV, no specific management action can be derived from the corpus.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

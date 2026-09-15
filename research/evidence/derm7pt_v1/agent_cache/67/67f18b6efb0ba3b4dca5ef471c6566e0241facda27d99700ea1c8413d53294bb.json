@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue whitish veil' has been overridden from 'absent' to 'present'. The system's deterministic computation now assigns a score range of 2 to 2 for this criterion, which is below the threshold of 3. The verdict remains 'clinical follow up', as the total score (2) does not meet the threshold for referral. The recommendation has not changed.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

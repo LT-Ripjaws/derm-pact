@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The criterion 'blue_whitish_veil' was corrected from 'absent' to 'present'.\\n\\nBefore override: 7-point score = 0 (min 0, max 0), verdict = clinical follow up.\\nAfter override: 7-point score = 2 (min 2, max 2), verdict = clinical follow up.\\n\\nThe threshold for intervention is 3. Since the new score of 2 remains below the threshold, the recommendation does not change. The previous score of 0 was incorrect given the clinician's correction; the correct score after applying the override is 2.\\n\\nDiagnosis: NEV, confidence 0.9782, 7-point score 2/7, conflict state: no conflict.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "The 7-point score is 0, which is below the threshold of 3. The criteria_implied_action is clinical follow up due to a score of 0 < 3. There are no guideline recommendations available for this case, as the condition group 'MISC' is not covered in the licensed guideline corpus.",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

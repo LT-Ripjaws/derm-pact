@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation classifies the lesion as NEV with a confidence of 0.5568. The 7-point score is computed as 6, which meets or exceeds the threshold of 3. This score is derived from the following criteria: pigment_network (atypical, 2 points), blue_whitish_veil (present, 2 points), streaks (irregular, 1 point), dots_and_globules (irregular, 1 point), and vascular_structures, pigmentation, and regression_structures each contributing 0 points. The total score is 6, which triggers the management ladder to recommend excision. A conflict is present because the classifier suggests a benign nevus while the 7-point checklist indicates suspicion for melanoma.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

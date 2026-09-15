@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The system's deterministic computation assigned a 7-point score of 3\u20134 after overriding 'blue_whitish_veil' from 'absent' to 'present'. Previously, the score was 1\u20132. The threshold for intervention is 3, so the verdict changed from 'clinical follow up' to 'excision'.\\n\\nThe clinician\u2019s correction of 'blue_whitish_veil' to 'present' resulted in a new score range of 3\u20134, which meets or exceeds the threshold. This change altered the recommended management action.\\n\\nAssessment: The licensed guideline corpus holds no recommendation for 'NEV'. Formal dermatology guidelines concentrate on malignant and pre-malignant lesions; this is a coverage boundary of the corpus, not a retrieval failure.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

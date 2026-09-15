@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"Diagnosis: The classifier assigned a diagnosis of NEV with 0.8955 confidence. The 7-point score is in the range [0,3], with determinate=false and decidable=false due to unresolved criteria. The unresolved criteria are 'streaks', 'pigmentation', and 'dots_and_globules'. The system's deterministic computation indicates that because the score range spans the threshold of 3, no definitive verdict can be reached without resolving these criteria.\\n\\nThe conflict state reports that agreement cannot be assessed because the checklist has not reached a verdict; therefore, the verdict remains undecidable until the unresolved criteria are resolved.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

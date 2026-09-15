@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The following criteria could not be assessed (marked as 'indeterminate'): 'pigment_network' and 'dots_and_globules'.\\n\\nThis affects the 7-point score, which is reported as undecidable: the computed range is [0,3], spanning the threshold of 3. Because the score cannot be definitively determined due to unresolved criteria, the system's deterministic computation implies a clinical follow-up action.\\n\\nThe verdict is therefore not definitive. The presence of unresolved criteria means the total score cannot be confirmed, and thus the case falls into an indeterminate decision state.\", \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

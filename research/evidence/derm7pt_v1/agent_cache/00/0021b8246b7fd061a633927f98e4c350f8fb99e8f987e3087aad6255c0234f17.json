@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": {\"Diagnosis\": \"The system classified the lesion as a NEV (nevus) with 88.81% confidence. The 7-point score is computed as a range from 1 to 2, which is below the threshold of 3, and the score is undetermined due to one indeterminate criterion ('dots_and_globules'). The conflict state is absent \u2014 both views agree. The criteria-implied action is clinical follow-up because the score is less than 3.\\n\\nThe system's deterministic computation indicates that no guideline recommendation exists for this condition in the licensed corpus.\", \"Assessment\": \"\"}, \"citations\": []}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

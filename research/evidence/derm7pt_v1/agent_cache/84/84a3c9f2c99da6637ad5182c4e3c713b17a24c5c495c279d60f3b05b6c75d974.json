@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"answer\", \"text\": \"The guideline corpus recommends surgical excision as the first-line treatment for this lesion, which is classified as melanoma (MEL). The 7-point score is between 5 and 7, which meets or exceeds the threshold of 3, indicating that excision is appropriate. According to the guidelines, the entire lesion should be completely excised with a narrow margin (1\u20133 mm) to enable histological diagnosis. For larger lesions, such as those on the face, acral areas, or genitalia, incisional biopsies may be considered. If sentinel lymph node biopsy is indicated, it should ideally be performed before wide excision and in the same operative setting.\", \"citations\": [\"aad:pmid:30392755:table-x-excision-first-line\", \"aad:pmid:30392755:table-x-slnb-timing\", \"eado:pmid:39709737:recommendation-1\"]}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

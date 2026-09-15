@@ -1,5 +1,0 @@
-{
-  "reply": "{\"action\": \"refuse\", \"text\": \"The available tools and guidelines do not provide survival probability estimates for any condition. The system is designed for clinical decision support based on dermoscopic criteria, guideline-based management, and referral triage, not for long-term prognostic modeling or survival statistics.\"}",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

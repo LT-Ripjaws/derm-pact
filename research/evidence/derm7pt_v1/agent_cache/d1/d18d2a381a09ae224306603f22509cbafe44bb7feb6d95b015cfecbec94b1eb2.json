@@ -1,5 +1,0 @@
-{
-  "reply": "The 7-point score is 3, which is at or above the threshold of 3, and the criteria_implied_action is excision. The pattern model diagnosed MISC, but this conflicts with the 7-point checklist result, which raises melanoma suspicion. No guideline recommendations are available for MISC; however, contingent guidelines for melanoma include excision as first-line management (e.g., DOI:10.1016/j.jaad.2018.08.055, DOI:10.1016/j.ejca.2024.115153).",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}

@@ -1,5 +1,0 @@
-{
-  "reply": "The 7-point score is 2, which is below the threshold of 3; therefore, the criteria_implied_action is clinical follow up. The diagnosis is NEV with a confidence of 0.8703, and no guideline recommendations are available for this condition as per the licensed corpus.",
-  "usage": {},
-  "model": "qwen/qwen3-vl-32b-instruct"
-}
