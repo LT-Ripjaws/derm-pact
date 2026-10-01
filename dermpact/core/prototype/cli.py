@@ -149,6 +149,8 @@ def build_parser() -> argparse.ArgumentParser:
     _add_common_host_args(p_all)
     p_all.add_argument("--output", required=True)
 
+    from dermpact.core.prototype.luna_cli import register
+    register(sub)
     return p
 
 
@@ -399,6 +401,9 @@ _COMMANDS = {
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "luna-clarify":
+        from dermpact.core.prototype.luna_cli import run
+        return run(args)
     handler = _COMMANDS.get(args.command)
     if handler is None:
         parser.print_usage(sys.stderr)
